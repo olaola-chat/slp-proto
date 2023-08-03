@@ -19,12 +19,10 @@ genproto() {
 }
 
 gendao(){
-    db=$2
-
-    if [ "$2" == "xianshi" ]; then
+    if [ "$2" = "xianshi" ]; then
         gf-cli gen dao -g default -t $1
     else
-        gf-cli gen dao -g $db -t $1
+        gf-cli gen dao -g $2 -t $1
     fi
 
     if [ $? -ne 0 ]; then
