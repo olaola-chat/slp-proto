@@ -74,6 +74,7 @@
     [[gfcli.gen.dao]]
         mod = "github.com/olaola-chat/rbp-proto"
         jsonCase = "Snake"
+        path = "./"
         tplDaoIndex = "daoindex.tpl"
         tplModelIndex = "modelindex.tpl"
     [[gfcli.gen.pbentity]]

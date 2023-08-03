@@ -11,7 +11,7 @@ fi
 export GF_GCFG_FILE=config/config_cli.toml
 
 genproto() {
-    gf-cli gen pbentity -g $2 -t $1 -path gen_proto/db/$db
+    gf-cli gen pbentity -g $2 -t $1 -path gen_proto/db/$2
 
     if [ $? -ne 0 ]; then
         exit 1
@@ -19,7 +19,6 @@ genproto() {
 }
 
 gendao(){
-    name=$1
     db=$2
 
     if [ "$2" == "xianshi" ]; then
