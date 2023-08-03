@@ -72,13 +72,11 @@
 [gfcli]
     # 自定义DAO生成配置(默认是读取database配置)
     [[gfcli.gen.dao]]
-		mod = "github.com/olaola-chat/rbp-proto"
+        mod = "github.com/olaola-chat/rbp-proto"
         jsonCase = "Snake"
-		path = "./"
         tplDaoIndex = "daoindex.tpl"
         tplModelIndex = "modelindex.tpl"
-	[[gfcli.gen.pbentity]]
-		path    = "../proto"
-		jsonCase = "Snake"
-		package = "pb"
-		option 	= "option go_package = \"./pb\";"
+    [[gfcli.gen.pbentity]]
+        jsonCase = "Snake"
+        package = "pb"
+        option 	= "option go_package = \"./gen_pb\";"

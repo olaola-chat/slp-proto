@@ -2,42 +2,32 @@
 
 cd `dirname $0`
 
+if [ $# -lt 2 ];
+then
+        echo "USAGE: $0 dbname tableName"
+        exit 1
+fi
+
 export GF_GCFG_FILE=config/config_cli.toml
 
 genproto() {
-    if [ -z "$1" ] 
-    then
-        exit 1
-    fi
+    gf-cli gen pbentity -g $2 -t $1 -path gen_proto/db/$db
 
-    db=$2
-
-    if [ "$db" ]
-    then
-        gf-cli gen pbentity -g $db -t $1
-    else
-        gf-cli gen pbentity -g default -t $1
-    fi
     if [ $? -ne 0 ]; then
         exit 1
     fi
 }
 
 gendao(){
-    if [ -z "$1" ] 
-    then
-        exit 1
-    fi
-
     name=$1
     db=$2
 
-    if [ "$db" ] 
-    then
-        gf-cli gen dao -g $db -t $name
+    if [ "$2" == "xianshi" ]; then
+        gf-cli gen dao -g default -t $1
     else
-        gf-cli gen dao -g default -t $name
+        gf-cli gen dao -g $db -t $1
     fi
+
     if [ $? -ne 0 ]; then
         exit 1
     fi
