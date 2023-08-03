@@ -52,3 +52,15 @@ sh gen_db.sh xianshi xs_user_profile
 sh gen_rpc.sh User Profile
 
 ```
+
+# 安装gf-cli
+
+git clone git@github.com:olaola-chat/rbp-gf-cli.git
+
+go install
+
+# 安装protoc-go-inject-tag
+
+git clone git@github.com:favadi/protoc-go-inject-tag.git
+
+go install
