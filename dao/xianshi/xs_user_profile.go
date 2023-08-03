@@ -5,7 +5,7 @@
 package dao
 
 import (
-	"banban/app/dao/internal"
+	"github.com/olaola-chat/rbp-proto/dao/xianshi/internal"
 )
 
 // xsUserProfileDao is the manager for logic model data accessing

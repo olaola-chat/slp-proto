@@ -5,7 +5,7 @@
 package model
 
 import (
-	"banban/app/model/internal"
+	"github.com/olaola-chat/rbp-proto/model/xianshi/internal"
 )
 
 // XsUserProfile is the golang structure for table xs_user_profile.

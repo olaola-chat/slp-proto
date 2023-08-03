@@ -7,7 +7,7 @@ syntax = "proto3";
 
 package pb;
 
-option go_package = "../app/pb";
+option go_package = "./gen_pb/db/xianshi";
 
 message EntityXsUserProfile {
            //@inject_tag: orm:"uid,primary"              
@@ -124,4 +124,6 @@ message EntityXsUserProfile {
     uint32 friend_state                                 = 56; // 进入广场,0 未通过, 1 未开启, 2 已开启       
            //@inject_tag: orm:"has_video"                
     uint32 has_video                                    = 57; // 是否有通过审核的视频                        
+           //@inject_tag: orm:"online_visible"           
+    string online_visible                               = 58; // 在线隐身状态，0:关闭，unix时间 开启         
 }

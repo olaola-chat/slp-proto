@@ -63,4 +63,5 @@ type XsUserProfile struct {
 	Tag                  uint32  `orm:"tag"                     json:"tag"`                     // 用户交友标签
 	FriendState          uint32  `orm:"friend_state"            json:"friend_state"`            // 进入广场,0 未通过, 1 未开启, 2 已开启
 	HasVideo             uint32  `orm:"has_video"               json:"has_video"`               // 是否有通过审核的视频
+	OnlineVisible        string  `orm:"online_visible"          json:"online_visible"`          // 在线隐身状态，0:关闭，unix时间 开启
 }

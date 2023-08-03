@@ -7,13 +7,19 @@ package internal
 import (
 	"context"
 	"database/sql"
+	"errors"
+	"reflect"
+	"strings"
+	"time"
+
+	"github.com/gogf/gf/container/gvar"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/frame/gmvc"
-	"time"
+	"github.com/gogf/gf/util/gconv"
 
-	//	"banban/app/model"
-	"banban/app/pb"
+	//	"github.com/olaola-chat/rbp-proto/model"
+	"github.com/olaola-chat/rbp-proto/pb"
 )
 
 // XsUserProfileDao is the manager for logic model data accessing
@@ -84,6 +90,7 @@ type xsUserProfileColumns struct {
 	Tag                  string // 用户交友标签
 	FriendState          string // 进入广场,0 未通过, 1 未开启, 2 已开启
 	HasVideo             string // 是否有通过审核的视频
+	OnlineVisible        string // 在线隐身状态，0:关闭，unix时间 开启
 }
 
 var (
@@ -150,6 +157,7 @@ var (
 			Tag:                  "tag",
 			FriendState:          "friend_state",
 			HasVideo:             "has_video",
+			OnlineVisible:        "online_visible",
 		},
 	}
 )
@@ -352,7 +360,10 @@ func (d *XsUserProfileDao) All(where ...interface{}) ([]*pb.EntityXsUserProfile,
 		return nil, err
 	}
 	var entities []*pb.EntityXsUserProfile
-	if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
+	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
+	//	return nil, err
+	//}
+	if err = d.scan(all, &entities); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
 	return entities, nil
@@ -397,7 +408,10 @@ func (d *XsUserProfileDao) FindAll(where ...interface{}) ([]*pb.EntityXsUserProf
 		return nil, err
 	}
 	var entities []*pb.EntityXsUserProfile
-	if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
+	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
+	//	return nil, err
+	//}
+	if err = d.scan(all, &entities); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
 	return entities, nil
@@ -493,4 +507,99 @@ func (d *XsUserProfileDao) LockShared() *XsUserProfileDao {
 // Unscoped enables/disables the soft deleting feature.
 func (d *XsUserProfileDao) Unscoped() *XsUserProfileDao {
 	return &XsUserProfileDao{M: d.M.Unscoped()}
+}
+
+func (d *XsUserProfileDao) scan(res gdb.Result, in interface{}) error {
+	length := res.Len()
+	if length == 0 {
+		return sql.ErrNoRows
+	}
+	v := reflect.ValueOf(in).Elem()
+	newv := reflect.MakeSlice(v.Type(), 0, length)
+	v.Set(newv)
+	v.SetLen(length)
+
+	index := 0
+	var fieldToTag []string
+	for i := 0; i < length; i++ {
+		k := v.Type().Elem().Elem()
+		newObj := reflect.New(k)
+		if i == 0 {
+			fieldToTag = d.getFieldTag(newObj)
+		}
+		err := d.mapping(res[i], newObj, fieldToTag)
+		if err != nil {
+			return err
+		}
+		v.Index(index).Set(newObj)
+		index++
+	}
+	v.SetLen(index)
+	return nil
+}
+
+func (d *XsUserProfileDao) getFieldTag(v reflect.Value) []string {
+	t := v.Type()
+	typ := t.Elem()
+	val := v.Elem()
+	vTypeOfT := val.Type()
+	length := val.NumField()
+	fieldToTag := make([]string, length)
+	for j := 0; j < length; j++ {
+		name := vTypeOfT.Field(j).Name
+		if name[0] < 'A' || name[0] > 'Z' {
+			continue
+		}
+		value := val.Field(j)
+		tagVal := typ.Field(j).Tag.Get("orm")
+		if !value.CanSet() || len(tagVal) == 0 {
+			continue
+		}
+		index := strings.Index(tagVal, ",")
+		if index > -1 {
+			fieldToTag[j] = tagVal[0:index]
+		} else {
+			fieldToTag[j] = tagVal
+		}
+	}
+	return fieldToTag
+}
+
+func (d *XsUserProfileDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
+	val := v.Elem()
+	length := val.NumField()
+	for i := 0; i < length; i++ {
+		tag := fieldToTag[i]
+		if len(tag) == 0 {
+			continue
+		}
+
+		meta, ok := m[tag]
+		if !ok {
+			continue
+		}
+		value := val.Field(i)
+		kind := value.Kind()
+		switch kind {
+		case reflect.String:
+			value.SetString(meta.String())
+			break
+		case reflect.Float32, reflect.Float64:
+			value.SetFloat(gconv.Float64(meta.String()))
+			break
+		case reflect.Int64, reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32:
+			value.SetInt(meta.Int64())
+			break
+		case reflect.Uint64, reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32:
+			value.SetUint(meta.Uint64())
+			break
+		case reflect.Bool:
+			value.SetBool(meta.Bool())
+			break
+		default:
+			return errors.New("unknown kind " + kind.String())
+			break
+		}
+	}
+	return nil
 }
