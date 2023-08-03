@@ -14,9 +14,9 @@ genproto() {
 
     if [ "$db" ]
     then
-        gf gen pbentity -g $db -t $1
+        gf-cli gen pbentity -g $db -t $1
     else
-        gf gen pbentity -g default -t $1
+        gf-cli gen pbentity -g default -t $1
     fi
     if [ $? -ne 0 ]; then
         exit 1
@@ -34,9 +34,9 @@ gendao(){
 
     if [ "$db" ] 
     then
-        gf gen dao -g $db -t $name
+        gf-cli gen dao -g $db -t $name
     else
-        gf gen dao -g default -t $name
+        gf-cli gen dao -g default -t $name
     fi
     if [ $? -ne 0 ]; then
         exit 1
