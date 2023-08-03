@@ -46,8 +46,8 @@ gendao(){
 sed "s/dbname/$1/g" config/daoindex.tpl > daoindex.tpl
 sed "s/dbname/$1/g" config/modelindex.tpl > modelindex.tpl
 
-genproto $1 $2
-gendao $1 $2
+genproto $2 $1
+gendao $2 $1
 
 rm daoindex.tpl modelindex.tpl
 
