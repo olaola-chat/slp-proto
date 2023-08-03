@@ -1,0 +1,19 @@
+syntax = "proto3";
+package pb;
+/*
+user.title rpc 协议
+*/
+
+option go_package = "../app/pb";
+
+//获取多个用户贵族等级信息
+message ReqUserTitleLevels {
+	//批量请求用户UID集合
+	repeated uint32	uids = 1;
+}
+
+//返回多个用户贵族等级信息
+message RepUserTitleLevels {
+	map<uint32, uint32> data = 1;
+}
+

@@ -1,0 +1,21 @@
+syntax = "proto3";
+package pb;
+/*
+face detect rpc协议
+ */
+
+option go_package = "../app/pb";
+
+message ReqFaceDetect {
+  string imgUrl = 1;
+  bool fixAngle = 2;
+}
+
+message RepFaceDetect {
+  uint32 faceCount = 2;
+}
+
+service RPCUserFaceDetect {
+  //获取人脸识别结果
+  rpc FaceDetect (ReqFaceDetect) returns (RepFaceDetect);
+}

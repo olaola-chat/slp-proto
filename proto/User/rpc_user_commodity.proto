@@ -1,0 +1,66 @@
+syntax = "proto3";
+package pb;
+/*
+user_commodity rpc 协议
+*/
+
+option go_package = "../app/pb";
+
+import "entity_xs_gift.proto";
+
+//redis里的数据, 存储麦上光圈和头像框
+message UserIconRing {
+	uint32 end = 1;
+	string icon = 2;
+	string icon_ext = 3;
+	string color = 4;
+}
+
+message WarpUserIconRing {
+	uint32 uid = 1;
+	string icon = 2;
+	string icon_ext = 3;
+	string color = 4;
+}
+
+//返回单个用户的头像框信息
+message RepUserHeadPic {
+	bool ok = 1;
+	WarpUserIconRing data = 2;
+}
+
+//返回单个用户的头像框,气泡,进场特效,坐骑
+message RepUserCommodityEnterRoom {
+	bool ok = 1;
+	WarpUserIconRing head = 2;
+	pb.EntityXsGift mount = 3;
+	WarpUserIconRing effect = 4;
+	WarpUserIconRing bubble = 5;
+}
+
+//批量返回多个头像框和麦上光圈信息
+message RepUsersHeadPic {
+	repeated WarpUserIconRing data = 1;
+}
+
+//用户的聊天气泡尾灯
+message RepUserBubbleTail {
+	bool ok = 1;
+	repeated WarpUserBubbleTail data = 2;
+}
+
+message WarpUserBubbleTail {
+	uint32 cid = 1;
+}
+
+//用户的房间资料卡装扮
+message RepUserCardDecorate {
+    bool ok = 1;
+    WarpUserCardDecorate data = 2;
+}
+
+message WarpUserCardDecorate {
+    uint32 uid = 1;
+    string image = 2;
+    pb.EntityXsGift gift = 3;
+}

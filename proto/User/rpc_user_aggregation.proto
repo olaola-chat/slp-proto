@@ -1,0 +1,47 @@
+syntax = "proto3";
+package pb;
+/*
+用户信息proto
+*/
+
+//表示目标文件生成的路径, go的包名就是最后的目录名
+//目前统一生成到 app/pb 目录下
+option go_package = "../../app/pb";
+
+message UserAgg {
+	bool has_mobile = 1;      //是否有手机号
+	bool has_safe_mobile = 2;   //是否有安全手机号
+	bool paied = 3;           //是否充值过
+	bool has_idCard = 4;       //是否有身份认证
+	bool has_idCardAli = 5;    //是否有阿里/微信身份认证
+	bool is_role_god = 6;       //是否大神角色 role = 3
+	bool has_bankCard = 7;     //是否有通过的银行账户
+	bool has_god_agreement = 8; //是否签约？
+	bool is_super = 9;         //是否是巡管
+	bool is_young_mode = 10;     //是否青少年模式
+	bool has_title = 11;        //是否有等级title
+	bool has_headPic = 12;      //是否有头像框
+	bool has_decorate = 13;    //是否有个人页装饰
+	bool has_mount = 14;       //是否有坐骑
+	bool has_skill = 15;        //是否有可用的技能
+	bool has_defend = 16;       //是否有人守护
+	bool has_mentor  = 17;      //是否有师傅
+	bool has_disciple  = 18;    //是否有徒弟
+	bool is_marry    = 19;      //是否已婚
+	bool has_business_moom = 20; //是否有商业房
+	bool in_union      = 21;    //是否加入了联盟
+	bool in_fleet     = 22;    //是否加入了家族
+	bool has_juben_title = 23;   //是否有剧本的称号
+	bool in_broker    = 24;     //是否加入了工会
+	bool has_ring   = 25;       //是否有麦上光圈
+	bool has_bubble  = 26;      //是否有聊天气泡
+	bool has_effect  = 27;      //是否有入场特效
+	bool empty_1   = 28;      //占位
+	bool has_small = 29; //是否有小号
+	bool mobile_certify = 30; //是否有认证手机号
+	bool is_close_msg_ntf = 31; //是否关闭小号消息提醒
+	bool is_use_small_account = 32; //是否使用小号助手功能
+	bool has_bubble_tail = 33; //聊天气泡尾灯
+	bool has_cp_house = 34; //是否有CP小屋
+	bool has_card_decorate = 35; //是否有资料卡装扮
+}

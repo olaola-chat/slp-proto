@@ -1,0 +1,63 @@
+syntax = "proto3";
+package pb;
+/*
+用户信息proto
+*/
+
+//表示目标文件生成的路径, go的包名就是最后的目录名
+//目前统一生成到 app/pb 目录下
+option go_package = "../app/pb";
+
+import "entity_bbc_badge.proto";
+import "entity_bbc_badge_allocate.proto";
+
+message MGetBadgeReq {
+  repeated uint32 badge_ids = 1;
+  repeated string fields = 2;
+}
+
+message MGetBadgesResp {
+  repeated pb.EntityBbcBadge badges = 1;
+}
+
+message GetBadgeReq {
+  uint32 badge_id = 1;
+  repeated string  fields = 2;
+}
+
+message GetBadgeResp {
+   pb.EntityBbcBadge badge = 1;
+}
+
+
+
+message MGetBadgeAllocReq {
+  repeated uint32 alloc_ids = 1;
+  repeated string fields = 2;
+}
+
+message MGetBadgesAllocResp {
+  repeated pb.EntityBbcBadgeAllocate allocs = 1;
+}
+
+message GetBadgeAllocReq {
+  uint32 alloc_id = 1;
+  repeated string  fields = 2;
+}
+
+message GetBadgeAllocResp {
+  pb.EntityBbcBadgeAllocate alloc = 1;
+}
+
+message BadgeAllocReq {
+	uint32 uid = 1;
+	uint32 badge_id = 2;
+	uint32 expire_time = 3;
+	uint32 send_time = 4;
+}
+
+message BadgeAllocResp {
+	bool success = 1;
+	string msg = 2;
+}
+  

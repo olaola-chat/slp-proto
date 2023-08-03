@@ -1,0 +1,129 @@
+syntax = "proto3";
+package pb;
+/*
+user MarketingRisk rpc 协议
+*/
+
+option go_package = "../app/pb";
+
+//设备单条信息
+message RiskDeviceDetail{
+  string FieldName = 1;
+  string FieldValue = 2;
+}
+
+//qq账号信息
+message QQAccountInfo{
+  string QQOpenId = 1;
+  string AppIdUser = 2;
+  string AssociateAccount = 3;
+  string MobilePhone = 4;
+  string DeviceId = 5;
+}
+
+//微信账号信息
+message WeChatAccountInfo{
+  string WeChatOpenId = 1;
+  uint32 WeChatSubType = 2;
+  string RandStr = 3;
+  string WeChatAccessToken = 4;
+  string AssociateAccount = 5;
+  string MobilePhone = 6;
+  string DeviceId = 7;
+}
+
+//其他类型账号信息
+message OtherAccountInfo{
+  string AccountId = 1;
+  string MobilePhone = 2;
+  string DeviceId = 3;
+}
+
+//网赚防刷相关参数
+message SponsorInfo{
+  string SponsorOpenId = 1;
+  string SponsorDeviceNumber = 2;
+  string SponsorPhone = 3;
+  string SponsorIp = 4;
+  string CampaignUrl = 5;
+}
+
+//诈骗信息
+message  OnlineScamInfo{
+  string ContentLabel = 1;
+  uint32 ContentRiskLevel = 2;
+  uint32 ContentType = 3;
+  uint32 FraudType = 4;
+  string FraudAccount = 5;
+}
+
+//请求数据
+message ReqMarketingRisk {
+  string Region = 1;
+  //Account相关信息
+  uint32 AccountType = 2;
+  QQAccountInfo QQAccount = 3;
+  WeChatAccountInfo WeChatAccount = 4;
+  OtherAccountInfo OtherAccount = 5;
+
+  //场景
+  string SceneCode = 6;
+
+  //基础信息
+  string UserIp = 7;
+  uint32 PostTime = 8;
+  string UserId = 9;
+  string DeviceToken = 10;
+  uint32 DeviceBusinessId = 11;
+  uint32 BusinessId = 12;
+  string Nickname = 13;
+  string EmailAddress = 14;
+  uint32 CheckDevice = 15;
+  string CookieHash = 16;
+  string Referer = 17;
+  string UserAgent = 18;
+  string XForwardedFor = 19;
+  string MacAddress = 20;
+  string VendorId = 21;
+
+  //设备信息
+  uint32 DeviceType = 22;
+  repeated RiskDeviceDetail Details = 23;
+
+  //网赚防刷相关参数
+  SponsorInfo Sponsor = 24;
+
+  //诈骗信息
+  OnlineScamInfo OnlineScam = 25;
+}
+
+
+
+//返回中data的明细数据
+message RiskRepValue{
+  string UserId = 1;
+  uint32 PostTime = 2;
+  string AssociateAccount = 3;
+  string UserIp = 4;
+  string RiskLevel = 5;
+  repeated uint32 RiskType = 6;
+}
+
+//返回中的data
+message RiskRepData{
+  uint32 Code = 1;
+  string Message = 2;
+  RiskRepValue Value = 3;
+  string UUid = 4;
+}
+
+//返回Response
+message RiskRepResponse{
+  RiskRepData Data = 1;
+  string RequestId = 2;
+}
+
+//响应数据
+message RepMarketingRisk{
+  RiskRepResponse Response = 1;
+}

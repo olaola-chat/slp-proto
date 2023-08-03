@@ -1,0 +1,99 @@
+syntax = "proto3";
+package pb;
+/*
+user_search rpc 协议
+*/
+
+option go_package = "../app/pb";
+
+//根据用户名字检索
+//只返回最近7天里，等级不低于5级的用户数据
+message ReqUserSearchName {
+	//检索关键字，不能为空，不能为停止词
+	string keyword 	= 1;
+	//检索哪些app的数据
+	repeated uint32 app_id = 2; 
+	//返回数量
+	uint32 limit = 3;
+	//搜索着等级
+	uint32 searcherLevel = 4;
+}
+
+//根据关键字检索家族
+message ReqFleetSearchName {
+	//检索关键字，不能为空，不能为停止词
+	string keyword 	= 1;
+	//返回数量
+	uint32 limit = 2;
+}
+
+//通用检索返回
+message RepUserSearchDefault {
+	//符合条件的数量
+	uint32 total = 1;
+	//返回的用户uids集合
+	repeated uint32 data = 2;
+}
+
+
+
+message FleetSimple {
+	uint32 gid = 1;
+	uint32 uid = 2;
+	uint32 total = 3;
+	string prefix = 4;
+	string name = 5;
+	string description = 6;
+}
+
+message RepSearchFleet {
+	//符合条件的数量
+	uint32 total = 1;
+	repeated FleetSimple data = 2;
+}
+
+message UnionSimple {
+	uint32 id = 1;
+	uint32 app_id = 2;
+	uint32 user_num = 3;
+	string name = 4;
+	string short_name = 5;
+}
+
+message RepSearchUnion {
+	//符合条件的数量
+	uint32 total = 1;
+	repeated UnionSimple data = 2;
+}
+
+message ReqUnionRoomFilter {
+	uint32 app_id = 1;
+	//返回数量
+	uint32 limit = 2;
+}
+
+message RepUnionRoomFilter {
+	//符合条件的数量
+	uint32 total = 1;
+	repeated UnionRoomItem list = 2;
+}
+
+message UnionRoomItem {
+	uint32 rid = 1;
+	uint32 num_boy = 2;
+}
+
+message ReqSingerClubRoomFilter {
+	uint32 limit = 1;
+}
+
+message RepSingerClubRoomFilter {
+	//符合条件的数量
+	uint32 total = 1;
+	repeated SingerRoomItem list = 2;
+}
+
+message SingerRoomItem {
+	uint32 rid = 1;
+	uint32 num_boy = 2;
+}

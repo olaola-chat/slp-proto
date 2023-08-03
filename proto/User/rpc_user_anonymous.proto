@@ -1,0 +1,140 @@
+syntax = "proto3";
+package pb;
+/*
+user.anonymous rpc 协议
+*/
+
+option go_package = "../../app/pb";
+
+enum UserAnonymousPermission{
+  Unknown = 0;
+  HideRoomOnline = 1;
+  HideUserPopularity = 2;
+  HideActiveLevel = 3;
+};
+
+// **************************Query**************************
+message ReqQueryUserAnonymousPermissions{
+  uint32 uid = 1;
+  repeated uint32 permissions = 2; // 需要查询的权限，如果为空，则返回所有权限
+}
+
+message AnonymousPermissionEntity{
+  uint32 permission = 1; // 权限类型
+  uint32 expiredAt = 2; // 过期时间点
+  bool disable = 3; // 是否禁用了该权限
+}
+
+message RspQueryUserAnonymousPermissions{
+  repeated AnonymousPermissionEntity permissions = 1; //  查询到的权限列表
+}
+
+// **************************MultiQuery**************************
+message ReqMultiUserMultiPermissions{
+  repeated uint32 uid = 1; // 需要查询的用户uid列表
+  repeated uint32 permissions = 2; // 需要查询的用户权限列表
+}
+
+message UserAnonymousPermissions{
+  repeated uint32 permissions = 1; // 用户所拥有的权限列表
+}
+
+message RspMultiUserMultiPermissions{
+  map<uint32,UserAnonymousPermissions> userPermissions = 1; // 批量查询结果，k=uid,v=权限列表
+}
+
+// **************************Filter**************************
+message ReqFilterUsersAnonymousPermissions{
+  repeated uint32 uid = 1; // 需要过滤的用户uid列表
+  uint32 permission = 2; // 根据哪个权限来过滤
+}
+
+message RspFilterUserAnonymousPermissions{
+  repeated uint32 uid = 1; // 拥有该权限的用户uid列表
+}
+
+// **************************Grant**************************
+message UserAnonymousGrantItem{
+  uint32 permission = 1; // 授予哪个权限
+  uint32 duration = 2; // 权限授予多长时间
+}
+
+message ReqUserAnonymousGrantPermissions{
+  uint32 uid = 1; // 权限授予用户
+  repeated UserAnonymousGrantItem permissions = 3; // 批量授予用户权限信息
+}
+
+message RspUserAnonymousGrantPermissions{
+  bool success = 1;
+  string message = 2;
+  repeated AnonymousPermissionEntity permissions = 3; // 授予之后用户的该权限信息
+}
+
+// **************************Disable**************************
+message ReqUserAnonymousPermissionDisable{
+  uint32 uid = 1;
+  bool disable = 2;
+  repeated uint32 permissions = 3; // 禁用哪些权限
+}
+
+message RspUserAnonymousPermissionDisable{
+  bool success = 1;
+  string message = 2;
+  repeated uint32 permissions = 3;// 成功禁用的权限列表
+}
+
+// **************************Query**************************
+message ReqUserAnonymousPermissionReclaim{
+  uint32 uid = 1;
+  bool force = 2;
+  repeated uint32 permissions = 3; // 回收哪些权限
+}
+
+message RspUserAnonymousPermissionReclaim{
+  bool success = 1;
+  string message = 2;
+  repeated uint32 permissions = 3; // 成功回收的权限列表
+}
+
+// **************************Dirty**************************
+message ReqUserAnonymousPermissionDirty{
+  uint32 uid = 1;
+}
+
+message RspUserAnonymousPermissionDirty{
+  bool success = 1;
+  string message = 2;
+}
+
+service UserAnonymous{
+  /**
+   * 查询单个用户的批量权限信息，当查询权限列表为空时，查询所有权限，返回权限列表的详细信息
+   */
+  rpc Query(ReqQueryUserAnonymousPermissions)returns(RspQueryUserAnonymousPermissions);
+
+  /**
+   * 授予权限，可同时授予某个用户一批权限，当用户当前不拥有该权限时，新增权限，当用户当前拥有该权限时，自动延长该权限的过期时间
+   */
+  rpc Grant(ReqUserAnonymousGrantPermissions)returns(RspUserAnonymousGrantPermissions);
+
+  /**
+   * 禁用某个用户的某些权限，传入的权限不可为空，返回成功禁用的权限ID
+   */
+  rpc Disable(ReqUserAnonymousPermissionDisable)returns(RspUserAnonymousPermissionDisable);
+
+  /**
+   * 回收用户的某些权限,传入的权限列表不可为空，返回成功回收后的权限ID
+   */
+  rpc Reclaim(ReqUserAnonymousPermissionReclaim)returns(RspUserAnonymousPermissionReclaim);
+
+  /**
+   * 业务慎用，用于更新用户的权限到缓存中,不保证成功率，当队列满时会直接抛弃
+   */
+  rpc Dirty(ReqUserAnonymousPermissionDirty)returns(RspUserAnonymousPermissionDirty);
+
+  /**
+   * 根据某个权益来过滤一批用户，返回拥有且开启该权限的用户列表
+   */
+  rpc Filter(ReqFilterUsersAnonymousPermissions)returns(RspFilterUserAnonymousPermissions);
+}
+

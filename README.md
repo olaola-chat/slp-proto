@@ -22,8 +22,33 @@ rbp-proto
     rpcclient proto生成的rpc客户端，各项目共用
         User  系统名
             User.Auth.go  微服务名
+    gen_pb proto生成的go文件
+        db
+            xianshi 数据库表
+        rpc
+            User 系统名
     Makefile 生成脚本
     
 ```
 
 rpc服务手写proto，用service定义函数方法，通过工具自动生成客户端代码
+
+# 生成数据库表代码
+
+在dev机器上执行
+
+```
+以xianshi库xs_user_profile为例
+
+sh gen_db.sh xianshi xs_user_profile
+
+```
+
+# 生成rpc代码
+
+```
+以User.Profile rpc服务为例
+
+sh gen_rpc.sh User Profile
+
+```

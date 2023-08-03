@@ -1,0 +1,120 @@
+syntax = "proto3";
+package pb;
+/*
+user_profile rpc 协议
+*/
+
+option go_package = "../app/pb";
+
+import "entity_xs_user_profile.proto";
+import "entity_xs_user_settings.proto";
+import "rpc_user_aggregation.proto";
+
+//获取单个请求请求
+message ReqUserProfile {
+	//需要查询的用户UID
+	uint32	uid 		= 1; 
+	//需要返回哪些字段，为空的话，表示所有字段名
+	repeated string fields = 2; 
+}
+
+//获取批量请求
+message ReqUserProfiles {
+	//批量请求用户UID集合
+	repeated uint32	uids = 1; 
+	//需要返回哪些字段，为空的话，表示所有字段名
+	repeated string fields = 2; 
+}
+
+//验证用户登录令牌合法性
+message ReqUserAuth {
+	//当前登录用户令牌
+	string token = 1; 
+}
+
+//返回验证用户信息
+message RepUserAuth {
+	uint32	uid		= 1;
+	uint32	time		= 2;
+	uint32	app_id	= 3;
+	string 	salt		= 4;
+	string	platform	= 5;
+	string	channel	= 6;
+}
+
+//申请令牌
+message ReqUserToken {
+	uint32 uid = 1; 
+	uint32 app_id = 2;
+	string platform = 3; // app or web
+	string channel = 4; // 可选
+}
+
+//返回令牌
+message RepUserToken {
+	string token = 1;
+}
+
+//返回多个用户信息
+message RepUserProfiles {
+	repeated pb.EntityXsUserProfile data = 1;
+}
+
+
+
+message ReqUsersBitMap{
+	//批量请求用户UID集合
+	repeated uint32	uids = 1;
+}
+
+
+message UserBitMapItem{
+	uint32  uid = 1;
+	pb.UserAgg userAgg = 2;
+}
+
+
+message RepUsersBitMap{
+	repeated UserBitMapItem data = 1;
+}
+
+
+message ReqGetUserIpInfo{
+	string Ip = 1;//ip地址10.10.10.10
+}
+
+message RepGetUserIpInfo{
+		string country = 1;//国家
+		string code = 2;//code，我也不知道是啥@zeng.gang
+		string province = 3;//省
+		string city = 4;//城市
+		string telecom = 5;//通信商
+}
+
+
+//返回多人设置信息
+message RepUserSettings {
+	repeated pb.EntityXsUserSettings data = 1;
+}
+
+message ReqNeedVerify {
+	uint32 uid = 1;
+}
+
+message RepNeedVerify {
+	bool success = 1;
+	uint32 res = 2;
+}
+
+service RPCUser {
+	//是否需要实名认证
+	rpc NeedVerify (ReqNeedVerify) returns (RepNeedVerify);
+
+	//获取用户
+	rpc Get (ReqUserProfile) returns (pb.EntityXsUserProfile);
+
+	//批量获取用户
+	rpc Mget (ReqUserProfiles) returns (RepUserProfiles);
+}
+
+
