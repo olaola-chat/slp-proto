@@ -1,10 +1,12 @@
 syntax = "proto3";
-package pb;
+package User;
 /*
 user.anonymous rpc 协议
 */
 
 option go_package = "../../app/pb";
+
+
 
 enum UserAnonymousPermission{
   Unknown = 0;

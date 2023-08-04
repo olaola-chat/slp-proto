@@ -12,152 +12,38 @@ import (
 	"strings"
 	"time"
 
+	"github.com/gogf/gf/util/gconv"
 	"github.com/gogf/gf/container/gvar"
 	"github.com/gogf/gf/database/gdb"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/frame/gmvc"
-	"github.com/gogf/gf/util/gconv"
 
-	//	"github.com/olaola-chat/rbp-proto/model"
-	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
+//	"{TplImportPrefix}/model"
+	pb "{TplImportPrefix}/gen_pb/db/{TplGroupName}"
 )
 
-// XsUserProfileDao is the manager for logic model data accessing
+// {TplTableNameCamelCase}Dao is the manager for logic model data accessing
 // and custom defined data operations functions management.
-type XsUserProfileDao struct {
+type {TplTableNameCamelCase}Dao struct {
 	gmvc.M
 	DB      gdb.DB
 	Table   string
-	Columns xsUserProfileColumns
+	Columns {TplTableNameCamelLowerCase}Columns
 }
 
-// XsUserProfileColumns defines and stores column names for table xs_user_profile.
-type xsUserProfileColumns struct {
-	UID                  string //
-	AppID                string //
-	Name                 string //
-	Icon                 string //
-	Sex                  string //
-	Video                string //
-	Cover                string //
-	Birthday             string //
-	Job                  string //
-	Role                 string //
-	GodCategory          string // 大神可用的资质
-	GodNum               string // 接单次数，冗余
-	GodMonthNum          string // 最近一个月接单次数，每天更新
-	GodWeekNum           string // 最近一天接单次数，每天更新
-	GodDayNum            string // 最近一天接单次数，每天更新
-	GodNowNum            string // 当前的接单数，实时更新
-	GodDateline          string // 首次通过技能审核时间
-	OnlineStatus         string // 0 在线， 1离线，2退出
-	OnlineDateline       string // 最后在线时间
-	Version              string //
-	City                 string //
-	CityCode             string //
-	Position             string //
-	Longitude            string // 地点经度
-	Latitude             string // 地点纬度
-	Dateline             string //
-	Deleted              string // 已被封禁，index表的冗余
-	Star                 string // 综合评分
-	TmpIcon              string // 更新头像临时存储，用于后台审核
-	UpdateTime           string // 更新头像和更新图片会更新当前时间
-	BlockUnAutherMessage string //
-	Sign                 string //
-	PayNum               string // 用户完成订单次数，冗余
-	PayMoney             string // 用户累计消费，用于计算用户等级
-	PayRoomMoney         string // 用户在聊天室里的累计消费，用于计算用户等级
-	PayOrderNum          string // 支付订单次数
-	PayReceiveToday      string // 大神当天接的单子，以支付计算
-	GodDefaultID         string // 默认技能ID
-	GodDefaultCid        string // 默认技能CID
-	GodDiscount          string // 打折
-	GodDiscountID        string // 默认技能
-	GodDiscountCid       string // 打折技能CID
-	ServiceScore         string // 服务质量，后台设定
-	ServiceBusy          string // 是否忙
-	ServicePause         string // 是否暂停接单
-	NoticeOrder          string // 是否开启抢单通知
-	Title                string // 爵位
-	NoticePower          string // 是否开启闪电抢单通知
-	NoticeGame           string // 是否开启自动匹配小游戏
-	CreditGod            string // 接单信用值
-	CreditUser           string // 下单信用值
-	CreditGodNow         string // 当日信用分数
-	CreditGodWeek        string // 本周信用分数
-	CreditGodDay         string // 昨日信用分数
-	Tag                  string // 用户交友标签
-	FriendState          string // 进入广场,0 未通过, 1 未开启, 2 已开启
-	HasVideo             string // 是否有通过审核的视频
-	OnlineVisible        string // 在线隐身状态，0:关闭，unix时间 开启
+// {TplTableNameCamelCase}Columns defines and stores column names for table {TplTableName}.
+type {TplTableNameCamelLowerCase}Columns struct {
+	{TplColumnDefine}
 }
 
 var (
-	// XsUserProfile is globally public accessible object for table xs_user_profile operations.
-	XsUserProfile = XsUserProfileDao{
-		M:     g.DB("xianshi").Model("xs_user_profile").Safe(),
-		DB:    g.DB("xianshi"),
-		Table: "xs_user_profile",
-		Columns: xsUserProfileColumns{
-			UID:                  "uid",
-			AppID:                "app_id",
-			Name:                 "name",
-			Icon:                 "icon",
-			Sex:                  "sex",
-			Video:                "video",
-			Cover:                "cover",
-			Birthday:             "birthday",
-			Job:                  "job",
-			Role:                 "role",
-			GodCategory:          "god_category",
-			GodNum:               "god_num",
-			GodMonthNum:          "god_month_num",
-			GodWeekNum:           "god_week_num",
-			GodDayNum:            "god_day_num",
-			GodNowNum:            "god_now_num",
-			GodDateline:          "god_dateline",
-			OnlineStatus:         "online_status",
-			OnlineDateline:       "online_dateline",
-			Version:              "version",
-			City:                 "city",
-			CityCode:             "city_code",
-			Position:             "position",
-			Longitude:            "longitude",
-			Latitude:             "latitude",
-			Dateline:             "dateline",
-			Deleted:              "deleted",
-			Star:                 "star",
-			TmpIcon:              "tmp_icon",
-			UpdateTime:           "update_time",
-			BlockUnAutherMessage: "block_un_auther_message",
-			Sign:                 "sign",
-			PayNum:               "pay_num",
-			PayMoney:             "pay_money",
-			PayRoomMoney:         "pay_room_money",
-			PayOrderNum:          "pay_order_num",
-			PayReceiveToday:      "pay_receive_today",
-			GodDefaultID:         "god_default_id",
-			GodDefaultCid:        "god_default_cid",
-			GodDiscount:          "god_discount",
-			GodDiscountID:        "god_discount_id",
-			GodDiscountCid:       "god_discount_cid",
-			ServiceScore:         "service_score",
-			ServiceBusy:          "service_busy",
-			ServicePause:         "service_pause",
-			NoticeOrder:          "notice_order",
-			Title:                "title",
-			NoticePower:          "notice_power",
-			NoticeGame:           "notice_game",
-			CreditGod:            "credit_god",
-			CreditUser:           "credit_user",
-			CreditGodNow:         "credit_god_now",
-			CreditGodWeek:        "credit_god_week",
-			CreditGodDay:         "credit_god_day",
-			Tag:                  "tag",
-			FriendState:          "friend_state",
-			HasVideo:             "has_video",
-			OnlineVisible:        "online_visible",
+	// {TplTableNameCamelCase} is globally public accessible object for table {TplTableName} operations.
+	{TplTableNameCamelCase} = {TplTableNameCamelCase}Dao{
+		M:     g.DB("{TplGroupName}").Model("{TplTableName}").Safe(),
+		DB:    g.DB("{TplGroupName}"),
+		Table: "{TplTableName}",
+		Columns: {TplTableNameCamelLowerCase}Columns{
+			{TplColumnNames}
 		},
 	}
 )
@@ -166,34 +52,34 @@ var (
 // of current DB object and with given context in it.
 // Note that this returned DB object can be used only once, so do not assign it to
 // a global or package variable for long using.
-func (d *XsUserProfileDao) Ctx(ctx context.Context) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Ctx(ctx)}
+func (d *{TplTableNameCamelCase}Dao) Ctx(ctx context.Context) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Ctx(ctx)}
 }
 
 // As sets an alias name for current table.
-func (d *XsUserProfileDao) As(as string) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.As(as)}
+func (d *{TplTableNameCamelCase}Dao) As(as string) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.As(as)}
 }
 
 // TX sets the transaction for current operation.
-func (d *XsUserProfileDao) TX(tx *gdb.TX) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.TX(tx)}
+func (d *{TplTableNameCamelCase}Dao) TX(tx *gdb.TX) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.TX(tx)}
 }
 
 // Master marks the following operation on master node.
-func (d *XsUserProfileDao) Master() *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Master()}
+func (d *{TplTableNameCamelCase}Dao) Master() *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Master()}
 }
 
 // Slave marks the following operation on slave node.
 // Note that it makes sense only if there's any slave node configured.
-func (d *XsUserProfileDao) Slave() *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Slave()}
+func (d *{TplTableNameCamelCase}Dao) Slave() *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Slave()}
 }
 
 // Args sets custom arguments for model operation.
-func (d *XsUserProfileDao) Args(args ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Args(args...)}
+func (d *{TplTableNameCamelCase}Dao) Args(args ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Args(args...)}
 }
 
 // LeftJoin does "LEFT JOIN ... ON ..." statement on the model.
@@ -201,8 +87,8 @@ func (d *XsUserProfileDao) Args(args ...interface{}) *XsUserProfileDao {
 // and also with its alias name, like:
 // Table("user").LeftJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").LeftJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *XsUserProfileDao) LeftJoin(table ...string) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.LeftJoin(table...)}
+func (d *{TplTableNameCamelCase}Dao) LeftJoin(table ...string) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.LeftJoin(table...)}
 }
 
 // RightJoin does "RIGHT JOIN ... ON ..." statement on the model.
@@ -210,8 +96,8 @@ func (d *XsUserProfileDao) LeftJoin(table ...string) *XsUserProfileDao {
 // and also with its alias name, like:
 // Table("user").RightJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").RightJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *XsUserProfileDao) RightJoin(table ...string) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.RightJoin(table...)}
+func (d *{TplTableNameCamelCase}Dao) RightJoin(table ...string) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.RightJoin(table...)}
 }
 
 // InnerJoin does "INNER JOIN ... ON ..." statement on the model.
@@ -219,36 +105,36 @@ func (d *XsUserProfileDao) RightJoin(table ...string) *XsUserProfileDao {
 // and also with its alias name, like:
 // Table("user").InnerJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").InnerJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *XsUserProfileDao) InnerJoin(table ...string) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.InnerJoin(table...)}
+func (d *{TplTableNameCamelCase}Dao) InnerJoin(table ...string) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.InnerJoin(table...)}
 }
 
 // Fields sets the operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *XsUserProfileDao) Fields(fieldNamesOrMapStruct ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
+func (d *{TplTableNameCamelCase}Dao) Fields(fieldNamesOrMapStruct ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Fields(fieldNamesOrMapStruct...)}
 }
 
 // FieldsEx sets the excluded operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *XsUserProfileDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
+func (d *{TplTableNameCamelCase}Dao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
 }
 
 // Option sets the extra operation option for the model.
-func (d *XsUserProfileDao) Option(option int) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Option(option)}
+func (d *{TplTableNameCamelCase}Dao) Option(option int) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Option(option)}
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers
 // the data and where attributes for empty values.
-func (d *XsUserProfileDao) OmitEmpty() *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.OmitEmpty()}
+func (d *{TplTableNameCamelCase}Dao) OmitEmpty() *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.OmitEmpty()}
 }
 
 // Filter marks filtering the fields which does not exist in the fields of the operated table.
-func (d *XsUserProfileDao) Filter() *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Filter()}
+func (d *{TplTableNameCamelCase}Dao) Filter() *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Filter()}
 }
 
 // Where sets the condition statement for the model. The parameter <where> can be type of
@@ -262,8 +148,8 @@ func (d *XsUserProfileDao) Filter() *XsUserProfileDao {
 // Where("status IN (?)", g.Slice{1,2,3})
 // Where("age IN(?,?)", 18, 50)
 // Where(User{ Id : 1, UserName : "john"})
-func (d *XsUserProfileDao) Where(where interface{}, args ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Where(where, args...)}
+func (d *{TplTableNameCamelCase}Dao) Where(where interface{}, args ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Where(where, args...)}
 }
 
 // WherePri does the same logic as M.Where except that if the parameter <where>
@@ -271,54 +157,54 @@ func (d *XsUserProfileDao) Where(where interface{}, args ...interface{}) *XsUser
 // key value. That is, if primary key is "id" and given <where> parameter as "123", the
 // WherePri function treats the condition as "id=123", but M.Where treats the condition
 // as string "123".
-func (d *XsUserProfileDao) WherePri(where interface{}, args ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.WherePri(where, args...)}
+func (d *{TplTableNameCamelCase}Dao) WherePri(where interface{}, args ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.WherePri(where, args...)}
 }
 
 // And adds "AND" condition to the where statement.
-func (d *XsUserProfileDao) And(where interface{}, args ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.And(where, args...)}
+func (d *{TplTableNameCamelCase}Dao) And(where interface{}, args ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.And(where, args...)}
 }
 
 // Or adds "OR" condition to the where statement.
-func (d *XsUserProfileDao) Or(where interface{}, args ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Or(where, args...)}
+func (d *{TplTableNameCamelCase}Dao) Or(where interface{}, args ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Or(where, args...)}
 }
 
 // Group sets the "GROUP BY" statement for the model.
-func (d *XsUserProfileDao) Group(groupBy string) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Group(groupBy)}
+func (d *{TplTableNameCamelCase}Dao) Group(groupBy string) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Group(groupBy)}
 }
 
 // Order sets the "ORDER BY" statement for the model.
-func (d *XsUserProfileDao) Order(orderBy ...string) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Order(orderBy...)}
+func (d *{TplTableNameCamelCase}Dao) Order(orderBy ...string) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Order(orderBy...)}
 }
 
 // Limit sets the "LIMIT" statement for the model.
 // The parameter <limit> can be either one or two number, if passed two number is passed,
 // it then sets "LIMIT limit[0],limit[1]" statement for the model, or else it sets "LIMIT limit[0]"
 // statement.
-func (d *XsUserProfileDao) Limit(limit ...int) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Limit(limit...)}
+func (d *{TplTableNameCamelCase}Dao) Limit(limit ...int) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Limit(limit...)}
 }
 
 // Offset sets the "OFFSET" statement for the model.
 // It only makes sense for some databases like SQLServer, PostgreSQL, etc.
-func (d *XsUserProfileDao) Offset(offset int) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Offset(offset)}
+func (d *{TplTableNameCamelCase}Dao) Offset(offset int) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Offset(offset)}
 }
 
 // Page sets the paging number for the model.
 // The parameter <page> is started from 1 for paging.
 // Note that, it differs that the Limit function start from 0 for "LIMIT" statement.
-func (d *XsUserProfileDao) Page(page, limit int) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Page(page, limit)}
+func (d *{TplTableNameCamelCase}Dao) Page(page, limit int) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Page(page, limit)}
 }
 
 // Batch sets the batch operation number for the model.
-func (d *XsUserProfileDao) Batch(batch int) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Batch(batch)}
+func (d *{TplTableNameCamelCase}Dao) Batch(batch int) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Batch(batch)}
 }
 
 // Cache sets the cache feature for the model. It caches the result of the sql, which means
@@ -333,8 +219,8 @@ func (d *XsUserProfileDao) Batch(batch int) *XsUserProfileDao {
 // control the cache like changing the <duration> or clearing the cache with specified <name>.
 //
 // Note that, the cache feature is disabled if the model is operating on a transaction.
-func (d *XsUserProfileDao) Cache(duration time.Duration, name ...string) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Cache(duration, name...)}
+func (d *{TplTableNameCamelCase}Dao) Cache(duration time.Duration, name ...string) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Cache(duration, name...)}
 }
 
 // Data sets the operation data for the model.
@@ -344,22 +230,22 @@ func (d *XsUserProfileDao) Cache(duration time.Duration, name ...string) *XsUser
 // Data("uid", 10000)
 // Data(g.Map{"uid": 10000, "name":"john"})
 // Data(g.Slice{g.Map{"uid": 10000, "name":"john"}, g.Map{"uid": 20000, "name":"smith"})
-func (d *XsUserProfileDao) Data(data ...interface{}) *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Data(data...)}
+func (d *{TplTableNameCamelCase}Dao) Data(data ...interface{}) *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Data(data...)}
 }
 
 // All does "SELECT FROM ..." statement for the model.
-// It retrieves the records from table and returns the result as []*pb.EntityXsUserProfile.
+// It retrieves the records from table and returns the result as []*pb.Entity{TplTableNameCamelCase}.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *XsUserProfileDao) All(where ...interface{}) ([]*pb.EntityXsUserProfile, error) {
+func (d *{TplTableNameCamelCase}Dao) All(where ...interface{}) ([]*pb.Entity{TplTableNameCamelCase}, error) {
 	all, err := d.M.All(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityXsUserProfile
+	var entities []*pb.Entity{TplTableNameCamelCase}
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -369,17 +255,17 @@ func (d *XsUserProfileDao) All(where ...interface{}) ([]*pb.EntityXsUserProfile,
 	return entities, nil
 }
 
-// One retrieves one record from table and returns the result as *pb.EntityXsUserProfile.
+// One retrieves one record from table and returns the result as *pb.Entity{TplTableNameCamelCase}.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *XsUserProfileDao) One(where ...interface{}) (*pb.EntityXsUserProfile, error) {
+func (d *{TplTableNameCamelCase}Dao) One(where ...interface{}) (*pb.Entity{TplTableNameCamelCase}, error) {
 	one, err := d.M.One(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityXsUserProfile
+	var entity *pb.Entity{TplTableNameCamelCase}
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -388,12 +274,12 @@ func (d *XsUserProfileDao) One(where ...interface{}) (*pb.EntityXsUserProfile, e
 
 // FindOne retrieves and returns a single Record by M.WherePri and M.One.
 // Also see M.WherePri and M.One.
-func (d *XsUserProfileDao) FindOne(where ...interface{}) (*pb.EntityXsUserProfile, error) {
+func (d *{TplTableNameCamelCase}Dao) FindOne(where ...interface{}) (*pb.Entity{TplTableNameCamelCase}, error) {
 	one, err := d.M.FindOne(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityXsUserProfile
+	var entity *pb.Entity{TplTableNameCamelCase}
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -402,12 +288,12 @@ func (d *XsUserProfileDao) FindOne(where ...interface{}) (*pb.EntityXsUserProfil
 
 // FindAll retrieves and returns Result by by M.WherePri and M.All.
 // Also see M.WherePri and M.All.
-func (d *XsUserProfileDao) FindAll(where ...interface{}) ([]*pb.EntityXsUserProfile, error) {
+func (d *{TplTableNameCamelCase}Dao) FindAll(where ...interface{}) ([]*pb.Entity{TplTableNameCamelCase}, error) {
 	all, err := d.M.FindAll(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityXsUserProfile
+	var entities []*pb.Entity{TplTableNameCamelCase}
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -433,7 +319,7 @@ func (d *XsUserProfileDao) FindAll(where ...interface{}) ([]*pb.EntityXsUserProf
 //
 // user := (*User)(nil)
 // err  := dao.User.Where("id", 1).Struct(&user)
-func (d *XsUserProfileDao) Struct(pointer interface{}, where ...interface{}) error {
+func (d *{TplTableNameCamelCase}Dao) Struct(pointer interface{}, where ...interface{}) error {
 	return d.M.Struct(pointer, where...)
 }
 
@@ -453,7 +339,7 @@ func (d *XsUserProfileDao) Struct(pointer interface{}, where ...interface{}) err
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Structs(&users)
-func (d *XsUserProfileDao) Structs(pointer interface{}, where ...interface{}) error {
+func (d *{TplTableNameCamelCase}Dao) Structs(pointer interface{}, where ...interface{}) error {
 	return d.M.Structs(pointer, where...)
 }
 
@@ -478,14 +364,14 @@ func (d *XsUserProfileDao) Structs(pointer interface{}, where ...interface{}) er
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Scan(&users)
-func (d *XsUserProfileDao) Scan(pointer interface{}, where ...interface{}) error {
+func (d *{TplTableNameCamelCase}Dao) Scan(pointer interface{}, where ...interface{}) error {
 	return d.M.Scan(pointer, where...)
 }
 
 // Chunk iterates the table with given size and callback function.
-func (d *XsUserProfileDao) Chunk(limit int, callback func(entities []*pb.EntityXsUserProfile, err error) bool) {
+func (d *{TplTableNameCamelCase}Dao) Chunk(limit int, callback func(entities []*pb.Entity{TplTableNameCamelCase}, err error) bool) {
 	d.M.Chunk(limit, func(result gdb.Result, err error) bool {
-		var entities []*pb.EntityXsUserProfile
+		var entities []*pb.Entity{TplTableNameCamelCase}
 		err = result.Structs(&entities)
 		if err == sql.ErrNoRows {
 			return false
@@ -495,21 +381,21 @@ func (d *XsUserProfileDao) Chunk(limit int, callback func(entities []*pb.EntityX
 }
 
 // LockUpdate sets the lock for update for current operation.
-func (d *XsUserProfileDao) LockUpdate() *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.LockUpdate()}
+func (d *{TplTableNameCamelCase}Dao) LockUpdate() *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.LockUpdate()}
 }
 
 // LockShared sets the lock in share mode for current operation.
-func (d *XsUserProfileDao) LockShared() *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.LockShared()}
+func (d *{TplTableNameCamelCase}Dao) LockShared() *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.LockShared()}
 }
 
 // Unscoped enables/disables the soft deleting feature.
-func (d *XsUserProfileDao) Unscoped() *XsUserProfileDao {
-	return &XsUserProfileDao{M: d.M.Unscoped()}
+func (d *{TplTableNameCamelCase}Dao) Unscoped() *{TplTableNameCamelCase}Dao {
+	return &{TplTableNameCamelCase}Dao{M: d.M.Unscoped()}
 }
 
-func (d *XsUserProfileDao) scan(res gdb.Result, in interface{}) error {
+func (d *{TplTableNameCamelCase}Dao) scan(res gdb.Result, in interface{}) error {
 	length := res.Len()
 	if length == 0 {
 		return sql.ErrNoRows
@@ -538,7 +424,7 @@ func (d *XsUserProfileDao) scan(res gdb.Result, in interface{}) error {
 	return nil
 }
 
-func (d *XsUserProfileDao) getFieldTag(v reflect.Value) []string {
+func (d *{TplTableNameCamelCase}Dao) getFieldTag(v reflect.Value) []string {
 	t := v.Type()
 	typ := t.Elem()
 	val := v.Elem()
@@ -558,14 +444,14 @@ func (d *XsUserProfileDao) getFieldTag(v reflect.Value) []string {
 		index := strings.Index(tagVal, ",")
 		if index > -1 {
 			fieldToTag[j] = tagVal[0:index]
-		} else {
+		}else{
 			fieldToTag[j] = tagVal
 		}
 	}
 	return fieldToTag
 }
 
-func (d *XsUserProfileDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
+func (d *{TplTableNameCamelCase}Dao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
 	val := v.Elem()
 	length := val.NumField()
 	for i := 0; i < length; i++ {

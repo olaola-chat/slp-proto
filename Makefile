@@ -20,3 +20,7 @@ lint:
 test:
 	$(GOTEST) -v -count=1 ./... 
 
+
+.PHONY: dao
+dao:
+	./gen_db.sh xianshi xs_user_profile

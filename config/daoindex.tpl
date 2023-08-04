@@ -5,7 +5,7 @@
 package dao                                                                        
                                                                                    
 import (                                                                           
-    "{TplImportPrefix}/dao/dbname/internal"                                               
+    "{TplImportPrefix}/dao/{TplGroupName}/internal"
 )                                                                                  
                                                                                    
 // {TplTableNameCamelLowerCase}Dao is the manager for logic model data accessing

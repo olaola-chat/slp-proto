@@ -20,11 +20,13 @@ genproto() {
 }
 
 gendao(){
-    if [ "$2" = "xianshi" ]; then
-        gf-cli gen dao -g default -t $1
-    else
-        gf-cli gen dao -g $2 -t $1
-    fi
+    # if [ "$2" = "xianshi" ]; then
+    #     gf-cli gen dao -g default -t $1
+    # else
+    #     gf-cli gen dao -g $2 -t $1
+    # fi
+
+    gf-cli gen dao -g $2 -t $1
 
     if [ $? -ne 0 ]; then
         echo "gendao failed"
@@ -48,13 +50,9 @@ inject() {
     fi
 }
 
-sed "s/dbname/$1/g" config/daoindex.tpl > daoindex.tpl
-sed "s/dbname/$1/g" config/modelindex.tpl > modelindex.tpl
-
 genproto $2 $1
 gendao $2 $1
 gengo $2 $1
 inject $2 $1
 
-rm daoindex.tpl modelindex.tpl
 
