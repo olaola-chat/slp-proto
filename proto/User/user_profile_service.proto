@@ -1,0 +1,27 @@
+syntax = "proto3";
+package rbp.user.profile;
+
+import "option.proto";
+
+import "user_profile_message.proto";
+
+/*
+user_profile rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/user";
+
+
+service RpcUser {
+	option (rbp.plugin.rbp_service).name = "User.Profile";
+
+	//是否需要实名认证
+	rpc NeedVerify (rbp.user.profile.ReqNeedVerify) returns (RepNeedVerify);
+
+	//批量获取用户
+	rpc Mget (ReqUserProfiles) returns (RepUserProfiles);
+
+	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
+}
+
+

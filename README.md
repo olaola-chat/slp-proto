@@ -56,6 +56,10 @@ sh gen_rpc.sh User Profile
 # 安装protoc-gen-go
 brew install protoc-gen-go
 
+# 安装rpc生成工具
+go install ./protoc-gen-rpb-rpc
+protoc --go_out=./ protoc-gen-rbp-rpc/proto/option.proto
+
 # 安装gf-cli
 
 git clone git@github.com:olaola-chat/rbp-gf-cli.git
