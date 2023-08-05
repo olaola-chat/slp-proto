@@ -4,6 +4,7 @@ GOBUILD=$(GOCMD) build
 GOTEST=$(GOCMD) test
 GOFMT=gofmt
 SHELL=/bin/bash #解决ubuntu下编译报错问题
+PWD=$(shell pwd)
 PROTOC=protoc --go_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto
 PROTO_SERV=protoc --rbp-rpc_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto
 
@@ -15,7 +16,7 @@ lint:
 	go vet ./...
 
 test:
-	$(GOTEST) -v -count=1 ./... 
+	GF_GCFG_PATH=$(PWD) $(GOTEST) -v -count=1 ./... 
 
 .PHONY: dao
 dao:
