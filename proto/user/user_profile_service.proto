@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.user.profile;
+package rbp.rpc.user;
 
 import "rbp/plugin/option.proto";
 
@@ -16,10 +16,10 @@ service UserProfile {
 	option (rbp.plugin.rbp_service).name = "User.Profile";
 
 	//是否需要实名认证
-	rpc NeedVerify (rbp.user.profile.ReqNeedVerify) returns (RepNeedVerify);
+	rpc NeedVerify (rbp.rpc.user.ReqNeedVerify) returns (RepNeedVerify);
 
 	//批量获取用户
-	rpc Mget (rbp.user.profile.ReqUserProfiles) returns (RepUserProfiles);
+	rpc Mget (rbp.rpc.user.ReqUserProfiles) returns (RepUserProfiles);
 
 	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
 }

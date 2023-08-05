@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.user.profile;
+package rbp.rpc.user;
 
 /*
 user_profile rpc 协议
