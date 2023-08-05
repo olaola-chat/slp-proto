@@ -19,7 +19,7 @@ test:
 
 .PHONY: dao
 dao:
-	./gen_db.sh xianshi xs_user_profile
+	./gen_dao_xianshi.sh
 
 .PHONY: cli
 cli:
