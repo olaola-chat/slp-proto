@@ -22,7 +22,7 @@ dao:
 
 .PHONY: cli
 cli:
-	protoc --go_out=paths=source_relative:./protoc-gen-rbp-rpc/proto protoc-gen-rbp-rpc/proto/option.proto
+	protoc --go_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto rbp/plugin/option.proto
 	go install ./protoc-gen-rbp-rpc
 
 
