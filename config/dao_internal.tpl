@@ -484,7 +484,6 @@ func (d *{TplTableNameCamelCase}Dao) mapping(m map[string]*gvar.Var, v reflect.V
 			break
 		default:
 			return errors.New("unknown kind " + kind.String())
-			break
 		}
 	}
 	return nil

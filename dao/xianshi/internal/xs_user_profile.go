@@ -598,7 +598,6 @@ func (d *XsUserProfileDao) mapping(m map[string]*gvar.Var, v reflect.Value, fiel
 			break
 		default:
 			return errors.New("unknown kind " + kind.String())
-			break
 		}
 	}
 	return nil
