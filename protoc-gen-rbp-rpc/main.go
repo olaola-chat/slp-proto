@@ -105,7 +105,8 @@ func genServices(gen *protogen.Plugin, file *protogen.File, service *protogen.Se
 
 	varName := FirstUpper(service.GoName)
 	typeName := FirstLower(service.GoName)
-	g.P("var " + varName + "*" + typeName + " = &" + typeName + "{")
+	g.P("// " + varName + " *" + typeName)
+	g.P("var " + varName + " = &" + typeName + "{")
 	g.P("  &base.Base{")
 	g.P("    Name: \"" + myOptions.GetName() + "\",")
 	g.P("  },")

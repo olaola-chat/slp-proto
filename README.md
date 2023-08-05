@@ -38,6 +38,12 @@ rpc服务手写proto，用service定义函数方法，通过工具自动生成�
 
 需要将项目代码按照go规范放置目录，当前代码应放置于${GOPATH}/src/github.com/olaola-chat/rbp-proto
 
+IDE 设置protobuf路径
+${GOPATH}/src/github.com/olaola-chat/rbp-proto/proto
+${GOPATH}/src/github.com/olaola-chat/rbp-proto/protoc-gen-rbp-rpc/proto
+${GOPATH}/src/github.com/olaola-chat/rbp-proto/gen_proto
+
+
 # 生成数据库表代码
 
 在dev机器上执行

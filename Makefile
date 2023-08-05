@@ -4,6 +4,8 @@ GOBUILD=$(GOCMD) build
 GOTEST=$(GOCMD) test
 GOFMT=gofmt
 SHELL=/bin/bash #解决ubuntu下编译报错问题
+PROTOC=protoc --go_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto
+PROTO_SERV=protoc --rbp-rpc_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto
 
 fmt:
 	$(GOFMT) -l -s -w .
@@ -15,19 +17,18 @@ lint:
 test:
 	$(GOTEST) -v -count=1 ./... 
 
-
 .PHONY: dao
 dao:
 	./gen_db.sh xianshi xs_user_profile
 
 .PHONY: cli
 cli:
-	protoc --go_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto rbp/plugin/option.proto
+	${PROTOC} rbp/plugin/option.proto
 	go install ./protoc-gen-rbp-rpc
 
 
 .PHONY: rpc
 rpc: cli
-	protoc --go_out=paths=source_relative:./gen_pb/rpc/user -I=./protoc-gen-rbp-rpc/proto --proto_path=proto/User user_profile_message.proto
-	protoc --rbp-rpc_out=paths=source_relative:./rpcclient/User -I=./protoc-gen-rbp-rpc/proto --proto_path=proto/User user_profile_service.proto
+	${PROTOC} user/user_profile_message.proto
+	${PROTO_SERV} user/user_profile_service.proto
 

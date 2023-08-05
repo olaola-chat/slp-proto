@@ -8,29 +8,30 @@ import (
 	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/user"
 )
 
-var RpcUser *rpcUser = &rpcUser{
+// UserProfile *userProfile
+var UserProfile = &userProfile{
 	&base.Base{
 		Name: "User.Profile",
 	},
 }
 
-type rpcUser struct {
+type userProfile struct {
 	*base.Base
 }
 
-func (s *rpcUser) NeedVerify(ctx context.Context, req *user.ReqNeedVerify) (*user.ReqNeedVerify, error) {
+func (s *userProfile) NeedVerify(ctx context.Context, req *user.ReqNeedVerify) (*user.ReqNeedVerify, error) {
 	reply := &user.ReqNeedVerify{}
 	err := s.Call(ctx, "NeedVerify", req, reply)
 	return reply, err
 }
 
-func (s *rpcUser) Mget(ctx context.Context, req *user.ReqUserProfiles) (*user.ReqUserProfiles, error) {
+func (s *userProfile) Mget(ctx context.Context, req *user.ReqUserProfiles) (*user.ReqUserProfiles, error) {
 	reply := &user.ReqUserProfiles{}
 	err := s.Call(ctx, "Mget", req, reply)
 	return reply, err
 }
 
-func (s *rpcUser) Test(ctx context.Context, req *user.ReqUserProfiles) (*user.ReqUserProfiles, error) {
+func (s *userProfile) Test(ctx context.Context, req *user.ReqUserProfiles) (*user.ReqUserProfiles, error) {
 	reply := &user.ReqUserProfiles{}
 	err := s.Call(ctx, "Test", req, reply)
 	return reply, err
