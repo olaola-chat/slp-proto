@@ -22,40 +22,40 @@ import (
 	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
 )
 
-// VoiceLoverAlbumDao is the manager for logic model data accessing
+// VoiceLoverAudioCommentDao is the manager for logic model data accessing
 // and custom defined data operations functions management.
-type VoiceLoverAlbumDao struct {
+type VoiceLoverAudioCommentDao struct {
 	gmvc.M
 	DB      gdb.DB
 	Table   string
-	Columns voiceLoverAlbumColumns
+	Columns voiceLoverAudioCommentColumns
 }
 
-// VoiceLoverAlbumColumns defines and stores column names for table voice_lover_album.
-type voiceLoverAlbumColumns struct {
-	ID         string // 专辑编号
-	Name       string // 专辑名称
-	Intro      string // 专辑简介
-	OpUID      string // 操作人
-	Choice     string // 0:默认 1:精选
-	ChoiceTime string //
+// VoiceLoverAudioCommentColumns defines and stores column names for table voice_lover_audio_comment.
+type voiceLoverAudioCommentColumns struct {
+	ID         string // 自增ID
+	AudioID    string // 音频id
+	UID        string // 用户uid
+	Content    string // 评论内容
+	Type       string // 审核状态：0-评论 1-弹幕
+	Status     string // 审核状态：0-默认状态 1-举报封禁
 	CreateTime string // 创建时间
 	UpdateTime string // 更新时间
 }
 
 var (
-	// VoiceLoverAlbum is globally public accessible object for table voice_lover_album operations.
-	VoiceLoverAlbum = VoiceLoverAlbumDao{
-		M:     g.DB("functor").Model("voice_lover_album").Safe(),
+	// VoiceLoverAudioComment is globally public accessible object for table voice_lover_audio_comment operations.
+	VoiceLoverAudioComment = VoiceLoverAudioCommentDao{
+		M:     g.DB("functor").Model("voice_lover_audio_comment").Safe(),
 		DB:    g.DB("functor"),
-		Table: "voice_lover_album",
-		Columns: voiceLoverAlbumColumns{
+		Table: "voice_lover_audio_comment",
+		Columns: voiceLoverAudioCommentColumns{
 			ID:         "id",
-			Name:       "name",
-			Intro:      "intro",
-			OpUID:      "op_uid",
-			Choice:     "choice",
-			ChoiceTime: "choice_time",
+			AudioID:    "audio_id",
+			UID:        "uid",
+			Content:    "content",
+			Type:       "type",
+			Status:     "status",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",
 		},
@@ -66,34 +66,34 @@ var (
 // of current DB object and with given context in it.
 // Note that this returned DB object can be used only once, so do not assign it to
 // a global or package variable for long using.
-func (d *VoiceLoverAlbumDao) Ctx(ctx context.Context) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Ctx(ctx)}
+func (d *VoiceLoverAudioCommentDao) Ctx(ctx context.Context) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Ctx(ctx)}
 }
 
 // As sets an alias name for current table.
-func (d *VoiceLoverAlbumDao) As(as string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.As(as)}
+func (d *VoiceLoverAudioCommentDao) As(as string) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.As(as)}
 }
 
 // TX sets the transaction for current operation.
-func (d *VoiceLoverAlbumDao) TX(tx *gdb.TX) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.TX(tx)}
+func (d *VoiceLoverAudioCommentDao) TX(tx *gdb.TX) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.TX(tx)}
 }
 
 // Master marks the following operation on master node.
-func (d *VoiceLoverAlbumDao) Master() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Master()}
+func (d *VoiceLoverAudioCommentDao) Master() *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Master()}
 }
 
 // Slave marks the following operation on slave node.
 // Note that it makes sense only if there's any slave node configured.
-func (d *VoiceLoverAlbumDao) Slave() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Slave()}
+func (d *VoiceLoverAudioCommentDao) Slave() *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Slave()}
 }
 
 // Args sets custom arguments for model operation.
-func (d *VoiceLoverAlbumDao) Args(args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Args(args...)}
+func (d *VoiceLoverAudioCommentDao) Args(args ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Args(args...)}
 }
 
 // LeftJoin does "LEFT JOIN ... ON ..." statement on the model.
@@ -101,8 +101,8 @@ func (d *VoiceLoverAlbumDao) Args(args ...interface{}) *VoiceLoverAlbumDao {
 // and also with its alias name, like:
 // Table("user").LeftJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").LeftJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAlbumDao) LeftJoin(table ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.LeftJoin(table...)}
+func (d *VoiceLoverAudioCommentDao) LeftJoin(table ...string) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.LeftJoin(table...)}
 }
 
 // RightJoin does "RIGHT JOIN ... ON ..." statement on the model.
@@ -110,8 +110,8 @@ func (d *VoiceLoverAlbumDao) LeftJoin(table ...string) *VoiceLoverAlbumDao {
 // and also with its alias name, like:
 // Table("user").RightJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").RightJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAlbumDao) RightJoin(table ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.RightJoin(table...)}
+func (d *VoiceLoverAudioCommentDao) RightJoin(table ...string) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.RightJoin(table...)}
 }
 
 // InnerJoin does "INNER JOIN ... ON ..." statement on the model.
@@ -119,36 +119,36 @@ func (d *VoiceLoverAlbumDao) RightJoin(table ...string) *VoiceLoverAlbumDao {
 // and also with its alias name, like:
 // Table("user").InnerJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").InnerJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAlbumDao) InnerJoin(table ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.InnerJoin(table...)}
+func (d *VoiceLoverAudioCommentDao) InnerJoin(table ...string) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.InnerJoin(table...)}
 }
 
 // Fields sets the operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAlbumDao) Fields(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
+func (d *VoiceLoverAudioCommentDao) Fields(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
 }
 
 // FieldsEx sets the excluded operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAlbumDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
+func (d *VoiceLoverAudioCommentDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
 }
 
 // Option sets the extra operation option for the model.
-func (d *VoiceLoverAlbumDao) Option(option int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Option(option)}
+func (d *VoiceLoverAudioCommentDao) Option(option int) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Option(option)}
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers
 // the data and where attributes for empty values.
-func (d *VoiceLoverAlbumDao) OmitEmpty() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.OmitEmpty()}
+func (d *VoiceLoverAudioCommentDao) OmitEmpty() *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.OmitEmpty()}
 }
 
 // Filter marks filtering the fields which does not exist in the fields of the operated table.
-func (d *VoiceLoverAlbumDao) Filter() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Filter()}
+func (d *VoiceLoverAudioCommentDao) Filter() *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Filter()}
 }
 
 // Where sets the condition statement for the model. The parameter <where> can be type of
@@ -162,8 +162,8 @@ func (d *VoiceLoverAlbumDao) Filter() *VoiceLoverAlbumDao {
 // Where("status IN (?)", g.Slice{1,2,3})
 // Where("age IN(?,?)", 18, 50)
 // Where(User{ Id : 1, UserName : "john"})
-func (d *VoiceLoverAlbumDao) Where(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Where(where, args...)}
+func (d *VoiceLoverAudioCommentDao) Where(where interface{}, args ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Where(where, args...)}
 }
 
 // WherePri does the same logic as M.Where except that if the parameter <where>
@@ -171,54 +171,54 @@ func (d *VoiceLoverAlbumDao) Where(where interface{}, args ...interface{}) *Voic
 // key value. That is, if primary key is "id" and given <where> parameter as "123", the
 // WherePri function treats the condition as "id=123", but M.Where treats the condition
 // as string "123".
-func (d *VoiceLoverAlbumDao) WherePri(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.WherePri(where, args...)}
+func (d *VoiceLoverAudioCommentDao) WherePri(where interface{}, args ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.WherePri(where, args...)}
 }
 
 // And adds "AND" condition to the where statement.
-func (d *VoiceLoverAlbumDao) And(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.And(where, args...)}
+func (d *VoiceLoverAudioCommentDao) And(where interface{}, args ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.And(where, args...)}
 }
 
 // Or adds "OR" condition to the where statement.
-func (d *VoiceLoverAlbumDao) Or(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Or(where, args...)}
+func (d *VoiceLoverAudioCommentDao) Or(where interface{}, args ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Or(where, args...)}
 }
 
 // Group sets the "GROUP BY" statement for the model.
-func (d *VoiceLoverAlbumDao) Group(groupBy string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Group(groupBy)}
+func (d *VoiceLoverAudioCommentDao) Group(groupBy string) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Group(groupBy)}
 }
 
 // Order sets the "ORDER BY" statement for the model.
-func (d *VoiceLoverAlbumDao) Order(orderBy ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Order(orderBy...)}
+func (d *VoiceLoverAudioCommentDao) Order(orderBy ...string) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Order(orderBy...)}
 }
 
 // Limit sets the "LIMIT" statement for the model.
 // The parameter <limit> can be either one or two number, if passed two number is passed,
 // it then sets "LIMIT limit[0],limit[1]" statement for the model, or else it sets "LIMIT limit[0]"
 // statement.
-func (d *VoiceLoverAlbumDao) Limit(limit ...int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Limit(limit...)}
+func (d *VoiceLoverAudioCommentDao) Limit(limit ...int) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Limit(limit...)}
 }
 
 // Offset sets the "OFFSET" statement for the model.
 // It only makes sense for some databases like SQLServer, PostgreSQL, etc.
-func (d *VoiceLoverAlbumDao) Offset(offset int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Offset(offset)}
+func (d *VoiceLoverAudioCommentDao) Offset(offset int) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Offset(offset)}
 }
 
 // Page sets the paging number for the model.
 // The parameter <page> is started from 1 for paging.
 // Note that, it differs that the Limit function start from 0 for "LIMIT" statement.
-func (d *VoiceLoverAlbumDao) Page(page, limit int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Page(page, limit)}
+func (d *VoiceLoverAudioCommentDao) Page(page, limit int) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Page(page, limit)}
 }
 
 // Batch sets the batch operation number for the model.
-func (d *VoiceLoverAlbumDao) Batch(batch int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Batch(batch)}
+func (d *VoiceLoverAudioCommentDao) Batch(batch int) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Batch(batch)}
 }
 
 // Cache sets the cache feature for the model. It caches the result of the sql, which means
@@ -233,8 +233,8 @@ func (d *VoiceLoverAlbumDao) Batch(batch int) *VoiceLoverAlbumDao {
 // control the cache like changing the <duration> or clearing the cache with specified <name>.
 //
 // Note that, the cache feature is disabled if the model is operating on a transaction.
-func (d *VoiceLoverAlbumDao) Cache(duration time.Duration, name ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Cache(duration, name...)}
+func (d *VoiceLoverAudioCommentDao) Cache(duration time.Duration, name ...string) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Cache(duration, name...)}
 }
 
 // Data sets the operation data for the model.
@@ -244,22 +244,22 @@ func (d *VoiceLoverAlbumDao) Cache(duration time.Duration, name ...string) *Voic
 // Data("uid", 10000)
 // Data(g.Map{"uid": 10000, "name":"john"})
 // Data(g.Slice{g.Map{"uid": 10000, "name":"john"}, g.Map{"uid": 20000, "name":"smith"})
-func (d *VoiceLoverAlbumDao) Data(data ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Data(data...)}
+func (d *VoiceLoverAudioCommentDao) Data(data ...interface{}) *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Data(data...)}
 }
 
 // All does "SELECT FROM ..." statement for the model.
-// It retrieves the records from table and returns the result as []*pb.EntityVoiceLoverAlbum.
+// It retrieves the records from table and returns the result as []*pb.EntityVoiceLoverAudioComment.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAlbumDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverAudioCommentDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAudioComment, error) {
 	all, err := d.M.All(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAlbum
+	var entities []*pb.EntityVoiceLoverAudioComment
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -269,17 +269,17 @@ func (d *VoiceLoverAlbumDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAl
 	return entities, nil
 }
 
-// One retrieves one record from table and returns the result as *pb.EntityVoiceLoverAlbum.
+// One retrieves one record from table and returns the result as *pb.EntityVoiceLoverAudioComment.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAlbumDao) One(where ...interface{}) (*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverAudioCommentDao) One(where ...interface{}) (*pb.EntityVoiceLoverAudioComment, error) {
 	one, err := d.M.One(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAlbum
+	var entity *pb.EntityVoiceLoverAudioComment
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -288,12 +288,12 @@ func (d *VoiceLoverAlbumDao) One(where ...interface{}) (*pb.EntityVoiceLoverAlbu
 
 // FindOne retrieves and returns a single Record by M.WherePri and M.One.
 // Also see M.WherePri and M.One.
-func (d *VoiceLoverAlbumDao) FindOne(where ...interface{}) (*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverAudioCommentDao) FindOne(where ...interface{}) (*pb.EntityVoiceLoverAudioComment, error) {
 	one, err := d.M.FindOne(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAlbum
+	var entity *pb.EntityVoiceLoverAudioComment
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -302,12 +302,12 @@ func (d *VoiceLoverAlbumDao) FindOne(where ...interface{}) (*pb.EntityVoiceLover
 
 // FindAll retrieves and returns Result by by M.WherePri and M.All.
 // Also see M.WherePri and M.All.
-func (d *VoiceLoverAlbumDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverAudioCommentDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLoverAudioComment, error) {
 	all, err := d.M.FindAll(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAlbum
+	var entities []*pb.EntityVoiceLoverAudioComment
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -333,7 +333,7 @@ func (d *VoiceLoverAlbumDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLov
 //
 // user := (*User)(nil)
 // err  := dao.User.Where("id", 1).Struct(&user)
-func (d *VoiceLoverAlbumDao) Struct(pointer interface{}, where ...interface{}) error {
+func (d *VoiceLoverAudioCommentDao) Struct(pointer interface{}, where ...interface{}) error {
 	return d.M.Struct(pointer, where...)
 }
 
@@ -353,7 +353,7 @@ func (d *VoiceLoverAlbumDao) Struct(pointer interface{}, where ...interface{}) e
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Structs(&users)
-func (d *VoiceLoverAlbumDao) Structs(pointer interface{}, where ...interface{}) error {
+func (d *VoiceLoverAudioCommentDao) Structs(pointer interface{}, where ...interface{}) error {
 	return d.M.Structs(pointer, where...)
 }
 
@@ -378,14 +378,14 @@ func (d *VoiceLoverAlbumDao) Structs(pointer interface{}, where ...interface{}) 
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Scan(&users)
-func (d *VoiceLoverAlbumDao) Scan(pointer interface{}, where ...interface{}) error {
+func (d *VoiceLoverAudioCommentDao) Scan(pointer interface{}, where ...interface{}) error {
 	return d.M.Scan(pointer, where...)
 }
 
 // Chunk iterates the table with given size and callback function.
-func (d *VoiceLoverAlbumDao) Chunk(limit int, callback func(entities []*pb.EntityVoiceLoverAlbum, err error) bool) {
+func (d *VoiceLoverAudioCommentDao) Chunk(limit int, callback func(entities []*pb.EntityVoiceLoverAudioComment, err error) bool) {
 	d.M.Chunk(limit, func(result gdb.Result, err error) bool {
-		var entities []*pb.EntityVoiceLoverAlbum
+		var entities []*pb.EntityVoiceLoverAudioComment
 		err = result.Structs(&entities)
 		if err == sql.ErrNoRows {
 			return false
@@ -395,21 +395,21 @@ func (d *VoiceLoverAlbumDao) Chunk(limit int, callback func(entities []*pb.Entit
 }
 
 // LockUpdate sets the lock for update for current operation.
-func (d *VoiceLoverAlbumDao) LockUpdate() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.LockUpdate()}
+func (d *VoiceLoverAudioCommentDao) LockUpdate() *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.LockUpdate()}
 }
 
 // LockShared sets the lock in share mode for current operation.
-func (d *VoiceLoverAlbumDao) LockShared() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.LockShared()}
+func (d *VoiceLoverAudioCommentDao) LockShared() *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.LockShared()}
 }
 
 // Unscoped enables/disables the soft deleting feature.
-func (d *VoiceLoverAlbumDao) Unscoped() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Unscoped()}
+func (d *VoiceLoverAudioCommentDao) Unscoped() *VoiceLoverAudioCommentDao {
+	return &VoiceLoverAudioCommentDao{M: d.M.Unscoped()}
 }
 
-func (d *VoiceLoverAlbumDao) scan(res gdb.Result, in interface{}) error {
+func (d *VoiceLoverAudioCommentDao) scan(res gdb.Result, in interface{}) error {
 	length := res.Len()
 	if length == 0 {
 		return sql.ErrNoRows
@@ -438,7 +438,7 @@ func (d *VoiceLoverAlbumDao) scan(res gdb.Result, in interface{}) error {
 	return nil
 }
 
-func (d *VoiceLoverAlbumDao) getFieldTag(v reflect.Value) []string {
+func (d *VoiceLoverAudioCommentDao) getFieldTag(v reflect.Value) []string {
 	t := v.Type()
 	typ := t.Elem()
 	val := v.Elem()
@@ -465,7 +465,7 @@ func (d *VoiceLoverAlbumDao) getFieldTag(v reflect.Value) []string {
 	return fieldToTag
 }
 
-func (d *VoiceLoverAlbumDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
+func (d *VoiceLoverAudioCommentDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
 	val := v.Elem()
 	length := val.NumField()
 	for i := 0; i < length; i++ {

@@ -32,4 +32,6 @@ cli:
 rpc: cli
 	${PROTOC} user/user_profile_message.proto
 	${PROTO_SERV} user/user_profile_service.proto
+	${PROTOC} voice_lover/voice_lover_message.proto
+	${PROTO_SERV} voice_lover/voice_lover_main_service.proto
 

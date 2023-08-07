@@ -1,0 +1,20 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+import "rbp/plugin/option.proto";
+
+import "voice_lover/voice_lover_message.proto";
+
+/*
+user_profile rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/voice_lover";
+
+
+service VoiceLoverMain {
+  option (rbp.plugin.rbp_service).name = "Functor.VoiceLover.Main";
+
+  //是否需要实名认证
+  rpc Post (rbp.rpc.voice_lover.ReqVoiceLoverPost) returns (rbp.rpc.voice_lover.ResVoiceLoverBase);
+}

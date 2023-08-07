@@ -1,0 +1,36 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
+
+message ResVoiceLoverBase {
+
+}
+
+message ReqVoiceLoverPost {
+  string resource = 1;
+  int32 source = 2;
+  string cover = 3;
+  string desc = 4;
+  string edit_dub = 5;
+  string edit_content = 6;
+  string edit_post = 7;
+  string edit_cover = 8;
+  string labels = 9;
+}
+
+
+/**
+type ReqVoiceLoverPost struct {
+	Resource string `json:"resource"` //音频资源
+	Title string `json:"tile"`    //标题
+	Source int32 `json:"source"`  //来源 1:原创 2:搬运
+	Cover string `json:"cover"` //封面
+	Desc  string `json:"desc"`  //简介
+	EditDub  string `json:"edit_dub"` // 编辑配音
+	EditContent string `json:"edit_content"` //编辑文案
+	EditPost string `json:"edit_post"` //编辑后期
+	EditCover string `json:"edit_cover"` //编辑封面
+	Label string `json:"label"` //标签
+}
+ */

@@ -20,8 +20,10 @@ message EntityVoiceLoverAlbum {
     uint64 op_uid                           = 4; // 操作人         
            //@inject_tag: orm:"choice"       
     int32  choice                           = 5; // 0:默认 1:精选  
+           //@inject_tag: orm:"choice_time"  
+    uint64 choice_time                      = 6; //                
            //@inject_tag: orm:"create_time"  
-    uint64 create_time                      = 6; // 创建时间       
+    uint64 create_time                      = 7; // 创建时间       
            //@inject_tag: orm:"update_time"  
-    uint64 update_time                      = 7; // 更新时间       
+    uint64 update_time                      = 8; // 更新时间       
 }

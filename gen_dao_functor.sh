@@ -11,7 +11,7 @@ rm -rf ./gen_pb/db/functor
 ./gen_db.sh functor voice_lover_album_subject
 ./gen_db.sh functor voice_lover_audio
 ./gen_db.sh functor voice_lover_audio_album
-./gen_db.sh functor voice_lover_audio_commnet
+./gen_db.sh functor voice_lover_audio_comment
 ./gen_db.sh functor voice_lover_subject
 ./gen_db.sh functor voice_lover_user_collect
 
