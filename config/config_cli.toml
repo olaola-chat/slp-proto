@@ -2,7 +2,7 @@
 [database]
     [[database.default]]
         type = "bbsql"
-        link = "root:123456@tcp(120.26.196.226:5545)/xianshi"
+        link = "root:123456@tcp(120.26.196.226:5545)/functor"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
@@ -62,6 +62,14 @@
     [[database.circle]]
         type = "bbsql"
         link = "root:123456@tcp(120.26.196.226:5545)/circle_dev"
+        charset = "utf8mb4"
+        debug = true
+        maxIdle = 1
+        maxOpen = 100
+        maxLifetime = 30
+    [[database.functor]]
+        type = "bbsql"
+        link = "root:123456@tcp(120.26.196.226:5545)/functor"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
