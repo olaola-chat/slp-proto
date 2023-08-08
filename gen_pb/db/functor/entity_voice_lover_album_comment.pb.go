@@ -32,8 +32,8 @@ type EntityVoiceLoverAlbumComment struct {
 
 	//@inject_tag: orm:"id,primary"
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` // 自增ID
-	//@inject_tag: orm:"album_id"
-	AlbumId uint64 `protobuf:"varint,2,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty" orm:"album_id"` // 专辑id
+	//@inject_tag: orm:"album_id,primary"
+	AlbumId uint64 `protobuf:"varint,2,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty" orm:"album_id,primary"` // 专辑id
 	//@inject_tag: orm:"uid"
 	Uid uint64 `protobuf:"varint,3,opt,name=uid,proto3" json:"uid,omitempty" orm:"uid"` // 用户uid
 	//@inject_tag: orm:"content"

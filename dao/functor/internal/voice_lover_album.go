@@ -37,8 +37,8 @@ type voiceLoverAlbumColumns struct {
 	Name       string // 专辑名称
 	Intro      string // 专辑简介
 	OpUID      string // 操作人
-	Choice     string // 0:默认 1:精选
-	ChoiceTime string //
+	Choice     string // 类型:0:默认 1:精选
+	ChoiceTime string // 设置类型时间，choice非0时写入
 	CreateTime string // 创建时间
 	UpdateTime string // 更新时间
 }

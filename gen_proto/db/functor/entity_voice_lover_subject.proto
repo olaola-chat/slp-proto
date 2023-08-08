@@ -11,15 +11,13 @@ option go_package = "./gen_pb/db/functor";
 
 message EntityVoiceLoverSubject {
            //@inject_tag: orm:"id,primary"   
-    uint64 id                               = 1; // 专题编号       
+    uint64 id                               = 1; // 专题编号  
            //@inject_tag: orm:"name"         
-    string name                             = 2; // 专题名称       
+    string name                             = 2; // 专题名称  
            //@inject_tag: orm:"op_id"        
-    uint64 op_id                            = 3; // 操作人         
-           //@inject_tag: orm:"choice"       
-    int32  choice                           = 4; // 0:默认 1:精选  
+    uint64 op_id                            = 3; // 操作人    
            //@inject_tag: orm:"create_time"  
-    uint64 create_time                      = 5; // 创建时间       
+    uint64 create_time                      = 4; // 创建时间  
            //@inject_tag: orm:"update_time"  
-    uint64 update_time                      = 6; // 更新时间       
+    uint64 update_time                      = 5; // 更新时间  
 }

@@ -33,10 +33,10 @@ type VoiceLoverUserCollectDao struct {
 
 // VoiceLoverUserCollectColumns defines and stores column names for table voice_lover_user_collect.
 type voiceLoverUserCollectColumns struct {
-	ID          string //
-	UID         string // uid
-	CollectID   string // 收藏id
-	CollectType string // 0:收藏专辑 1:收藏音频
+	ID          string // 自增id
+	UID         string // 用户uid
+	CollectID   string // 收藏的资源id
+	CollectType string // 收藏资源类型:0-专辑 1-音频
 	CreateTime  string // 创建时间
 	UpdateTime  string // 更新时间
 }

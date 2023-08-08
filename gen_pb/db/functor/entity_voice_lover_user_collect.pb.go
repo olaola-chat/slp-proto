@@ -31,13 +31,13 @@ type EntityVoiceLoverUserCollect struct {
 	unknownFields protoimpl.UnknownFields
 
 	//@inject_tag: orm:"id,primary"
-	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` //
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` // 自增id
 	//@inject_tag: orm:"uid"
-	Uid uint64 `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty" orm:"uid"` // uid
+	Uid uint64 `protobuf:"varint,2,opt,name=uid,proto3" json:"uid,omitempty" orm:"uid"` // 用户uid
 	//@inject_tag: orm:"collect_id"
-	CollectId uint64 `protobuf:"varint,3,opt,name=collect_id,json=collectId,proto3" json:"collect_id,omitempty" orm:"collect_id"` // 收藏id
+	CollectId uint64 `protobuf:"varint,3,opt,name=collect_id,json=collectId,proto3" json:"collect_id,omitempty" orm:"collect_id"` // 收藏的资源id
 	//@inject_tag: orm:"collect_type"
-	CollectType int32 `protobuf:"varint,4,opt,name=collect_type,json=collectType,proto3" json:"collect_type,omitempty" orm:"collect_type"` // 0:收藏专辑 1:收藏音频
+	CollectType int32 `protobuf:"varint,4,opt,name=collect_type,json=collectType,proto3" json:"collect_type,omitempty" orm:"collect_type"` // 收藏资源类型:0-专辑 1-音频
 	//@inject_tag: orm:"create_time"
 	CreateTime uint64 `protobuf:"varint,5,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time"` // 创建时间
 	//@inject_tag: orm:"update_time"

@@ -39,9 +39,9 @@ type EntityVoiceLoverAlbum struct {
 	//@inject_tag: orm:"op_uid"
 	OpUid uint64 `protobuf:"varint,4,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty" orm:"op_uid"` // 操作人
 	//@inject_tag: orm:"choice"
-	Choice int32 `protobuf:"varint,5,opt,name=choice,proto3" json:"choice,omitempty" orm:"choice"` // 0:默认 1:精选
+	Choice int32 `protobuf:"varint,5,opt,name=choice,proto3" json:"choice,omitempty" orm:"choice"` // 类型:0:默认 1:精选
 	//@inject_tag: orm:"choice_time"
-	ChoiceTime uint64 `protobuf:"varint,6,opt,name=choice_time,json=choiceTime,proto3" json:"choice_time,omitempty" orm:"choice_time"` //
+	ChoiceTime uint64 `protobuf:"varint,6,opt,name=choice_time,json=choiceTime,proto3" json:"choice_time,omitempty" orm:"choice_time"` // 设置类型时间，choice非0时写入
 	//@inject_tag: orm:"create_time"
 	CreateTime uint64 `protobuf:"varint,7,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time"` // 创建时间
 	//@inject_tag: orm:"update_time"

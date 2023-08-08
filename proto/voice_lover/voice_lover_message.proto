@@ -8,15 +8,17 @@ message ResVoiceLoverBase {
 }
 
 message ReqVoiceLoverPost {
-  string resource = 1;
-  int32 source = 2;
-  string cover = 3;
-  string desc = 4;
-  string edit_dub = 5;
-  string edit_content = 6;
-  string edit_post = 7;
-  string edit_cover = 8;
-  string labels = 9;
+  uint64 uid = 1;
+  string resource = 2;
+  int32 source = 3;
+  string cover = 4;
+  string title = 5;
+  string desc = 6;
+  string edit_dub = 7;
+  string edit_content = 8;
+  string edit_post = 9;
+  string edit_cover = 10;
+  string labels = 11;
 }
 
 

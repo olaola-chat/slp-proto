@@ -32,8 +32,8 @@ type EntityVoiceLoverAudioComment struct {
 
 	//@inject_tag: orm:"id,primary"
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` // 自增ID
-	//@inject_tag: orm:"audio_id"
-	AudioId uint64 `protobuf:"varint,2,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty" orm:"audio_id"` // 音频id
+	//@inject_tag: orm:"audio_id,primary"
+	AudioId uint64 `protobuf:"varint,2,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty" orm:"audio_id,primary"` // 音频id
 	//@inject_tag: orm:"uid"
 	Uid uint64 `protobuf:"varint,3,opt,name=uid,proto3" json:"uid,omitempty" orm:"uid"` // 用户uid
 	//@inject_tag: orm:"content"

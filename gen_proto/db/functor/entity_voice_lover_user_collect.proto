@@ -11,15 +11,15 @@ option go_package = "./gen_pb/db/functor";
 
 message EntityVoiceLoverUserCollect {
            //@inject_tag: orm:"id,primary"    
-    uint64 id                                = 1; //                        
+    uint64 id                                = 1; // 自增id                      
            //@inject_tag: orm:"uid"           
-    uint64 uid                               = 2; // uid                    
+    uint64 uid                               = 2; // 用户uid                     
            //@inject_tag: orm:"collect_id"    
-    uint64 collect_id                        = 3; // 收藏id                 
+    uint64 collect_id                        = 3; // 收藏的资源id                
            //@inject_tag: orm:"collect_type"  
-    int32  collect_type                      = 4; // 0:收藏专辑 1:收藏音频  
+    int32  collect_type                      = 4; // 收藏资源类型:0-专辑 1-音频  
            //@inject_tag: orm:"create_time"   
-    uint64 create_time                       = 5; // 创建时间               
+    uint64 create_time                       = 5; // 创建时间                    
            //@inject_tag: orm:"update_time"   
-    uint64 update_time                       = 6; // 更新时间               
+    uint64 update_time                       = 6; // 更新时间                    
 }
