@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rpc.pay.consume;
+package rbp.rpc.room;
 
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
 
