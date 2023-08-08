@@ -1,12 +1,12 @@
 module github.com/olaola-chat/rbp-proto
 
-go 1.19
+go 1.20
 
 require (
 	github.com/gogf/gf v1.16.9
 	github.com/rpcxio/libkv v0.5.0
 	github.com/smallnest/rpcx v1.8.11
-	google.golang.org/protobuf v1.28.0
+	google.golang.org/protobuf v1.31.0
 )
 
 require (
