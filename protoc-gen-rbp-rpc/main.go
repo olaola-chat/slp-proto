@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
-	rbp_proto "github.com/olaola-chat/rbp-proto/protoc-gen-rbp-rpc/proto"
-	"google.golang.org/protobuf/compiler/protogen"
-	"google.golang.org/protobuf/proto"
 	"log"
 	"path/filepath"
 	"sort"
 	"strings"
+
+	"google.golang.org/protobuf/compiler/protogen"
+	"google.golang.org/protobuf/proto"
+
+	rbp_proto "github.com/olaola-chat/rbp-proto/protoc-gen-rbp-rpc/proto"
 )
 
 // FirstUpper 字符串首字母大写
@@ -120,7 +122,7 @@ func genServices(gen *protogen.Plugin, file *protogen.File, service *protogen.Se
 	for _, m := range service.Methods {
 		g.P()
 		inputPackName := path2name[string(m.Input.GoIdent.GoImportPath)] + "." + string(m.Input.GoIdent.GoName)
-		outputPackName := path2name[string(m.Output.GoIdent.GoImportPath)] + "." + string(m.Input.GoIdent.GoName)
+		outputPackName := path2name[string(m.Output.GoIdent.GoImportPath)] + "." + string(m.Output.GoIdent.GoName)
 		g.P("func (s *" + typeName + ") " + m.GoName + "(ctx context.Context, req *" + inputPackName + ") (*" + outputPackName + ", error) {")
 		g.P("  reply := &" + outputPackName + "{}")
 		g.P("  err := s.Call(ctx, \"" + m.GoName + "\", req, reply)")
