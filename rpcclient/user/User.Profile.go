@@ -36,3 +36,9 @@ func (s *userProfile) Test(ctx context.Context, req *user.ReqUserProfiles) (*use
 	err := s.Call(ctx, "Test", req, reply)
 	return reply, err
 }
+
+func (s *userProfile) Auth(ctx context.Context, req *user.ReqUserAuth) (*user.ReqUserAuth, error) {
+	reply := &user.ReqUserAuth{}
+	err := s.Call(ctx, "Auth", req, reply)
+	return reply, err
+}
