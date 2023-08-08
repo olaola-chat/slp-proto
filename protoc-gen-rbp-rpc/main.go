@@ -120,7 +120,7 @@ func genServices(gen *protogen.Plugin, file *protogen.File, service *protogen.Se
 	for _, m := range service.Methods {
 		g.P()
 		inputPackName := path2name[string(m.Input.GoIdent.GoImportPath)] + "." + string(m.Input.GoIdent.GoName)
-		outputPackName := path2name[string(m.Output.GoIdent.GoImportPath)] + "." + string(m.Input.GoIdent.GoName)
+		outputPackName := path2name[string(m.Output.GoIdent.GoImportPath)] + "." + string(m.Output.GoIdent.GoName)
 		g.P("func (s *" + typeName + ") " + m.GoName + "(ctx context.Context, req *" + inputPackName + ") (*" + outputPackName + ", error) {")
 		g.P("  reply := &" + outputPackName + "{}")
 		g.P("  err := s.Call(ctx, \"" + m.GoName + "\", req, reply)")

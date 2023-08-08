@@ -19,26 +19,26 @@ type userProfile struct {
 	*base.Base
 }
 
-func (s *userProfile) NeedVerify(ctx context.Context, req *user.ReqNeedVerify) (*user.ReqNeedVerify, error) {
-	reply := &user.ReqNeedVerify{}
+func (s *userProfile) NeedVerify(ctx context.Context, req *user.ReqNeedVerify) (*user.RepNeedVerify, error) {
+	reply := &user.RepNeedVerify{}
 	err := s.Call(ctx, "NeedVerify", req, reply)
 	return reply, err
 }
 
-func (s *userProfile) Mget(ctx context.Context, req *user.ReqUserProfiles) (*user.ReqUserProfiles, error) {
-	reply := &user.ReqUserProfiles{}
+func (s *userProfile) Mget(ctx context.Context, req *user.ReqUserProfiles) (*user.RepUserProfiles, error) {
+	reply := &user.RepUserProfiles{}
 	err := s.Call(ctx, "Mget", req, reply)
 	return reply, err
 }
 
-func (s *userProfile) Test(ctx context.Context, req *user.ReqUserProfiles) (*user.ReqUserProfiles, error) {
-	reply := &user.ReqUserProfiles{}
+func (s *userProfile) Test(ctx context.Context, req *user.ReqUserProfiles) (*user.RepUserProfiles, error) {
+	reply := &user.RepUserProfiles{}
 	err := s.Call(ctx, "Test", req, reply)
 	return reply, err
 }
 
-func (s *userProfile) Auth(ctx context.Context, req *user.ReqUserAuth) (*user.ReqUserAuth, error) {
-	reply := &user.ReqUserAuth{}
+func (s *userProfile) Auth(ctx context.Context, req *user.ReqUserAuth) (*user.RepUserAuth, error) {
+	reply := &user.RepUserAuth{}
 	err := s.Call(ctx, "Auth", req, reply)
 	return reply, err
 }
