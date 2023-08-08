@@ -5,9 +5,9 @@
 
 syntax = "proto3";
 
-package pb;
+package db.xianshi;
 
-option go_package = "./gen_pb/db/xianshi";
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi";
 
 message EntityXsMarryRelation {
            //@inject_tag: orm:"id,primary"         
