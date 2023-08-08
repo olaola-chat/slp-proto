@@ -21,3 +21,6 @@ rm -rf ./gen_pb/db/xianshi
 ./gen_db.sh xianshi xs_marry_message
 ./gen_db.sh xianshi xs_marry_relation
 ./gen_db.sh xianshi xs_live_config
+
+./gen_db.sh config bbc_chatroom_super_tab
+./gen_db.sh config bbc_chatroom_super_tab_auth
