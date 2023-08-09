@@ -25,6 +25,7 @@ service UserProfile {
 
 	rpc Auth(ReqUserAuth) returns (RepUserAuth);
 
+	rpc SearchByName(ReqUserSearchName) returns (RepUserSearchDefault);
 }
 
 

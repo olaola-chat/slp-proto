@@ -42,3 +42,9 @@ func (s *userProfile) Auth(ctx context.Context, req *user.ReqUserAuth) (*user.Re
 	err := s.Call(ctx, "Auth", req, reply)
 	return reply, err
 }
+
+func (s *userProfile) SearchByName(ctx context.Context, req *user.ReqUserSearchName) (*user.RepUserSearchDefault, error) {
+	reply := &user.RepUserSearchDefault{}
+	err := s.Call(ctx, "SearchByName", req, reply)
+	return reply, err
+}
