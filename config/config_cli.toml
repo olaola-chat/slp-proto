@@ -2,7 +2,7 @@
 [database]
     [[database.default]]
         type = "bbsql"
-        link = "root:123456@tcp(120.26.196.226:5545)/functor"
+        link = "root:123456@tcp(120.26.196.226:5545)/xianshi"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
