@@ -16,7 +16,7 @@ service VoiceLoverMain {
   option (rbp.plugin.rbp_service).name = "Functor.VoiceLover.Main";
 
   //是否需要实名认证
-  rpc Post (rbp.rpc.voice_lover.ReqVoiceLoverPost) returns (rbp.rpc.voice_lover.ResVoiceLoverBase);
+  rpc Post (rbp.rpc.voice_lover.ReqPost) returns (rbp.rpc.voice_lover.ResBase);
 
   // 获取推荐专辑列表
   rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);

@@ -19,8 +19,8 @@ type voiceLoverMain struct {
 	*base.Base
 }
 
-func (s *voiceLoverMain) Post(ctx context.Context, req *voice_lover.ReqVoiceLoverPost) (*voice_lover.ResVoiceLoverBase, error) {
-	reply := &voice_lover.ResVoiceLoverBase{}
+func (s *voiceLoverMain) Post(ctx context.Context, req *voice_lover.ReqPost) (*voice_lover.ResBase, error) {
+	reply := &voice_lover.ResBase{}
 	err := s.Call(ctx, "Post", req, reply)
 	return reply, err
 }

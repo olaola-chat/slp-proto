@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// 获取单个请求请求
+//获取单个请求请求
 type ReqUserProfile struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -78,7 +78,7 @@ func (x *ReqUserProfile) GetFields() []string {
 	return nil
 }
 
-// 获取批量请求
+//获取批量请求
 type ReqUserProfiles struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -136,7 +136,7 @@ func (x *ReqUserProfiles) GetFields() []string {
 	return nil
 }
 
-// 验证用户登录令牌合法性
+//验证用户登录令牌合法性
 type ReqUserAuth struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -185,7 +185,7 @@ func (x *ReqUserAuth) GetToken() string {
 	return ""
 }
 
-// 返回验证用户信息
+//返回验证用户信息
 type RepUserAuth struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -273,7 +273,7 @@ func (x *RepUserAuth) GetChannel() string {
 	return ""
 }
 
-// 申请令牌
+//申请令牌
 type ReqUserToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -345,7 +345,7 @@ func (x *ReqUserToken) GetChannel() string {
 	return ""
 }
 
-// 返回令牌
+//返回令牌
 type RepUserToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -393,7 +393,7 @@ func (x *RepUserToken) GetToken() string {
 	return ""
 }
 
-// 返回多个用户信息
+//返回多个用户信息
 type RepUserProfiles struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -700,7 +700,7 @@ func (x *RepGetUserIpInfo) GetTelecom() string {
 	return ""
 }
 
-// 返回多人设置信息
+//返回多人设置信息
 type RepUserSettings struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
