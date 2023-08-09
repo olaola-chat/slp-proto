@@ -3,7 +3,7 @@ package rbp.rpc.user;
 
 import "rbp/plugin/option.proto";
 
-import "user/user_profile_message.proto";
+import "rpc/user/user_profile_message.proto";
 
 /*
 user_profile rpc 协议

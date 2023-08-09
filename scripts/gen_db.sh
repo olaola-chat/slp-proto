@@ -1,6 +1,7 @@
 #! /bin/bash
 
 cd `dirname $0`
+cd ..
 
 if [ $# -lt 2 ];
 then

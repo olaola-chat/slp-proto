@@ -20,7 +20,8 @@ test:
 
 .PHONY: dao
 dao:
-	./gen_dao_xianshi.sh
+	./scripts/gen_dao_xianshi.sh
+	./scripts/gen_dao_config.sh
 
 .PHONY: cli
 cli:
@@ -30,6 +31,15 @@ cli:
 
 .PHONY: rpc
 rpc: cli
-	${PROTOC} user/user_profile_message.proto
-	${PROTO_SERV} user/user_profile_service.proto
+	./scripts/gen_rpc.sh
+
+
+.PHONY: nsq
+nsq:
+	./scripts/gen_nsq.sh
+
+
+.PHONY: kafka
+kafka:
+	./scripts/gen_kafka.sh
 

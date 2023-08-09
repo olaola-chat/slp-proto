@@ -3,9 +3,7 @@ module github.com/olaola-chat/rbp-proto
 go 1.20
 
 require (
-	github.com/fananchong/test_protobuf_options v0.0.0-20190827065125-0ccc78da2aab
 	github.com/gogf/gf v1.16.9
-	github.com/golang/protobuf v1.5.2
 	github.com/rpcxio/libkv v0.5.0
 	github.com/smallnest/rpcx v1.8.11
 	google.golang.org/protobuf v1.31.0

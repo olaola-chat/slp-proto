@@ -2,9 +2,9 @@
 
 cd `dirname $0`
 
-rm -rf ./dao/xianshi
-rm -rf ./gen_proto/db/xianshi
-rm -rf ./gen_pb/db/xianshi
+#rm -rf ./dao/xianshi
+#rm -rf ./gen_proto/db/xianshi
+#rm -rf ./gen_pb/db/xianshi
 
 ./gen_db.sh xianshi xs_user_profile
 ./gen_db.sh xianshi xs_chatroom
@@ -21,6 +21,3 @@ rm -rf ./gen_pb/db/xianshi
 ./gen_db.sh xianshi xs_marry_message
 ./gen_db.sh xianshi xs_marry_relation
 ./gen_db.sh xianshi xs_live_config
-
-./gen_db.sh config bbc_chatroom_super_tab
-./gen_db.sh config bbc_chatroom_super_tab_auth
