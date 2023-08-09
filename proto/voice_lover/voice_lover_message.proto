@@ -3,6 +3,8 @@ package rbp.rpc.voice_lover;
 
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
 
+import "voice_lover/voice_lover_common.proto";
+
 message ResVoiceLoverBase {
 
 }
@@ -19,6 +21,13 @@ message ReqVoiceLoverPost {
   string edit_post = 9;
   string edit_cover = 10;
   string labels = 11;
+}
+
+message ReqGetRecAlbums {
+  uint64 uid = 1;
+}
+message ResGetRecAlbums {
+  repeated AlbumData albums = 1;
 }
 
 

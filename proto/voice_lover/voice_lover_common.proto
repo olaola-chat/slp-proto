@@ -1,0 +1,11 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
+
+message AlbumData {
+  uint64 id = 1;            // 专辑id
+  string name = 2;          // 专辑名称
+  string intro = 3;         // 专辑介绍
+  uint64 create_time = 4;   // 创建时间
+}

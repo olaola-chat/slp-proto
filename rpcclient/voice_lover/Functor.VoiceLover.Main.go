@@ -24,3 +24,9 @@ func (s *voiceLoverMain) Post(ctx context.Context, req *voice_lover.ReqVoiceLove
 	err := s.Call(ctx, "Post", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) GetRecAlbums(ctx context.Context, req *voice_lover.ReqGetRecAlbums) (*voice_lover.ResGetRecAlbums, error) {
+	reply := &voice_lover.ResGetRecAlbums{}
+	err := s.Call(ctx, "GetRecAlbums", req, reply)
+	return reply, err
+}
