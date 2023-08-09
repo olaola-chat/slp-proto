@@ -5,11 +5,11 @@ option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
 
 import "voice_lover/voice_lover_common.proto";
 
-message ResVoiceLoverBase {
+message ResBase {
 
 }
 
-message ReqVoiceLoverPost {
+message ReqPost {
   uint64 uid = 1;
   string resource = 2;
   int32 source = 3;
@@ -30,4 +30,18 @@ message ResGetRecAlbums {
   repeated AlbumData albums = 1;
 }
 
+message ReqGetAudioEdit {
+  uint64 id = 1;
+}
 
+message ResGetAudioEdit {
+  repeated AudioEditData edits = 1;
+}
+
+message ReqGetAudioDetail {
+  uint64 id = 1;
+}
+
+message ResGetAudioDetail {
+  AudioData audio = 1;
+}
