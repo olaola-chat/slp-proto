@@ -36,6 +36,7 @@ type voiceLoverAlbumColumns struct {
 	ID         string // 专辑编号
 	Name       string // 专辑名称
 	Intro      string // 专辑简介
+	Cover      string // 专辑封面
 	OpUID      string // 操作人
 	Choice     string // 类型:0:默认 1:精选
 	ChoiceTime string // 设置类型时间，choice非0时写入
@@ -53,6 +54,7 @@ var (
 			ID:         "id",
 			Name:       "name",
 			Intro:      "intro",
+			Cover:      "cover",
 			OpUID:      "op_uid",
 			Choice:     "choice",
 			ChoiceTime: "choice_time",

@@ -7,7 +7,8 @@ message AlbumData {
   uint64 id = 1;            // 专辑id
   string name = 2;          // 专辑名称
   string intro = 3;         // 专辑介绍
-  uint64 create_time = 4;   // 创建时间
+  string cover = 4;         // 专辑封面
+  uint64 create_time = 5;   // 创建时间
 }
 
 message VoiceLoverAudio {
