@@ -14,25 +14,21 @@ message AlbumData {
 message AudioData {
   uint64 id = 1;
   uint64 uid = 2;
-  string user_name = 3;
-  string broker = 4;
-  string resource = 5;
-  repeated string covers = 6;
-  string title = 7;
-  string desc = 8;
-  repeated string labels = 9;
-  int32 audit_status = 10;
-  uint64 create_time = 11;
-  uint64 op_uid = 12;
-  repeated AudioEditData edit_dubs = 13;
-  repeated AudioEditData edit_contents = 14;
-  repeated AudioEditData edit_posts = 15;
-  repeated AudioEditData edit_covers = 16;
+  string resource = 3;
+  repeated string covers = 4;
+  string title = 5;
+  string desc = 6;
+  repeated string labels = 7;
+  int32 audit_status = 8;
+  uint64 create_time = 9;
+  uint64 op_uid = 10;
+  repeated AudioEditData edit_dubs = 11;
+  repeated AudioEditData edit_contents = 12;
+  repeated AudioEditData edit_posts = 13;
+  repeated AudioEditData edit_covers = 14;
 }
 
 message AudioEditData {
   uint64 uid = 1;
-  string user_avatar = 2;
-  string user_name = 3;
   int32 type = 4;
 }
