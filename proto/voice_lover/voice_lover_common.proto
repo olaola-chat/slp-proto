@@ -9,3 +9,28 @@ message AlbumData {
   string intro = 3;         // 专辑介绍
   uint64 create_time = 4;   // 创建时间
 }
+
+message VoiceLoverAudio {
+  uint64 id = 1;
+  uint64 uid = 2;
+  string user_name = 3;
+  string broker = 4;
+  string resource = 5;
+  repeated string covers = 6;
+  string title = 7;
+  string desc = 8;
+  repeated string labels = 9;
+  int32 audit_status = 10;
+  uint64 create_time = 11;
+  uint64 op_uid = 12;
+  repeated VoiceLoverAudioEdit edit_dubs = 13;
+  repeated VoiceLoverAudioEdit edit_contents = 14;
+  repeated VoiceLoverAudioEdit edit_posts = 15;
+  repeated VoiceLoverAudioEdit edit_covers = 16;
+}
+
+message VoiceLoverAudioEdit {
+  uint64 uid = 1;
+  string user_avatar = 2;
+  string user_name = 3;
+}
