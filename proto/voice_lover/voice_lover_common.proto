@@ -34,4 +34,5 @@ message AudioEditData {
   uint64 uid = 1;
   string user_avatar = 2;
   string user_name = 3;
+  int32 type = 4;
 }
