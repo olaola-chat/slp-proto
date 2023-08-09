@@ -35,4 +35,5 @@ rpc: cli
 	${PROTOC} voice_lover/voice_lover_common.proto
 	${PROTOC} voice_lover/voice_lover_message.proto
 	${PROTO_SERV} voice_lover/voice_lover_main_service.proto
+	${PROTO_SERV} voice_lover/voice_lover_admin_service.proto
 
