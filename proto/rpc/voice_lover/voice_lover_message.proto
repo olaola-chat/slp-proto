@@ -3,7 +3,7 @@ package rbp.rpc.voice_lover;
 
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
 
-import "voice_lover/voice_lover_common.proto";
+import "rpc/voice_lover/voice_lover_common.proto";
 
 message ResBase {
 

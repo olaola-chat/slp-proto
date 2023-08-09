@@ -3,7 +3,7 @@ package rbp.rpc.voice_lover;
 
 import "rbp/plugin/option.proto";
 
-import "voice_lover/voice_lover_message.proto";
+import "rpc/voice_lover/voice_lover_message.proto";
 
 /*
 user_profile rpc 协议
