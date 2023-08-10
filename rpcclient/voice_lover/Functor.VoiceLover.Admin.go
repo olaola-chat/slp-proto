@@ -36,3 +36,33 @@ func (s *voiceLoverAdmin) AuditAudio(ctx context.Context, req *voice_lover.ReqAu
 	err := s.Call(ctx, "AuditAudio", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) ReqCreateAlbum(ctx context.Context, req *voice_lover.ReqCreateAlbum) (*voice_lover.ResCreateAlbum, error) {
+	reply := &voice_lover.ResCreateAlbum{}
+	err := s.Call(ctx, "ReqCreateAlbum", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) ReqUpdateAlbum(ctx context.Context, req *voice_lover.ReqUpdateAlbum) (*voice_lover.ResUpdateAlbum, error) {
+	reply := &voice_lover.ResUpdateAlbum{}
+	err := s.Call(ctx, "ReqUpdateAlbum", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) ReqDelAlbum(ctx context.Context, req *voice_lover.ReqDelAlbum) (*voice_lover.ResDelAlbum, error) {
+	reply := &voice_lover.ResDelAlbum{}
+	err := s.Call(ctx, "ReqDelAlbum", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) ReqGetAlbumList(ctx context.Context, req *voice_lover.ReqGetAlbumList) (*voice_lover.ResGetAlbumList, error) {
+	reply := &voice_lover.ResGetAlbumList{}
+	err := s.Call(ctx, "ReqGetAlbumList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) ReqGetAlbumDetail(ctx context.Context, req *voice_lover.ReqGetAlbumDetail) (*voice_lover.ResGetAlbumDetail, error) {
+	reply := &voice_lover.ResGetAlbumDetail{}
+	err := s.Call(ctx, "ReqGetAlbumDetail", req, reply)
+	return reply, err
+}

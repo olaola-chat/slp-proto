@@ -74,3 +74,50 @@ message ReqAuditAudio {
 }
 
 message ResAuditAudio {}
+
+message ReqCreateAlbum {
+  string name = 1;
+  string intro = 2;
+  string cover = 3;
+  uint64 op_uid = 4;
+}
+
+message ResCreateAlbum {
+  uint64 id = 1;
+}
+
+message ReqUpdateAlbum {
+  string name = 1;
+  string intro = 2;
+  uint64 op_uid = 3;
+}
+
+message ResUpdateAlbum {}
+
+message ReqDelAlbum {
+  uint64 id = 1;
+  uint64 op_uid = 2;
+}
+
+message ResDelAlbum {}
+
+message ReqGetAlbumList {
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string name = 3;
+  int32 page = 4;
+  int32 limit = 5;
+}
+
+message ResGetAlbumList {
+  repeated AlbumData albums = 1;
+  int32 total = 2;
+}
+
+message ReqGetAlbumDetail {
+  string album_str = 1;
+}
+
+message ResGetAlbumDetail {
+  AlbumData album = 1;
+}
