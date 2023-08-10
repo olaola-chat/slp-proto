@@ -22,6 +22,7 @@ test:
 dao:
 	./scripts/gen_dao_xianshi.sh
 	./scripts/gen_dao_config.sh
+	./scripts/gen_dao_functor.sh
 
 .PHONY: cli
 cli:
