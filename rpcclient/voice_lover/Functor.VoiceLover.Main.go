@@ -30,3 +30,9 @@ func (s *voiceLoverMain) GetRecAlbums(ctx context.Context, req *voice_lover.ReqG
 	err := s.Call(ctx, "GetRecAlbums", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) BatchGetAlbumAudioCount(ctx context.Context, req *voice_lover.ReqBatchGetAlbumAudioCount) (*voice_lover.ResBatchGetAlbumAudioCount, error) {
+	reply := &voice_lover.ResBatchGetAlbumAudioCount{}
+	err := s.Call(ctx, "BatchGetAlbumAudioCount", req, reply)
+	return reply, err
+}

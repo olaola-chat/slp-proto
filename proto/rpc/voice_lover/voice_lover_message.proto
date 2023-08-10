@@ -33,7 +33,6 @@ message ResGetRecAlbums {
 message ReqGetAudioEdit {
   uint64 id = 1;
 }
-
 message ResGetAudioEdit {
   repeated AudioEditData edits = 1;
 }
@@ -41,7 +40,13 @@ message ResGetAudioEdit {
 message ReqGetAudioDetail {
   uint64 id = 1;
 }
-
 message ResGetAudioDetail {
   AudioData audio = 1;
+}
+
+message ReqBatchGetAlbumAudioCount {
+  repeated uint64 album_ids = 1;
+}
+message ResBatchGetAlbumAudioCount {
+  map<uint64, uint32> album_counts = 1;
 }
