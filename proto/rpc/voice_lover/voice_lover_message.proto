@@ -24,7 +24,7 @@ message ReqPost {
 }
 
 message ReqGetRecAlbums {
-  uint64 uid = 1;
+  uint32 uid = 1;
 }
 message ResGetRecAlbums {
   repeated AlbumData albums = 1;
