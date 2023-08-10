@@ -21,6 +21,7 @@ message ReqPost {
   string edit_post = 9;
   string edit_cover = 10;
   string labels = 11;
+  int32 seconds = 12;
 }
 
 message ReqGetRecAlbums {
