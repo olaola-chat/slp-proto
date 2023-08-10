@@ -37,6 +37,7 @@ type voiceLoverAlbumColumns struct {
 	Name       string // 专辑名称
 	Intro      string // 专辑简介
 	Cover      string // 专辑封面
+	IsDeleted  string // 是否删除:0-未删除 1-已删除
 	OpUID      string // 操作人
 	Choice     string // 类型:0:默认 1:精选
 	ChoiceTime string // 设置类型时间，choice非0时写入
@@ -55,6 +56,7 @@ var (
 			Name:       "name",
 			Intro:      "intro",
 			Cover:      "cover",
+			IsDeleted:  "is_deleted",
 			OpUID:      "op_uid",
 			Choice:     "choice",
 			ChoiceTime: "choice_time",
