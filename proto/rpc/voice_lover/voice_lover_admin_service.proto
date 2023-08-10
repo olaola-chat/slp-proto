@@ -18,4 +18,8 @@ service VoiceLoverAdmin {
   rpc GetAudioDetail (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
   //是否需要实名认证
   rpc UpdateAudio (rbp.rpc.voice_lover.ReqUpdateAudio) returns (rbp.rpc.voice_lover.ResBase);
+
+  rpc AuditAudio (rbp.rpc.voice_lover.ReqAuditAudio) returns (rbp.rpc.voice_lover.ResAuditAudio);
+
+  rpc GetAuditAudioReason (rbp.rpc.voice_lover.ReqGetAuditAudioReason) returns (rbp.rpc.voice_lover.ResGetAuditAudioReason);
 }
