@@ -5,6 +5,8 @@ import "rbp/plugin/option.proto";
 
 import "rpc/user/user_profile_message.proto";
 
+import "db/xianshi/entity_xs_user_profile.proto";
+
 /*
 user_profile rpc 协议
 */
@@ -17,6 +19,9 @@ service UserProfile {
 
 	//是否需要实名认证
 	rpc NeedVerify (rbp.rpc.user.ReqNeedVerify) returns (RepNeedVerify);
+
+	//获取用户
+	rpc Get (rbp.rpc.user.ReqUserProfile) returns (db.xianshi.EntityXsUserProfile);
 
 	//批量获取用户
 	rpc Mget (rbp.rpc.user.ReqUserProfiles) returns (RepUserProfiles);

@@ -5,6 +5,7 @@ import (
 
 	"github.com/olaola-chat/rbp-proto/rpcclient/base"
 
+	"github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
 	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/user"
 )
 
@@ -22,6 +23,12 @@ type userProfile struct {
 func (s *userProfile) NeedVerify(ctx context.Context, req *user.ReqNeedVerify) (*user.RepNeedVerify, error) {
 	reply := &user.RepNeedVerify{}
 	err := s.Call(ctx, "NeedVerify", req, reply)
+	return reply, err
+}
+
+func (s *userProfile) Get(ctx context.Context, req *user.ReqUserProfile) (*xianshi.EntityXsUserProfile, error) {
+	reply := &xianshi.EntityXsUserProfile{}
+	err := s.Call(ctx, "Get", req, reply)
 	return reply, err
 }
 
