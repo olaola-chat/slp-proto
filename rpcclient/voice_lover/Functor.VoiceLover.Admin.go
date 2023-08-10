@@ -36,9 +36,3 @@ func (s *voiceLoverAdmin) AuditAudio(ctx context.Context, req *voice_lover.ReqAu
 	err := s.Call(ctx, "AuditAudio", req, reply)
 	return reply, err
 }
-
-func (s *voiceLoverAdmin) GetAuditAudioReason(ctx context.Context, req *voice_lover.ReqGetAuditAudioReason) (*voice_lover.ResGetAuditAudioReason, error) {
-	reply := &voice_lover.ResGetAuditAudioReason{}
-	err := s.Call(ctx, "GetAuditAudioReason", req, reply)
-	return reply, err
-}

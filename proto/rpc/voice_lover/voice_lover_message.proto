@@ -74,9 +74,3 @@ message ReqAuditAudio {
 }
 
 message ResAuditAudio {}
-
-message ReqGetAuditAudioReason {}
-
-message ResGetAuditAudioReason {
-  repeated AudioAuditReason reasons = 1;
-}
