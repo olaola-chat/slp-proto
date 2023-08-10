@@ -24,3 +24,9 @@ func (s *voiceLoverAdmin) GetAudioDetail(ctx context.Context, req *voice_lover.R
 	err := s.Call(ctx, "GetAudioDetail", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) UpdateAudio(ctx context.Context, req *voice_lover.ReqUpdateAudio) (*voice_lover.ResBase, error) {
+	reply := &voice_lover.ResBase{}
+	err := s.Call(ctx, "UpdateAudio", req, reply)
+	return reply, err
+}

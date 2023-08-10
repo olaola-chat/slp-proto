@@ -50,3 +50,10 @@ message ReqBatchGetAlbumAudioCount {
 message ResBatchGetAlbumAudioCount {
   map<uint64, uint32> album_counts = 1;
 }
+
+message ReqUpdateAudio {
+  uint64 id = 1;
+  string title = 2;
+  string desc = 3;
+  string labels = 4;
+}
