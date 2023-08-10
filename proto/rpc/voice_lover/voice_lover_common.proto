@@ -12,6 +12,8 @@ message AlbumData {
 
   uint32 audio_count = 6;   // 音频数量
   uint64 play_count = 7;    // 播放数量
+
+  uint64 op_uid = 8;
 }
 
 message SubjectData {
@@ -38,6 +40,7 @@ message AudioData {
   repeated AudioEditData edit_contents = 13;
   repeated AudioEditData edit_posts = 14;
   repeated AudioEditData edit_covers = 15;
+  int32 seconds = 16;
 }
 
 message AudioEditData {
