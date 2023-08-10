@@ -7,6 +7,8 @@ user_profile rpc 协议
 
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/user";
 
+import "db/xianshi/entity_xs_user_profile.proto";
+
 //获取单个请求请求
 message ReqUserProfile {
 	//需要查询的用户UID
@@ -54,6 +56,7 @@ message RepUserToken {
 
 //返回多个用户信息
 message RepUserProfiles {
+	repeated db.xianshi.EntityXsUserProfile data = 1;
 }
 
 
