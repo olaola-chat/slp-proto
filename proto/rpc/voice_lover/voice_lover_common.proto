@@ -44,3 +44,8 @@ message AudioEditData {
   uint32 uid = 1;
   int32 type = 4;
 }
+
+message AudioAuditReason {
+  uint64 id = 1;
+  string reason = 2;
+}

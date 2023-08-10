@@ -70,6 +70,13 @@ message ReqAuditAudio {
   uint64 id = 1;
   int32 audit_status = 2; // 1:通过 2:不通过
   int32 audit_reason = 3; // 不通过原因
+  uint64 op_uid = 4;
 }
 
 message ResAuditAudio {}
+
+message ReqGetAuditAudioReason {}
+
+message ResGetAuditAudioReason {
+  repeated AudioAuditReason reasons = 1;
+}
