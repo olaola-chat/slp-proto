@@ -25,12 +25,9 @@ message ReqPost {
 
 message ReqGetRecAlbums {
   uint32 uid = 1;
-  uint32 page = 2;
-  uint32 limit = 3;
 }
 message ResGetRecAlbums {
   repeated AlbumData albums = 1;
-  bool has_more = 2;
 }
 
 message ReqGetAudioEdit {
