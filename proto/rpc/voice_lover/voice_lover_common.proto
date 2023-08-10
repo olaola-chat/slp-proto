@@ -16,7 +16,7 @@ message AlbumData {
 
 message AudioData {
   uint64 id = 1;
-  uint64 uid = 2;
+  uint32 uid = 2;
   string resource = 3;
   repeated string covers = 4;
   string title = 5;
@@ -32,6 +32,6 @@ message AudioData {
 }
 
 message AudioEditData {
-  uint64 uid = 1;
+  uint32 uid = 1;
   int32 type = 4;
 }

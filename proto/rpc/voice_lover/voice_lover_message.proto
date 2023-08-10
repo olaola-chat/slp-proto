@@ -10,7 +10,7 @@ message ResBase {
 }
 
 message ReqPost {
-  uint64 uid = 1;
+  uint32 uid = 1;
   string resource = 2;
   int32 source = 3;
   string cover = 4;
