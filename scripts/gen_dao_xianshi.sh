@@ -25,3 +25,4 @@ cd `dirname $0`
 ./gen_db.sh xianshi xs_marry_message
 ./gen_db.sh xianshi xs_marry_relation
 ./gen_db.sh xianshi xs_live_config
+./gen_db.sh xianshi xs_chatroom_super
