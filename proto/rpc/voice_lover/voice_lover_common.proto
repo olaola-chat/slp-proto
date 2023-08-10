@@ -21,14 +21,15 @@ message AudioData {
   repeated string covers = 4;
   string title = 5;
   string desc = 6;
-  repeated string labels = 7;
-  int32 audit_status = 8;
-  uint64 create_time = 9;
-  uint64 op_uid = 10;
-  repeated AudioEditData edit_dubs = 11;
-  repeated AudioEditData edit_contents = 12;
-  repeated AudioEditData edit_posts = 13;
-  repeated AudioEditData edit_covers = 14;
+  int32 source = 7;
+  repeated string labels = 8;
+  int32 audit_status = 9;
+  uint64 create_time = 10;
+  uint64 op_uid = 11;
+  repeated AudioEditData edit_dubs = 12;
+  repeated AudioEditData edit_contents = 13;
+  repeated AudioEditData edit_posts = 14;
+  repeated AudioEditData edit_covers = 15;
 }
 
 message AudioEditData {
