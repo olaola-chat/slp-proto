@@ -21,13 +21,13 @@ service VoiceLoverAdmin {
 
   rpc AuditAudio (rbp.rpc.voice_lover.ReqAuditAudio) returns (rbp.rpc.voice_lover.ResAuditAudio);
 
-  rpc ReqCreateAlbum (rbp.rpc.voice_lover.ReqCreateAlbum) returns (rbp.rpc.voice_lover.ResCreateAlbum);
+  rpc CreateAlbum (rbp.rpc.voice_lover.ReqCreateAlbum) returns (rbp.rpc.voice_lover.ResCreateAlbum);
 
-  rpc ReqUpdateAlbum (rbp.rpc.voice_lover.ReqUpdateAlbum) returns (rbp.rpc.voice_lover.ResUpdateAlbum);
+  rpc UpdateAlbum (rbp.rpc.voice_lover.ReqUpdateAlbum) returns (rbp.rpc.voice_lover.ResUpdateAlbum);
 
-  rpc ReqDelAlbum (rbp.rpc.voice_lover.ReqDelAlbum) returns (rbp.rpc.voice_lover.ResDelAlbum);
+  rpc DelAlbum (rbp.rpc.voice_lover.ReqDelAlbum) returns (rbp.rpc.voice_lover.ResDelAlbum);
 
-  rpc ReqGetAlbumList (rbp.rpc.voice_lover.ReqGetAlbumList) returns (rbp.rpc.voice_lover.ResGetAlbumList);
+  rpc GetAlbumList (rbp.rpc.voice_lover.ReqGetAlbumList) returns (rbp.rpc.voice_lover.ResGetAlbumList);
 
-  rpc ReqGetAlbumDetail (rbp.rpc.voice_lover.ReqGetAlbumDetail) returns (rbp.rpc.voice_lover.ResGetAlbumDetail);
+  rpc GetAlbumDetail (rbp.rpc.voice_lover.ReqGetAlbumDetail) returns (rbp.rpc.voice_lover.ResGetAlbumDetail);
 }
