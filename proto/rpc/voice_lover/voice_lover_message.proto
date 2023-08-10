@@ -87,9 +87,10 @@ message ResCreateAlbum {
 }
 
 message ReqUpdateAlbum {
-  string name = 1;
-  string intro = 2;
-  uint64 op_uid = 3;
+  uint64 id = 1;
+  string name = 2;
+  string intro = 3;
+  uint64 op_uid = 4;
 }
 
 message ResUpdateAlbum {}
