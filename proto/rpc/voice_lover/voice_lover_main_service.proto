@@ -21,6 +21,9 @@ service VoiceLoverMain {
   // 获取推荐专辑列表
   rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
 
+  // 获取专题列表
+  rpc GetRecSubjects (rbp.rpc.voice_lover.ReqGetRecSubjects) returns (rbp.rpc.voice_lover.ResGetRecSubjects);
+
   // 批量获取专辑的音频数量
   rpc BatchGetAlbumAudioCount (rbp.rpc.voice_lover.ReqBatchGetAlbumAudioCount) returns (rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount);
 }

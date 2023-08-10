@@ -30,6 +30,13 @@ message ResGetRecAlbums {
   repeated AlbumData albums = 1;
 }
 
+message ReqGetRecSubjects {
+  uint32 uid = 1;
+}
+message ResGetRecSubjects {
+  repeated SubjectData subjects = 1;
+}
+
 message ReqGetAudioEdit {
   uint64 id = 1;
 }
