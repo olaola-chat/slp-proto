@@ -30,3 +30,9 @@ func (s *voiceLoverAdmin) UpdateAudio(ctx context.Context, req *voice_lover.ReqU
 	err := s.Call(ctx, "UpdateAudio", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) AuditAudio(ctx context.Context, req *voice_lover.ReqAuditAudio) (*voice_lover.ResAuditAudio, error) {
+	reply := &voice_lover.ResAuditAudio{}
+	err := s.Call(ctx, "AuditAudio", req, reply)
+	return reply, err
+}
