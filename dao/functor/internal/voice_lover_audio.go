@@ -39,6 +39,7 @@ type voiceLoverAudioColumns struct {
 	Resource    string // 资源链接
 	Cover       string // 封面链接
 	From        string // 作品来源：0-无 1-原创 2-搬运
+	Seconds     string //
 	Labels      string // 作品labels
 	AuditStatus string // 审核状态：0-待审核 1-审核通过 2-审核不通过
 	AuditReason string // 审核不通过原因：0-默认
@@ -62,6 +63,7 @@ var (
 			Resource:    "resource",
 			Cover:       "cover",
 			From:        "from",
+			Seconds:     "seconds",
 			Labels:      "labels",
 			AuditStatus: "audit_status",
 			AuditReason: "audit_reason",
