@@ -9,6 +9,9 @@ message AlbumData {
   string intro = 3;         // 专辑介绍
   string cover = 4;         // 专辑封面
   uint64 create_time = 5;   // 创建时间
+
+  uint32 audio_count = 6;   // 音频数量
+  uint64 play_count = 7;    // 播放数量
 }
 
 message AudioData {
