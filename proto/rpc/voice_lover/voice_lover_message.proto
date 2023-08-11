@@ -118,9 +118,9 @@ message ResGetAlbumList {
 }
 
 message ReqGetAlbumDetail {
-  string album_str = 1;
+  repeated string album_str = 1;
 }
 
 message ResGetAlbumDetail {
-  AlbumData album = 1;
+  map<uint64, AlbumData> albums = 1;
 }
