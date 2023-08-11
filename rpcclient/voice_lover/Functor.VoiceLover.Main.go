@@ -31,6 +31,12 @@ func (s *voiceLoverMain) GetRecAlbums(ctx context.Context, req *voice_lover.ReqG
 	return reply, err
 }
 
+func (s *voiceLoverMain) GetAlbumList(ctx context.Context, req *voice_lover.ReqGetAlbumList) (*voice_lover.ResGetAlbumList, error) {
+	reply := &voice_lover.ResGetAlbumList{}
+	err := s.Call(ctx, "GetAlbumList", req, reply)
+	return reply, err
+}
+
 func (s *voiceLoverMain) GetRecSubjects(ctx context.Context, req *voice_lover.ReqGetRecSubjects) (*voice_lover.ResGetRecSubjects, error) {
 	reply := &voice_lover.ResGetRecSubjects{}
 	err := s.Call(ctx, "GetRecSubjects", req, reply)

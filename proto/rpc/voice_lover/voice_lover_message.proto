@@ -30,6 +30,16 @@ message ResGetRecAlbums {
   repeated AlbumData albums = 1;
 }
 
+message ReqGetAlbumList {
+  uint32 choice = 1;    // 0-默认 1-精选
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+message ResGetAlbumList {
+  repeated AlbumData albums = 1;
+  bool has_more = 2;
+}
+
 message ReqGetRecSubjects {
   uint32 uid = 1;
 }

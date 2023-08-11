@@ -18,8 +18,11 @@ service VoiceLoverMain {
   //是否需要实名认证
   rpc Post (rbp.rpc.voice_lover.ReqPost) returns (rbp.rpc.voice_lover.ResBase);
 
-  // 获取推荐专辑列表
+  // 获取推荐专辑数据
   rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
+
+  // 分页获取专辑列表
+  rpc GetAlbumList (rbp.rpc.voice_lover.ReqGetAlbumList) returns (rbp.rpc.voice_lover.ResGetAlbumList);
 
   // 获取专题列表
   rpc GetRecSubjects (rbp.rpc.voice_lover.ReqGetRecSubjects) returns (rbp.rpc.voice_lover.ResGetRecSubjects);
