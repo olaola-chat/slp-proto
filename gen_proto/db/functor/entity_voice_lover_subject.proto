@@ -14,8 +14,8 @@ message EntityVoiceLoverSubject {
     uint64 id                               = 1; // 专题编号                    
            //@inject_tag: orm:"name"         
     string name                             = 2; // 专题名称                    
-           //@inject_tag: orm:"op_id"        
-    uint64 op_id                            = 3; // 操作人                      
+           //@inject_tag: orm:"op_uid"       
+    uint64 op_uid                           = 3; // 操作人                      
            //@inject_tag: orm:"is_deleted"   
     int32  is_deleted                       = 4; // 是否删除:0-未删除 1-已删除  
            //@inject_tag: orm:"create_time"  

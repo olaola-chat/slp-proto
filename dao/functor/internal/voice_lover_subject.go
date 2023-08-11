@@ -35,7 +35,7 @@ type VoiceLoverSubjectDao struct {
 type voiceLoverSubjectColumns struct {
 	ID         string // 专题编号
 	Name       string // 专题名称
-	OpID       string // 操作人
+	OpUID      string // 操作人
 	IsDeleted  string // 是否删除:0-未删除 1-已删除
 	CreateTime string // 创建时间
 	UpdateTime string // 更新时间
@@ -50,7 +50,7 @@ var (
 		Columns: voiceLoverSubjectColumns{
 			ID:         "id",
 			Name:       "name",
-			OpID:       "op_id",
+			OpUID:      "op_uid",
 			IsDeleted:  "is_deleted",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",

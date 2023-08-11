@@ -4,6 +4,7 @@ package rbp.rpc.voice_lover;
 import "rbp/plugin/option.proto";
 
 import "rpc/voice_lover/voice_lover_message.proto";
+import "rpc/voice_lover/voice_lover_admin_message.proto";
 
 /*
 user_profile rpc 协议
@@ -32,4 +33,13 @@ service VoiceLoverAdmin {
   rpc GetAlbumDetail (rbp.rpc.voice_lover.ReqGetAlbumDetail) returns (rbp.rpc.voice_lover.ResGetAlbumDetail);
 
   rpc AudioCollect (rbp.rpc.voice_lover.ReqAudioCollect) returns (rbp.rpc.voice_lover.ResAudioCollect);
+
+  rpc CreateSubject (rbp.rpc.voice_lover.ReqCreateSubject) returns (rbp.rpc.voice_lover.ResCreateSubject);
+
+  rpc DelSubject (rbp.rpc.voice_lover.ReqDelSubject) returns (rbp.rpc.voice_lover.ResDelSubject);
+
+  rpc UpdateSubject (rbp.rpc.voice_lover.ReqUpdateSubject) returns (rbp.rpc.voice_lover.ResUpdateSubject);
+
+  rpc GetSubjectDetail (rbp.rpc.voice_lover.ReqGetSubjectDetail) returns (rbp.rpc.voice_lover.ResGetSubjectDetail);
+
 }

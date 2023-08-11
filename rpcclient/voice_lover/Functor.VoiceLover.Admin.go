@@ -72,3 +72,27 @@ func (s *voiceLoverAdmin) AudioCollect(ctx context.Context, req *voice_lover.Req
 	err := s.Call(ctx, "AudioCollect", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) CreateSubject(ctx context.Context, req *voice_lover.ReqCreateSubject) (*voice_lover.ResCreateSubject, error) {
+	reply := &voice_lover.ResCreateSubject{}
+	err := s.Call(ctx, "CreateSubject", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) DelSubject(ctx context.Context, req *voice_lover.ReqDelSubject) (*voice_lover.ResDelSubject, error) {
+	reply := &voice_lover.ResDelSubject{}
+	err := s.Call(ctx, "DelSubject", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) UpdateSubject(ctx context.Context, req *voice_lover.ReqUpdateSubject) (*voice_lover.ResUpdateSubject, error) {
+	reply := &voice_lover.ResUpdateSubject{}
+	err := s.Call(ctx, "UpdateSubject", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetSubjectDetail(ctx context.Context, req *voice_lover.ReqGetSubjectDetail) (*voice_lover.ResGetSubjectDetail, error) {
+	reply := &voice_lover.ResGetSubjectDetail{}
+	err := s.Call(ctx, "GetSubjectDetail", req, reply)
+	return reply, err
+}
