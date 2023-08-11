@@ -13,6 +13,7 @@ ${PROTOC} rpc/voice_lover/voice_lover_message.proto
 ${PROTO_SERV} rpc/voice_lover/voice_lover_main_service.proto
 ${PROTOC} rpc/voice_lover/voice_lover_common.proto
 ${PROTO_SERV} rpc/voice_lover/voice_lover_admin_service.proto
+${PROTOC} rpc/voice_lover/voice_lover_admin_message.proto
 
 
 
