@@ -24,6 +24,9 @@ service VoiceLoverMain {
   // 分页获取专辑列表
   rpc GetAlbumsByPage (rbp.rpc.voice_lover.ReqGetAlbumsByPage) returns (rbp.rpc.voice_lover.ResGetAlbumsByPage);
 
+  // 分页获取专题下专辑列表
+  rpc GetSubjectAlbumsByPage (rbp.rpc.voice_lover.ReqGetSubjectAlbumsByPage) returns (rbp.rpc.voice_lover.ResGetAlbumsByPage);
+
   // 获取专题列表
   rpc GetRecSubjects (rbp.rpc.voice_lover.ReqGetRecSubjects) returns (rbp.rpc.voice_lover.ResGetRecSubjects);
 

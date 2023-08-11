@@ -36,6 +36,11 @@ message ReqGetAlbumsByPage {
   uint32 page = 2;
   uint32 limit = 3;
 }
+message ReqGetSubjectAlbumsByPage {
+  uint64 subject_id = 1;
+  uint32 page = 2;
+  uint32 limit = 3;
+}
 message ResGetAlbumsByPage {
   repeated AlbumData albums = 1;
   bool has_more = 2;

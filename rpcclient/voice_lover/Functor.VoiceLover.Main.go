@@ -37,6 +37,12 @@ func (s *voiceLoverMain) GetAlbumsByPage(ctx context.Context, req *voice_lover.R
 	return reply, err
 }
 
+func (s *voiceLoverMain) GetSubjectAlbumsByPage(ctx context.Context, req *voice_lover.ReqGetSubjectAlbumsByPage) (*voice_lover.ResGetAlbumsByPage, error) {
+	reply := &voice_lover.ResGetAlbumsByPage{}
+	err := s.Call(ctx, "GetSubjectAlbumsByPage", req, reply)
+	return reply, err
+}
+
 func (s *voiceLoverMain) GetRecSubjects(ctx context.Context, req *voice_lover.ReqGetRecSubjects) (*voice_lover.ResGetRecSubjects, error) {
 	reply := &voice_lover.ResGetRecSubjects{}
 	err := s.Call(ctx, "GetRecSubjects", req, reply)
