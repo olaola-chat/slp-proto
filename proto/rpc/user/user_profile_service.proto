@@ -26,6 +26,9 @@ service UserProfile {
 	//批量获取用户
 	rpc Mget (rbp.rpc.user.ReqUserProfiles) returns (RepUserProfiles);
 
+	//认证
+	rpc Auth (rbp.rpc.user.ReqUserAuth) returns (RepUserAuth);
+
 	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
 }
 
