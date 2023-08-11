@@ -25,6 +25,12 @@ func (s *voiceLoverMain) Post(ctx context.Context, req *voice_lover.ReqPost) (*v
 	return reply, err
 }
 
+func (s *voiceLoverMain) GetAlbumInfoById(ctx context.Context, req *voice_lover.ReqGetAlbumInfoById) (*voice_lover.ResGetAlbumInfoById, error) {
+	reply := &voice_lover.ResGetAlbumInfoById{}
+	err := s.Call(ctx, "GetAlbumInfoById", req, reply)
+	return reply, err
+}
+
 func (s *voiceLoverMain) GetRecAlbums(ctx context.Context, req *voice_lover.ReqGetRecAlbums) (*voice_lover.ResGetRecAlbums, error) {
 	reply := &voice_lover.ResGetRecAlbums{}
 	err := s.Call(ctx, "GetRecAlbums", req, reply)
@@ -49,8 +55,26 @@ func (s *voiceLoverMain) GetRecSubjects(ctx context.Context, req *voice_lover.Re
 	return reply, err
 }
 
+func (s *voiceLoverMain) GetAudioListByAlbumId(ctx context.Context, req *voice_lover.ReqGetAudioListByAlbumId) (*voice_lover.ResGetAudioListByAlbumId, error) {
+	reply := &voice_lover.ResGetAudioListByAlbumId{}
+	err := s.Call(ctx, "GetAudioListByAlbumId", req, reply)
+	return reply, err
+}
+
 func (s *voiceLoverMain) BatchGetAlbumAudioCount(ctx context.Context, req *voice_lover.ReqBatchGetAlbumAudioCount) (*voice_lover.ResBatchGetAlbumAudioCount, error) {
 	reply := &voice_lover.ResBatchGetAlbumAudioCount{}
 	err := s.Call(ctx, "BatchGetAlbumAudioCount", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAlbumCommentCount(ctx context.Context, req *voice_lover.ReqGetAlbumCommentCount) (*voice_lover.ResGetAlbumCommentCount, error) {
+	reply := &voice_lover.ResGetAlbumCommentCount{}
+	err := s.Call(ctx, "GetAlbumCommentCount", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) IsUserCollectAlbum(ctx context.Context, req *voice_lover.ReqIsUserCollectAlbum) (*voice_lover.ResIsUserCollectAlbum, error) {
+	reply := &voice_lover.ResIsUserCollectAlbum{}
+	err := s.Call(ctx, "IsUserCollectAlbum", req, reply)
 	return reply, err
 }
