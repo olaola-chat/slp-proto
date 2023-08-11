@@ -66,3 +66,9 @@ func (s *voiceLoverAdmin) GetAlbumDetail(ctx context.Context, req *voice_lover.R
 	err := s.Call(ctx, "GetAlbumDetail", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) AudioCollect(ctx context.Context, req *voice_lover.ReqAudioCollect) (*voice_lover.ResAudioCollect, error) {
+	reply := &voice_lover.ResAudioCollect{}
+	err := s.Call(ctx, "AudioCollect", req, reply)
+	return reply, err
+}
