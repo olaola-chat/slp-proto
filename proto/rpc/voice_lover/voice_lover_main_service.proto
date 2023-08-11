@@ -22,7 +22,7 @@ service VoiceLoverMain {
   rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
 
   // 分页获取专辑列表
-  rpc GetAlbumList (rbp.rpc.voice_lover.ReqGetAlbumList) returns (rbp.rpc.voice_lover.ResGetAlbumList);
+  rpc GetAlbumsByPage (rbp.rpc.voice_lover.ReqGetAlbumsByPage) returns (rbp.rpc.voice_lover.ResGetAlbumsByPage);
 
   // 获取专题列表
   rpc GetRecSubjects (rbp.rpc.voice_lover.ReqGetRecSubjects) returns (rbp.rpc.voice_lover.ResGetRecSubjects);

@@ -19,59 +19,59 @@ import (
 	"github.com/gogf/gf/util/gconv"
 
 	//	"github.com/olaola-chat/rbp-proto/model"
-	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
+	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
 )
 
-// VoiceLoverAudioDao is the manager for logic model data accessing
+// XsBrokerUserDao is the manager for logic model data accessing
 // and custom defined data operations functions management.
-type VoiceLoverAudioDao struct {
+type XsBrokerUserDao struct {
 	gmvc.M
 	DB      gdb.DB
 	Table   string
-	Columns voiceLoverAudioColumns
+	Columns xsBrokerUserColumns
 }
 
-// VoiceLoverAudioColumns defines and stores column names for table voice_lover_audio.
-type voiceLoverAudioColumns struct {
-	ID          string // 自增ID
-	Title       string // 标题
-	Desc        string // 简介
-	Resource    string // 资源链接
-	Cover       string // 封面链接
-	From        string // 作品来源：0-无 1-原创 2-搬运
-	Seconds     string // 作品时长 单位秒
-	Labels      string // 作品labels
-	AuditStatus string // 审核状态：0-待审核 1-审核通过 2-审核不通过
-	AuditReason string // 审核不通过原因：0-默认
-	OpUID       string // 审核人
-	PubUID      string // 发布人
-	ApplyTime   string // 审核时间
-	CreateTime  string // 创建时间
-	UpdateTime  string // 更新时间
+// XsBrokerUserColumns defines and stores column names for table xs_broker_user.
+type xsBrokerUserColumns struct {
+	ID         string //
+	Bid        string // 公会id
+	UID        string // 用户id
+	Deleted    string // 是否删除，0正常，1删除
+	Dateline   string // 加入时间
+	State      string //
+	Exit       string //
+	PackCal    string //
+	Sign       string //
+	CorpCal    string //
+	CorpStatus string //
+	IsRisk     string // 是否是风险账户
+	VoiceUser  string //
+	VideoUser  string //
+	ApplyTime  string // 申请时间
 }
 
 var (
-	// VoiceLoverAudio is globally public accessible object for table voice_lover_audio operations.
-	VoiceLoverAudio = VoiceLoverAudioDao{
-		M:     g.DB("functor").Model("voice_lover_audio").Safe(),
-		DB:    g.DB("functor"),
-		Table: "voice_lover_audio",
-		Columns: voiceLoverAudioColumns{
-			ID:          "id",
-			Title:       "title",
-			Desc:        "desc",
-			Resource:    "resource",
-			Cover:       "cover",
-			From:        "from",
-			Seconds:     "seconds",
-			Labels:      "labels",
-			AuditStatus: "audit_status",
-			AuditReason: "audit_reason",
-			OpUID:       "op_uid",
-			PubUID:      "pub_uid",
-			ApplyTime:   "apply_time",
-			CreateTime:  "create_time",
-			UpdateTime:  "update_time",
+	// XsBrokerUser is globally public accessible object for table xs_broker_user operations.
+	XsBrokerUser = XsBrokerUserDao{
+		M:     g.DB("xianshi").Model("xs_broker_user").Safe(),
+		DB:    g.DB("xianshi"),
+		Table: "xs_broker_user",
+		Columns: xsBrokerUserColumns{
+			ID:         "id",
+			Bid:        "bid",
+			UID:        "uid",
+			Deleted:    "deleted",
+			Dateline:   "dateline",
+			State:      "state",
+			Exit:       "exit",
+			PackCal:    "pack_cal",
+			Sign:       "sign",
+			CorpCal:    "corp_cal",
+			CorpStatus: "corp_status",
+			IsRisk:     "is_risk",
+			VoiceUser:  "voice_user",
+			VideoUser:  "video_user",
+			ApplyTime:  "apply_time",
 		},
 	}
 )
@@ -80,34 +80,34 @@ var (
 // of current DB object and with given context in it.
 // Note that this returned DB object can be used only once, so do not assign it to
 // a global or package variable for long using.
-func (d *VoiceLoverAudioDao) Ctx(ctx context.Context) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Ctx(ctx)}
+func (d *XsBrokerUserDao) Ctx(ctx context.Context) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Ctx(ctx)}
 }
 
 // As sets an alias name for current table.
-func (d *VoiceLoverAudioDao) As(as string) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.As(as)}
+func (d *XsBrokerUserDao) As(as string) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.As(as)}
 }
 
 // TX sets the transaction for current operation.
-func (d *VoiceLoverAudioDao) TX(tx *gdb.TX) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.TX(tx)}
+func (d *XsBrokerUserDao) TX(tx *gdb.TX) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.TX(tx)}
 }
 
 // Master marks the following operation on master node.
-func (d *VoiceLoverAudioDao) Master() *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Master()}
+func (d *XsBrokerUserDao) Master() *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Master()}
 }
 
 // Slave marks the following operation on slave node.
 // Note that it makes sense only if there's any slave node configured.
-func (d *VoiceLoverAudioDao) Slave() *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Slave()}
+func (d *XsBrokerUserDao) Slave() *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Slave()}
 }
 
 // Args sets custom arguments for model operation.
-func (d *VoiceLoverAudioDao) Args(args ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Args(args...)}
+func (d *XsBrokerUserDao) Args(args ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Args(args...)}
 }
 
 // LeftJoin does "LEFT JOIN ... ON ..." statement on the model.
@@ -115,8 +115,8 @@ func (d *VoiceLoverAudioDao) Args(args ...interface{}) *VoiceLoverAudioDao {
 // and also with its alias name, like:
 // Table("user").LeftJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").LeftJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAudioDao) LeftJoin(table ...string) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.LeftJoin(table...)}
+func (d *XsBrokerUserDao) LeftJoin(table ...string) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.LeftJoin(table...)}
 }
 
 // RightJoin does "RIGHT JOIN ... ON ..." statement on the model.
@@ -124,8 +124,8 @@ func (d *VoiceLoverAudioDao) LeftJoin(table ...string) *VoiceLoverAudioDao {
 // and also with its alias name, like:
 // Table("user").RightJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").RightJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAudioDao) RightJoin(table ...string) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.RightJoin(table...)}
+func (d *XsBrokerUserDao) RightJoin(table ...string) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.RightJoin(table...)}
 }
 
 // InnerJoin does "INNER JOIN ... ON ..." statement on the model.
@@ -133,36 +133,36 @@ func (d *VoiceLoverAudioDao) RightJoin(table ...string) *VoiceLoverAudioDao {
 // and also with its alias name, like:
 // Table("user").InnerJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").InnerJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAudioDao) InnerJoin(table ...string) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.InnerJoin(table...)}
+func (d *XsBrokerUserDao) InnerJoin(table ...string) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.InnerJoin(table...)}
 }
 
 // Fields sets the operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAudioDao) Fields(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
+func (d *XsBrokerUserDao) Fields(fieldNamesOrMapStruct ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
 }
 
 // FieldsEx sets the excluded operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAudioDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
+func (d *XsBrokerUserDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
 }
 
 // Option sets the extra operation option for the model.
-func (d *VoiceLoverAudioDao) Option(option int) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Option(option)}
+func (d *XsBrokerUserDao) Option(option int) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Option(option)}
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers
 // the data and where attributes for empty values.
-func (d *VoiceLoverAudioDao) OmitEmpty() *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.OmitEmpty()}
+func (d *XsBrokerUserDao) OmitEmpty() *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.OmitEmpty()}
 }
 
 // Filter marks filtering the fields which does not exist in the fields of the operated table.
-func (d *VoiceLoverAudioDao) Filter() *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Filter()}
+func (d *XsBrokerUserDao) Filter() *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Filter()}
 }
 
 // Where sets the condition statement for the model. The parameter <where> can be type of
@@ -176,8 +176,8 @@ func (d *VoiceLoverAudioDao) Filter() *VoiceLoverAudioDao {
 // Where("status IN (?)", g.Slice{1,2,3})
 // Where("age IN(?,?)", 18, 50)
 // Where(User{ Id : 1, UserName : "john"})
-func (d *VoiceLoverAudioDao) Where(where interface{}, args ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Where(where, args...)}
+func (d *XsBrokerUserDao) Where(where interface{}, args ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Where(where, args...)}
 }
 
 // WherePri does the same logic as M.Where except that if the parameter <where>
@@ -185,54 +185,54 @@ func (d *VoiceLoverAudioDao) Where(where interface{}, args ...interface{}) *Voic
 // key value. That is, if primary key is "id" and given <where> parameter as "123", the
 // WherePri function treats the condition as "id=123", but M.Where treats the condition
 // as string "123".
-func (d *VoiceLoverAudioDao) WherePri(where interface{}, args ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.WherePri(where, args...)}
+func (d *XsBrokerUserDao) WherePri(where interface{}, args ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.WherePri(where, args...)}
 }
 
 // And adds "AND" condition to the where statement.
-func (d *VoiceLoverAudioDao) And(where interface{}, args ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.And(where, args...)}
+func (d *XsBrokerUserDao) And(where interface{}, args ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.And(where, args...)}
 }
 
 // Or adds "OR" condition to the where statement.
-func (d *VoiceLoverAudioDao) Or(where interface{}, args ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Or(where, args...)}
+func (d *XsBrokerUserDao) Or(where interface{}, args ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Or(where, args...)}
 }
 
 // Group sets the "GROUP BY" statement for the model.
-func (d *VoiceLoverAudioDao) Group(groupBy string) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Group(groupBy)}
+func (d *XsBrokerUserDao) Group(groupBy string) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Group(groupBy)}
 }
 
 // Order sets the "ORDER BY" statement for the model.
-func (d *VoiceLoverAudioDao) Order(orderBy ...string) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Order(orderBy...)}
+func (d *XsBrokerUserDao) Order(orderBy ...string) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Order(orderBy...)}
 }
 
 // Limit sets the "LIMIT" statement for the model.
 // The parameter <limit> can be either one or two number, if passed two number is passed,
 // it then sets "LIMIT limit[0],limit[1]" statement for the model, or else it sets "LIMIT limit[0]"
 // statement.
-func (d *VoiceLoverAudioDao) Limit(limit ...int) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Limit(limit...)}
+func (d *XsBrokerUserDao) Limit(limit ...int) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Limit(limit...)}
 }
 
 // Offset sets the "OFFSET" statement for the model.
 // It only makes sense for some databases like SQLServer, PostgreSQL, etc.
-func (d *VoiceLoverAudioDao) Offset(offset int) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Offset(offset)}
+func (d *XsBrokerUserDao) Offset(offset int) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Offset(offset)}
 }
 
 // Page sets the paging number for the model.
 // The parameter <page> is started from 1 for paging.
 // Note that, it differs that the Limit function start from 0 for "LIMIT" statement.
-func (d *VoiceLoverAudioDao) Page(page, limit int) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Page(page, limit)}
+func (d *XsBrokerUserDao) Page(page, limit int) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Page(page, limit)}
 }
 
 // Batch sets the batch operation number for the model.
-func (d *VoiceLoverAudioDao) Batch(batch int) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Batch(batch)}
+func (d *XsBrokerUserDao) Batch(batch int) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Batch(batch)}
 }
 
 // Cache sets the cache feature for the model. It caches the result of the sql, which means
@@ -247,8 +247,8 @@ func (d *VoiceLoverAudioDao) Batch(batch int) *VoiceLoverAudioDao {
 // control the cache like changing the <duration> or clearing the cache with specified <name>.
 //
 // Note that, the cache feature is disabled if the model is operating on a transaction.
-func (d *VoiceLoverAudioDao) Cache(duration time.Duration, name ...string) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Cache(duration, name...)}
+func (d *XsBrokerUserDao) Cache(duration time.Duration, name ...string) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Cache(duration, name...)}
 }
 
 // Data sets the operation data for the model.
@@ -258,22 +258,22 @@ func (d *VoiceLoverAudioDao) Cache(duration time.Duration, name ...string) *Voic
 // Data("uid", 10000)
 // Data(g.Map{"uid": 10000, "name":"john"})
 // Data(g.Slice{g.Map{"uid": 10000, "name":"john"}, g.Map{"uid": 20000, "name":"smith"})
-func (d *VoiceLoverAudioDao) Data(data ...interface{}) *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Data(data...)}
+func (d *XsBrokerUserDao) Data(data ...interface{}) *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Data(data...)}
 }
 
 // All does "SELECT FROM ..." statement for the model.
-// It retrieves the records from table and returns the result as []*pb.EntityVoiceLoverAudio.
+// It retrieves the records from table and returns the result as []*pb.EntityXsBrokerUser.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAudioDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAudio, error) {
+func (d *XsBrokerUserDao) All(where ...interface{}) ([]*pb.EntityXsBrokerUser, error) {
 	all, err := d.M.All(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAudio
+	var entities []*pb.EntityXsBrokerUser
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -283,17 +283,17 @@ func (d *VoiceLoverAudioDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAu
 	return entities, nil
 }
 
-// One retrieves one record from table and returns the result as *pb.EntityVoiceLoverAudio.
+// One retrieves one record from table and returns the result as *pb.EntityXsBrokerUser.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAudioDao) One(where ...interface{}) (*pb.EntityVoiceLoverAudio, error) {
+func (d *XsBrokerUserDao) One(where ...interface{}) (*pb.EntityXsBrokerUser, error) {
 	one, err := d.M.One(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAudio
+	var entity *pb.EntityXsBrokerUser
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -302,12 +302,12 @@ func (d *VoiceLoverAudioDao) One(where ...interface{}) (*pb.EntityVoiceLoverAudi
 
 // FindOne retrieves and returns a single Record by M.WherePri and M.One.
 // Also see M.WherePri and M.One.
-func (d *VoiceLoverAudioDao) FindOne(where ...interface{}) (*pb.EntityVoiceLoverAudio, error) {
+func (d *XsBrokerUserDao) FindOne(where ...interface{}) (*pb.EntityXsBrokerUser, error) {
 	one, err := d.M.FindOne(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAudio
+	var entity *pb.EntityXsBrokerUser
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -316,12 +316,12 @@ func (d *VoiceLoverAudioDao) FindOne(where ...interface{}) (*pb.EntityVoiceLover
 
 // FindAll retrieves and returns Result by by M.WherePri and M.All.
 // Also see M.WherePri and M.All.
-func (d *VoiceLoverAudioDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLoverAudio, error) {
+func (d *XsBrokerUserDao) FindAll(where ...interface{}) ([]*pb.EntityXsBrokerUser, error) {
 	all, err := d.M.FindAll(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAudio
+	var entities []*pb.EntityXsBrokerUser
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -347,7 +347,7 @@ func (d *VoiceLoverAudioDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLov
 //
 // user := (*User)(nil)
 // err  := dao.User.Where("id", 1).Struct(&user)
-func (d *VoiceLoverAudioDao) Struct(pointer interface{}, where ...interface{}) error {
+func (d *XsBrokerUserDao) Struct(pointer interface{}, where ...interface{}) error {
 	return d.M.Struct(pointer, where...)
 }
 
@@ -367,7 +367,7 @@ func (d *VoiceLoverAudioDao) Struct(pointer interface{}, where ...interface{}) e
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Structs(&users)
-func (d *VoiceLoverAudioDao) Structs(pointer interface{}, where ...interface{}) error {
+func (d *XsBrokerUserDao) Structs(pointer interface{}, where ...interface{}) error {
 	return d.M.Structs(pointer, where...)
 }
 
@@ -392,14 +392,14 @@ func (d *VoiceLoverAudioDao) Structs(pointer interface{}, where ...interface{}) 
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Scan(&users)
-func (d *VoiceLoverAudioDao) Scan(pointer interface{}, where ...interface{}) error {
+func (d *XsBrokerUserDao) Scan(pointer interface{}, where ...interface{}) error {
 	return d.M.Scan(pointer, where...)
 }
 
 // Chunk iterates the table with given size and callback function.
-func (d *VoiceLoverAudioDao) Chunk(limit int, callback func(entities []*pb.EntityVoiceLoverAudio, err error) bool) {
+func (d *XsBrokerUserDao) Chunk(limit int, callback func(entities []*pb.EntityXsBrokerUser, err error) bool) {
 	d.M.Chunk(limit, func(result gdb.Result, err error) bool {
-		var entities []*pb.EntityVoiceLoverAudio
+		var entities []*pb.EntityXsBrokerUser
 		err = result.Structs(&entities)
 		if err == sql.ErrNoRows {
 			return false
@@ -409,21 +409,21 @@ func (d *VoiceLoverAudioDao) Chunk(limit int, callback func(entities []*pb.Entit
 }
 
 // LockUpdate sets the lock for update for current operation.
-func (d *VoiceLoverAudioDao) LockUpdate() *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.LockUpdate()}
+func (d *XsBrokerUserDao) LockUpdate() *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.LockUpdate()}
 }
 
 // LockShared sets the lock in share mode for current operation.
-func (d *VoiceLoverAudioDao) LockShared() *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.LockShared()}
+func (d *XsBrokerUserDao) LockShared() *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.LockShared()}
 }
 
 // Unscoped enables/disables the soft deleting feature.
-func (d *VoiceLoverAudioDao) Unscoped() *VoiceLoverAudioDao {
-	return &VoiceLoverAudioDao{M: d.M.Unscoped()}
+func (d *XsBrokerUserDao) Unscoped() *XsBrokerUserDao {
+	return &XsBrokerUserDao{M: d.M.Unscoped()}
 }
 
-func (d *VoiceLoverAudioDao) scan(res gdb.Result, in interface{}) error {
+func (d *XsBrokerUserDao) scan(res gdb.Result, in interface{}) error {
 	length := res.Len()
 	if length == 0 {
 		return sql.ErrNoRows
@@ -452,7 +452,7 @@ func (d *VoiceLoverAudioDao) scan(res gdb.Result, in interface{}) error {
 	return nil
 }
 
-func (d *VoiceLoverAudioDao) getFieldTag(v reflect.Value) []string {
+func (d *XsBrokerUserDao) getFieldTag(v reflect.Value) []string {
 	t := v.Type()
 	typ := t.Elem()
 	val := v.Elem()
@@ -479,7 +479,7 @@ func (d *VoiceLoverAudioDao) getFieldTag(v reflect.Value) []string {
 	return fieldToTag
 }
 
-func (d *VoiceLoverAudioDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
+func (d *XsBrokerUserDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
 	val := v.Elem()
 	length := val.NumField()
 	for i := 0; i < length; i++ {

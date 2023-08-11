@@ -21,6 +21,7 @@ message ReqPost {
   string edit_post = 9;
   string edit_cover = 10;
   string labels = 11;
+  uint32 seconds = 12;
 }
 
 message ReqGetRecAlbums {
@@ -30,12 +31,12 @@ message ResGetRecAlbums {
   repeated AlbumData albums = 1;
 }
 
-message ReqGetAlbumList {
+message ReqGetAlbumsByPage {
   uint32 choice = 1;    // 0-默认 1-精选
   uint32 page = 2;
   uint32 limit = 3;
 }
-message ResGetAlbumList {
+message ResGetAlbumsByPage {
   repeated AlbumData albums = 1;
   bool has_more = 2;
 }
@@ -85,8 +86,51 @@ message ReqAuditAudio {
 
 message ResAuditAudio {}
 
-message ReqGetAuditAudioReason {}
+message ReqCreateAlbum {
+  string name = 1;
+  string intro = 2;
+  string cover = 3;
+  uint64 op_uid = 4;
+}
 
-message ResGetAuditAudioReason {
-  repeated AudioAuditReason reasons = 1;
+message ResCreateAlbum {
+  uint64 id = 1;
+}
+
+message ReqUpdateAlbum {
+  uint64 id = 1;
+  string name = 2;
+  string intro = 3;
+  string cover = 4;
+  uint64 op_uid = 5;
+}
+
+message ResUpdateAlbum {}
+
+message ReqDelAlbum {
+  uint64 id = 1;
+  uint64 op_uid = 2;
+}
+
+message ResDelAlbum {}
+
+message ReqGetAlbumList {
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string name = 3;
+  int32 page = 4;
+  int32 limit = 5;
+}
+
+message ResGetAlbumList {
+  repeated AlbumData albums = 1;
+  int32 total = 2;
+}
+
+message ReqGetAlbumDetail {
+  repeated string album_str = 1;
+}
+
+message ResGetAlbumDetail {
+  map<uint64, AlbumData> albums = 1;
 }

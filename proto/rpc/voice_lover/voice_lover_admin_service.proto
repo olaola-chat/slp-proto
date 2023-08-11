@@ -21,5 +21,13 @@ service VoiceLoverAdmin {
 
   rpc AuditAudio (rbp.rpc.voice_lover.ReqAuditAudio) returns (rbp.rpc.voice_lover.ResAuditAudio);
 
-  rpc GetAuditAudioReason (rbp.rpc.voice_lover.ReqGetAuditAudioReason) returns (rbp.rpc.voice_lover.ResGetAuditAudioReason);
+  rpc CreateAlbum (rbp.rpc.voice_lover.ReqCreateAlbum) returns (rbp.rpc.voice_lover.ResCreateAlbum);
+
+  rpc UpdateAlbum (rbp.rpc.voice_lover.ReqUpdateAlbum) returns (rbp.rpc.voice_lover.ResUpdateAlbum);
+
+  rpc DelAlbum (rbp.rpc.voice_lover.ReqDelAlbum) returns (rbp.rpc.voice_lover.ResDelAlbum);
+
+  rpc GetAlbumList (rbp.rpc.voice_lover.ReqGetAlbumList) returns (rbp.rpc.voice_lover.ResGetAlbumList);
+
+  rpc GetAlbumDetail (rbp.rpc.voice_lover.ReqGetAlbumDetail) returns (rbp.rpc.voice_lover.ResGetAlbumDetail);
 }

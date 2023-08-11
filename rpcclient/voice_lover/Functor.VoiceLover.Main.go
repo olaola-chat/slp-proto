@@ -31,9 +31,9 @@ func (s *voiceLoverMain) GetRecAlbums(ctx context.Context, req *voice_lover.ReqG
 	return reply, err
 }
 
-func (s *voiceLoverMain) GetAlbumList(ctx context.Context, req *voice_lover.ReqGetAlbumList) (*voice_lover.ResGetAlbumList, error) {
-	reply := &voice_lover.ResGetAlbumList{}
-	err := s.Call(ctx, "GetAlbumList", req, reply)
+func (s *voiceLoverMain) GetAlbumsByPage(ctx context.Context, req *voice_lover.ReqGetAlbumsByPage) (*voice_lover.ResGetAlbumsByPage, error) {
+	reply := &voice_lover.ResGetAlbumsByPage{}
+	err := s.Call(ctx, "GetAlbumsByPage", req, reply)
 	return reply, err
 }
 
