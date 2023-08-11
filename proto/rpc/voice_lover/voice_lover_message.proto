@@ -78,7 +78,7 @@ message ReqGetAudioListByAlbumId {
   uint64 album_id = 1;
 }
 message ResGetAudioListByAlbumId {
-  repeated AudioData audios = 1;
+  repeated AudioSimpleData audios = 1;
 }
 
 message ReqBatchGetAlbumAudioCount {
