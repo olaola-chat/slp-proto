@@ -40,7 +40,7 @@ message AudioData {
   repeated AudioEditData edit_contents = 13;
   repeated AudioEditData edit_posts = 14;
   repeated AudioEditData edit_covers = 15;
-  int32 seconds = 16;
+  uint32 seconds = 16;
 }
 
 message AudioEditData {
