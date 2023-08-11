@@ -24,6 +24,7 @@ message ResUpdateSubject {}
 
 message ReqDelSubject {
   uint64 id = 1;
+  uint64 op_uid = 2;
 }
 
 message ResDelSubject {}
