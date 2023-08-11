@@ -23,7 +23,7 @@ message EntityVoiceLoverAudio {
            //@inject_tag: orm:"from"          
     uint32 from                              = 6;  // 作品来源：0-无 1-原创 2-搬运                
            //@inject_tag: orm:"seconds"       
-    int32  seconds                           = 7;  //                                             
+    uint32 seconds                           = 7;  // 作品时长 单位秒                             
            //@inject_tag: orm:"labels"        
     string labels                            = 8;  // 作品labels                                  
            //@inject_tag: orm:"audit_status"  
