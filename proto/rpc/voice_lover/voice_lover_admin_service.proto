@@ -42,4 +42,10 @@ service VoiceLoverAdmin {
 
   rpc GetSubjectDetail (rbp.rpc.voice_lover.ReqGetSubjectDetail) returns (rbp.rpc.voice_lover.ResGetSubjectDetail);
 
+  rpc GetSubjectList (rbp.rpc.voice_lover.ReqGetSubjectList) returns (rbp.rpc.voice_lover.ReqGetSubjectList);
+
+  rpc GetAlbumCollect (rbp.rpc.voice_lover.ReqGetAlbumCollect) returns (rbp.rpc.voice_lover.ResGetAlbumCollect);
+
+  rpc AlbumCollect (rbp.rpc.voice_lover.ReqAlbumCollect) returns (rbp.rpc.voice_lover.ResAlbumCollect);
+
 }

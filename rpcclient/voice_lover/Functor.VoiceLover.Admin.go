@@ -96,3 +96,21 @@ func (s *voiceLoverAdmin) GetSubjectDetail(ctx context.Context, req *voice_lover
 	err := s.Call(ctx, "GetSubjectDetail", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) GetSubjectList(ctx context.Context, req *voice_lover.ReqGetSubjectList) (*voice_lover.ReqGetSubjectList, error) {
+	reply := &voice_lover.ReqGetSubjectList{}
+	err := s.Call(ctx, "GetSubjectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetAlbumCollect(ctx context.Context, req *voice_lover.ReqGetAlbumCollect) (*voice_lover.ResGetAlbumCollect, error) {
+	reply := &voice_lover.ResGetAlbumCollect{}
+	err := s.Call(ctx, "GetAlbumCollect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AlbumCollect(ctx context.Context, req *voice_lover.ReqAlbumCollect) (*voice_lover.ResAlbumCollect, error) {
+	reply := &voice_lover.ResAlbumCollect{}
+	err := s.Call(ctx, "AlbumCollect", req, reply)
+	return reply, err
+}
