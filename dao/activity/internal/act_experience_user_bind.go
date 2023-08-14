@@ -40,6 +40,7 @@ type actExperienceUserBindColumns struct {
 	Code             string // 体验码
 	Status           string // 绑定状态0-未绑定 1-正常绑定 2-已解绑
 	UserRegisterTime string // 用户注册时间
+	BindTime         string // 绑定时间
 	AddTime          string //
 	UpdateTime       string //
 }
@@ -58,6 +59,7 @@ var (
 			Code:             "code",
 			Status:           "status",
 			UserRegisterTime: "user_register_time",
+			BindTime:         "bind_time",
 			AddTime:          "add_time",
 			UpdateTime:       "update_time",
 		},

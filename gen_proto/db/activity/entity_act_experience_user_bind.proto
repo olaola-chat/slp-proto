@@ -11,21 +11,23 @@ option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/activity";
 
 message EntityActExperienceUserBind {
            //@inject_tag: orm:"id,primary"          
-    uint32 id                                      = 1; //                                       
+    uint32 id                                      = 1;  //                                       
            //@inject_tag: orm:"uid"                 
-    uint32 uid                                     = 2; // 用户id                                
+    uint32 uid                                     = 2;  // 用户id                                
            //@inject_tag: orm:"bind_uid"            
-    uint32 bind_uid                                = 3; // 绑定的主播uid                         
+    uint32 bind_uid                                = 3;  // 绑定的主播uid                         
            //@inject_tag: orm:"bind_bid"            
-    uint32 bind_bid                                = 4; // 绑定的主播所属公会                    
+    uint32 bind_bid                                = 4;  // 绑定的主播所属公会                    
            //@inject_tag: orm:"code,unique"         
-    string code                                    = 5; // 体验码                                
+    string code                                    = 5;  // 体验码                                
            //@inject_tag: orm:"status"              
-    uint32 status                                  = 6; // 绑定状态0-未绑定 1-正常绑定 2-已解绑  
+    uint32 status                                  = 6;  // 绑定状态0-未绑定 1-正常绑定 2-已解绑  
            //@inject_tag: orm:"user_register_time"  
-    uint32 user_register_time                      = 7; // 用户注册时间                          
+    uint32 user_register_time                      = 7;  // 用户注册时间                          
+           //@inject_tag: orm:"bind_time"           
+    uint32 bind_time                               = 8;  // 绑定时间                              
            //@inject_tag: orm:"add_time"            
-    uint32 add_time                                = 8; //                                       
+    uint32 add_time                                = 9;  //                                       
            //@inject_tag: orm:"update_time"         
-    uint32 update_time                             = 9; //                                       
+    uint32 update_time                             = 10; //                                       
 }
