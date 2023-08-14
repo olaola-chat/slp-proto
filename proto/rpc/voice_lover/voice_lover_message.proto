@@ -181,6 +181,8 @@ message ResAudioCollect {}
 message ReqSubmitComment {
   uint64 audio_id = 1;
   string content = 2;
+  uint32 uid = 3;
+  uint32 type = 4;
 }
 
 message ReqGetCommentList{

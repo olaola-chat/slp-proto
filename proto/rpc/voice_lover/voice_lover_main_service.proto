@@ -49,5 +49,5 @@ service VoiceLoverMain {
   rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
 
   // 提交音频评论
-  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommentList);
+  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqGetAudioEdit) returns (rbp.rpc.voice_lover.ResCommentList);
 }
