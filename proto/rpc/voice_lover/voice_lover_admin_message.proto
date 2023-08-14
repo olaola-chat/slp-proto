@@ -40,6 +40,8 @@ message ReqGetSubjectList {
   uint64 start_time = 1;
   uint64 end_time = 2;
   string name = 3;
+  int32 page = 4;
+  int32 limit = 5;
 }
 
 message ResGetSubjectList {
