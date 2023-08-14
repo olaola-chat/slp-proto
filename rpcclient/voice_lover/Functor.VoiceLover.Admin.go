@@ -97,8 +97,8 @@ func (s *voiceLoverAdmin) GetSubjectDetail(ctx context.Context, req *voice_lover
 	return reply, err
 }
 
-func (s *voiceLoverAdmin) GetSubjectList(ctx context.Context, req *voice_lover.ReqGetSubjectList) (*voice_lover.ReqGetSubjectList, error) {
-	reply := &voice_lover.ReqGetSubjectList{}
+func (s *voiceLoverAdmin) GetSubjectList(ctx context.Context, req *voice_lover.ReqGetSubjectList) (*voice_lover.ResGetSubjectList, error) {
+	reply := &voice_lover.ResGetSubjectList{}
 	err := s.Call(ctx, "GetSubjectList", req, reply)
 	return reply, err
 }
