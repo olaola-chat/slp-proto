@@ -78,3 +78,15 @@ func (s *voiceLoverMain) IsUserCollectAlbum(ctx context.Context, req *voice_love
 	err := s.Call(ctx, "IsUserCollectAlbum", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) SubmitAudioComment(ctx context.Context, req *voice_lover.ReqSubmitComment) (*voice_lover.ResCommonPost, error) {
+	reply := &voice_lover.ResCommonPost{}
+	err := s.Call(ctx, "SubmitAudioComment", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAudioCommentList(ctx context.Context, req *voice_lover.ReqSubmitComment) (*voice_lover.ResCommentList, error) {
+	reply := &voice_lover.ResCommentList{}
+	err := s.Call(ctx, "GetAudioCommentList", req, reply)
+	return reply, err
+}
