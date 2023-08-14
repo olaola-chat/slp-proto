@@ -70,6 +70,7 @@ message AlbumCollectData {
 message ReqAlbumCollect {
   uint64 album_id = 1;
   uint64 subject_id = 2;
+  int32 collect_type = 3;
 }
 
 message ResAlbumCollect {
