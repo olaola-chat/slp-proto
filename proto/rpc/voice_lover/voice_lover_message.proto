@@ -1,0 +1,198 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
+
+import "rpc/voice_lover/voice_lover_common.proto";
+
+message ResBase {
+
+}
+
+message ReqPost {
+  uint32 uid = 1;
+  string resource = 2;
+  int32 source = 3;
+  string cover = 4;
+  string title = 5;
+  string desc = 6;
+  string edit_dub = 7;
+  string edit_content = 8;
+  string edit_post = 9;
+  string edit_cover = 10;
+  string labels = 11;
+  uint32 seconds = 12;
+}
+
+message ReqGetAlbumInfoById {
+  uint64 id = 1;
+}
+message ResGetAlbumInfoById {
+  AlbumData album = 1;
+}
+
+message ReqGetRecAlbums {
+  uint32 uid = 1;
+}
+message ResGetRecAlbums {
+  repeated AlbumData albums = 1;
+}
+
+message ReqGetAlbumsByPage {
+  uint32 choice = 1;    // 0-默认 1-精选
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+message ReqGetSubjectAlbumsByPage {
+  uint64 subject_id = 1;
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+message ResGetAlbumsByPage {
+  repeated AlbumData albums = 1;
+  bool has_more = 2;
+}
+
+message ReqGetRecSubjects {
+  uint32 uid = 1;
+}
+message ResGetRecSubjects {
+  repeated SubjectData subjects = 1;
+}
+
+message ReqGetAudioEdit {
+  uint64 id = 1;
+}
+message ResGetAudioEdit {
+  repeated AudioEditData edits = 1;
+}
+
+message ReqGetAudioDetail {
+  uint64 id = 1;
+}
+message ResGetAudioDetail {
+  AudioData audio = 1;
+}
+
+message ReqGetAudioListByAlbumId {
+  uint64 album_id = 1;
+}
+message ResGetAudioListByAlbumId {
+  repeated AudioSimpleData audios = 1;
+}
+
+message ReqBatchGetAlbumAudioCount {
+  repeated uint64 album_ids = 1;
+}
+message ResBatchGetAlbumAudioCount {
+  map<uint64, uint32> album_counts = 1;
+}
+
+message ReqGetAlbumCommentCount {
+  uint64 album_id = 1;
+}
+message ResGetAlbumCommentCount {
+  uint32 total = 1;
+}
+
+message ReqIsUserCollectAlbum {
+  uint32 uid = 1;
+  uint64 album_id = 2;
+}
+message ResIsUserCollectAlbum {
+  bool is_collect = 1;
+}
+
+message ReqUpdateAudio {
+  uint64 id = 1;
+  string title = 2;
+  string desc = 3;
+  string labels = 4;
+  uint64 op_uid = 5;
+}
+
+message ReqAuditAudio {
+  uint64 id = 1;
+  int32 audit_status = 2; // 1:通过 2:不通过
+  int32 audit_reason = 3; // 不通过原因
+  uint64 op_uid = 4;
+}
+
+message ResAuditAudio {}
+
+message ReqCreateAlbum {
+  string name = 1;
+  string intro = 2;
+  string cover = 3;
+  uint64 op_uid = 4;
+}
+
+message ResCreateAlbum {
+  uint64 id = 1;
+}
+
+message ReqUpdateAlbum {
+  uint64 id = 1;
+  string name = 2;
+  string intro = 3;
+  string cover = 4;
+  uint64 op_uid = 5;
+}
+
+message ResUpdateAlbum {}
+
+message ReqDelAlbum {
+  uint64 id = 1;
+  uint64 op_uid = 2;
+}
+
+message ResDelAlbum {}
+
+message ReqGetAlbumList {
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string name = 3;
+  int32 page = 4;
+  int32 limit = 5;
+}
+
+message ResGetAlbumList {
+  repeated AlbumData albums = 1;
+  int32 total = 2;
+}
+
+message ReqGetAlbumDetail {
+  repeated string album_str = 1;
+}
+
+message ResGetAlbumDetail {
+  map<uint64, AlbumData> albums = 1;
+}
+
+message ReqAudioCollect {
+  uint64 audio_id = 1;
+  uint64 album_id = 2;
+  int32 type = 3; //0:收录 1:移除
+}
+
+message ResAudioCollect {}
+
+
+message ReqSubmitComment {
+  uint64 audio_id = 1;
+  string content = 2;
+}
+
+message ReqGetCommentList{
+  uint64 audio_id = 1;
+}
+
+message ResCommonPost{
+  bool success = 1;
+  uint32 code = 2;
+  string msg = 3;
+}
+
+message ResCommentList{
+  repeated Comment list = 1;
+}

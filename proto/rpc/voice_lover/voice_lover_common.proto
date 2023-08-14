@@ -1,0 +1,76 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
+
+message AlbumData {
+  uint64 id = 1;            // 专辑id
+  string name = 2;          // 专辑名称
+  string intro = 3;         // 专辑介绍
+  string cover = 4;         // 专辑封面
+  uint64 create_time = 5;   // 创建时间
+
+  uint32 audio_count = 6;   // 音频数量
+  uint64 play_count = 7;    // 播放数量
+
+  uint64 op_uid = 8;
+}
+
+message SubjectData {
+  uint64 id = 1;                  // 专题id
+  string name = 2;                // 专题名称
+  uint64 create_time = 3;         // 创建时间
+
+  repeated AlbumData albums = 4;  // 专题下专辑数据
+}
+
+message AudioSimpleData {
+  uint64 id = 1;
+  string title = 2;
+  string resource = 3;
+  repeated string covers = 4;
+  uint32 seconds = 5;
+
+  uint64 play_count = 6;
+}
+
+message AudioData {
+  uint64 id = 1;
+  uint32 uid = 2;
+  string resource = 3;
+  repeated string covers = 4;
+  string title = 5;
+  string desc = 6;
+  int32 source = 7;
+  repeated string labels = 8;
+  int32 audit_status = 9;
+  uint64 create_time = 10;
+  uint64 op_uid = 11;
+  repeated AudioEditData edit_dubs = 12;
+  repeated AudioEditData edit_contents = 13;
+  repeated AudioEditData edit_posts = 14;
+  repeated AudioEditData edit_covers = 15;
+  uint32 seconds = 16;
+}
+
+message AudioEditData {
+  uint32 uid = 1;
+  int32 type = 4;
+}
+
+message AudioAuditReason {
+  uint64 id = 1;
+  string reason = 2;
+}
+
+message Comment{
+  uint64 id = 1;
+  string content = 2;
+  uint32 create_time = 3;
+  string ip_address = 4;
+  CommentUser user_info = 5;
+}
+message CommentUser{
+  string name = 1;
+  string avtar = 2;
+}

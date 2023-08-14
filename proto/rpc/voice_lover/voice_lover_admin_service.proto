@@ -1,0 +1,45 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+import "rbp/plugin/option.proto";
+
+import "rpc/voice_lover/voice_lover_message.proto";
+import "rpc/voice_lover/voice_lover_admin_message.proto";
+
+/*
+user_profile rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/voice_lover";
+
+
+service VoiceLoverAdmin {
+  option (rbp.plugin.rbp_service).name = "Functor.VoiceLover.Admin";
+
+  rpc GetAudioDetail (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
+  //是否需要实名认证
+  rpc UpdateAudio (rbp.rpc.voice_lover.ReqUpdateAudio) returns (rbp.rpc.voice_lover.ResBase);
+
+  rpc AuditAudio (rbp.rpc.voice_lover.ReqAuditAudio) returns (rbp.rpc.voice_lover.ResAuditAudio);
+
+  rpc CreateAlbum (rbp.rpc.voice_lover.ReqCreateAlbum) returns (rbp.rpc.voice_lover.ResCreateAlbum);
+
+  rpc UpdateAlbum (rbp.rpc.voice_lover.ReqUpdateAlbum) returns (rbp.rpc.voice_lover.ResUpdateAlbum);
+
+  rpc DelAlbum (rbp.rpc.voice_lover.ReqDelAlbum) returns (rbp.rpc.voice_lover.ResDelAlbum);
+
+  rpc GetAlbumList (rbp.rpc.voice_lover.ReqGetAlbumList) returns (rbp.rpc.voice_lover.ResGetAlbumList);
+
+  rpc GetAlbumDetail (rbp.rpc.voice_lover.ReqGetAlbumDetail) returns (rbp.rpc.voice_lover.ResGetAlbumDetail);
+
+  rpc AudioCollect (rbp.rpc.voice_lover.ReqAudioCollect) returns (rbp.rpc.voice_lover.ResAudioCollect);
+
+  rpc CreateSubject (rbp.rpc.voice_lover.ReqCreateSubject) returns (rbp.rpc.voice_lover.ResCreateSubject);
+
+  rpc DelSubject (rbp.rpc.voice_lover.ReqDelSubject) returns (rbp.rpc.voice_lover.ResDelSubject);
+
+  rpc UpdateSubject (rbp.rpc.voice_lover.ReqUpdateSubject) returns (rbp.rpc.voice_lover.ResUpdateSubject);
+
+  rpc GetSubjectDetail (rbp.rpc.voice_lover.ReqGetSubjectDetail) returns (rbp.rpc.voice_lover.ResGetSubjectDetail);
+
+}

@@ -36,3 +36,15 @@ func (s *userProfile) Test(ctx context.Context, req *user.ReqUserProfiles) (*use
 	err := s.Call(ctx, "Test", req, reply)
 	return reply, err
 }
+
+func (s *userProfile) Auth(ctx context.Context, req *user.ReqUserAuth) (*user.RepUserAuth, error) {
+	reply := &user.RepUserAuth{}
+	err := s.Call(ctx, "Auth", req, reply)
+	return reply, err
+}
+
+func (s *userProfile) SearchByName(ctx context.Context, req *user.ReqUserSearchName) (*user.RepUserSearchDefault, error) {
+	reply := &user.RepUserSearchDefault{}
+	err := s.Call(ctx, "SearchByName", req, reply)
+	return reply, err
+}

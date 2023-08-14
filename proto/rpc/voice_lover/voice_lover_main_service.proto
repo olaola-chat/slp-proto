@@ -1,0 +1,53 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+import "rbp/plugin/option.proto";
+
+import "rpc/voice_lover/voice_lover_message.proto";
+
+/*
+user_profile rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/voice_lover";
+
+
+service VoiceLoverMain {
+  option (rbp.plugin.rbp_service).name = "Functor.VoiceLover.Main";
+
+  //是否需要实名认证
+  rpc Post (rbp.rpc.voice_lover.ReqPost) returns (rbp.rpc.voice_lover.ResBase);
+
+  // 获取专辑详情
+  rpc GetAlbumInfoById (rbp.rpc.voice_lover.ReqGetAlbumInfoById) returns (rbp.rpc.voice_lover.ResGetAlbumInfoById);
+
+  // 获取推荐专辑数据
+  rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
+
+  // 分页获取专辑列表
+  rpc GetAlbumsByPage (rbp.rpc.voice_lover.ReqGetAlbumsByPage) returns (rbp.rpc.voice_lover.ResGetAlbumsByPage);
+
+  // 分页获取专题下专辑列表
+  rpc GetSubjectAlbumsByPage (rbp.rpc.voice_lover.ReqGetSubjectAlbumsByPage) returns (rbp.rpc.voice_lover.ResGetAlbumsByPage);
+
+  // 获取专题列表
+  rpc GetRecSubjects (rbp.rpc.voice_lover.ReqGetRecSubjects) returns (rbp.rpc.voice_lover.ResGetRecSubjects);
+
+  // 获取专辑下音频列表
+  rpc GetAudioListByAlbumId (rbp.rpc.voice_lover.ReqGetAudioListByAlbumId) returns (rbp.rpc.voice_lover.ResGetAudioListByAlbumId);
+
+  // 批量获取专辑的音频数量
+  rpc BatchGetAlbumAudioCount (rbp.rpc.voice_lover.ReqBatchGetAlbumAudioCount) returns (rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount);
+
+  // 获取专辑的评论数量
+  rpc GetAlbumCommentCount (rbp.rpc.voice_lover.ReqGetAlbumCommentCount) returns (rbp.rpc.voice_lover.ResGetAlbumCommentCount);
+
+  // 判断用户是否收藏了专辑
+  rpc IsUserCollectAlbum (rbp.rpc.voice_lover.ReqIsUserCollectAlbum) returns (rbp.rpc.voice_lover.ResIsUserCollectAlbum);
+
+  // 提交音频评论
+  rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+
+  // 提交音频评论
+  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+}
