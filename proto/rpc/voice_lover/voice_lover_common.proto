@@ -62,3 +62,15 @@ message AudioAuditReason {
   uint64 id = 1;
   string reason = 2;
 }
+
+message Comment{
+  uint64 id = 1;
+  string content = 2;
+  uint32 create_time = 3;
+  string ip_address = 4;
+  CommentUser user_info = 5;
+}
+message CommentUser{
+  string name = 1;
+  string avtar = 2;
+}

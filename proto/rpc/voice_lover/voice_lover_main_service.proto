@@ -44,4 +44,10 @@ service VoiceLoverMain {
 
   // 判断用户是否收藏了专辑
   rpc IsUserCollectAlbum (rbp.rpc.voice_lover.ReqIsUserCollectAlbum) returns (rbp.rpc.voice_lover.ResIsUserCollectAlbum);
+
+  // 提交音频评论
+  rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+
+  // 提交音频评论
+  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
 }

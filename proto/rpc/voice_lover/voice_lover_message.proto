@@ -176,3 +176,23 @@ message ReqAudioCollect {
 }
 
 message ResAudioCollect {}
+
+
+message ReqSubmitComment {
+  uint64 audio_id = 1;
+  string content = 2;
+}
+
+message ReqGetCommentList{
+  uint64 audio_id = 1;
+}
+
+message ResCommonPost{
+  bool success = 1;
+  uint32 code = 2;
+  string msg = 3;
+}
+
+message ResCommentList{
+  repeated Comment list = 1;
+}
