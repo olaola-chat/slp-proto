@@ -39,6 +39,7 @@ type actExperienceConsumeStaticsColumns struct {
 	ConsumeMoney     string // 消费总金额
 	CompleteStatus   string // 完成状态：1-进行中 2-已完成 3-已失效
 	UserRegisterTime string // 用户注册时间
+	BindTime         string //
 	AddTime          string //
 	UpdateTime       string //
 }
@@ -56,6 +57,7 @@ var (
 			ConsumeMoney:     "consume_money",
 			CompleteStatus:   "complete_status",
 			UserRegisterTime: "user_register_time",
+			BindTime:         "bind_time",
 			AddTime:          "add_time",
 			UpdateTime:       "update_time",
 		},
