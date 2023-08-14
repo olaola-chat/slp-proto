@@ -48,4 +48,8 @@ service VoiceLoverAdmin {
 
   rpc AlbumCollect (rbp.rpc.voice_lover.ReqAlbumCollect) returns (rbp.rpc.voice_lover.ResAlbumCollect);
 
+  rpc AlbumChoice (rbp.rpc.voice_lover.ReqAlbumChoice) returns (rbp.rpc.voice_lover.ResAlbumChoice);
+
+  rpc GetAlbumChoice (rbp.rpc.voice_lover.ReqGetAlbumChoice) returns (rbp.rpc.voice_lover.ResGetAlbumChoice);
+
 }

@@ -114,3 +114,15 @@ func (s *voiceLoverAdmin) AlbumCollect(ctx context.Context, req *voice_lover.Req
 	err := s.Call(ctx, "AlbumCollect", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) AlbumChoice(ctx context.Context, req *voice_lover.ReqAlbumChoice) (*voice_lover.ResAlbumChoice, error) {
+	reply := &voice_lover.ResAlbumChoice{}
+	err := s.Call(ctx, "AlbumChoice", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetAlbumChoice(ctx context.Context, req *voice_lover.ReqGetAlbumChoice) (*voice_lover.ResGetAlbumChoice, error) {
+	reply := &voice_lover.ResGetAlbumChoice{}
+	err := s.Call(ctx, "GetAlbumChoice", req, reply)
+	return reply, err
+}

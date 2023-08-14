@@ -78,3 +78,18 @@ message ReqAlbumCollect {
 message ResAlbumCollect {
 
 }
+
+message ReqAlbumChoice {
+  uint64 id = 1;
+  int32 type = 2; //0:精选 1:非精选
+}
+
+message ResAlbumChoice {}
+
+message ReqGetAlbumChoice {
+
+}
+
+message ResGetAlbumChoice {
+  repeated AlbumData albums = 1;
+}
