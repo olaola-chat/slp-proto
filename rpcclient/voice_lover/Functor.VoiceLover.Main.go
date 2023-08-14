@@ -85,7 +85,7 @@ func (s *voiceLoverMain) SubmitAudioComment(ctx context.Context, req *voice_love
 	return reply, err
 }
 
-func (s *voiceLoverMain) GetAudioCommentList(ctx context.Context, req *voice_lover.ReqSubmitComment) (*voice_lover.ResCommentList, error) {
+func (s *voiceLoverMain) GetAudioCommentList(ctx context.Context, req *voice_lover.ReqGetAudioEdit) (*voice_lover.ResCommentList, error) {
 	reply := &voice_lover.ResCommentList{}
 	err := s.Call(ctx, "GetAudioCommentList", req, reply)
 	return reply, err
