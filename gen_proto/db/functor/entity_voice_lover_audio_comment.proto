@@ -15,7 +15,7 @@ message EntityVoiceLoverAudioComment {
            //@inject_tag: orm:"audio_id,primary"  
     uint64 audio_id                              = 2; // 音频id                           
            //@inject_tag: orm:"uid"               
-    uint64 uid                                   = 3; // 用户uid                          
+    uint32 uid                                   = 3; // 用户uid                          
            //@inject_tag: orm:"content"           
     string content                               = 4; // 评论内容                         
            //@inject_tag: orm:"type"              
