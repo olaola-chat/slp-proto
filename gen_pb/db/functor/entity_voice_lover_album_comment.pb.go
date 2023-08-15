@@ -32,16 +32,16 @@ type EntityVoiceLoverAlbumComment struct {
 
 	//@inject_tag: orm:"id,primary"
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` // 自增ID
-	//@inject_tag: orm:"album_id,primary"
-	AlbumId uint64 `protobuf:"varint,2,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty" orm:"album_id,primary"` // 专辑id
+	//@inject_tag: orm:"album_id"
+	AlbumId uint64 `protobuf:"varint,2,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty" orm:"album_id"` // 专辑id
 	//@inject_tag: orm:"uid"
 	Uid uint64 `protobuf:"varint,3,opt,name=uid,proto3" json:"uid,omitempty" orm:"uid"` // 用户uid
 	//@inject_tag: orm:"content"
 	Content string `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty" orm:"content"` // 评论内容
 	//@inject_tag: orm:"status"
 	Status uint32 `protobuf:"varint,5,opt,name=status,proto3" json:"status,omitempty" orm:"status"` // 审核状态：0-默认状态 1-举报封禁
-	//@inject_tag: orm:"create_time"
-	CreateTime uint64 `protobuf:"varint,6,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time"` // 创建时间
+	//@inject_tag: orm:"create_time,primary"
+	CreateTime uint64 `protobuf:"varint,6,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time,primary"` // 创建时间
 	//@inject_tag: orm:"update_time"
 	UpdateTime uint64 `protobuf:"varint,7,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty" orm:"update_time"` // 更新时间
 }
