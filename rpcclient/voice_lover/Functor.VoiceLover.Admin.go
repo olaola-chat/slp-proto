@@ -96,3 +96,33 @@ func (s *voiceLoverAdmin) GetSubjectDetail(ctx context.Context, req *voice_lover
 	err := s.Call(ctx, "GetSubjectDetail", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) GetSubjectList(ctx context.Context, req *voice_lover.ReqGetSubjectList) (*voice_lover.ResGetSubjectList, error) {
+	reply := &voice_lover.ResGetSubjectList{}
+	err := s.Call(ctx, "GetSubjectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetAlbumCollect(ctx context.Context, req *voice_lover.ReqGetAlbumCollect) (*voice_lover.ResGetAlbumCollect, error) {
+	reply := &voice_lover.ResGetAlbumCollect{}
+	err := s.Call(ctx, "GetAlbumCollect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AlbumCollect(ctx context.Context, req *voice_lover.ReqAlbumCollect) (*voice_lover.ResAlbumCollect, error) {
+	reply := &voice_lover.ResAlbumCollect{}
+	err := s.Call(ctx, "AlbumCollect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AlbumChoice(ctx context.Context, req *voice_lover.ReqAlbumChoice) (*voice_lover.ResAlbumChoice, error) {
+	reply := &voice_lover.ResAlbumChoice{}
+	err := s.Call(ctx, "AlbumChoice", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetAlbumChoice(ctx context.Context, req *voice_lover.ReqGetAlbumChoice) (*voice_lover.ResGetAlbumChoice, error) {
+	reply := &voice_lover.ResGetAlbumChoice{}
+	err := s.Call(ctx, "GetAlbumChoice", req, reply)
+	return reply, err
+}

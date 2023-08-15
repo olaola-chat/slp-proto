@@ -2073,19 +2073,18 @@ func (*ResAudioCollect) Descriptor() ([]byte, []int) {
 	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{37}
 }
 
-type ReqSubmitComment struct {
+type ReqAudioSubmitComment struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	AudioId uint64 `protobuf:"varint,1,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty"`
 	Content string `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
-	Uid     uint32 `protobuf:"varint,3,opt,name=uid,proto3" json:"uid,omitempty"`
-	Type    uint32 `protobuf:"varint,4,opt,name=type,proto3" json:"type,omitempty"`
+	Type    uint32 `protobuf:"varint,3,opt,name=type,proto3" json:"type,omitempty"`
 }
 
-func (x *ReqSubmitComment) Reset() {
-	*x = ReqSubmitComment{}
+func (x *ReqAudioSubmitComment) Reset() {
+	*x = ReqAudioSubmitComment{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2093,13 +2092,13 @@ func (x *ReqSubmitComment) Reset() {
 	}
 }
 
-func (x *ReqSubmitComment) String() string {
+func (x *ReqAudioSubmitComment) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ReqSubmitComment) ProtoMessage() {}
+func (*ReqAudioSubmitComment) ProtoMessage() {}
 
-func (x *ReqSubmitComment) ProtoReflect() protoreflect.Message {
+func (x *ReqAudioSubmitComment) ProtoReflect() protoreflect.Message {
 	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2111,40 +2110,33 @@ func (x *ReqSubmitComment) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ReqSubmitComment.ProtoReflect.Descriptor instead.
-func (*ReqSubmitComment) Descriptor() ([]byte, []int) {
+// Deprecated: Use ReqAudioSubmitComment.ProtoReflect.Descriptor instead.
+func (*ReqAudioSubmitComment) Descriptor() ([]byte, []int) {
 	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{38}
 }
 
-func (x *ReqSubmitComment) GetAudioId() uint64 {
+func (x *ReqAudioSubmitComment) GetAudioId() uint64 {
 	if x != nil {
 		return x.AudioId
 	}
 	return 0
 }
 
-func (x *ReqSubmitComment) GetContent() string {
+func (x *ReqAudioSubmitComment) GetContent() string {
 	if x != nil {
 		return x.Content
 	}
 	return ""
 }
 
-func (x *ReqSubmitComment) GetUid() uint32 {
-	if x != nil {
-		return x.Uid
-	}
-	return 0
-}
-
-func (x *ReqSubmitComment) GetType() uint32 {
+func (x *ReqAudioSubmitComment) GetType() uint32 {
 	if x != nil {
 		return x.Type
 	}
 	return 0
 }
 
-type ReqGetCommentList struct {
+type ReqGetAudioCommentList struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2152,8 +2144,8 @@ type ReqGetCommentList struct {
 	AudioId uint64 `protobuf:"varint,1,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty"`
 }
 
-func (x *ReqGetCommentList) Reset() {
-	*x = ReqGetCommentList{}
+func (x *ReqGetAudioCommentList) Reset() {
+	*x = ReqGetAudioCommentList{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2161,13 +2153,13 @@ func (x *ReqGetCommentList) Reset() {
 	}
 }
 
-func (x *ReqGetCommentList) String() string {
+func (x *ReqGetAudioCommentList) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ReqGetCommentList) ProtoMessage() {}
+func (*ReqGetAudioCommentList) ProtoMessage() {}
 
-func (x *ReqGetCommentList) ProtoReflect() protoreflect.Message {
+func (x *ReqGetAudioCommentList) ProtoReflect() protoreflect.Message {
 	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2179,14 +2171,61 @@ func (x *ReqGetCommentList) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ReqGetCommentList.ProtoReflect.Descriptor instead.
-func (*ReqGetCommentList) Descriptor() ([]byte, []int) {
+// Deprecated: Use ReqGetAudioCommentList.ProtoReflect.Descriptor instead.
+func (*ReqGetAudioCommentList) Descriptor() ([]byte, []int) {
 	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{39}
 }
 
-func (x *ReqGetCommentList) GetAudioId() uint64 {
+func (x *ReqGetAudioCommentList) GetAudioId() uint64 {
 	if x != nil {
 		return x.AudioId
+	}
+	return 0
+}
+
+type ReqGetAlbumCommentList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AlbumId uint64 `protobuf:"varint,1,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty"`
+}
+
+func (x *ReqGetAlbumCommentList) Reset() {
+	*x = ReqGetAlbumCommentList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqGetAlbumCommentList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqGetAlbumCommentList) ProtoMessage() {}
+
+func (x *ReqGetAlbumCommentList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqGetAlbumCommentList.ProtoReflect.Descriptor instead.
+func (*ReqGetAlbumCommentList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *ReqGetAlbumCommentList) GetAlbumId() uint64 {
+	if x != nil {
+		return x.AlbumId
 	}
 	return 0
 }
@@ -2204,7 +2243,7 @@ type ResCommonPost struct {
 func (x *ResCommonPost) Reset() {
 	*x = ResCommonPost{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2217,7 +2256,7 @@ func (x *ResCommonPost) String() string {
 func (*ResCommonPost) ProtoMessage() {}
 
 func (x *ResCommonPost) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2230,7 +2269,7 @@ func (x *ResCommonPost) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResCommonPost.ProtoReflect.Descriptor instead.
 func (*ResCommonPost) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{40}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *ResCommonPost) GetSuccess() bool {
@@ -2265,7 +2304,7 @@ type ResCommentList struct {
 func (x *ResCommentList) Reset() {
 	*x = ResCommentList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2278,7 +2317,7 @@ func (x *ResCommentList) String() string {
 func (*ResCommentList) ProtoMessage() {}
 
 func (x *ResCommentList) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2291,7 +2330,7 @@ func (x *ResCommentList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResCommentList.ProtoReflect.Descriptor instead.
 func (*ResCommentList) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{41}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *ResCommentList) GetList() []*Comment {
@@ -2299,6 +2338,61 @@ func (x *ResCommentList) GetList() []*Comment {
 		return x.List
 	}
 	return nil
+}
+
+type ReqAlbumSubmitComment struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AlbumId uint64 `protobuf:"varint,1,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty"`
+	Content string `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+}
+
+func (x *ReqAlbumSubmitComment) Reset() {
+	*x = ReqAlbumSubmitComment{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAlbumSubmitComment) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAlbumSubmitComment) ProtoMessage() {}
+
+func (x *ReqAlbumSubmitComment) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAlbumSubmitComment.ProtoReflect.Descriptor instead.
+func (*ReqAlbumSubmitComment) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *ReqAlbumSubmitComment) GetAlbumId() uint64 {
+	if x != nil {
+		return x.AlbumId
+	}
+	return 0
+}
+
+func (x *ReqAlbumSubmitComment) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
 }
 
 var File_rpc_voice_lover_voice_lover_message_proto protoreflect.FileDescriptor
@@ -2499,31 +2593,38 @@ var file_rpc_voice_lover_voice_lover_message_proto_rawDesc = []byte{
 	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07,
 	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18,
 	0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x11, 0x0a, 0x0f, 0x52,
-	0x65, 0x73, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x22, 0x6d,
-	0x0a, 0x10, 0x52, 0x65, 0x71, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65,
-	0x6e, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x5f, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x49, 0x64, 0x12, 0x18, 0x0a,
-	0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
-	0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x69, 0x64, 0x18, 0x03,
-	0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x75, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70,
-	0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x2e, 0x0a,
-	0x11, 0x52, 0x65, 0x71, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4c, 0x69,
-	0x73, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x5f, 0x69, 0x64, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x49, 0x64, 0x22, 0x4f, 0x0a,
-	0x0d, 0x52, 0x65, 0x73, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x50, 0x6f, 0x73, 0x74, 0x12, 0x18,
-	0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x10, 0x0a, 0x03,
-	0x6d, 0x73, 0x67, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x42,
-	0x0a, 0x0e, 0x52, 0x65, 0x73, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74,
-	0x12, 0x30, 0x0a, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c,
-	0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c,
-	0x6f, 0x76, 0x65, 0x72, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x04, 0x6c, 0x69,
-	0x73, 0x74, 0x42, 0x39, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70,
-	0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70,
-	0x63, 0x2f, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x73, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x22, 0x60,
+	0x0a, 0x15, 0x52, 0x65, 0x71, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61, 0x75, 0x64, 0x69, 0x6f,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61, 0x75, 0x64, 0x69, 0x6f,
+	0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x12, 0x0a, 0x04,
+	0x74, 0x79, 0x70, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65,
+	0x22, 0x33, 0x0a, 0x16, 0x52, 0x65, 0x71, 0x47, 0x65, 0x74, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x43,
+	0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61, 0x75,
+	0x64, 0x69, 0x6f, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61, 0x75,
+	0x64, 0x69, 0x6f, 0x49, 0x64, 0x22, 0x33, 0x0a, 0x16, 0x52, 0x65, 0x71, 0x47, 0x65, 0x74, 0x41,
+	0x6c, 0x62, 0x75, 0x6d, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12,
+	0x19, 0x0a, 0x08, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x04, 0x52, 0x07, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x49, 0x64, 0x22, 0x4f, 0x0a, 0x0d, 0x52, 0x65,
+	0x73, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x50, 0x6f, 0x73, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x73,
+	0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x73, 0x75,
+	0x63, 0x63, 0x65, 0x73, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0d, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x42, 0x0a, 0x0e, 0x52,
+	0x65, 0x73, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x30, 0x0a,
+	0x04, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x72, 0x62,
+	0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65,
+	0x72, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x22,
+	0x4c, 0x0a, 0x15, 0x52, 0x65, 0x71, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x53, 0x75, 0x62, 0x6d, 0x69,
+	0x74, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61, 0x6c, 0x62, 0x75,
+	0x6d, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61, 0x6c, 0x62, 0x75,
+	0x6d, 0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x42, 0x39, 0x5a,
+	0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x6c, 0x61, 0x6f,
+	0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70, 0x63, 0x2f, 0x76, 0x6f, 0x69,
+	0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2538,7 +2639,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP() []byte {
 	return file_rpc_voice_lover_voice_lover_message_proto_rawDescData
 }
 
-var file_rpc_voice_lover_voice_lover_message_proto_msgTypes = make([]protoimpl.MessageInfo, 44)
+var file_rpc_voice_lover_voice_lover_message_proto_msgTypes = make([]protoimpl.MessageInfo, 46)
 var file_rpc_voice_lover_voice_lover_message_proto_goTypes = []interface{}{
 	(*ResBase)(nil),                    // 0: rbp.rpc.voice_lover.ResBase
 	(*ReqPost)(nil),                    // 1: rbp.rpc.voice_lover.ReqPost
@@ -2578,32 +2679,34 @@ var file_rpc_voice_lover_voice_lover_message_proto_goTypes = []interface{}{
 	(*ResGetAlbumDetail)(nil),          // 35: rbp.rpc.voice_lover.ResGetAlbumDetail
 	(*ReqAudioCollect)(nil),            // 36: rbp.rpc.voice_lover.ReqAudioCollect
 	(*ResAudioCollect)(nil),            // 37: rbp.rpc.voice_lover.ResAudioCollect
-	(*ReqSubmitComment)(nil),           // 38: rbp.rpc.voice_lover.ReqSubmitComment
-	(*ReqGetCommentList)(nil),          // 39: rbp.rpc.voice_lover.ReqGetCommentList
-	(*ResCommonPost)(nil),              // 40: rbp.rpc.voice_lover.ResCommonPost
-	(*ResCommentList)(nil),             // 41: rbp.rpc.voice_lover.ResCommentList
-	nil,                                // 42: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
-	nil,                                // 43: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
-	(*AlbumData)(nil),                  // 44: rbp.rpc.voice_lover.AlbumData
-	(*SubjectData)(nil),                // 45: rbp.rpc.voice_lover.SubjectData
-	(*AudioEditData)(nil),              // 46: rbp.rpc.voice_lover.AudioEditData
-	(*AudioData)(nil),                  // 47: rbp.rpc.voice_lover.AudioData
-	(*AudioSimpleData)(nil),            // 48: rbp.rpc.voice_lover.AudioSimpleData
-	(*Comment)(nil),                    // 49: rbp.rpc.voice_lover.Comment
+	(*ReqAudioSubmitComment)(nil),      // 38: rbp.rpc.voice_lover.ReqAudioSubmitComment
+	(*ReqGetAudioCommentList)(nil),     // 39: rbp.rpc.voice_lover.ReqGetAudioCommentList
+	(*ReqGetAlbumCommentList)(nil),     // 40: rbp.rpc.voice_lover.ReqGetAlbumCommentList
+	(*ResCommonPost)(nil),              // 41: rbp.rpc.voice_lover.ResCommonPost
+	(*ResCommentList)(nil),             // 42: rbp.rpc.voice_lover.ResCommentList
+	(*ReqAlbumSubmitComment)(nil),      // 43: rbp.rpc.voice_lover.ReqAlbumSubmitComment
+	nil,                                // 44: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
+	nil,                                // 45: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
+	(*AlbumData)(nil),                  // 46: rbp.rpc.voice_lover.AlbumData
+	(*SubjectData)(nil),                // 47: rbp.rpc.voice_lover.SubjectData
+	(*AudioEditData)(nil),              // 48: rbp.rpc.voice_lover.AudioEditData
+	(*AudioData)(nil),                  // 49: rbp.rpc.voice_lover.AudioData
+	(*AudioSimpleData)(nil),            // 50: rbp.rpc.voice_lover.AudioSimpleData
+	(*Comment)(nil),                    // 51: rbp.rpc.voice_lover.Comment
 }
 var file_rpc_voice_lover_voice_lover_message_proto_depIdxs = []int32{
-	44, // 0: rbp.rpc.voice_lover.ResGetAlbumInfoById.album:type_name -> rbp.rpc.voice_lover.AlbumData
-	44, // 1: rbp.rpc.voice_lover.ResGetRecAlbums.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	44, // 2: rbp.rpc.voice_lover.ResGetAlbumsByPage.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	45, // 3: rbp.rpc.voice_lover.ResGetRecSubjects.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
-	46, // 4: rbp.rpc.voice_lover.ResGetAudioEdit.edits:type_name -> rbp.rpc.voice_lover.AudioEditData
-	47, // 5: rbp.rpc.voice_lover.ResGetAudioDetail.audio:type_name -> rbp.rpc.voice_lover.AudioData
-	48, // 6: rbp.rpc.voice_lover.ResGetAudioListByAlbumId.audios:type_name -> rbp.rpc.voice_lover.AudioSimpleData
-	42, // 7: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.album_counts:type_name -> rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
-	44, // 8: rbp.rpc.voice_lover.ResGetAlbumList.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	43, // 9: rbp.rpc.voice_lover.ResGetAlbumDetail.albums:type_name -> rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
-	49, // 10: rbp.rpc.voice_lover.ResCommentList.list:type_name -> rbp.rpc.voice_lover.Comment
-	44, // 11: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry.value:type_name -> rbp.rpc.voice_lover.AlbumData
+	46, // 0: rbp.rpc.voice_lover.ResGetAlbumInfoById.album:type_name -> rbp.rpc.voice_lover.AlbumData
+	46, // 1: rbp.rpc.voice_lover.ResGetRecAlbums.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	46, // 2: rbp.rpc.voice_lover.ResGetAlbumsByPage.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	47, // 3: rbp.rpc.voice_lover.ResGetRecSubjects.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
+	48, // 4: rbp.rpc.voice_lover.ResGetAudioEdit.edits:type_name -> rbp.rpc.voice_lover.AudioEditData
+	49, // 5: rbp.rpc.voice_lover.ResGetAudioDetail.audio:type_name -> rbp.rpc.voice_lover.AudioData
+	50, // 6: rbp.rpc.voice_lover.ResGetAudioListByAlbumId.audios:type_name -> rbp.rpc.voice_lover.AudioSimpleData
+	44, // 7: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.album_counts:type_name -> rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
+	46, // 8: rbp.rpc.voice_lover.ResGetAlbumList.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	45, // 9: rbp.rpc.voice_lover.ResGetAlbumDetail.albums:type_name -> rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
+	51, // 10: rbp.rpc.voice_lover.ResCommentList.list:type_name -> rbp.rpc.voice_lover.Comment
+	46, // 11: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry.value:type_name -> rbp.rpc.voice_lover.AlbumData
 	12, // [12:12] is the sub-list for method output_type
 	12, // [12:12] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name
@@ -3075,7 +3178,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqSubmitComment); i {
+			switch v := v.(*ReqAudioSubmitComment); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3087,7 +3190,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqGetCommentList); i {
+			switch v := v.(*ReqGetAudioCommentList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3099,7 +3202,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResCommonPost); i {
+			switch v := v.(*ReqGetAlbumCommentList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3111,7 +3214,31 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResCommonPost); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResCommentList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAlbumSubmitComment); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3129,7 +3256,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rpc_voice_lover_voice_lover_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   44,
+			NumMessages:   46,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

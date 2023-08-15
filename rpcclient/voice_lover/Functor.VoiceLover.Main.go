@@ -79,14 +79,26 @@ func (s *voiceLoverMain) IsUserCollectAlbum(ctx context.Context, req *voice_love
 	return reply, err
 }
 
-func (s *voiceLoverMain) SubmitAudioComment(ctx context.Context, req *voice_lover.ReqSubmitComment) (*voice_lover.ResCommonPost, error) {
+func (s *voiceLoverMain) SubmitAudioComment(ctx context.Context, req *voice_lover.ReqAudioSubmitComment) (*voice_lover.ResCommonPost, error) {
 	reply := &voice_lover.ResCommonPost{}
 	err := s.Call(ctx, "SubmitAudioComment", req, reply)
 	return reply, err
 }
 
-func (s *voiceLoverMain) GetAudioCommentList(ctx context.Context, req *voice_lover.ReqGetAudioEdit) (*voice_lover.ResCommentList, error) {
+func (s *voiceLoverMain) GetAudioCommentList(ctx context.Context, req *voice_lover.ReqGetAudioCommentList) (*voice_lover.ResCommentList, error) {
 	reply := &voice_lover.ResCommentList{}
 	err := s.Call(ctx, "GetAudioCommentList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) SubmitAlbumComment(ctx context.Context, req *voice_lover.ReqAlbumSubmitComment) (*voice_lover.ResCommonPost, error) {
+	reply := &voice_lover.ResCommonPost{}
+	err := s.Call(ctx, "SubmitAlbumComment", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAlbumCommentList(ctx context.Context, req *voice_lover.ReqGetAlbumCommentList) (*voice_lover.ResCommentList, error) {
+	reply := &voice_lover.ResCommentList{}
+	err := s.Call(ctx, "GetAlbumCommentList", req, reply)
 	return reply, err
 }

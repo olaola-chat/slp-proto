@@ -46,8 +46,14 @@ service VoiceLoverMain {
   rpc IsUserCollectAlbum (rbp.rpc.voice_lover.ReqIsUserCollectAlbum) returns (rbp.rpc.voice_lover.ResIsUserCollectAlbum);
 
   // 提交音频评论
-  rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+  rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqAudioSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
 
   // 提交音频评论
-  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqGetAudioEdit) returns (rbp.rpc.voice_lover.ResCommentList);
+  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqGetAudioCommentList) returns (rbp.rpc.voice_lover.ResCommentList);
+
+  // 提交音频评论
+  rpc SubmitAlbumComment (rbp.rpc.voice_lover.ReqAlbumSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+
+  // 提交音频评论
+  rpc GetAlbumCommentList (rbp.rpc.voice_lover.ReqGetAlbumCommentList) returns (rbp.rpc.voice_lover.ResCommentList);
 }

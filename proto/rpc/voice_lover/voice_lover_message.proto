@@ -178,15 +178,18 @@ message ReqAudioCollect {
 message ResAudioCollect {}
 
 
-message ReqSubmitComment {
+message ReqAudioSubmitComment {
   uint64 audio_id = 1;
   string content = 2;
-  uint32 uid = 3;
-  uint32 type = 4;
+  uint32 type = 3;
 }
 
-message ReqGetCommentList{
+message ReqGetAudioCommentList{
   uint64 audio_id = 1;
+}
+
+message ReqGetAlbumCommentList{
+  uint64 album_id = 1;
 }
 
 message ResCommonPost{
@@ -197,4 +200,9 @@ message ResCommonPost{
 
 message ResCommentList{
   repeated Comment list = 1;
+}
+
+message ReqAlbumSubmitComment {
+  uint64 album_id = 1;
+  string content = 2;
 }

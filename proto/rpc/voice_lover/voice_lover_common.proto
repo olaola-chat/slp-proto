@@ -22,6 +22,7 @@ message SubjectData {
   uint64 create_time = 3;         // 创建时间
 
   repeated AlbumData albums = 4;  // 专题下专辑数据
+  uint64 album_count = 5; //专题下专辑数量
 }
 
 message AudioSimpleData {
