@@ -32,8 +32,8 @@ type EntityVoiceLoverAudioComment struct {
 
 	//@inject_tag: orm:"id,primary"
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` // 自增ID
-	//@inject_tag: orm:"audio_id,primary"
-	AudioId uint64 `protobuf:"varint,2,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty" orm:"audio_id,primary"` // 音频id
+	//@inject_tag: orm:"audio_id"
+	AudioId uint64 `protobuf:"varint,2,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty" orm:"audio_id"` // 音频id
 	//@inject_tag: orm:"uid"
 	Uid uint32 `protobuf:"varint,3,opt,name=uid,proto3" json:"uid,omitempty" orm:"uid"` // 用户uid
 	//@inject_tag: orm:"content"
@@ -42,8 +42,8 @@ type EntityVoiceLoverAudioComment struct {
 	Type uint32 `protobuf:"varint,5,opt,name=type,proto3" json:"type,omitempty" orm:"type"` // 审核状态：0-评论 1-弹幕
 	//@inject_tag: orm:"status"
 	Status uint32 `protobuf:"varint,6,opt,name=status,proto3" json:"status,omitempty" orm:"status"` // 审核状态：0-默认状态 1-举报封禁
-	//@inject_tag: orm:"create_time"
-	CreateTime uint64 `protobuf:"varint,7,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time"` // 创建时间
+	//@inject_tag: orm:"create_time,primary"
+	CreateTime uint64 `protobuf:"varint,7,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time,primary"` // 创建时间
 	//@inject_tag: orm:"update_time"
 	UpdateTime uint64 `protobuf:"varint,8,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty" orm:"update_time"` // 更新时间
 }
