@@ -6,6 +6,7 @@ room_info rpc 协议
 */
 
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
+import "db/xianshi/entity_xs_chatroom.proto";
 
 message Chatroom {
 	uint32 rid                                     = 1;  //
@@ -60,4 +61,17 @@ message ReqRoomInfo {
 	uint32	rid 		= 1;
 	//需要返回哪些字段，为空的话，表示所有字段名
 	repeated string fields = 2;
+}
+
+//获取批量请求
+message ReqRoomInfos {
+	//批量请求房间RID集合
+	repeated uint32	rids = 1;
+	//需要返回哪些字段，为空的话，表示所有字段名
+	repeated string fields = 2;
+}
+
+//返回多个房间信息
+message RepRoomInfos {
+	repeated db.xianshi.EntityXsChatroom data = 1;
 }

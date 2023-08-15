@@ -17,6 +17,9 @@ service RoomInfo {
 
 	// 获取单个房间信息
 	rpc Get (rbp.rpc.room.ReqRoomInfo) returns (db.xianshi.EntityXsChatroom);
+
+	// 批量获取房间列表
+	rpc MGet (rbp.rpc.room.ReqRoomInfos) returns (rbp.rpc.room.RepRoomInfos);
 }
 
 
