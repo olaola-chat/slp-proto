@@ -26,8 +26,8 @@ func (s *roomInfo) Get(ctx context.Context, req *room.ReqRoomInfo) (*xianshi.Ent
 	return reply, err
 }
 
-func (s *roomInfo) MGet(ctx context.Context, req *room.ReqRoomInfos) (*room.RepRoomInfos, error) {
+func (s *roomInfo) Mget(ctx context.Context, req *room.ReqRoomInfos) (*room.RepRoomInfos, error) {
 	reply := &room.RepRoomInfos{}
-	err := s.Call(ctx, "MGet", req, reply)
+	err := s.Call(ctx, "Mget", req, reply)
 	return reply, err
 }
