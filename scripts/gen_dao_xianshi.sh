@@ -6,6 +6,7 @@ cd `dirname $0`
 #rm -rf ./gen_proto/db/xianshi
 #rm -rf ./gen_pb/db/xianshi
 
+./gen_db.sh xianshi xs_user_index
 ./gen_db.sh xianshi xs_user_profile
 ./gen_db.sh xianshi xs_user_settings
 ./gen_db.sh xianshi xs_broker
