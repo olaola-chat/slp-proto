@@ -12,7 +12,7 @@ user_profile rpc 协议
 option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/consume";
 
 
-service UserProfile {
+service ConsumeMoney {
 	option (rbp.plugin.rbp_service).name = "Consume.Money";
 
 	// 获取请求id
