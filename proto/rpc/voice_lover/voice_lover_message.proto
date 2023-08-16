@@ -107,6 +107,7 @@ message ReqCollect {
   uint32 uid = 1;
   uint64 id = 2;
   uint32 type = 3; // 0-专辑 1-音频
+  uint32 from = 4; // 0-收藏 1-取消收藏
 }
 message ResCollect {
 }
