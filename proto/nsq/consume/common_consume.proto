@@ -4,11 +4,11 @@ package rbp.nsq.consume;
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/nsq/consume";
 
 // 通用消费nsq：礼物消费消息推送
-message ChCommonConsumeNsqPush {
+message RbpCommonConsumeNsqPush {
   string cmd = 1;
-  ChCommonConsumeNsqPushData data = 2;
+  RbpCommonConsumeNsqPushData data = 2;
 }
-message ChCommonConsumeNsqPushData {
+message RbpCommonConsumeNsqPushData {
   uint32 uid = 1; //用户id（必填）
   repeated uint32 to_uids = 2; //收方id（必填）
   uint32 rid = 3; //房间id（必填）
