@@ -23,3 +23,4 @@ cd `dirname $0`
 ./gen_db.sh xianshi xs_live_config
 ./gen_db.sh xianshi xs_broker_user
 ./gen_db.sh xianshi xs_broker
+./gen_db.sh xianshi xs_user_friend

@@ -15,6 +15,9 @@ ${PROTOC} rpc/voice_lover/voice_lover_common.proto
 ${PROTO_SERV} rpc/voice_lover/voice_lover_admin_service.proto
 ${PROTOC} rpc/voice_lover/voice_lover_admin_message.proto
 
+${PROTOC} rpc/room/room_message.proto
+${PROTO_SERV} rpc/room/room_service.proto
+
 
 
 

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package rbp.rpc.room;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
+
+//获取单个请求请求
+message ReqUid {
+	uint32	uid = 1;
+}
+
+message RepRid {
+	uint32	rid = 1;
+}
+
+

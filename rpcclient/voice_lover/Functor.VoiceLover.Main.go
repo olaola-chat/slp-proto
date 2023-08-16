@@ -108,3 +108,9 @@ func (s *voiceLoverMain) GetAlbumCommentList(ctx context.Context, req *voice_lov
 	err := s.Call(ctx, "GetAlbumCommentList", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) GetAudioInfoById(ctx context.Context, req *voice_lover.ReqGetAudioDetail) (*voice_lover.ResGetAudioDetail, error) {
+	reply := &voice_lover.ResGetAudioDetail{}
+	err := s.Call(ctx, "GetAudioInfoById", req, reply)
+	return reply, err
+}

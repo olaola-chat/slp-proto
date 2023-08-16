@@ -59,4 +59,7 @@ service VoiceLoverMain {
 
   // 提交音频评论
   rpc GetAlbumCommentList (rbp.rpc.voice_lover.ReqGetAlbumCommentList) returns (rbp.rpc.voice_lover.ResCommentList);
+
+  // 音频详情
+  rpc GetAudioInfoById (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
 }
