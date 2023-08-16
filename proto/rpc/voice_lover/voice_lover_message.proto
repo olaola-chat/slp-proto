@@ -103,6 +103,14 @@ message ResIsUserCollectAlbum {
   bool is_collect = 1;
 }
 
+message ReqCollect {
+  uint32 uid = 1;
+  uint64 id = 2;
+  uint32 type = 3; // 0-专辑 1-音频
+}
+message ResCollect {
+}
+
 message ReqUpdateAudio {
   uint64 id = 1;
   string title = 2;
