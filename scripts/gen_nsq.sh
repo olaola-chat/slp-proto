@@ -7,6 +7,7 @@ cd ..
 export PROTOC="protoc --go_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto"
 export PROTO_SERV="protoc --rbp-rpc_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto"
 
+${PROTOC} nsq/consume/common_consume.proto
 ${PROTOC} nsq/room/room_consume_package.proto
 
 
