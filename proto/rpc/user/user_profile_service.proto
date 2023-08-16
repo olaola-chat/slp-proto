@@ -30,6 +30,10 @@ service UserProfile {
 	rpc Auth (rbp.rpc.user.ReqUserAuth) returns (RepUserAuth);
 
 	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
+
+	rpc Auth(ReqUserAuth) returns (RepUserAuth);
+
+	rpc SearchByName(ReqUserSearchName) returns (RepUserSearchDefault);
 }
 
 

@@ -4,7 +4,6 @@ package rbp.rpc.user;
 /*
 user_profile rpc 协议
 */
-
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/user";
 
 import "db/xianshi/entity_xs_user_profile.proto";
@@ -103,3 +102,23 @@ message RepNeedVerify {
 	uint32 res = 2;
 }
 
+//根据用户名字检索
+//只返回最近7天里，等级不低于5级的用户数据
+message ReqUserSearchName {
+	//检索关键字，不能为空，不能为停止词
+	string keyword 	= 1;
+	//检索哪些app的数据
+	repeated uint32 app_id = 2;
+	//返回数量
+	uint32 limit = 3;
+	//搜索着等级
+	uint32 searcherLevel = 4;
+}
+
+//通用检索返回
+message RepUserSearchDefault {
+	//符合条件的数量
+	uint32 total = 1;
+	//返回的用户uids集合
+	repeated uint32 data = 2;
+}

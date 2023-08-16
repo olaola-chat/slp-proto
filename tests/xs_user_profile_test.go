@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"testing"
 
-    "github.com/olaola-chat/rbp-proto/dao/xianshi"
+	"github.com/olaola-chat/rbp-proto/dao/xianshi"
 )
 
 func TestXsUserProfile(t *testing.T) {
-    row, err := xianshi.XsUserProfile.One("uid = ?", 100000000)
+	row, err := xianshi.XsUserProfile.One("uid = ?", 100000000)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
-    fmt.Println(row)
+	fmt.Println(row)
 }

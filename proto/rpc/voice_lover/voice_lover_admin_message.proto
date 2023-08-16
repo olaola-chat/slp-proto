@@ -1,0 +1,38 @@
+syntax = "proto3";
+package rbp.rpc.voice_lover;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
+
+import "rpc/voice_lover/voice_lover_common.proto";
+
+message ReqCreateSubject {
+  string name = 1;
+  uint64 op_uid = 2;
+}
+
+message ResCreateSubject {
+  uint64 id = 1;
+}
+
+message ReqUpdateSubject {
+  uint64 id = 1;
+  string name = 2;
+  uint64 op_uid = 3;
+}
+
+message ResUpdateSubject {}
+
+message ReqDelSubject {
+  uint64 id = 1;
+  uint64 op_uid = 2;
+}
+
+message ResDelSubject {}
+message ReqGetSubjectDetail {
+  repeated uint64 ids = 1;
+}
+
+message ResGetSubjectDetail {
+  map<uint64,SubjectData> subjects = 1;
+}
+
