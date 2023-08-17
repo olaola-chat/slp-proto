@@ -1,11 +1,11 @@
-package auth
+package user
 
 import (
 	"context"
 
 	"github.com/olaola-chat/rbp-proto/rpcclient/base"
 
-	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/user/auth"
+	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/user"
 )
 
 // RbpUserAuth *rbpUserAuth
@@ -19,8 +19,8 @@ type rbpUserAuth struct {
 	*base.Base
 }
 
-func (s *rbpUserAuth) Auth(ctx context.Context, req *auth.ReqUserAuth) (*auth.RepUserAuth, error) {
-	reply := &auth.RepUserAuth{}
+func (s *rbpUserAuth) Auth(ctx context.Context, req *user.ReqUserAuth) (*user.RepUserAuth, error) {
+	reply := &user.RepUserAuth{}
 	err := s.Call(ctx, "Auth", req, reply)
 	return reply, err
 }

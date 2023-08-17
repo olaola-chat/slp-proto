@@ -1,11 +1,11 @@
 syntax = "proto3";
-package rbp.rpc.user.auth;
+package rbp.rpc.user;
 
 import "rbp/plugin/option.proto";
 
-import "rpc/user/auth/message.proto";
+import "rpc/user/auth_message.proto";
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/user/auth";
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/user";
 
 
 service RbpUserAuth {

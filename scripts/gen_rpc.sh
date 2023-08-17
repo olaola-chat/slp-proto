@@ -7,8 +7,8 @@ cd ..
 export PROTOC="protoc --go_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto"
 export PROTO_SERV="protoc --rbp-rpc_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto"
 
-${PROTOC} rpc/user/auth/message.proto
-${PROTO_SERV} rpc/user/auth/service.proto
+${PROTOC} rpc/user/auth_message.proto
+${PROTO_SERV} rpc/user/auth_service.proto
 
 ${PROTOC} rpc/user/user_profile_message.proto
 ${PROTO_SERV} rpc/user/user_profile_service.proto
