@@ -21,8 +21,11 @@ service VoiceLoverMain {
   // 获取专辑详情
   rpc GetAlbumInfoById (rbp.rpc.voice_lover.ReqGetAlbumInfoById) returns (rbp.rpc.voice_lover.ResGetAlbumInfoById);
 
-  // 获取推荐专辑数据
+  // 获取精选推荐专辑数据
   rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
+
+  // 获取普通推荐专辑数据
+  rpc GetRecCommonAlbums (rbp.rpc.voice_lover.ReqGetRecCommonAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
 
   // 分页获取专辑列表
   rpc GetAlbumsByPage (rbp.rpc.voice_lover.ReqGetAlbumsByPage) returns (rbp.rpc.voice_lover.ResGetAlbumsByPage);

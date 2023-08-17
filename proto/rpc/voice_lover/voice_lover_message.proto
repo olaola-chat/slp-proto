@@ -34,6 +34,9 @@ message ResGetAlbumInfoById {
 message ReqGetRecAlbums {
   uint32 uid = 1;
 }
+message ReqGetRecCommonAlbums {
+  uint32 uid = 1;
+}
 message ResGetRecAlbums {
   repeated AlbumData albums = 1;
 }
