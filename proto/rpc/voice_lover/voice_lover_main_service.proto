@@ -70,4 +70,6 @@ service VoiceLoverMain {
   rpc GetAudioInfoById (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
 
   rpc UpdateReportStatus(rbp.rpc.voice_lover.ReqUpdateStatus) returns (rbp.rpc.voice_lover.ResUpdateStatus);
+
+  rpc PlayStatReport (rbp.rpc.voice_lover.ReqPlayStatReport) returns (rbp.rpc.voice_lover.ResPlayStatReport);
 }

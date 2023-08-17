@@ -132,3 +132,9 @@ func (s *voiceLoverMain) UpdateReportStatus(ctx context.Context, req *voice_love
 	err := s.Call(ctx, "UpdateReportStatus", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) PlayStatReport(ctx context.Context, req *voice_lover.ReqPlayStatReport) (*voice_lover.ResPlayStatReport, error) {
+	reply := &voice_lover.ResPlayStatReport{}
+	err := s.Call(ctx, "PlayStatReport", req, reply)
+	return reply, err
+}
