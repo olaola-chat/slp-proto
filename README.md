@@ -13,19 +13,23 @@ rbp-proto
         db  数据库子目录
             xianshi  数据库名
                 xxx.proto  表名
-    proto rpc手写proto
-        user 系统名
-            xxx.proto
+    proto 手写proto
+        rpc rpc服务接口
+            user 系统名
+                xxx.proto
+        nsq nsq消息结构
+        kafka kafka消息结构
     protoc-gen-rbp-rpc 生成RPC客户端的插件代码
     rpcclient proto生成的rpc客户端，各项目共用
         base RPC基类
         user  系统名
-            User.Auth.go  微服务名
+            Rbp.User.Auth.go  微服务名
     gen_pb proto生成的go文件
         db
             xianshi 数据库表
         rpc
             user 系统名
+        nsq 
     Makefile 生成脚本
     
 ```
