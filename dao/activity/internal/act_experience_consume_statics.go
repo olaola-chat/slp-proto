@@ -34,11 +34,12 @@ type ActExperienceConsumeStaticsDao struct {
 // ActExperienceConsumeStaticsColumns defines and stores column names for table act_experience_consume_statics.
 type actExperienceConsumeStaticsColumns struct {
 	ID               string //
-	UID              string // 送礼人uid
+	UID              string // 收礼人uid
 	BindUID          string // 绑定的主播uid
-	ConsumeMoney     string // 消费总金额
+	ReceiveMoney     string // 收礼总金额
 	CompleteStatus   string // 完成状态：1-进行中 2-已完成 3-已失效
 	UserRegisterTime string // 用户注册时间
+	BindTime         string //
 	AddTime          string //
 	UpdateTime       string //
 }
@@ -53,9 +54,10 @@ var (
 			ID:               "id",
 			UID:              "uid",
 			BindUID:          "bind_uid",
-			ConsumeMoney:     "consume_money",
+			ReceiveMoney:     "receive_money",
 			CompleteStatus:   "complete_status",
 			UserRegisterTime: "user_register_time",
+			BindTime:         "bind_time",
 			AddTime:          "add_time",
 			UpdateTime:       "update_time",
 		},

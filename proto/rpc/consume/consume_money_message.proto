@@ -1,0 +1,142 @@
+syntax = "proto3";
+package rbp.rpc.consume;
+
+/*
+consume_money rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/consume";
+
+//错误码
+enum ErrorCode {
+	ok = 0; //成功
+	param_error = 1; //参数错误
+	mysql_error = 2; //数据库错误
+	get_lock_failed = 3; //加锁失败
+	request_repeated = 4; //请求重复
+	not_enough = 5; //余额不足
+	internal_error = 6; //服务内部错误
+	cannot_punish = 7; //不符合罚款执行标准
+	no_punish = 8; //未被处罚过，无法退款
+	punish_back_money_error = 9; //罚款退还金额错误
+	no_commodity = 10; //物品不存在
+
+	redis_error = 11; //redis错误
+	commodity_cannot_decompose = 12; //物品不能分解
+	commodity_not_enough = 18; //物品不足
+	no_user = 19; //用户不存在
+	request_limited = 20; //请求量受限
+	redis_lock_failed = 21; //redis锁失败
+	todo_deleted = 22; //todo已删除
+	commodity_use_wrong_type = 23; //物品使用类型错误
+
+}
+
+//场景类型
+enum ConsumeType {
+	no_ctype = 0;
+	test_dec = 1; //测试金额减少
+	test_consume = 2; //测试消费
+	test_income = 3; //测试收入
+
+	give = 10; //后台发钱
+	wages = 11; //房主分成奖励
+	admin_coin = 12; //系统奖励金币
+	recall = 13; //召回用户奖励发放
+	exchange = 14; //任务中心奖券兑换
+	punish = 15; //罚款通知
+	freeze_punish = 16; //冻结通知
+	punish_process = 17; //罚款执行
+	punish_back = 18; //罚款退还
+	commodity_send = 19; //物品发放
+	commodity_buy = 20; //物品购买
+	punish_pack_cal= 22; //罚没违规收入
+	collect = 23; //资金归集转出
+	pack_cal = 25; //打包结算
+	mood_share_out = 27; //公会长分配人气
+	mood_share_in = 28; //收到公会长人气分配
+	mood_share_back = 29; //分配人气失败退还
+	cash = 30; //公会成员申请提现
+	cash_back = 31; //公会成员提现失败退还
+	cash_back_pack_cal = 32; //公司打款失败退还
+	cash_back_income = 33; //手续费清算返还
+	invite_award = 34; //邀请奖励物品
+	commodity_use = 35; //使用背包物品
+	open_box_income = 36; //凶手开启宝箱奖励
+	lottery = 37; //凶手抽奖
+	lottery_income = 38; //凶手抽奖阶段奖励
+	lucky_gift = 39; //凶手幸运礼物
+	lucky_gift_prize = 41; //凶手幸运礼物中奖
+	sign_award = 42; //任务中心签到奖励
+	lucky_bag_send = 43; //凶手发福袋
+	lucky_bag_grab = 44; //凶手抢福袋
+	lucky_bag_back = 45; //凶手福袋退还
+	good_voice = 46; //凶手好声音送礼
+	commodity_consume = 47; //物品消费
+	room_gift = 48; //房间礼物
+	room_box_gift = 49; //房间礼盒礼物
+	room_defend = 50; //房间守护
+	agent_share_income = 51; //经纪人分成
+	mentor_income = 52; //师徒奖励
+	use_header = 53; //使用头像框
+	chat_gift = 54; //私聊礼物
+	chat_box_gift = 55; //私聊礼盒礼物
+	chat_defend = 56; //私聊守护
+	open_box = 57; //开箱子
+	custom_share = 58; //自定义分成
+	activity_redpacket_send = 59; //发活动红包
+	activity_redpacket_grab = 60; //抢活动红包
+	activity_redpacket_back = 61; //活动红包退还
+	redpacket_send = 62; //发红包
+	redpacket_grab = 63; //抢红包
+	redpacket_back = 64; //红包退还
+	lottery_common = 65; //通用抽奖
+	consume_common = 67; //通用消费
+	commodity_decompose = 68; //物品分解
+}
+
+//金额类型
+enum MoneyType {
+	no_mtype = 0;
+	money = 1; //平台币
+	money_b = 2; //平台币
+	money_order = 3; //平台币
+	money_order_b = 4; //平台币
+	money_cash = 5; //公会魅力值
+	money_cash_b = 6; //个人魅力值
+	gold_coin = 7; //金币
+	money_coupon = 8; //金豆
+	max_mtype = 9;
+}
+
+message CommoditySend {
+	int32 cid = 1; //物品id（必填）
+	int32 num = 2; //发放数量（必填）
+}
+//发物品时可以同时发钱，方便业务使用
+message MoneySend {
+	MoneyType mtype = 1; //金额类型（必填）
+	int32 money = 2; //金额数量（必填）
+}
+
+message GetRequestIdReq {
+}
+message GetRequestIdRes {
+	bool success = 1; //false-处理失败，true-处理成功
+	uint64 requestId = 2; //请求id，全局唯一
+}
+
+message CommoditySendReq {
+	uint64 requestId = 1; //请求id，全局唯一（必填）
+	ConsumeType type = 2; //场景类型（必填）
+	uint32 uid = 3; //用户id（必填）
+	repeated CommoditySend commodities = 4; //发放的物品，最多100种（必填）
+	string subject = 5; //发放说明
+	repeated MoneySend moneys = 6; //发钱
+	uint32 rid = 7; //房间id
+}
+message CommoditySendRes {
+	bool success = 1; //false-处理失败，true-处理成功
+	ErrorCode code = 2; //错误码
+	string msg = 3; //错误信息
+}

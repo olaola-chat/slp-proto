@@ -15,6 +15,7 @@ cd `dirname $0`
 
 ./gen_db.sh xianshi xs_chatroom
 ./gen_db.sh xianshi xs_chatroom_config
+./gen_db.sh xianshi xs_chatroom_package
 
 # ./gen_db.sh xianshi bbc_commodity_type_config
 # ./gen_db.sh xianshi bbc_commodity_whitelist
