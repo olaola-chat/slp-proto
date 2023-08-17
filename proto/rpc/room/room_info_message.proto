@@ -75,3 +75,11 @@ message ReqRoomInfos {
 message RepRoomInfos {
 	repeated db.xianshi.EntityXsChatroom data = 1;
 }
+
+message ReqUid{
+	uint32 uid = 1;
+}
+
+message RepRid{
+	uint32 rid = 1;
+}
