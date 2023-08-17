@@ -234,3 +234,9 @@ message ReqAlbumSubmitComment {
   string content = 2;
   uint32 uid = 3;
 }
+
+message ReqAlbumPlayStatReport {
+  uint64 album_id = 1;
+}
+message ResAlbumPlayStatReport {
+}

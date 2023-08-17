@@ -126,3 +126,9 @@ func (s *voiceLoverMain) GetAudioInfoById(ctx context.Context, req *voice_lover.
 	err := s.Call(ctx, "GetAudioInfoById", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) AlbumPlayStatReport(ctx context.Context, req *voice_lover.ReqAlbumPlayStatReport) (*voice_lover.ResAlbumPlayStatReport, error) {
+	reply := &voice_lover.ResAlbumPlayStatReport{}
+	err := s.Call(ctx, "AlbumPlayStatReport", req, reply)
+	return reply, err
+}
