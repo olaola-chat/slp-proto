@@ -110,10 +110,10 @@ message ResIsUserCollectAlbum {
 
 message ReqIsUserCollectAlbums {
   uint32 uid = 1;
-  repeated uint64 album_id = 2;
+  repeated uint64 album_ids = 2;
 }
 message ResIsUserCollectAlbums {
-  repeated bool is_collect = 1;
+  repeated bool is_collects = 1;
 }
 
 message ReqCollect {
