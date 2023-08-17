@@ -85,6 +85,12 @@ func (s *voiceLoverMain) IsUserCollectAlbum(ctx context.Context, req *voice_love
 	return reply, err
 }
 
+func (s *voiceLoverMain) IsUserCollectAlbums(ctx context.Context, req *voice_lover.ReqIsUserCollectAlbums) (*voice_lover.ResIsUserCollectAlbums, error) {
+	reply := &voice_lover.ResIsUserCollectAlbums{}
+	err := s.Call(ctx, "IsUserCollectAlbums", req, reply)
+	return reply, err
+}
+
 func (s *voiceLoverMain) Collect(ctx context.Context, req *voice_lover.ReqCollect) (*voice_lover.ResCollect, error) {
 	reply := &voice_lover.ResCollect{}
 	err := s.Call(ctx, "Collect", req, reply)

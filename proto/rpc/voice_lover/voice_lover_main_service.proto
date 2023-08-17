@@ -48,6 +48,9 @@ service VoiceLoverMain {
   // 判断用户是否收藏了专辑
   rpc IsUserCollectAlbum (rbp.rpc.voice_lover.ReqIsUserCollectAlbum) returns (rbp.rpc.voice_lover.ResIsUserCollectAlbum);
 
+  // 批量判断用户是否收藏了专辑
+  rpc IsUserCollectAlbums (rbp.rpc.voice_lover.ReqIsUserCollectAlbums) returns (rbp.rpc.voice_lover.ResIsUserCollectAlbums);
+
   // 收藏专辑或者音频
   rpc Collect (rbp.rpc.voice_lover.ReqCollect) returns (rbp.rpc.voice_lover.ResCollect);
 

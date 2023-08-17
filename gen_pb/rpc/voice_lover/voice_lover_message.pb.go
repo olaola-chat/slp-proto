@@ -1291,6 +1291,108 @@ func (x *ResIsUserCollectAlbum) GetIsCollect() bool {
 	return false
 }
 
+type ReqIsUserCollectAlbums struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uid     uint32   `protobuf:"varint,1,opt,name=uid,proto3" json:"uid,omitempty"`
+	AlbumId []uint64 `protobuf:"varint,2,rep,packed,name=album_id,json=albumId,proto3" json:"album_id,omitempty"`
+}
+
+func (x *ReqIsUserCollectAlbums) Reset() {
+	*x = ReqIsUserCollectAlbums{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqIsUserCollectAlbums) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqIsUserCollectAlbums) ProtoMessage() {}
+
+func (x *ReqIsUserCollectAlbums) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqIsUserCollectAlbums.ProtoReflect.Descriptor instead.
+func (*ReqIsUserCollectAlbums) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *ReqIsUserCollectAlbums) GetUid() uint32 {
+	if x != nil {
+		return x.Uid
+	}
+	return 0
+}
+
+func (x *ReqIsUserCollectAlbums) GetAlbumId() []uint64 {
+	if x != nil {
+		return x.AlbumId
+	}
+	return nil
+}
+
+type ResIsUserCollectAlbums struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	IsCollect []bool `protobuf:"varint,1,rep,packed,name=is_collect,json=isCollect,proto3" json:"is_collect,omitempty"`
+}
+
+func (x *ResIsUserCollectAlbums) Reset() {
+	*x = ResIsUserCollectAlbums{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResIsUserCollectAlbums) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResIsUserCollectAlbums) ProtoMessage() {}
+
+func (x *ResIsUserCollectAlbums) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResIsUserCollectAlbums.ProtoReflect.Descriptor instead.
+func (*ResIsUserCollectAlbums) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ResIsUserCollectAlbums) GetIsCollect() []bool {
+	if x != nil {
+		return x.IsCollect
+	}
+	return nil
+}
+
 type ReqCollect struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1305,7 +1407,7 @@ type ReqCollect struct {
 func (x *ReqCollect) Reset() {
 	*x = ReqCollect{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[24]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1318,7 +1420,7 @@ func (x *ReqCollect) String() string {
 func (*ReqCollect) ProtoMessage() {}
 
 func (x *ReqCollect) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[24]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1331,7 +1433,7 @@ func (x *ReqCollect) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqCollect.ProtoReflect.Descriptor instead.
 func (*ReqCollect) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{24}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ReqCollect) GetUid() uint32 {
@@ -1371,7 +1473,7 @@ type ResCollect struct {
 func (x *ResCollect) Reset() {
 	*x = ResCollect{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[25]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1384,7 +1486,7 @@ func (x *ResCollect) String() string {
 func (*ResCollect) ProtoMessage() {}
 
 func (x *ResCollect) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[25]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1397,7 +1499,7 @@ func (x *ResCollect) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResCollect.ProtoReflect.Descriptor instead.
 func (*ResCollect) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{25}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{27}
 }
 
 type ReqUpdateAudio struct {
@@ -1415,7 +1517,7 @@ type ReqUpdateAudio struct {
 func (x *ReqUpdateAudio) Reset() {
 	*x = ReqUpdateAudio{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[26]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1428,7 +1530,7 @@ func (x *ReqUpdateAudio) String() string {
 func (*ReqUpdateAudio) ProtoMessage() {}
 
 func (x *ReqUpdateAudio) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[26]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1441,7 +1543,7 @@ func (x *ReqUpdateAudio) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqUpdateAudio.ProtoReflect.Descriptor instead.
 func (*ReqUpdateAudio) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{26}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *ReqUpdateAudio) GetId() uint64 {
@@ -1493,7 +1595,7 @@ type ReqAuditAudio struct {
 func (x *ReqAuditAudio) Reset() {
 	*x = ReqAuditAudio{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[27]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1506,7 +1608,7 @@ func (x *ReqAuditAudio) String() string {
 func (*ReqAuditAudio) ProtoMessage() {}
 
 func (x *ReqAuditAudio) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[27]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1519,7 +1621,7 @@ func (x *ReqAuditAudio) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqAuditAudio.ProtoReflect.Descriptor instead.
 func (*ReqAuditAudio) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{27}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ReqAuditAudio) GetId() uint64 {
@@ -1559,7 +1661,7 @@ type ResAuditAudio struct {
 func (x *ResAuditAudio) Reset() {
 	*x = ResAuditAudio{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[28]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1572,7 +1674,7 @@ func (x *ResAuditAudio) String() string {
 func (*ResAuditAudio) ProtoMessage() {}
 
 func (x *ResAuditAudio) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[28]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1585,7 +1687,7 @@ func (x *ResAuditAudio) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResAuditAudio.ProtoReflect.Descriptor instead.
 func (*ResAuditAudio) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{28}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{30}
 }
 
 type ReqCreateAlbum struct {
@@ -1602,7 +1704,7 @@ type ReqCreateAlbum struct {
 func (x *ReqCreateAlbum) Reset() {
 	*x = ReqCreateAlbum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[29]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1615,7 +1717,7 @@ func (x *ReqCreateAlbum) String() string {
 func (*ReqCreateAlbum) ProtoMessage() {}
 
 func (x *ReqCreateAlbum) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[29]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1628,7 +1730,7 @@ func (x *ReqCreateAlbum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqCreateAlbum.ProtoReflect.Descriptor instead.
 func (*ReqCreateAlbum) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{29}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *ReqCreateAlbum) GetName() string {
@@ -1670,7 +1772,7 @@ type ResCreateAlbum struct {
 func (x *ResCreateAlbum) Reset() {
 	*x = ResCreateAlbum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[30]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1683,7 +1785,7 @@ func (x *ResCreateAlbum) String() string {
 func (*ResCreateAlbum) ProtoMessage() {}
 
 func (x *ResCreateAlbum) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[30]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1696,7 +1798,7 @@ func (x *ResCreateAlbum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResCreateAlbum.ProtoReflect.Descriptor instead.
 func (*ResCreateAlbum) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{30}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *ResCreateAlbum) GetId() uint64 {
@@ -1721,7 +1823,7 @@ type ReqUpdateAlbum struct {
 func (x *ReqUpdateAlbum) Reset() {
 	*x = ReqUpdateAlbum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[31]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1734,7 +1836,7 @@ func (x *ReqUpdateAlbum) String() string {
 func (*ReqUpdateAlbum) ProtoMessage() {}
 
 func (x *ReqUpdateAlbum) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[31]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1747,7 +1849,7 @@ func (x *ReqUpdateAlbum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqUpdateAlbum.ProtoReflect.Descriptor instead.
 func (*ReqUpdateAlbum) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{31}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *ReqUpdateAlbum) GetId() uint64 {
@@ -1794,7 +1896,7 @@ type ResUpdateAlbum struct {
 func (x *ResUpdateAlbum) Reset() {
 	*x = ResUpdateAlbum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[32]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1807,7 +1909,7 @@ func (x *ResUpdateAlbum) String() string {
 func (*ResUpdateAlbum) ProtoMessage() {}
 
 func (x *ResUpdateAlbum) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[32]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1820,7 +1922,7 @@ func (x *ResUpdateAlbum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResUpdateAlbum.ProtoReflect.Descriptor instead.
 func (*ResUpdateAlbum) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{32}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{34}
 }
 
 type ReqDelAlbum struct {
@@ -1835,7 +1937,7 @@ type ReqDelAlbum struct {
 func (x *ReqDelAlbum) Reset() {
 	*x = ReqDelAlbum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[33]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1848,7 +1950,7 @@ func (x *ReqDelAlbum) String() string {
 func (*ReqDelAlbum) ProtoMessage() {}
 
 func (x *ReqDelAlbum) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[33]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1861,7 +1963,7 @@ func (x *ReqDelAlbum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqDelAlbum.ProtoReflect.Descriptor instead.
 func (*ReqDelAlbum) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{33}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *ReqDelAlbum) GetId() uint64 {
@@ -1887,7 +1989,7 @@ type ResDelAlbum struct {
 func (x *ResDelAlbum) Reset() {
 	*x = ResDelAlbum{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[34]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1900,7 +2002,7 @@ func (x *ResDelAlbum) String() string {
 func (*ResDelAlbum) ProtoMessage() {}
 
 func (x *ResDelAlbum) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[34]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1913,7 +2015,7 @@ func (x *ResDelAlbum) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResDelAlbum.ProtoReflect.Descriptor instead.
 func (*ResDelAlbum) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{34}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{36}
 }
 
 type ReqGetAlbumList struct {
@@ -1931,7 +2033,7 @@ type ReqGetAlbumList struct {
 func (x *ReqGetAlbumList) Reset() {
 	*x = ReqGetAlbumList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[35]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1944,7 +2046,7 @@ func (x *ReqGetAlbumList) String() string {
 func (*ReqGetAlbumList) ProtoMessage() {}
 
 func (x *ReqGetAlbumList) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[35]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1957,7 +2059,7 @@ func (x *ReqGetAlbumList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqGetAlbumList.ProtoReflect.Descriptor instead.
 func (*ReqGetAlbumList) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{35}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *ReqGetAlbumList) GetStartTime() uint64 {
@@ -2007,7 +2109,7 @@ type ResGetAlbumList struct {
 func (x *ResGetAlbumList) Reset() {
 	*x = ResGetAlbumList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[36]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2020,7 +2122,7 @@ func (x *ResGetAlbumList) String() string {
 func (*ResGetAlbumList) ProtoMessage() {}
 
 func (x *ResGetAlbumList) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[36]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2033,7 +2135,7 @@ func (x *ResGetAlbumList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResGetAlbumList.ProtoReflect.Descriptor instead.
 func (*ResGetAlbumList) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{36}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *ResGetAlbumList) GetAlbums() []*AlbumData {
@@ -2061,7 +2163,7 @@ type ReqGetAlbumDetail struct {
 func (x *ReqGetAlbumDetail) Reset() {
 	*x = ReqGetAlbumDetail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[37]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2074,7 +2176,7 @@ func (x *ReqGetAlbumDetail) String() string {
 func (*ReqGetAlbumDetail) ProtoMessage() {}
 
 func (x *ReqGetAlbumDetail) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[37]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2087,7 +2189,7 @@ func (x *ReqGetAlbumDetail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqGetAlbumDetail.ProtoReflect.Descriptor instead.
 func (*ReqGetAlbumDetail) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{37}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *ReqGetAlbumDetail) GetAlbumStr() []string {
@@ -2108,7 +2210,7 @@ type ResGetAlbumDetail struct {
 func (x *ResGetAlbumDetail) Reset() {
 	*x = ResGetAlbumDetail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2121,7 +2223,7 @@ func (x *ResGetAlbumDetail) String() string {
 func (*ResGetAlbumDetail) ProtoMessage() {}
 
 func (x *ResGetAlbumDetail) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2134,7 +2236,7 @@ func (x *ResGetAlbumDetail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResGetAlbumDetail.ProtoReflect.Descriptor instead.
 func (*ResGetAlbumDetail) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{38}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *ResGetAlbumDetail) GetAlbums() map[uint64]*AlbumData {
@@ -2157,7 +2259,7 @@ type ReqAudioCollect struct {
 func (x *ReqAudioCollect) Reset() {
 	*x = ReqAudioCollect{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2170,7 +2272,7 @@ func (x *ReqAudioCollect) String() string {
 func (*ReqAudioCollect) ProtoMessage() {}
 
 func (x *ReqAudioCollect) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2183,7 +2285,7 @@ func (x *ReqAudioCollect) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqAudioCollect.ProtoReflect.Descriptor instead.
 func (*ReqAudioCollect) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{39}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *ReqAudioCollect) GetAudioId() uint64 {
@@ -2216,7 +2318,7 @@ type ResAudioCollect struct {
 func (x *ResAudioCollect) Reset() {
 	*x = ResAudioCollect{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2229,7 +2331,7 @@ func (x *ResAudioCollect) String() string {
 func (*ResAudioCollect) ProtoMessage() {}
 
 func (x *ResAudioCollect) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2242,7 +2344,7 @@ func (x *ResAudioCollect) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResAudioCollect.ProtoReflect.Descriptor instead.
 func (*ResAudioCollect) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{40}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{42}
 }
 
 type ReqAudioSubmitComment struct {
@@ -2259,7 +2361,7 @@ type ReqAudioSubmitComment struct {
 func (x *ReqAudioSubmitComment) Reset() {
 	*x = ReqAudioSubmitComment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2272,7 +2374,7 @@ func (x *ReqAudioSubmitComment) String() string {
 func (*ReqAudioSubmitComment) ProtoMessage() {}
 
 func (x *ReqAudioSubmitComment) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2285,7 +2387,7 @@ func (x *ReqAudioSubmitComment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqAudioSubmitComment.ProtoReflect.Descriptor instead.
 func (*ReqAudioSubmitComment) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{41}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *ReqAudioSubmitComment) GetAudioId() uint64 {
@@ -2329,7 +2431,7 @@ type ReqGetAudioCommentList struct {
 func (x *ReqGetAudioCommentList) Reset() {
 	*x = ReqGetAudioCommentList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2342,7 +2444,7 @@ func (x *ReqGetAudioCommentList) String() string {
 func (*ReqGetAudioCommentList) ProtoMessage() {}
 
 func (x *ReqGetAudioCommentList) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2355,7 +2457,7 @@ func (x *ReqGetAudioCommentList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqGetAudioCommentList.ProtoReflect.Descriptor instead.
 func (*ReqGetAudioCommentList) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{42}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *ReqGetAudioCommentList) GetAudioId() uint64 {
@@ -2392,7 +2494,7 @@ type ReqGetAlbumCommentList struct {
 func (x *ReqGetAlbumCommentList) Reset() {
 	*x = ReqGetAlbumCommentList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2405,7 +2507,7 @@ func (x *ReqGetAlbumCommentList) String() string {
 func (*ReqGetAlbumCommentList) ProtoMessage() {}
 
 func (x *ReqGetAlbumCommentList) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2418,7 +2520,7 @@ func (x *ReqGetAlbumCommentList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqGetAlbumCommentList.ProtoReflect.Descriptor instead.
 func (*ReqGetAlbumCommentList) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{43}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *ReqGetAlbumCommentList) GetAlbumId() uint64 {
@@ -2455,7 +2557,7 @@ type ResCommonPost struct {
 func (x *ResCommonPost) Reset() {
 	*x = ResCommonPost{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[44]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2468,7 +2570,7 @@ func (x *ResCommonPost) String() string {
 func (*ResCommonPost) ProtoMessage() {}
 
 func (x *ResCommonPost) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[44]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2481,7 +2583,7 @@ func (x *ResCommonPost) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResCommonPost.ProtoReflect.Descriptor instead.
 func (*ResCommonPost) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{44}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *ResCommonPost) GetSuccess() bool {
@@ -2516,7 +2618,7 @@ type ResCommentList struct {
 func (x *ResCommentList) Reset() {
 	*x = ResCommentList{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[45]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2529,7 +2631,7 @@ func (x *ResCommentList) String() string {
 func (*ResCommentList) ProtoMessage() {}
 
 func (x *ResCommentList) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[45]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2542,7 +2644,7 @@ func (x *ResCommentList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResCommentList.ProtoReflect.Descriptor instead.
 func (*ResCommentList) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{45}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *ResCommentList) GetList() []*Comment {
@@ -2565,7 +2667,7 @@ type ReqAlbumSubmitComment struct {
 func (x *ReqAlbumSubmitComment) Reset() {
 	*x = ReqAlbumSubmitComment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[46]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2578,7 +2680,7 @@ func (x *ReqAlbumSubmitComment) String() string {
 func (*ReqAlbumSubmitComment) ProtoMessage() {}
 
 func (x *ReqAlbumSubmitComment) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[46]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2591,7 +2693,7 @@ func (x *ReqAlbumSubmitComment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReqAlbumSubmitComment.ProtoReflect.Descriptor instead.
 func (*ReqAlbumSubmitComment) Descriptor() ([]byte, []int) {
-	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{46}
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *ReqAlbumSubmitComment) GetAlbumId() uint64 {
@@ -2746,6 +2848,14 @@ var file_rpc_voice_lover_voice_lover_message_proto_rawDesc = []byte{
 	0x73, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x41, 0x6c, 0x62, 0x75,
 	0x6d, 0x12, 0x1d, 0x0a, 0x0a, 0x69, 0x73, 0x5f, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x09, 0x69, 0x73, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74,
+	0x22, 0x45, 0x0a, 0x16, 0x52, 0x65, 0x71, 0x49, 0x73, 0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6c,
+	0x6c, 0x65, 0x63, 0x74, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x73, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x75, 0x69, 0x64, 0x12, 0x19, 0x0a, 0x08,
+	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x03, 0x28, 0x04, 0x52, 0x07,
+	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x49, 0x64, 0x22, 0x37, 0x0a, 0x16, 0x52, 0x65, 0x73, 0x49, 0x73,
+	0x55, 0x73, 0x65, 0x72, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x41, 0x6c, 0x62, 0x75, 0x6d,
+	0x73, 0x12, 0x1d, 0x0a, 0x0a, 0x69, 0x73, 0x5f, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x08, 0x52, 0x09, 0x69, 0x73, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74,
 	0x22, 0x56, 0x0a, 0x0a, 0x52, 0x65, 0x71, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x12, 0x10,
 	0x0a, 0x03, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x75, 0x69, 0x64,
 	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64,
@@ -2881,7 +2991,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP() []byte {
 	return file_rpc_voice_lover_voice_lover_message_proto_rawDescData
 }
 
-var file_rpc_voice_lover_voice_lover_message_proto_msgTypes = make([]protoimpl.MessageInfo, 49)
+var file_rpc_voice_lover_voice_lover_message_proto_msgTypes = make([]protoimpl.MessageInfo, 51)
 var file_rpc_voice_lover_voice_lover_message_proto_goTypes = []interface{}{
 	(*ResBase)(nil),                    // 0: rbp.rpc.voice_lover.ResBase
 	(*ReqPost)(nil),                    // 1: rbp.rpc.voice_lover.ReqPost
@@ -2907,52 +3017,54 @@ var file_rpc_voice_lover_voice_lover_message_proto_goTypes = []interface{}{
 	(*ResGetAlbumCommentCount)(nil),    // 21: rbp.rpc.voice_lover.ResGetAlbumCommentCount
 	(*ReqIsUserCollectAlbum)(nil),      // 22: rbp.rpc.voice_lover.ReqIsUserCollectAlbum
 	(*ResIsUserCollectAlbum)(nil),      // 23: rbp.rpc.voice_lover.ResIsUserCollectAlbum
-	(*ReqCollect)(nil),                 // 24: rbp.rpc.voice_lover.ReqCollect
-	(*ResCollect)(nil),                 // 25: rbp.rpc.voice_lover.ResCollect
-	(*ReqUpdateAudio)(nil),             // 26: rbp.rpc.voice_lover.ReqUpdateAudio
-	(*ReqAuditAudio)(nil),              // 27: rbp.rpc.voice_lover.ReqAuditAudio
-	(*ResAuditAudio)(nil),              // 28: rbp.rpc.voice_lover.ResAuditAudio
-	(*ReqCreateAlbum)(nil),             // 29: rbp.rpc.voice_lover.ReqCreateAlbum
-	(*ResCreateAlbum)(nil),             // 30: rbp.rpc.voice_lover.ResCreateAlbum
-	(*ReqUpdateAlbum)(nil),             // 31: rbp.rpc.voice_lover.ReqUpdateAlbum
-	(*ResUpdateAlbum)(nil),             // 32: rbp.rpc.voice_lover.ResUpdateAlbum
-	(*ReqDelAlbum)(nil),                // 33: rbp.rpc.voice_lover.ReqDelAlbum
-	(*ResDelAlbum)(nil),                // 34: rbp.rpc.voice_lover.ResDelAlbum
-	(*ReqGetAlbumList)(nil),            // 35: rbp.rpc.voice_lover.ReqGetAlbumList
-	(*ResGetAlbumList)(nil),            // 36: rbp.rpc.voice_lover.ResGetAlbumList
-	(*ReqGetAlbumDetail)(nil),          // 37: rbp.rpc.voice_lover.ReqGetAlbumDetail
-	(*ResGetAlbumDetail)(nil),          // 38: rbp.rpc.voice_lover.ResGetAlbumDetail
-	(*ReqAudioCollect)(nil),            // 39: rbp.rpc.voice_lover.ReqAudioCollect
-	(*ResAudioCollect)(nil),            // 40: rbp.rpc.voice_lover.ResAudioCollect
-	(*ReqAudioSubmitComment)(nil),      // 41: rbp.rpc.voice_lover.ReqAudioSubmitComment
-	(*ReqGetAudioCommentList)(nil),     // 42: rbp.rpc.voice_lover.ReqGetAudioCommentList
-	(*ReqGetAlbumCommentList)(nil),     // 43: rbp.rpc.voice_lover.ReqGetAlbumCommentList
-	(*ResCommonPost)(nil),              // 44: rbp.rpc.voice_lover.ResCommonPost
-	(*ResCommentList)(nil),             // 45: rbp.rpc.voice_lover.ResCommentList
-	(*ReqAlbumSubmitComment)(nil),      // 46: rbp.rpc.voice_lover.ReqAlbumSubmitComment
-	nil,                                // 47: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
-	nil,                                // 48: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
-	(*AlbumData)(nil),                  // 49: rbp.rpc.voice_lover.AlbumData
-	(*SubjectData)(nil),                // 50: rbp.rpc.voice_lover.SubjectData
-	(*AudioEditData)(nil),              // 51: rbp.rpc.voice_lover.AudioEditData
-	(*AudioData)(nil),                  // 52: rbp.rpc.voice_lover.AudioData
-	(*AudioSimpleData)(nil),            // 53: rbp.rpc.voice_lover.AudioSimpleData
-	(*Comment)(nil),                    // 54: rbp.rpc.voice_lover.Comment
+	(*ReqIsUserCollectAlbums)(nil),     // 24: rbp.rpc.voice_lover.ReqIsUserCollectAlbums
+	(*ResIsUserCollectAlbums)(nil),     // 25: rbp.rpc.voice_lover.ResIsUserCollectAlbums
+	(*ReqCollect)(nil),                 // 26: rbp.rpc.voice_lover.ReqCollect
+	(*ResCollect)(nil),                 // 27: rbp.rpc.voice_lover.ResCollect
+	(*ReqUpdateAudio)(nil),             // 28: rbp.rpc.voice_lover.ReqUpdateAudio
+	(*ReqAuditAudio)(nil),              // 29: rbp.rpc.voice_lover.ReqAuditAudio
+	(*ResAuditAudio)(nil),              // 30: rbp.rpc.voice_lover.ResAuditAudio
+	(*ReqCreateAlbum)(nil),             // 31: rbp.rpc.voice_lover.ReqCreateAlbum
+	(*ResCreateAlbum)(nil),             // 32: rbp.rpc.voice_lover.ResCreateAlbum
+	(*ReqUpdateAlbum)(nil),             // 33: rbp.rpc.voice_lover.ReqUpdateAlbum
+	(*ResUpdateAlbum)(nil),             // 34: rbp.rpc.voice_lover.ResUpdateAlbum
+	(*ReqDelAlbum)(nil),                // 35: rbp.rpc.voice_lover.ReqDelAlbum
+	(*ResDelAlbum)(nil),                // 36: rbp.rpc.voice_lover.ResDelAlbum
+	(*ReqGetAlbumList)(nil),            // 37: rbp.rpc.voice_lover.ReqGetAlbumList
+	(*ResGetAlbumList)(nil),            // 38: rbp.rpc.voice_lover.ResGetAlbumList
+	(*ReqGetAlbumDetail)(nil),          // 39: rbp.rpc.voice_lover.ReqGetAlbumDetail
+	(*ResGetAlbumDetail)(nil),          // 40: rbp.rpc.voice_lover.ResGetAlbumDetail
+	(*ReqAudioCollect)(nil),            // 41: rbp.rpc.voice_lover.ReqAudioCollect
+	(*ResAudioCollect)(nil),            // 42: rbp.rpc.voice_lover.ResAudioCollect
+	(*ReqAudioSubmitComment)(nil),      // 43: rbp.rpc.voice_lover.ReqAudioSubmitComment
+	(*ReqGetAudioCommentList)(nil),     // 44: rbp.rpc.voice_lover.ReqGetAudioCommentList
+	(*ReqGetAlbumCommentList)(nil),     // 45: rbp.rpc.voice_lover.ReqGetAlbumCommentList
+	(*ResCommonPost)(nil),              // 46: rbp.rpc.voice_lover.ResCommonPost
+	(*ResCommentList)(nil),             // 47: rbp.rpc.voice_lover.ResCommentList
+	(*ReqAlbumSubmitComment)(nil),      // 48: rbp.rpc.voice_lover.ReqAlbumSubmitComment
+	nil,                                // 49: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
+	nil,                                // 50: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
+	(*AlbumData)(nil),                  // 51: rbp.rpc.voice_lover.AlbumData
+	(*SubjectData)(nil),                // 52: rbp.rpc.voice_lover.SubjectData
+	(*AudioEditData)(nil),              // 53: rbp.rpc.voice_lover.AudioEditData
+	(*AudioData)(nil),                  // 54: rbp.rpc.voice_lover.AudioData
+	(*AudioSimpleData)(nil),            // 55: rbp.rpc.voice_lover.AudioSimpleData
+	(*Comment)(nil),                    // 56: rbp.rpc.voice_lover.Comment
 }
 var file_rpc_voice_lover_voice_lover_message_proto_depIdxs = []int32{
-	49, // 0: rbp.rpc.voice_lover.ResGetAlbumInfoById.album:type_name -> rbp.rpc.voice_lover.AlbumData
-	49, // 1: rbp.rpc.voice_lover.ResGetRecAlbums.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	49, // 2: rbp.rpc.voice_lover.ResGetAlbumsByPage.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	50, // 3: rbp.rpc.voice_lover.ResGetRecSubjects.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
-	51, // 4: rbp.rpc.voice_lover.ResGetAudioEdit.edits:type_name -> rbp.rpc.voice_lover.AudioEditData
-	52, // 5: rbp.rpc.voice_lover.ResGetAudioDetail.audio:type_name -> rbp.rpc.voice_lover.AudioData
-	49, // 6: rbp.rpc.voice_lover.ResGetAudioDetail.album:type_name -> rbp.rpc.voice_lover.AlbumData
-	53, // 7: rbp.rpc.voice_lover.ResGetAudioListByAlbumId.audios:type_name -> rbp.rpc.voice_lover.AudioSimpleData
-	47, // 8: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.album_counts:type_name -> rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
-	49, // 9: rbp.rpc.voice_lover.ResGetAlbumList.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	48, // 10: rbp.rpc.voice_lover.ResGetAlbumDetail.albums:type_name -> rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
-	54, // 11: rbp.rpc.voice_lover.ResCommentList.list:type_name -> rbp.rpc.voice_lover.Comment
-	49, // 12: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry.value:type_name -> rbp.rpc.voice_lover.AlbumData
+	51, // 0: rbp.rpc.voice_lover.ResGetAlbumInfoById.album:type_name -> rbp.rpc.voice_lover.AlbumData
+	51, // 1: rbp.rpc.voice_lover.ResGetRecAlbums.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	51, // 2: rbp.rpc.voice_lover.ResGetAlbumsByPage.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	52, // 3: rbp.rpc.voice_lover.ResGetRecSubjects.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
+	53, // 4: rbp.rpc.voice_lover.ResGetAudioEdit.edits:type_name -> rbp.rpc.voice_lover.AudioEditData
+	54, // 5: rbp.rpc.voice_lover.ResGetAudioDetail.audio:type_name -> rbp.rpc.voice_lover.AudioData
+	51, // 6: rbp.rpc.voice_lover.ResGetAudioDetail.album:type_name -> rbp.rpc.voice_lover.AlbumData
+	55, // 7: rbp.rpc.voice_lover.ResGetAudioListByAlbumId.audios:type_name -> rbp.rpc.voice_lover.AudioSimpleData
+	49, // 8: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.album_counts:type_name -> rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
+	51, // 9: rbp.rpc.voice_lover.ResGetAlbumList.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	50, // 10: rbp.rpc.voice_lover.ResGetAlbumDetail.albums:type_name -> rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
+	56, // 11: rbp.rpc.voice_lover.ResCommentList.list:type_name -> rbp.rpc.voice_lover.Comment
+	51, // 12: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry.value:type_name -> rbp.rpc.voice_lover.AlbumData
 	13, // [13:13] is the sub-list for method output_type
 	13, // [13:13] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name
@@ -3256,7 +3368,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqCollect); i {
+			switch v := v.(*ReqIsUserCollectAlbums); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3268,7 +3380,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResCollect); i {
+			switch v := v.(*ResIsUserCollectAlbums); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3280,7 +3392,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqUpdateAudio); i {
+			switch v := v.(*ReqCollect); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3292,7 +3404,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqAuditAudio); i {
+			switch v := v.(*ResCollect); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3304,7 +3416,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResAuditAudio); i {
+			switch v := v.(*ReqUpdateAudio); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3316,7 +3428,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqCreateAlbum); i {
+			switch v := v.(*ReqAuditAudio); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3328,7 +3440,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResCreateAlbum); i {
+			switch v := v.(*ResAuditAudio); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3340,7 +3452,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqUpdateAlbum); i {
+			switch v := v.(*ReqCreateAlbum); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3352,7 +3464,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResUpdateAlbum); i {
+			switch v := v.(*ResCreateAlbum); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3364,7 +3476,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqDelAlbum); i {
+			switch v := v.(*ReqUpdateAlbum); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3376,7 +3488,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResDelAlbum); i {
+			switch v := v.(*ResUpdateAlbum); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3388,7 +3500,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqGetAlbumList); i {
+			switch v := v.(*ReqDelAlbum); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3400,7 +3512,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResGetAlbumList); i {
+			switch v := v.(*ResDelAlbum); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3412,7 +3524,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqGetAlbumDetail); i {
+			switch v := v.(*ReqGetAlbumList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3424,7 +3536,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResGetAlbumDetail); i {
+			switch v := v.(*ResGetAlbumList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3436,7 +3548,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqAudioCollect); i {
+			switch v := v.(*ReqGetAlbumDetail); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3448,7 +3560,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResAudioCollect); i {
+			switch v := v.(*ResGetAlbumDetail); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3460,7 +3572,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqAudioSubmitComment); i {
+			switch v := v.(*ReqAudioCollect); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3472,7 +3584,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqGetAudioCommentList); i {
+			switch v := v.(*ResAudioCollect); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3484,7 +3596,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReqGetAlbumCommentList); i {
+			switch v := v.(*ReqAudioSubmitComment); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3496,7 +3608,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResCommonPost); i {
+			switch v := v.(*ReqGetAudioCommentList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3508,7 +3620,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResCommentList); i {
+			switch v := v.(*ReqGetAlbumCommentList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3520,6 +3632,30 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			}
 		}
 		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResCommonPost); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResCommentList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ReqAlbumSubmitComment); i {
 			case 0:
 				return &v.state
@@ -3538,7 +3674,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rpc_voice_lover_voice_lover_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   49,
+			NumMessages:   51,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
