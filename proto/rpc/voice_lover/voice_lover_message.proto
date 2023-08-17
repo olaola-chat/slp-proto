@@ -235,8 +235,9 @@ message ReqAlbumSubmitComment {
   uint32 uid = 3;
 }
 
-message ReqAlbumPlayStatReport {
+message ReqPlayStatReport {
   uint64 album_id = 1;
+  uint64 audio_id = 2;
 }
-message ResAlbumPlayStatReport {
+message ResPlayStatReport {
 }

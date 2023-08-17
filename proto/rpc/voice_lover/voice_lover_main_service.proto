@@ -69,6 +69,6 @@ service VoiceLoverMain {
   // 音频详情
   rpc GetAudioInfoById (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
 
-  // 专辑播放事件上报
-  rpc AlbumPlayStatReport (rbp.rpc.voice_lover.ReqAlbumPlayStatReport) returns (rbp.rpc.voice_lover.ResAlbumPlayStatReport);
+  // 播放事件上报
+  rpc PlayStatReport (rbp.rpc.voice_lover.ReqPlayStatReport) returns (rbp.rpc.voice_lover.ResPlayStatReport);
 }
