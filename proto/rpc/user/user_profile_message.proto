@@ -24,21 +24,6 @@ message ReqUserProfiles {
 	repeated string fields = 2; 
 }
 
-//验证用户登录令牌合法性
-message ReqUserAuth {
-	//当前登录用户令牌
-	string token = 1; 
-}
-
-//返回验证用户信息
-message RepUserAuth {
-	uint32	uid		= 1;
-	uint32	time		= 2;
-	uint32	app_id	= 3;
-	string 	salt		= 4;
-	string	platform	= 5;
-	string	channel	= 6;
-}
 
 //申请令牌
 message ReqUserToken {

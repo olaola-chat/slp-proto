@@ -23,8 +23,6 @@ service UserProfile {
 
 	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
 
-	rpc Auth(ReqUserAuth) returns (RepUserAuth);
-
 	rpc SearchByName(ReqUserSearchName) returns (RepUserSearchDefault);
 }
 
