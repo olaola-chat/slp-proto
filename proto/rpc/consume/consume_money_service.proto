@@ -1,0 +1,25 @@
+syntax = "proto3";
+package rbp.rpc.consume;
+
+import "rbp/plugin/option.proto";
+
+import "rpc/consume/consume_money_message.proto";
+
+/*
+user_profile rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/consume";
+
+
+service ConsumeMoney {
+	option (rbp.plugin.rbp_service).name = "Consume.Money";
+
+	// 获取请求id
+	rpc GetRequestId (rbp.rpc.consume.GetRequestIdReq) returns (rbp.rpc.consume.GetRequestIdRes);
+
+	// 物品发放
+	rpc CommoditySend (rbp.rpc.consume.CommoditySendReq) returns (rbp.rpc.consume.CommoditySendRes);
+}
+
+

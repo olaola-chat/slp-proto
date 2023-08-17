@@ -5,6 +5,7 @@ import (
 
 	"github.com/olaola-chat/rbp-proto/rpcclient/base"
 
+	"github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
 	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/user"
 )
 
@@ -25,6 +26,12 @@ func (s *userProfile) NeedVerify(ctx context.Context, req *user.ReqNeedVerify) (
 	return reply, err
 }
 
+func (s *userProfile) Get(ctx context.Context, req *user.ReqUserProfile) (*xianshi.EntityXsUserProfile, error) {
+	reply := &xianshi.EntityXsUserProfile{}
+	err := s.Call(ctx, "Get", req, reply)
+	return reply, err
+}
+
 func (s *userProfile) Mget(ctx context.Context, req *user.ReqUserProfiles) (*user.RepUserProfiles, error) {
 	reply := &user.RepUserProfiles{}
 	err := s.Call(ctx, "Mget", req, reply)
@@ -34,12 +41,6 @@ func (s *userProfile) Mget(ctx context.Context, req *user.ReqUserProfiles) (*use
 func (s *userProfile) Test(ctx context.Context, req *user.ReqUserProfiles) (*user.RepUserProfiles, error) {
 	reply := &user.RepUserProfiles{}
 	err := s.Call(ctx, "Test", req, reply)
-	return reply, err
-}
-
-func (s *userProfile) Auth(ctx context.Context, req *user.ReqUserAuth) (*user.RepUserAuth, error) {
-	reply := &user.RepUserAuth{}
-	err := s.Call(ctx, "Auth", req, reply)
 	return reply, err
 }
 

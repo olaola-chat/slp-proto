@@ -1,0 +1,19 @@
+syntax = "proto3";
+package rbp.rpc.room;
+
+/*
+room_info rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
+
+message Package {
+  string id = 1;
+  string rid = 2;
+  string bid = 3;
+  string sender = 4;
+  string uid = 5;
+  string money = 6;
+  string dateline = 7;
+  uint32 package_sec = 8;
+}

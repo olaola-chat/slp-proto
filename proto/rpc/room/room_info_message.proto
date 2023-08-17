@@ -1,0 +1,77 @@
+syntax = "proto3";
+package rbp.rpc.room;
+
+/*
+room_info rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
+import "db/xianshi/entity_xs_chatroom.proto";
+
+message Chatroom {
+	uint32 rid                                     = 1;  //
+	int32  app_id                                  = 2;  //
+	uint32 uid                                     = 3;  //
+	string prefix                                  = 4;  //
+	string name                                    = 5;  //
+	string icon                                    = 6;  //
+	string type                                    = 7;  //
+	string property                                = 8;  // 商业，爵位，家族房，个人(所有人都可以有), 游戏房,联盟房 vip 和 fleet 对应 auto, private 对应 private pretty:靓号房 virtual:模拟房
+	string types                                   = 9;  // 类别，后台更改, 默认，点单，自由，点单厅无法修改theme
+	string description                             = 10; //
+	uint32 display_message                         = 11; //
+	uint32 online_num                              = 12; // 在线人数
+	uint32 online_admin                            = 13; // 房主是否现在
+	uint32 version                                 = 14; //
+	int32  deleted                                 = 15; // 是否已经被屏蔽， -1 初始化 0 正常 1 关闭 2 删除
+	uint32 boss                                    = 16; // xs_chatroom_package表中的bid，跟派单有关
+	int32  reception                               = 17; // 是否开启招待位
+	int32  paier                                   = 18; // 是否开启老板位
+	string theme                                   = 19; //
+	string background                              = 20; //
+	uint32 counter                                 = 21; //
+	string mode                                    = 22; // auto 自由上麦模式，lock 默认锁定模式，只能由管理员抱上麦
+	uint32 package                                 = 23; // 麦上打赏统计
+	uint32 o_total                                 = 24; // 派单数
+	uint32 o_num                                   = 25; // 成功单数
+	uint32 o_duration                              = 26; // 成功总耗时
+	uint32 nine                                    = 27; // 9麦位模式
+	uint32 dateline                                = 28; // 创建时间
+	string password                                = 29; //
+	int32  weight                                  = 30; //
+	uint32 display_rank                            = 31; //
+	string bicon                                   = 32; //
+	uint32 sex                                     = 33; //
+	uint32 close_box                               = 34; //
+	string game                                    = 35; //
+	uint32 state                                   = 36; // 0：正常，1：隐藏，2：仅好友可见，3：仅粉丝可见
+	int32  auction                                 = 37; // 是否开启拍卖
+	string area                                    = 38; // zh_tw台湾地区，sg新加坡，ms马来西亚，ho港澳，ar中东，th泰国，vi越南，ko韩国，jo约旦，ir伊朗，ma摩洛哥，tn突尼斯，sd苏丹，dz阿尔及利亚，kw科威特，eg埃及，iq伊拉克，ae阿联酋，bh巴林，lb黎巴嫩，om阿曼，qa卡塔尔，sa沙特，sy叙利亚，mr毛里塔尼亚，so索马里，ye也门，bl巴勒斯坦，ly利比亚，km科摩罗，dj吉布提，tr土耳其
+	string language                                = 39; // 语言
+	string room_factory_type                       = 40; // 创造房间的工厂type
+	uint32 fixed_tag_id                            = 41; // 房间的标签显示id
+	uint32 room_module_id                          = 42; // 冗余字段房间的模版id
+	string settlement_channel                      = 43; // 结算频道
+	uint32 gift_wish                               = 44; // 心愿礼物功能，0-关闭，1-开启
+}
+
+//获取单个请求请求
+message ReqRoomInfo {
+	//需要查询的房间RID
+	uint32	rid 		= 1;
+	//需要返回哪些字段，为空的话，表示所有字段名
+	repeated string fields = 2;
+}
+
+//获取批量请求
+message ReqRoomInfos {
+	//批量请求房间RID集合
+	repeated uint32	rids = 1;
+	//需要返回哪些字段，为空的话，表示所有字段名
+	repeated string fields = 2;
+}
+
+//返回多个房间信息
+message RepRoomInfos {
+	repeated db.xianshi.EntityXsChatroom data = 1;
+}

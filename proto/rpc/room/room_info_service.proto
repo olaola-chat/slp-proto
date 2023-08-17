@@ -1,0 +1,25 @@
+syntax = "proto3";
+package rbp.rpc.room;
+
+import "rbp/plugin/option.proto";
+import "rpc/room/room_info_message.proto";
+import "db/xianshi/entity_xs_chatroom.proto";
+
+/*
+room_info rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/room";
+
+
+service RoomInfo {
+	option (rbp.plugin.rbp_service).name = "Room.Info";
+
+	// 获取单个房间信息
+	rpc Get (rbp.rpc.room.ReqRoomInfo) returns (db.xianshi.EntityXsChatroom);
+
+	// 批量获取房间列表
+	rpc Mget (rbp.rpc.room.ReqRoomInfos) returns (rbp.rpc.room.RepRoomInfos);
+}
+
+
