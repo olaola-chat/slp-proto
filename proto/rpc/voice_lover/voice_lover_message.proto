@@ -234,3 +234,17 @@ message ReqAlbumSubmitComment {
   string content = 2;
   uint32 uid = 3;
 }
+
+//举报回调参数
+message ReqUpdateStatus{
+  uint64 id = 1;   //评论id
+  string type = 2; //专辑或者音频评论
+  uint32 status = 3; //状态
+}
+
+//举报回调接过
+message ResUpdateStatus{
+  bool success = 1;
+  string msg = 2;
+  bool retry = 3;
+}
