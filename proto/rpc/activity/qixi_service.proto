@@ -1,0 +1,18 @@
+syntax = "proto3";
+package rbp.rpc.activity;
+
+import "rbp/plugin/option.proto";
+
+import "rpc/activity/qixi_message.proto";
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/activity";
+
+service RbpActivityQixi {
+    option (rbp.plugin.rbp_service).name = "Rbp.Activity.Qixi";
+
+    rpc RoomPackage(ReqRoomPackage) returns (RepConsume);
+    rpc ChatGift(ReqChatGift) returns (RepConsume);
+
+    rpc GetMyData(ReqMyData) returns (RepMyData);
+    rpc GetAwardPool(ReqAwardPool) returns (RepAwardPool);
+}

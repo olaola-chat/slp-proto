@@ -1,0 +1,53 @@
+syntax = "proto3";
+package rbp.rpc.activity;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/activitypb";
+
+message ReqRoomPackage {
+    uint32 uid = 1; //用户id（必填）
+    repeated uint32 to_uids = 2; //收方id（必填）
+    uint32 rid = 3; //房间id（必填）
+    int32 total_money = 4; //需要支付的总金额（必填）
+    int32 every_money = 5; //支付给每个人的金额（必填）
+    int32 user_cid = 6; //xs_user_commodity.id
+    int32 gift_id = 7;
+    int32 gift_num = 8;
+    uint64 request_id = 9;
+    int32 type = 10; //场景id
+}
+
+message ReqChatGift {
+    uint32 uid = 1; //用户id（必填）
+    uint32 to_uid = 2; //收方id（必填）
+    int32 total_money = 3; //需要支付的总金额（必填）
+    int32 user_cid = 4; //xs_user_commodity.id
+    int32 gift_id = 5;
+    int32 gift_num = 6;
+    uint64 request_id = 7;
+    int32 type = 8; //场景id
+}
+
+message RepConsume {
+    bool success = 1;
+    string msg = 2;
+}
+
+message ReqMyData {
+    uint32 uid = 1;
+}
+
+message RepMyData {
+    uint32 sent_sum = 1;
+    uint32 recv_sum = 2;
+    uint32 rank = 3;
+}
+
+message ReqAwardPool {
+    uint32 uid = 1;
+}
+
+message RepAwardPool {
+    uint32 sum_lv1 = 1;
+    uint32 sum_lv2 = 2;
+    repeated uint32 award_cnts = 3;
+}
