@@ -37,9 +37,12 @@ message ReqMyData {
 }
 
 message RepMyData {
-    uint32 sent_sum = 1;
-    uint32 recv_sum = 2;
-    uint32 rank = 3;
+    bool success = 1;
+    string msg = 2;
+
+    uint32 sent_sum = 3;
+    uint32 recv_sum = 4;
+    uint32 rank = 5;
 }
 
 message ReqAwardPool {
@@ -47,7 +50,10 @@ message ReqAwardPool {
 }
 
 message RepAwardPool {
-    uint32 sum_lv1 = 1;
-    uint32 sum_lv2 = 2;
-    repeated uint32 award_cnts = 3;
+    bool success = 1;
+    string msg = 2;
+
+    uint32 sum_lv1 = 3;
+    uint32 sum_lv2 = 4;
+    repeated uint32 award_cnts = 5;
 }
