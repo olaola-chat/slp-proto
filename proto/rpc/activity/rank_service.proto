@@ -17,9 +17,9 @@ option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/activity";
 service RbpActivityRank {
     option (rbp.plugin.rbp_service).name = "Rbp.Activity.Rank";
 
-    rpc Insert(ReqActivityRankInsert) returns (RepActivityRankInsert);
-    rpc IncrSimple(ReqActivityRankIncrSimple) returns (RepActivityRankIncr);
-    rpc IncrComplex(ReqActivityRankIncrComplex) returns (RepActivityRankIncr);
+    rpc Insert(ReqRankInsert) returns (RepRankInsert);
+    rpc IncrSimple(ReqRankIncrSimple) returns (RepRankIncr);
+    rpc IncrComplex(ReqRankIncrComplex) returns (RepRankIncr);
 
-    rpc GetList(ReqActivityRankGetList) returns (RepActivityRankGetList);
+    rpc GetList(ReqRankGetList) returns (RepRankGetList);
 }

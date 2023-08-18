@@ -412,15 +412,15 @@ func (x *Chatroom) GetGiftWish() uint32 {
 	return 0
 }
 
-//获取单个请求请求
+// 获取单个请求请求
 type ReqRoomInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	//需要查询的房间RID
+	// 需要查询的房间RID
 	Rid uint32 `protobuf:"varint,1,opt,name=rid,proto3" json:"rid,omitempty"`
-	//需要返回哪些字段，为空的话，表示所有字段名
+	// 需要返回哪些字段，为空的话，表示所有字段名
 	Fields []string `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
 }
 
@@ -470,15 +470,15 @@ func (x *ReqRoomInfo) GetFields() []string {
 	return nil
 }
 
-//获取批量请求
+// 获取批量请求
 type ReqRoomInfos struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	//批量请求房间RID集合
+	// 批量请求房间RID集合
 	Rids []uint32 `protobuf:"varint,1,rep,packed,name=rids,proto3" json:"rids,omitempty"`
-	//需要返回哪些字段，为空的话，表示所有字段名
+	// 需要返回哪些字段，为空的话，表示所有字段名
 	Fields []string `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
 }
 
@@ -528,7 +528,7 @@ func (x *ReqRoomInfos) GetFields() []string {
 	return nil
 }
 
-//返回多个房间信息
+// 返回多个房间信息
 type RepRoomInfos struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
