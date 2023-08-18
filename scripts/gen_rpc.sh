@@ -28,5 +28,7 @@ ${PROTO_SERV} rpc/room/room_info_service.proto
 ${PROTOC} rpc/activity/rank_message.proto
 ${PROTO_SERV} rpc/activity/rank_service.proto
 
+${PROTOC} rpc/activity/send_gift_message.proto
+
 ${PROTOC} rpc/activity/qixi_message.proto
 ${PROTO_SERV} rpc/activity/qixi_service.proto
