@@ -31,14 +31,14 @@ func (s *rbpActivityQixi) ChatGift(ctx context.Context, req *activitypb.ReqChatG
 	return reply, err
 }
 
-func (s *rbpActivityQixi) GetMyData(ctx context.Context, req *activitypb.ReqMyData) (*activitypb.RepMyData, error) {
-	reply := &activitypb.RepMyData{}
+func (s *rbpActivityQixi) GetMyData(ctx context.Context, req *activitypb.ReqQixiMyData) (*activitypb.RepQixiMyData, error) {
+	reply := &activitypb.RepQixiMyData{}
 	err := s.Call(ctx, "GetMyData", req, reply)
 	return reply, err
 }
 
-func (s *rbpActivityQixi) GetAwardPool(ctx context.Context, req *activitypb.ReqAwardPool) (*activitypb.RepAwardPool, error) {
-	reply := &activitypb.RepAwardPool{}
+func (s *rbpActivityQixi) GetAwardPool(ctx context.Context, req *activitypb.ReqQixiAwardPool) (*activitypb.RepQixiAwardPool, error) {
+	reply := &activitypb.RepQixiAwardPool{}
 	err := s.Call(ctx, "GetAwardPool", req, reply)
 	return reply, err
 }
