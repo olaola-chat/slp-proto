@@ -1,0 +1,25 @@
+syntax = "proto3";
+package rbp.rpc.activity;
+
+import "rbp/plugin/option.proto";
+
+import "rpc/activity/rank_message.proto";
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/activity";
+
+/*
+ * 通用榜单, 有三种更新数据策略：
+ * Insert 不累加，删除排名靠后的
+ * IncrSimple 累加，不限制榜单数量，ZIncrBy累加
+ * IncrComplex, 累加，通过单独的key累加，并且删除排名靠后的
+ */
+
+service RbpActivityRank {
+    option (rbp.plugin.rbp_service).name = "Rbp.Activity.Rank";
+
+    rpc Insert(ReqActivityRankInsert) returns (RepActivityRankInsert);
+    rpc IncrSimple(ReqActivityRankIncrSimple) returns (RepActivityRankIncr);
+    rpc IncrComplex(ReqActivityRankIncrComplex) returns (RepActivityRankIncr);
+
+    rpc GetList(ReqActivityRankGetList) returns (RepActivityRankGetList);
+}
