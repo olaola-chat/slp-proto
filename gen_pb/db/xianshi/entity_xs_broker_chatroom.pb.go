@@ -30,13 +30,13 @@ type EntityXsBrokerChatroom struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	//@inject_tag: orm:"id,primary"
+	// @inject_tag: orm:"id,primary"
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` //
-	//@inject_tag: orm:"bid"
+	// @inject_tag: orm:"bid"
 	Bid int32 `protobuf:"varint,2,opt,name=bid,proto3" json:"bid,omitempty" orm:"bid"` // 公会id
-	//@inject_tag: orm:"rid"
+	// @inject_tag: orm:"rid"
 	Rid int32 `protobuf:"varint,3,opt,name=rid,proto3" json:"rid,omitempty" orm:"rid"` // 房间id
-	//@inject_tag: orm:"dateline"
+	// @inject_tag: orm:"dateline"
 	Dateline int32 `protobuf:"varint,4,opt,name=dateline,proto3" json:"dateline,omitempty" orm:"dateline"` // 加入时间
 }
 
