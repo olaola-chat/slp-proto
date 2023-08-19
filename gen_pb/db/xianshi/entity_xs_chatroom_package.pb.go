@@ -30,19 +30,19 @@ type EntityXsChatroomPackage struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	//@inject_tag: orm:"id,primary"
+	// @inject_tag: orm:"id,primary"
 	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` //
-	//@inject_tag: orm:"rid"
+	// @inject_tag: orm:"rid"
 	Rid uint32 `protobuf:"varint,2,opt,name=rid,proto3" json:"rid,omitempty" orm:"rid"` //
-	//@inject_tag: orm:"bid"
+	// @inject_tag: orm:"bid"
 	Bid uint32 `protobuf:"varint,3,opt,name=bid,proto3" json:"bid,omitempty" orm:"bid"` // 老板ID
-	//@inject_tag: orm:"sender"
+	// @inject_tag: orm:"sender"
 	Sender uint32 `protobuf:"varint,4,opt,name=sender,proto3" json:"sender,omitempty" orm:"sender"` //
-	//@inject_tag: orm:"uid"
+	// @inject_tag: orm:"uid"
 	Uid uint32 `protobuf:"varint,5,opt,name=uid,proto3" json:"uid,omitempty" orm:"uid"` //
-	//@inject_tag: orm:"money"
+	// @inject_tag: orm:"money"
 	Money uint32 `protobuf:"varint,6,opt,name=money,proto3" json:"money,omitempty" orm:"money"` //
-	//@inject_tag: orm:"dateline,primary"
+	// @inject_tag: orm:"dateline,primary"
 	Dateline uint32 `protobuf:"varint,7,opt,name=dateline,proto3" json:"dateline,omitempty" orm:"dateline,primary"` //
 }
 

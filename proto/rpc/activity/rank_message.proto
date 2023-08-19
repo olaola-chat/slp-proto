@@ -1,0 +1,56 @@
+syntax = "proto3";
+package rbp.rpc.activity;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/activitypb";
+
+message RankCfg {
+    string key = 1;
+    string keySuffix = 2; //key后缀，支持"today", "week", "yestoday"。不识别的字符串直接添加到key
+    uint32 ttl = 3; //如果不设置，默认30天过期
+    uint32 limit = 4; //如果不设置，不限制最大数量
+    bool asc = 5; //如果不设置，默认降序
+}
+
+message ReqRankInsert {
+    RankCfg cfg = 1;
+    map<string, double> values = 2;
+}
+
+message RepRankInsert {
+    bool success = 1;
+    string msg = 2;
+}
+
+message ReqRankIncrSimple {
+    RankCfg cfg = 1;
+    map<string, double> values = 2;
+}
+
+message ReqRankIncrComplex {
+    RankCfg cfg = 1;
+    map<string, double> values = 2;
+    bool append_time = 3;
+}
+
+message RepRankIncr {
+    bool success = 1;
+    string msg = 2;
+}
+
+message ReqRankGetList {
+    RankCfg cfg = 1;
+    uint32 num = 2;
+    bool member_is_id = 3;
+}
+
+message RankDataItem {
+    string member = 1;
+    uint32 id = 2; //如果member是id，并且member_is_id设置为true，返回结果包含id
+    double value = 3;
+}
+
+message RepRankGetList {
+    bool success = 1;
+    string msg = 2;
+    repeated RankDataItem data = 3;
+}

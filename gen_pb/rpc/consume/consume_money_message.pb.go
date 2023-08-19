@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//错误码
+// 错误码
 type ErrorCode int32
 
 const (
@@ -118,7 +118,7 @@ func (ErrorCode) EnumDescriptor() ([]byte, []int) {
 	return file_rpc_consume_consume_money_message_proto_rawDescGZIP(), []int{0}
 }
 
-//场景类型
+// 场景类型
 type ConsumeType int32
 
 const (
@@ -333,7 +333,7 @@ func (ConsumeType) EnumDescriptor() ([]byte, []int) {
 	return file_rpc_consume_consume_money_message_proto_rawDescGZIP(), []int{1}
 }
 
-//金额类型
+// 金额类型
 type MoneyType int32
 
 const (
@@ -459,7 +459,7 @@ func (x *CommoditySend) GetNum() int32 {
 	return 0
 }
 
-//发物品时可以同时发钱，方便业务使用
+// 发物品时可以同时发钱，方便业务使用
 type MoneySend struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

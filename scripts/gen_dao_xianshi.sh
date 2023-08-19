@@ -31,3 +31,5 @@ cd `dirname $0`
 ./gen_db.sh xianshi xs_chatroom_super
 ./gen_db.sh xianshi xs_broker_user
 ./gen_db.sh xianshi xs_broker
+
+./gen_db.sh xianshi xs_pay_change
