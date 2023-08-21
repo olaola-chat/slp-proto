@@ -20,13 +20,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// 验证用户登录令牌合法性
+//验证用户登录令牌合法性
 type ReqUserAuth struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 当前登录用户令牌
+	//当前登录用户令牌
 	Token string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (x *ReqUserAuth) GetToken() string {
 	return ""
 }
 
-// 返回验证用户信息
+//返回验证用户信息
 type RepUserAuth struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
