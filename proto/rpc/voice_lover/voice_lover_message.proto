@@ -76,7 +76,7 @@ message ReqGetAudioDetail {
 }
 message ResGetAudioDetail {
   AudioData audio = 1;
-  AlbumData album = 2;
+  repeated AlbumData album = 2;
 }
 
 message ReqGetAudioListByAlbumId {
