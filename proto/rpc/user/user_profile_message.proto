@@ -60,6 +60,15 @@ message RepUsersBitMap{
 	repeated UserBitMapItem data = 1;
 }
 
+message ReqCheckFollow{
+	uint32 uid = 1;
+	uint32 to_uid = 2;
+}
+
+message RepCheckFollow{
+	bool is_follow = 1;
+}
+
 
 message ReqGetUserIpInfo{
 	string Ip = 1;//ip地址10.10.10.10
