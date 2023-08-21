@@ -108,6 +108,10 @@ message ResIsUserCollectAlbum {
   bool is_collect = 1;
 }
 
+message ResIsUserCollectAudio{
+  bool is_collect = 1;
+}
+
 message ReqIsUserCollectAlbums {
   uint32 uid = 1;
   repeated uint64 album_ids = 2;

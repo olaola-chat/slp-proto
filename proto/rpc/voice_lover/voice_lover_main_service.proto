@@ -72,4 +72,6 @@ service VoiceLoverMain {
   rpc UpdateReportStatus(rbp.rpc.voice_lover.ReqUpdateStatus) returns (rbp.rpc.voice_lover.ResUpdateStatus);
 
   rpc PlayStatReport (rbp.rpc.voice_lover.ReqPlayStatReport) returns (rbp.rpc.voice_lover.ResPlayStatReport);
+  
+  rpc ResIsUserCollectAudio(rbp.rpc.voice_lover.ReqCollect) returns ()
 }
