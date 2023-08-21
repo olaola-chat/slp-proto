@@ -139,8 +139,8 @@ func (s *voiceLoverMain) PlayStatReport(ctx context.Context, req *voice_lover.Re
 	return reply, err
 }
 
-func (s *voiceLoverMain) ResIsUserCollectAudio(ctx context.Context, req *voice_lover.ReqCollect) (*voice_lover.ResIsUserCollectAudio, error) {
+func (s *voiceLoverMain) IsUserCollectAudio(ctx context.Context, req *voice_lover.ReqCollect) (*voice_lover.ResIsUserCollectAudio, error) {
 	reply := &voice_lover.ResIsUserCollectAudio{}
-	err := s.Call(ctx, "ResIsUserCollectAudio", req, reply)
+	err := s.Call(ctx, "IsUserCollectAudio", req, reply)
 	return reply, err
 }
