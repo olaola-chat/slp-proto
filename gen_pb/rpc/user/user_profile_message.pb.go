@@ -21,15 +21,15 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// 获取单个请求请求
+//获取单个请求请求
 type ReqUserProfile struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 需要查询的用户UID
+	//需要查询的用户UID
 	Uid uint32 `protobuf:"varint,1,opt,name=uid,proto3" json:"uid,omitempty"`
-	// 需要返回哪些字段，为空的话，表示所有字段名
+	//需要返回哪些字段，为空的话，表示所有字段名
 	Fields []string `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
 }
 
@@ -79,15 +79,15 @@ func (x *ReqUserProfile) GetFields() []string {
 	return nil
 }
 
-// 获取批量请求
+//获取批量请求
 type ReqUserProfiles struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 批量请求用户UID集合
+	//批量请求用户UID集合
 	Uids []uint32 `protobuf:"varint,1,rep,packed,name=uids,proto3" json:"uids,omitempty"`
-	// 需要返回哪些字段，为空的话，表示所有字段名
+	//需要返回哪些字段，为空的话，表示所有字段名
 	Fields []string `protobuf:"bytes,2,rep,name=fields,proto3" json:"fields,omitempty"`
 }
 
@@ -137,7 +137,7 @@ func (x *ReqUserProfiles) GetFields() []string {
 	return nil
 }
 
-// 申请令牌
+//申请令牌
 type ReqUserToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -209,7 +209,7 @@ func (x *ReqUserToken) GetChannel() string {
 	return ""
 }
 
-// 返回令牌
+//返回令牌
 type RepUserToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -257,7 +257,7 @@ func (x *RepUserToken) GetToken() string {
 	return ""
 }
 
-// 返回多个用户信息
+//返回多个用户信息
 type RepUserProfiles struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -310,7 +310,7 @@ type ReqUsersBitMap struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 批量请求用户UID集合
+	//批量请求用户UID集合
 	Uids []uint32 `protobuf:"varint,1,rep,packed,name=uids,proto3" json:"uids,omitempty"`
 }
 
@@ -573,7 +573,7 @@ func (x *RepGetUserIpInfo) GetTelecom() string {
 	return ""
 }
 
-// 返回多人设置信息
+//返回多人设置信息
 type RepUserSettings struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -714,20 +714,20 @@ func (x *RepNeedVerify) GetRes() uint32 {
 	return 0
 }
 
-// 根据用户名字检索
-// 只返回最近7天里，等级不低于5级的用户数据
+//根据用户名字检索
+//只返回最近7天里，等级不低于5级的用户数据
 type ReqUserSearchName struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 检索关键字，不能为空，不能为停止词
+	//检索关键字，不能为空，不能为停止词
 	Keyword string `protobuf:"bytes,1,opt,name=keyword,proto3" json:"keyword,omitempty"`
-	// 检索哪些app的数据
+	//检索哪些app的数据
 	AppId []uint32 `protobuf:"varint,2,rep,packed,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
-	// 返回数量
+	//返回数量
 	Limit uint32 `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
-	// 搜索着等级
+	//搜索着等级
 	SearcherLevel uint32 `protobuf:"varint,4,opt,name=searcherLevel,proto3" json:"searcherLevel,omitempty"`
 }
 
@@ -791,15 +791,15 @@ func (x *ReqUserSearchName) GetSearcherLevel() uint32 {
 	return 0
 }
 
-// 通用检索返回
+//通用检索返回
 type RepUserSearchDefault struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 符合条件的数量
+	//符合条件的数量
 	Total uint32 `protobuf:"varint,1,opt,name=total,proto3" json:"total,omitempty"`
-	// 返回的用户uids集合
+	//返回的用户uids集合
 	Data []uint32 `protobuf:"varint,2,rep,packed,name=data,proto3" json:"data,omitempty"`
 }
 

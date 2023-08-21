@@ -1,0 +1,44 @@
+syntax = "proto3";
+package rbp.rpc.room;
+
+/*
+room_hot rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
+
+message ReqRoomHotAdd{
+  uint32 rid = 1;            //房间id
+  int64 hot = 2;             //热度值，正表示加，负表示减
+  uint32 uid = 3;            //用户id
+  uint32 effect_hour = 4;    //生效时长(小时)
+  uint32 admin = 5;          //管理员uid
+  uint64 start_time = 6;     //开始生效时间
+  uint32 hid = 7;            //运营放数据库生产的ID(用于更新)
+}
+
+message ReqRoomHotGet{
+  uint32 rid = 1;     //房间id
+}
+
+message RoomHotItem{
+  uint32 rid = 1;
+  uint32 hot = 2;
+}
+
+message ResRoomHotGet{
+  bool success = 1;
+  string msg = 2;
+  uint32 hot = 3;    //热度值
+}
+
+message ReqRoomHotGetBatch{
+  repeated uint32 rids = 1;  //房间id
+  map<uint32,uint32> online_num = 2; //在线人数
+}
+
+message ResRoomHotGetBatch{
+  bool success = 1;
+  string msg = 2;
+  map<uint32,uint32> hot = 3;    //热度值
+}

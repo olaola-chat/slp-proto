@@ -23,7 +23,9 @@ ${PROTO_SERV} rpc/consume/consume_money_service.proto
 
 ${PROTOC} rpc/room/room_info_message.proto
 ${PROTOC} rpc/room/room_package_message.proto
+${PROTOC} rpc/room/room_hot_message.proto
 ${PROTO_SERV} rpc/room/room_info_service.proto
+${PROTO_SERV} rpc/room/room_hot_service.proto
 
 ${PROTOC} rpc/activity/rank_message.proto
 ${PROTO_SERV} rpc/activity/rank_service.proto

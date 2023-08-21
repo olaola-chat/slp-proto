@@ -1,0 +1,17 @@
+syntax = "proto3";
+package rbp.rpc.room;
+
+/*
+room_hot rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
+import "rpc/room/room_hot_message.proto";
+
+service RoomHot{
+  //获取单个房间热度
+  rpc Get (rbp.rpc.room.ReqRoomHotGet) returns (rbp.rpc.room.ReqRoomHotGet);
+
+  //批量获取房间热度
+  rpc GetBatch(rbp.rpc.room.ReqRoomHotGetBatch) returns (rbp.rpc.room.ResRoomHotGetBatch);
+}
