@@ -54,6 +54,12 @@ service VoiceLoverMain {
   // 收藏专辑或者音频
   rpc Collect (rbp.rpc.voice_lover.ReqCollect) returns (rbp.rpc.voice_lover.ResCollect);
 
+  // 获取收藏专辑列表
+  rpc GetAlbumCollectList (rbp.rpc.voice_lover.ReqGetAlbumCollectList) returns (rbp.rpc.voice_lover.ResGetAlbumCollectList);
+
+  // 获取收藏音频列表
+  rpc GetAudioCollectList (rbp.rpc.voice_lover.ReqGetAudioCollectList) returns (rbp.rpc.voice_lover.ResGetAudioCollectList);
+
   // 提交音频评论
   rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqAudioSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
 

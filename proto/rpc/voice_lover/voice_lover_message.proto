@@ -129,6 +129,26 @@ message ReqCollect {
 message ResCollect {
 }
 
+message ReqGetAlbumCollectList {
+  uint32 uid = 1;
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+message ResGetAlbumCollectList {
+  repeated AlbumData list = 1;
+  bool has_more = 2;
+}
+
+message ReqGetAudioCollectList {
+  uint32 uid = 1;
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+message ResGetAudioCollectList {
+  repeated AudioSimpleData list = 1;
+  bool has_more = 2;
+}
+
 message ReqUpdateAudio {
   uint64 id = 1;
   string title = 2;

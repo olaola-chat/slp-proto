@@ -97,6 +97,18 @@ func (s *voiceLoverMain) Collect(ctx context.Context, req *voice_lover.ReqCollec
 	return reply, err
 }
 
+func (s *voiceLoverMain) GetAlbumCollectList(ctx context.Context, req *voice_lover.ReqGetAlbumCollectList) (*voice_lover.ResGetAlbumCollectList, error) {
+	reply := &voice_lover.ResGetAlbumCollectList{}
+	err := s.Call(ctx, "GetAlbumCollectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAudioCollectList(ctx context.Context, req *voice_lover.ReqGetAudioCollectList) (*voice_lover.ResGetAudioCollectList, error) {
+	reply := &voice_lover.ResGetAudioCollectList{}
+	err := s.Call(ctx, "GetAudioCollectList", req, reply)
+	return reply, err
+}
+
 func (s *voiceLoverMain) SubmitAudioComment(ctx context.Context, req *voice_lover.ReqAudioSubmitComment) (*voice_lover.ResCommonPost, error) {
 	reply := &voice_lover.ResCommonPost{}
 	err := s.Call(ctx, "SubmitAudioComment", req, reply)

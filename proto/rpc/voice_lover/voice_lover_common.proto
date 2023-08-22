@@ -31,9 +31,10 @@ message AudioSimpleData {
   string resource = 3;
   repeated string covers = 4;
   uint32 seconds = 5;
+  uint32 uid = 6;
 
-  uint64 play_count = 6;
-  string play_count_desc = 7;
+  uint64 play_count = 7;
+  string play_count_desc = 8;
 }
 
 message AudioData {
