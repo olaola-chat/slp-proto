@@ -1,0 +1,12 @@
+syntax = "proto3";
+package rbp.es.room;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/es/room";;
+
+//通用检索返回
+message RepEsRoomSearchDefault {
+  //符合条件的数量
+  uint32 total = 1;
+  //返回的属性唯一ids集合
+  repeated uint32 data = 2;
+}
