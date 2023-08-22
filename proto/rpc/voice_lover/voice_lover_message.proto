@@ -209,8 +209,7 @@ message ReqAudioSubmitComment {
   string content = 2;
   uint32 type = 3;
   uint32 uid = 4;
-  double lat = 5;
-  double lon = 6;
+  string address = 5;
 }
 
 message ReqGetAudioCommentList{
@@ -239,8 +238,7 @@ message ReqAlbumSubmitComment {
   uint64 album_id = 1;
   string content = 2;
   uint32 uid = 3;
-  double lat = 4;
-  double lon = 5;
+  string address = 4;
 }
 
 //举报回调参数
