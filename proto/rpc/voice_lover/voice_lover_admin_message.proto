@@ -93,3 +93,61 @@ message ReqGetAlbumChoice {
 message ResGetAlbumChoice {
   repeated AlbumData albums = 1;
 }
+
+message ReqGetBannerList {
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string title = 3;
+  int32 status = 4; //0:全部 1:上架 2:没上架
+  int32 page = 5;
+  int32 limit = 6;
+}
+
+message ResGetBannerList {
+  repeated BannerData banners = 1;
+  int32 total = 2;
+}
+
+message ReqCreateBanner {
+  string title = 1;
+  string cover = 2;
+  string schema = 3;
+  uint64 op_uid = 4;
+  uint32 sort = 5;
+  uint64 create_time = 6;
+  uint32 end_time = 7;
+}
+
+message ResCreateBanner {
+  uint64 id = 1;
+}
+
+message ReqUpdateBanner {
+  uint64 id = 1;
+  string title = 2;
+  string cover = 3;
+  string schema = 4;
+  uint64 op_uid = 5;
+  uint32 sort = 6;
+  uint64 create_time = 7;
+  uint32 end_time = 8;
+}
+
+message ResUpdateBanner {
+  uint64 id = 1;
+  string title = 2;
+  string cover = 3;
+  string schema = 4;
+  uint64 op_uid = 5;
+  uint32 sort = 6;
+  uint64 create_time = 7;
+  uint32 end_time = 8;
+}
+
+message ReqGetBannerDetail {
+  uint64 id = 1;
+}
+
+message ResGetBannerDetail {
+  BannerData banner = 1;
+}

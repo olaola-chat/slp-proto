@@ -77,3 +77,15 @@ message CommentUser{
   string name = 1;
   string avtar = 2;
 }
+
+message BannerData {
+  uint64 id = 1;
+  string title = 2;
+  string cover = 3;
+  string schema = 4;
+  uint64 op_uid = 5;
+  uint64 start_time = 6;
+  uint64 end_time = 7;
+  uint64 create_time = 8;
+  uint32 sort = 9;
+}

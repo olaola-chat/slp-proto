@@ -52,4 +52,12 @@ service VoiceLoverAdmin {
 
   rpc GetAlbumChoice (rbp.rpc.voice_lover.ReqGetAlbumChoice) returns (rbp.rpc.voice_lover.ResGetAlbumChoice);
 
+  rpc GetBannerList (rbp.rpc.voice_lover.ReqGetBannerList) returns (rbp.rpc.voice_lover.ResGetBannerList);
+
+  rpc CreateBanner (rbp.rpc.voice_lover.ReqCreateBanner) returns (rbp.rpc.voice_lover.ResCreateBanner);
+
+  rpc UpdateBanner (rbp.rpc.voice_lover.ReqUpdateBanner) returns (rbp.rpc.voice_lover.ResUpdateBanner);
+
+  rpc GetBannerDetail (rbp.rpc.voice_lover.ReqGetBannerDetail) returns (rbp.rpc.voice_lover.ResGetBannerDetail);
+
 }

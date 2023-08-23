@@ -1028,6 +1028,590 @@ func (x *ResGetAlbumChoice) GetAlbums() []*AlbumData {
 	return nil
 }
 
+type ReqGetBannerList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StartTime uint64 `protobuf:"varint,1,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime   uint64 `protobuf:"varint,2,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	Title     string `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status    int32  `protobuf:"varint,4,opt,name=status,proto3" json:"status,omitempty"` //0:全部 1:上架 2:没上架
+	Page      int32  `protobuf:"varint,5,opt,name=page,proto3" json:"page,omitempty"`
+	Limit     int32  `protobuf:"varint,6,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *ReqGetBannerList) Reset() {
+	*x = ReqGetBannerList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqGetBannerList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqGetBannerList) ProtoMessage() {}
+
+func (x *ReqGetBannerList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqGetBannerList.ProtoReflect.Descriptor instead.
+func (*ReqGetBannerList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *ReqGetBannerList) GetStartTime() uint64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *ReqGetBannerList) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+func (x *ReqGetBannerList) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ReqGetBannerList) GetStatus() int32 {
+	if x != nil {
+		return x.Status
+	}
+	return 0
+}
+
+func (x *ReqGetBannerList) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ReqGetBannerList) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ResGetBannerList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Banners []*BannerData `protobuf:"bytes,1,rep,name=banners,proto3" json:"banners,omitempty"`
+	Total   int32         `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+}
+
+func (x *ResGetBannerList) Reset() {
+	*x = ResGetBannerList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResGetBannerList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResGetBannerList) ProtoMessage() {}
+
+func (x *ResGetBannerList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResGetBannerList.ProtoReflect.Descriptor instead.
+func (*ResGetBannerList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *ResGetBannerList) GetBanners() []*BannerData {
+	if x != nil {
+		return x.Banners
+	}
+	return nil
+}
+
+func (x *ResGetBannerList) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type ReqCreateBanner struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Title      string `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Cover      string `protobuf:"bytes,2,opt,name=cover,proto3" json:"cover,omitempty"`
+	Schema     string `protobuf:"bytes,3,opt,name=schema,proto3" json:"schema,omitempty"`
+	OpUid      uint64 `protobuf:"varint,4,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	Sort       uint32 `protobuf:"varint,5,opt,name=sort,proto3" json:"sort,omitempty"`
+	CreateTime uint64 `protobuf:"varint,6,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+	EndTime    uint32 `protobuf:"varint,7,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+}
+
+func (x *ReqCreateBanner) Reset() {
+	*x = ReqCreateBanner{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqCreateBanner) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqCreateBanner) ProtoMessage() {}
+
+func (x *ReqCreateBanner) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqCreateBanner.ProtoReflect.Descriptor instead.
+func (*ReqCreateBanner) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *ReqCreateBanner) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ReqCreateBanner) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *ReqCreateBanner) GetSchema() string {
+	if x != nil {
+		return x.Schema
+	}
+	return ""
+}
+
+func (x *ReqCreateBanner) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *ReqCreateBanner) GetSort() uint32 {
+	if x != nil {
+		return x.Sort
+	}
+	return 0
+}
+
+func (x *ReqCreateBanner) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+func (x *ReqCreateBanner) GetEndTime() uint32 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+type ResCreateBanner struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ResCreateBanner) Reset() {
+	*x = ResCreateBanner{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResCreateBanner) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResCreateBanner) ProtoMessage() {}
+
+func (x *ResCreateBanner) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResCreateBanner.ProtoReflect.Descriptor instead.
+func (*ResCreateBanner) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *ResCreateBanner) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ReqUpdateBanner struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id         uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title      string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Cover      string `protobuf:"bytes,3,opt,name=cover,proto3" json:"cover,omitempty"`
+	Schema     string `protobuf:"bytes,4,opt,name=schema,proto3" json:"schema,omitempty"`
+	OpUid      uint64 `protobuf:"varint,5,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	Sort       uint32 `protobuf:"varint,6,opt,name=sort,proto3" json:"sort,omitempty"`
+	CreateTime uint64 `protobuf:"varint,7,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+	EndTime    uint32 `protobuf:"varint,8,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+}
+
+func (x *ReqUpdateBanner) Reset() {
+	*x = ReqUpdateBanner{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqUpdateBanner) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqUpdateBanner) ProtoMessage() {}
+
+func (x *ReqUpdateBanner) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqUpdateBanner.ProtoReflect.Descriptor instead.
+func (*ReqUpdateBanner) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ReqUpdateBanner) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqUpdateBanner) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ReqUpdateBanner) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *ReqUpdateBanner) GetSchema() string {
+	if x != nil {
+		return x.Schema
+	}
+	return ""
+}
+
+func (x *ReqUpdateBanner) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *ReqUpdateBanner) GetSort() uint32 {
+	if x != nil {
+		return x.Sort
+	}
+	return 0
+}
+
+func (x *ReqUpdateBanner) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+func (x *ReqUpdateBanner) GetEndTime() uint32 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+type ResUpdateBanner struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id         uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title      string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Cover      string `protobuf:"bytes,3,opt,name=cover,proto3" json:"cover,omitempty"`
+	Schema     string `protobuf:"bytes,4,opt,name=schema,proto3" json:"schema,omitempty"`
+	OpUid      uint64 `protobuf:"varint,5,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	Sort       uint32 `protobuf:"varint,6,opt,name=sort,proto3" json:"sort,omitempty"`
+	CreateTime uint64 `protobuf:"varint,7,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+	EndTime    uint32 `protobuf:"varint,8,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+}
+
+func (x *ResUpdateBanner) Reset() {
+	*x = ResUpdateBanner{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResUpdateBanner) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResUpdateBanner) ProtoMessage() {}
+
+func (x *ResUpdateBanner) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResUpdateBanner.ProtoReflect.Descriptor instead.
+func (*ResUpdateBanner) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *ResUpdateBanner) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ResUpdateBanner) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ResUpdateBanner) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *ResUpdateBanner) GetSchema() string {
+	if x != nil {
+		return x.Schema
+	}
+	return ""
+}
+
+func (x *ResUpdateBanner) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *ResUpdateBanner) GetSort() uint32 {
+	if x != nil {
+		return x.Sort
+	}
+	return 0
+}
+
+func (x *ResUpdateBanner) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+func (x *ResUpdateBanner) GetEndTime() uint32 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+type ReqGetBannerDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ReqGetBannerDetail) Reset() {
+	*x = ReqGetBannerDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqGetBannerDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqGetBannerDetail) ProtoMessage() {}
+
+func (x *ReqGetBannerDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqGetBannerDetail.ProtoReflect.Descriptor instead.
+func (*ReqGetBannerDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ReqGetBannerDetail) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ResGetBannerDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Banner *BannerData `protobuf:"bytes,1,opt,name=banner,proto3" json:"banner,omitempty"`
+}
+
+func (x *ResGetBannerDetail) Reset() {
+	*x = ResGetBannerDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResGetBannerDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResGetBannerDetail) ProtoMessage() {}
+
+func (x *ResGetBannerDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResGetBannerDetail.ProtoReflect.Descriptor instead.
+func (*ResGetBannerDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ResGetBannerDetail) GetBanner() *BannerData {
+	if x != nil {
+		return x.Banner
+	}
+	return nil
+}
+
 var File_rpc_voice_lover_voice_lover_admin_message_proto protoreflect.FileDescriptor
 
 var file_rpc_voice_lover_voice_lover_admin_message_proto_rawDesc = []byte{
@@ -1130,11 +1714,75 @@ var file_rpc_voice_lover_voice_lover_admin_message_proto_rawDesc = []byte{
 	0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72,
 	0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41,
 	0x6c, 0x62, 0x75, 0x6d, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x73,
-	0x42, 0x39, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f,
-	0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70, 0x63, 0x2f,
-	0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x22, 0xa4, 0x01, 0x0a, 0x10, 0x52, 0x65, 0x71, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65,
+	0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x74,
+	0x69, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x73, 0x74, 0x61, 0x72, 0x74,
+	0x54, 0x69, 0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x12, 0x0a,
+	0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x70, 0x61, 0x67,
+	0x65, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x63, 0x0a, 0x10, 0x52, 0x65, 0x73, 0x47, 0x65,
+	0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x07, 0x62,
+	0x61, 0x6e, 0x6e, 0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x72,
+	0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76,
+	0x65, 0x72, 0x2e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x52, 0x07, 0x62,
+	0x61, 0x6e, 0x6e, 0x65, 0x72, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0xbc, 0x01, 0x0a,
+	0x0f, 0x52, 0x65, 0x71, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72,
+	0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x16, 0x0a, 0x06,
+	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x63,
+	0x68, 0x65, 0x6d, 0x61, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x73,
+	0x6f, 0x72, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x73, 0x6f, 0x72, 0x74, 0x12,
+	0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x06,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65,
+	0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x07, 0x20, 0x01,
+	0x28, 0x0d, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x21, 0x0a, 0x0f, 0x52,
+	0x65, 0x73, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x12, 0x0e,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0xcc,
+	0x01, 0x0a, 0x0f, 0x52, 0x65, 0x71, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e,
+	0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02,
+	0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65,
+	0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x16,
+	0x0a, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64,
+	0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x12, 0x12, 0x0a,
+	0x04, 0x73, 0x6f, 0x72, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x73, 0x6f, 0x72,
+	0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65,
+	0x18, 0x07, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69,
+	0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x08,
+	0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x22, 0xcc, 0x01,
+	0x0a, 0x0f, 0x52, 0x65, 0x73, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e, 0x65,
+	0x72, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69,
+	0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x16, 0x0a,
+	0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73,
+	0x63, 0x68, 0x65, 0x6d, 0x61, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04,
+	0x73, 0x6f, 0x72, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x73, 0x6f, 0x72, 0x74,
+	0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18,
+	0x07, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d,
+	0x65, 0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x08, 0x20,
+	0x01, 0x28, 0x0d, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x24, 0x0a, 0x12,
+	0x52, 0x65, 0x71, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02,
+	0x69, 0x64, 0x22, 0x4d, 0x0a, 0x12, 0x52, 0x65, 0x73, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e,
+	0x65, 0x72, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x37, 0x0a, 0x06, 0x62, 0x61, 0x6e, 0x6e,
+	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72,
+	0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x42,
+	0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06, 0x62, 0x61, 0x6e, 0x6e, 0x65,
+	0x72, 0x42, 0x39, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70, 0x63,
+	0x2f, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1149,7 +1797,7 @@ func file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP() []byte {
 	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescData
 }
 
-var file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
+var file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
 var file_rpc_voice_lover_voice_lover_admin_message_proto_goTypes = []interface{}{
 	(*ReqCreateSubject)(nil),    // 0: rbp.rpc.voice_lover.ReqCreateSubject
 	(*ResCreateSubject)(nil),    // 1: rbp.rpc.voice_lover.ResCreateSubject
@@ -1170,21 +1818,32 @@ var file_rpc_voice_lover_voice_lover_admin_message_proto_goTypes = []interface{}
 	(*ResAlbumChoice)(nil),      // 16: rbp.rpc.voice_lover.ResAlbumChoice
 	(*ReqGetAlbumChoice)(nil),   // 17: rbp.rpc.voice_lover.ReqGetAlbumChoice
 	(*ResGetAlbumChoice)(nil),   // 18: rbp.rpc.voice_lover.ResGetAlbumChoice
-	nil,                         // 19: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
-	(*SubjectData)(nil),         // 20: rbp.rpc.voice_lover.SubjectData
-	(*AlbumData)(nil),           // 21: rbp.rpc.voice_lover.AlbumData
+	(*ReqGetBannerList)(nil),    // 19: rbp.rpc.voice_lover.ReqGetBannerList
+	(*ResGetBannerList)(nil),    // 20: rbp.rpc.voice_lover.ResGetBannerList
+	(*ReqCreateBanner)(nil),     // 21: rbp.rpc.voice_lover.ReqCreateBanner
+	(*ResCreateBanner)(nil),     // 22: rbp.rpc.voice_lover.ResCreateBanner
+	(*ReqUpdateBanner)(nil),     // 23: rbp.rpc.voice_lover.ReqUpdateBanner
+	(*ResUpdateBanner)(nil),     // 24: rbp.rpc.voice_lover.ResUpdateBanner
+	(*ReqGetBannerDetail)(nil),  // 25: rbp.rpc.voice_lover.ReqGetBannerDetail
+	(*ResGetBannerDetail)(nil),  // 26: rbp.rpc.voice_lover.ResGetBannerDetail
+	nil,                         // 27: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
+	(*SubjectData)(nil),         // 28: rbp.rpc.voice_lover.SubjectData
+	(*AlbumData)(nil),           // 29: rbp.rpc.voice_lover.AlbumData
+	(*BannerData)(nil),          // 30: rbp.rpc.voice_lover.BannerData
 }
 var file_rpc_voice_lover_voice_lover_admin_message_proto_depIdxs = []int32{
-	19, // 0: rbp.rpc.voice_lover.ResGetSubjectDetail.subjects:type_name -> rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
-	20, // 1: rbp.rpc.voice_lover.ResGetSubjectList.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
+	27, // 0: rbp.rpc.voice_lover.ResGetSubjectDetail.subjects:type_name -> rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
+	28, // 1: rbp.rpc.voice_lover.ResGetSubjectList.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
 	12, // 2: rbp.rpc.voice_lover.ResGetAlbumCollect.album_collects:type_name -> rbp.rpc.voice_lover.AlbumCollectData
-	21, // 3: rbp.rpc.voice_lover.ResGetAlbumChoice.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	20, // 4: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry.value:type_name -> rbp.rpc.voice_lover.SubjectData
-	5,  // [5:5] is the sub-list for method output_type
-	5,  // [5:5] is the sub-list for method input_type
-	5,  // [5:5] is the sub-list for extension type_name
-	5,  // [5:5] is the sub-list for extension extendee
-	0,  // [0:5] is the sub-list for field type_name
+	29, // 3: rbp.rpc.voice_lover.ResGetAlbumChoice.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	30, // 4: rbp.rpc.voice_lover.ResGetBannerList.banners:type_name -> rbp.rpc.voice_lover.BannerData
+	30, // 5: rbp.rpc.voice_lover.ResGetBannerDetail.banner:type_name -> rbp.rpc.voice_lover.BannerData
+	28, // 6: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry.value:type_name -> rbp.rpc.voice_lover.SubjectData
+	7,  // [7:7] is the sub-list for method output_type
+	7,  // [7:7] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_rpc_voice_lover_voice_lover_admin_message_proto_init() }
@@ -1422,6 +2081,102 @@ func file_rpc_voice_lover_voice_lover_admin_message_proto_init() {
 				return nil
 			}
 		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqGetBannerList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResGetBannerList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqCreateBanner); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResCreateBanner); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqUpdateBanner); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResUpdateBanner); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqGetBannerDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResGetBannerDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1429,7 +2184,7 @@ func file_rpc_voice_lover_voice_lover_admin_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rpc_voice_lover_voice_lover_admin_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   20,
+			NumMessages:   28,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

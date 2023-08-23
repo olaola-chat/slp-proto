@@ -126,3 +126,27 @@ func (s *voiceLoverAdmin) GetAlbumChoice(ctx context.Context, req *voice_lover.R
 	err := s.Call(ctx, "GetAlbumChoice", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) GetBannerList(ctx context.Context, req *voice_lover.ReqGetBannerList) (*voice_lover.ResGetBannerList, error) {
+	reply := &voice_lover.ResGetBannerList{}
+	err := s.Call(ctx, "GetBannerList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) CreateBanner(ctx context.Context, req *voice_lover.ReqCreateBanner) (*voice_lover.ResCreateBanner, error) {
+	reply := &voice_lover.ResCreateBanner{}
+	err := s.Call(ctx, "CreateBanner", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) UpdateBanner(ctx context.Context, req *voice_lover.ReqUpdateBanner) (*voice_lover.ResUpdateBanner, error) {
+	reply := &voice_lover.ResUpdateBanner{}
+	err := s.Call(ctx, "UpdateBanner", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetBannerDetail(ctx context.Context, req *voice_lover.ReqGetBannerDetail) (*voice_lover.ResGetBannerDetail, error) {
+	reply := &voice_lover.ResGetBannerDetail{}
+	err := s.Call(ctx, "GetBannerDetail", req, reply)
+	return reply, err
+}
