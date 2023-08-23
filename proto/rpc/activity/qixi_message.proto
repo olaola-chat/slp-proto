@@ -1,0 +1,30 @@
+syntax = "proto3";
+package rbp.rpc.activity;
+
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/activitypb";
+
+message ReqQixiMyData {
+    uint32 uid = 1;
+}
+
+message RepQixiMyData {
+    bool success = 1;
+    string msg = 2;
+
+    uint32 sent_sum = 3;
+    uint32 recv_sum = 4;
+    uint32 rank = 5;
+}
+
+message ReqQixiAwardPool {
+    uint32 uid = 1;
+}
+
+message RepQixiAwardPool {
+    bool success = 1;
+    string msg = 2;
+
+    uint32 sum_lv1 = 3;
+    uint32 sum_lv2 = 4;
+    repeated uint32 award_cnts = 5;
+}

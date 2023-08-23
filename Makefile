@@ -45,3 +45,6 @@ nsq:
 kafka:
 	./scripts/gen_kafka.sh
 
+.PHONY: es
+es:
+	./scripts/gen_es.sh

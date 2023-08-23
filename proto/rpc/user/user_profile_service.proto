@@ -18,13 +18,13 @@ service UserProfile {
 	option (rbp.plugin.rbp_service).name = "User.Profile";
 
 	//是否需要实名认证
-	rpc NeedVerify (rbp.rpc.user.ReqNeedVerify) returns (RepNeedVerify);
+	rpc NeedVerify (ReqNeedVerify) returns (RepNeedVerify);
 
 	//获取用户
-	rpc Get (rbp.rpc.user.ReqUserProfile) returns (db.xianshi.EntityXsUserProfile);
+	rpc Get (ReqUserProfile) returns (db.xianshi.EntityXsUserProfile);
 
 	//批量获取用户
-	rpc Mget (rbp.rpc.user.ReqUserProfiles) returns (RepUserProfiles);
+	rpc Mget (ReqUserProfiles) returns (RepUserProfiles);
 
 	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
 
