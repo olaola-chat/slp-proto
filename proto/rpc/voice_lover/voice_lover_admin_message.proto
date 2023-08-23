@@ -129,8 +129,8 @@ message ReqUpdateBanner {
   string schema = 4;
   uint64 op_uid = 5;
   uint32 sort = 6;
-  uint64 create_time = 7;
-  uint32 end_time = 8;
+  uint64 start_time = 7;
+  uint64 end_time = 8;
 }
 
 message ResUpdateBanner {
