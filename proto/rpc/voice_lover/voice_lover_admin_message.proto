@@ -114,7 +114,7 @@ message ReqCreateBanner {
   string schema = 3;
   uint64 op_uid = 4;
   uint32 sort = 5;
-  uint64 create_time = 6;
+  uint64 start_time = 6;
   uint32 end_time = 7;
 }
 
