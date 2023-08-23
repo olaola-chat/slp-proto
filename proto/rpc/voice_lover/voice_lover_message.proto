@@ -263,9 +263,9 @@ message ReqAlbumSubmitComment {
 
 //举报回调参数
 message ReqUpdateStatus{
-  uint64 id = 1;   //评论id
-  string type = 2; //专辑或者音频评论
-  uint32 status = 3; //状态
+  uint64 id = 1;   			// 评论id
+  uint32 type = 2; 			// 0-专辑 1-音频
+  uint32 status = 3; 		// 状态
 }
 
 //举报回调接过
