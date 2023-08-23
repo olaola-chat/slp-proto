@@ -54,6 +54,8 @@ message AudioData {
   repeated AudioEditData edit_posts = 14;
   repeated AudioEditData edit_covers = 15;
   uint32 seconds = 16;
+  uint64 play_count = 17;
+  string play_count_desc = 18;
 }
 
 message AudioEditData {
