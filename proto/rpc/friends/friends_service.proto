@@ -1,15 +1,15 @@
 syntax = "proto3";
-package rbp.rpc.friend;
+package rbp.rpc.friends;
 
 import "rbp/plugin/option.proto";
 
-import "rpc/friend/friend_message.proto";
+import "rpc/friends/friends_message.proto";
 
 /*
 friend rpc 协议
 */
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/friend";
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/friends";
 
 
 service Friend {

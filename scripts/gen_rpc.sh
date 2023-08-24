@@ -10,8 +10,8 @@ export PROTO_SERV="protoc --rbp-rpc_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/pr
 ${PROTOC} rpc/user/auth_message.proto
 ${PROTO_SERV} rpc/user/auth_service.proto
 
-${PROTOC} rpc/friend/friend_message.proto
-${PROTO_SERV} rpc/friend/friend_service.proto
+${PROTOC} rpc/friends/friends_message.proto
+${PROTO_SERV} rpc/friends/friends_service.proto
 
 ${PROTOC} rpc/user/user_profile_message.proto
 ${PROTO_SERV} rpc/user/user_profile_service.proto

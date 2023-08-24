@@ -1,10 +1,10 @@
 syntax = "proto3";
-package rbp.rpc.friend;
+package rbp.rpc.friends;
 
 /*
 friend rpc 协议
 */
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/friend";
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/friends";
 
 //ReqFriendCount 返回数量包含被封禁的
 message ReqFriendCount {

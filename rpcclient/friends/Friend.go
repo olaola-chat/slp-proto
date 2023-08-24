@@ -1,11 +1,11 @@
-package friend
+package friends
 
 import (
 	"context"
 
 	"github.com/olaola-chat/rbp-proto/rpcclient/base"
 
-	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/friend"
+	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/friends"
 )
 
 // Friend *friend
@@ -19,8 +19,8 @@ type friend struct {
 	*base.Base
 }
 
-func (s *friend) Count(ctx context.Context, req *friend.ReqFriendCount) (*friend.RepFriendCount, error) {
-	reply := &friend.RepFriendCount{}
+func (s *friend) Count(ctx context.Context, req *friends.ReqFriendCount) (*friends.RepFriendCount, error) {
+	reply := &friends.RepFriendCount{}
 	err := s.Call(ctx, "Count", req, reply)
 	return reply, err
 }
