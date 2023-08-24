@@ -41,6 +41,7 @@ type voiceLoverAlbumColumns struct {
 	OpUID      string // 操作人
 	Choice     string // 类型:0:默认 1:精选
 	ChoiceTime string // 设置类型时间，choice非0时写入
+	HasSubject string //
 	CreateTime string // 创建时间
 	UpdateTime string // 更新时间
 }
@@ -60,6 +61,7 @@ var (
 			OpUID:      "op_uid",
 			Choice:     "choice",
 			ChoiceTime: "choice_time",
+			HasSubject: "hasSubject",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",
 		},

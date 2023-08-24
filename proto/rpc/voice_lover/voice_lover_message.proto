@@ -198,8 +198,9 @@ message ReqGetAlbumList {
   uint64 start_time = 1;
   uint64 end_time = 2;
   string name = 3;
-  int32 page = 4;
-  int32 limit = 5;
+  int32 collect_status = 4; //-1:全部 0:未收录 1:已收录
+  int32 page = 5;
+  int32 limit = 6;
 }
 
 message ResGetAlbumList {
