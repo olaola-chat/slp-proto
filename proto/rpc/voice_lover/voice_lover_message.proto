@@ -41,6 +41,13 @@ message ResGetRecAlbums {
   repeated AlbumData albums = 1;
 }
 
+message ReqGetRecBanners {
+  uint32 uid = 1;
+}
+message ResGetRecBanners {
+  repeated BannerData banners = 1;
+}
+
 message ReqGetAlbumsByPage {
   uint32 choice = 1;    // 0-默认 1-精选
   uint32 page = 2;

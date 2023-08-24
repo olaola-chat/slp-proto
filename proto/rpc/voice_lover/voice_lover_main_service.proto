@@ -24,6 +24,9 @@ service VoiceLoverMain {
   // 获取精选推荐专辑数据
   rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
 
+  // 获取推荐banner数据
+  rpc GetRecBanners (rbp.rpc.voice_lover.ReqGetRecBanners) returns (rbp.rpc.voice_lover.ResGetRecBanners);
+
   // 获取普通推荐专辑数据
   rpc GetRecCommonAlbums (rbp.rpc.voice_lover.ReqGetRecCommonAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
 
