@@ -1,0 +1,20 @@
+syntax = "proto3";
+package rbp.rpc.friend;
+
+/*
+friend rpc 协议
+*/
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/friend";
+
+//ReqFriendCount 返回数量包含被封禁的
+message ReqFriendCount {
+	uint32 uid = 1; //用户UID
+	bool follow = 2; //查询关注我的人的数量
+	bool watch = 3;//查询我关注的人的数量
+	bool friend = 4; //查询我的好友的数量
+}
+message RepFriendCount {
+	uint32 watch = 1; //我关注的数量
+	uint32 follow = 2; //关注我的数量
+	uint32 friend = 3; //好友数量
+}

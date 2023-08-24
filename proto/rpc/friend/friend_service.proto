@@ -1,0 +1,21 @@
+syntax = "proto3";
+package rbp.rpc.friend;
+
+import "rbp/plugin/option.proto";
+
+import "rpc/friend/friend_message.proto";
+
+/*
+friend rpc 协议
+*/
+
+option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/friend";
+
+
+service Friend {
+	option (rbp.plugin.rbp_service).name = "Friend";
+
+	rpc Count (ReqFriendCount) returns (RepFriendCount);
+}
+
+
