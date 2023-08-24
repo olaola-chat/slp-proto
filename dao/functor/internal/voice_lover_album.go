@@ -61,7 +61,7 @@ var (
 			OpUID:      "op_uid",
 			Choice:     "choice",
 			ChoiceTime: "choice_time",
-			HasSubject: "hasSubject",
+			HasSubject: "has_subject",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",
 		},
