@@ -24,3 +24,9 @@ func (s *friend) Count(ctx context.Context, req *friends.ReqFriendCount) (*frien
 	err := s.Call(ctx, "Count", req, reply)
 	return reply, err
 }
+
+func (s *friend) IsFollow(ctx context.Context, req *friends.ReqIsFollow) (*friends.RepIsFollow, error) {
+	reply := &friends.RepIsFollow{}
+	err := s.Call(ctx, "IsFollow", req, reply)
+	return reply, err
+}

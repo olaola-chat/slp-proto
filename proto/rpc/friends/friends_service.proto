@@ -16,6 +16,8 @@ service Friend {
 	option (rbp.plugin.rbp_service).name = "Friend";
 
 	rpc Count (ReqFriendCount) returns (RepFriendCount);
+
+	rpc IsFollow (ReqIsFollow) returns (RepIsFollow);
 }
 
 

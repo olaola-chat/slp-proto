@@ -49,9 +49,3 @@ func (s *userProfile) SearchByName(ctx context.Context, req *user.ReqUserSearchN
 	err := s.Call(ctx, "SearchByName", req, reply)
 	return reply, err
 }
-
-func (s *userProfile) CheckFollow(ctx context.Context, req *user.ReqCheckFollow) (*user.RepCheckFollow, error) {
-	reply := &user.RepCheckFollow{}
-	err := s.Call(ctx, "CheckFollow", req, reply)
-	return reply, err
-}

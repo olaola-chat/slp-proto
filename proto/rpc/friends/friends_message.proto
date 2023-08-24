@@ -18,3 +18,16 @@ message RepFriendCount {
 	uint32 follow = 2; //关注我的数量
 	uint32 friend = 3; //好友数量
 }
+
+message ReqIsFollow {
+	uint32 uid = 1; //用户UID
+	repeated uint32 uids = 2; //对方UID列表
+}
+message IsFollow {
+	uint32 uid = 1;
+	uint32 follow = 2; //是否关注我
+	uint32 friend = 3; //是否是好友
+}
+message RepIsFollow {
+	repeated IsFollow data = 1;
+}

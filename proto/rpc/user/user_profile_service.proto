@@ -29,9 +29,6 @@ service UserProfile {
 	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
 
 	rpc SearchByName(ReqUserSearchName) returns (RepUserSearchDefault);
-	
-	//
-	rpc CheckFollow(ReqCheckFollow) returns(RepCheckFollow);
 }
 
 

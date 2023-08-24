@@ -155,6 +155,171 @@ func (x *RepFriendCount) GetFriend() uint32 {
 	return 0
 }
 
+type ReqIsFollow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uid  uint32   `protobuf:"varint,1,opt,name=uid,proto3" json:"uid,omitempty"`          //用户UID
+	Uids []uint32 `protobuf:"varint,2,rep,packed,name=uids,proto3" json:"uids,omitempty"` //对方UID列表
+}
+
+func (x *ReqIsFollow) Reset() {
+	*x = ReqIsFollow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_friends_friends_message_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqIsFollow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqIsFollow) ProtoMessage() {}
+
+func (x *ReqIsFollow) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_friends_friends_message_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqIsFollow.ProtoReflect.Descriptor instead.
+func (*ReqIsFollow) Descriptor() ([]byte, []int) {
+	return file_rpc_friends_friends_message_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ReqIsFollow) GetUid() uint32 {
+	if x != nil {
+		return x.Uid
+	}
+	return 0
+}
+
+func (x *ReqIsFollow) GetUids() []uint32 {
+	if x != nil {
+		return x.Uids
+	}
+	return nil
+}
+
+type IsFollow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uid    uint32 `protobuf:"varint,1,opt,name=uid,proto3" json:"uid,omitempty"`
+	Follow uint32 `protobuf:"varint,2,opt,name=follow,proto3" json:"follow,omitempty"` //是否关注我
+	Friend uint32 `protobuf:"varint,3,opt,name=friend,proto3" json:"friend,omitempty"` //是否是好友
+}
+
+func (x *IsFollow) Reset() {
+	*x = IsFollow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_friends_friends_message_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IsFollow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IsFollow) ProtoMessage() {}
+
+func (x *IsFollow) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_friends_friends_message_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IsFollow.ProtoReflect.Descriptor instead.
+func (*IsFollow) Descriptor() ([]byte, []int) {
+	return file_rpc_friends_friends_message_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *IsFollow) GetUid() uint32 {
+	if x != nil {
+		return x.Uid
+	}
+	return 0
+}
+
+func (x *IsFollow) GetFollow() uint32 {
+	if x != nil {
+		return x.Follow
+	}
+	return 0
+}
+
+func (x *IsFollow) GetFriend() uint32 {
+	if x != nil {
+		return x.Friend
+	}
+	return 0
+}
+
+type RepIsFollow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Data []*IsFollow `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
+}
+
+func (x *RepIsFollow) Reset() {
+	*x = RepIsFollow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_friends_friends_message_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RepIsFollow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RepIsFollow) ProtoMessage() {}
+
+func (x *RepIsFollow) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_friends_friends_message_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RepIsFollow.ProtoReflect.Descriptor instead.
+func (*RepIsFollow) Descriptor() ([]byte, []int) {
+	return file_rpc_friends_friends_message_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *RepIsFollow) GetData() []*IsFollow {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 var File_rpc_friends_friends_message_proto protoreflect.FileDescriptor
 
 var file_rpc_friends_friends_message_proto_rawDesc = []byte{
@@ -173,11 +338,23 @@ var file_rpc_friends_friends_message_proto_rawDesc = []byte{
 	0x05, 0x77, 0x61, 0x74, 0x63, 0x68, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x6f, 0x6c, 0x6c, 0x6f, 0x77,
 	0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x66, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x12, 0x16,
 	0x0a, 0x06, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06,
-	0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74,
-	0x2f, 0x72, 0x62, 0x70, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70,
-	0x62, 0x2f, 0x72, 0x70, 0x63, 0x2f, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x22, 0x33, 0x0a, 0x0b, 0x52, 0x65, 0x71, 0x49, 0x73, 0x46,
+	0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0d, 0x52, 0x03, 0x75, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x69, 0x64, 0x73, 0x18,
+	0x02, 0x20, 0x03, 0x28, 0x0d, 0x52, 0x04, 0x75, 0x69, 0x64, 0x73, 0x22, 0x4c, 0x0a, 0x08, 0x49,
+	0x73, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x75, 0x69, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x6f, 0x6c,
+	0x6c, 0x6f, 0x77, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x66, 0x6f, 0x6c, 0x6c, 0x6f,
+	0x77, 0x12, 0x16, 0x0a, 0x06, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x0d, 0x52, 0x06, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x22, 0x3c, 0x0a, 0x0b, 0x52, 0x65, 0x70,
+	0x49, 0x73, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x12, 0x2d, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63,
+	0x2e, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x2e, 0x49, 0x73, 0x46, 0x6f, 0x6c, 0x6c, 0x6f,
+	0x77, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x42, 0x35, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61,
+	0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f,
+	0x70, 0x62, 0x2f, 0x72, 0x70, 0x63, 0x2f, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -192,17 +369,21 @@ func file_rpc_friends_friends_message_proto_rawDescGZIP() []byte {
 	return file_rpc_friends_friends_message_proto_rawDescData
 }
 
-var file_rpc_friends_friends_message_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_rpc_friends_friends_message_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_rpc_friends_friends_message_proto_goTypes = []interface{}{
 	(*ReqFriendCount)(nil), // 0: rbp.rpc.friends.ReqFriendCount
 	(*RepFriendCount)(nil), // 1: rbp.rpc.friends.RepFriendCount
+	(*ReqIsFollow)(nil),    // 2: rbp.rpc.friends.ReqIsFollow
+	(*IsFollow)(nil),       // 3: rbp.rpc.friends.IsFollow
+	(*RepIsFollow)(nil),    // 4: rbp.rpc.friends.RepIsFollow
 }
 var file_rpc_friends_friends_message_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	3, // 0: rbp.rpc.friends.RepIsFollow.data:type_name -> rbp.rpc.friends.IsFollow
+	1, // [1:1] is the sub-list for method output_type
+	1, // [1:1] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_rpc_friends_friends_message_proto_init() }
@@ -235,6 +416,42 @@ func file_rpc_friends_friends_message_proto_init() {
 				return nil
 			}
 		}
+		file_rpc_friends_friends_message_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqIsFollow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_friends_friends_message_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*IsFollow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_friends_friends_message_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RepIsFollow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -242,7 +459,7 @@ func file_rpc_friends_friends_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rpc_friends_friends_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
