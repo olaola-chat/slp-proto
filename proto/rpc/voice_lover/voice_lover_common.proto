@@ -14,6 +14,7 @@ message AlbumData {
   uint64 play_count = 7;      // 播放数量
   string play_count_desc = 8; // 播放数量默认显示字符串
   uint64 op_uid = 9;
+  int32  has_subject = 10;  //收录状态
 }
 
 message SubjectData {
