@@ -29,6 +29,8 @@ service UserProfile {
 	rpc Test (ReqUserProfiles) returns (RepUserProfiles);
 
 	rpc SearchByName(ReqUserSearchName) returns (RepUserSearchDefault);
+
+	rpc IsValidBrokerUser(ReqIsValidBrokerUser) returns (RepIsValidBrokerUser);
 }
 
 

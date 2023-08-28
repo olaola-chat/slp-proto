@@ -49,3 +49,9 @@ func (s *userProfile) SearchByName(ctx context.Context, req *user.ReqUserSearchN
 	err := s.Call(ctx, "SearchByName", req, reply)
 	return reply, err
 }
+
+func (s *userProfile) IsValidBrokerUser(ctx context.Context, req *user.ReqIsValidBrokerUser) (*user.RepIsValidBrokerUser, error) {
+	reply := &user.RepIsValidBrokerUser{}
+	err := s.Call(ctx, "IsValidBrokerUser", req, reply)
+	return reply, err
+}
