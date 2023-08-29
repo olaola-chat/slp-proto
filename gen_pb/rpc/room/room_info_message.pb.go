@@ -670,6 +670,102 @@ func (x *RepRid) GetRid() uint32 {
 	return 0
 }
 
+type ReqUids struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uids []uint32 `protobuf:"varint,1,rep,packed,name=uids,proto3" json:"uids,omitempty"`
+}
+
+func (x *ReqUids) Reset() {
+	*x = ReqUids{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_room_room_info_message_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqUids) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqUids) ProtoMessage() {}
+
+func (x *ReqUids) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_room_room_info_message_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqUids.ProtoReflect.Descriptor instead.
+func (*ReqUids) Descriptor() ([]byte, []int) {
+	return file_rpc_room_room_info_message_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *ReqUids) GetUids() []uint32 {
+	if x != nil {
+		return x.Uids
+	}
+	return nil
+}
+
+//在哪个房间，>=0表示在房间里
+//如果用户uid对应的rid<=0表示不在房间
+type RepInRooms struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Data map[uint32]uint32 `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3"`
+}
+
+func (x *RepInRooms) Reset() {
+	*x = RepInRooms{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_room_room_info_message_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RepInRooms) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RepInRooms) ProtoMessage() {}
+
+func (x *RepInRooms) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_room_room_info_message_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RepInRooms.ProtoReflect.Descriptor instead.
+func (*RepInRooms) Descriptor() ([]byte, []int) {
+	return file_rpc_room_room_info_message_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *RepInRooms) GetData() map[uint32]uint32 {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 var File_rpc_room_room_info_message_proto protoreflect.FileDescriptor
 
 var file_rpc_room_room_info_message_proto_rawDesc = []byte{
@@ -767,11 +863,20 @@ var file_rpc_room_room_info_message_proto_rawDesc = []byte{
 	0x0a, 0x06, 0x52, 0x65, 0x71, 0x55, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x69, 0x64, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x75, 0x69, 0x64, 0x22, 0x1a, 0x0a, 0x06, 0x52, 0x65,
 	0x70, 0x52, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x72, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0d, 0x52, 0x03, 0x72, 0x69, 0x64, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74,
-	0x2f, 0x72, 0x62, 0x70, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70,
-	0x62, 0x2f, 0x72, 0x70, 0x63, 0x2f, 0x72, 0x6f, 0x6f, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x0d, 0x52, 0x03, 0x72, 0x69, 0x64, 0x22, 0x1d, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x55, 0x69, 0x64,
+	0x73, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0d, 0x52,
+	0x04, 0x75, 0x69, 0x64, 0x73, 0x22, 0x7d, 0x0a, 0x0a, 0x52, 0x65, 0x70, 0x49, 0x6e, 0x52, 0x6f,
+	0x6f, 0x6d, 0x73, 0x12, 0x36, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x01, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x22, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x72, 0x6f, 0x6f, 0x6d,
+	0x2e, 0x52, 0x65, 0x70, 0x49, 0x6e, 0x52, 0x6f, 0x6f, 0x6d, 0x73, 0x2e, 0x44, 0x61, 0x74, 0x61,
+	0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x1a, 0x37, 0x0a, 0x09, 0x44,
+	0x61, 0x74, 0x61, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
+	0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65,
+	0x3a, 0x02, 0x38, 0x01, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72,
+	0x62, 0x70, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f,
+	0x72, 0x70, 0x63, 0x2f, 0x72, 0x6f, 0x6f, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -786,7 +891,7 @@ func file_rpc_room_room_info_message_proto_rawDescGZIP() []byte {
 	return file_rpc_room_room_info_message_proto_rawDescData
 }
 
-var file_rpc_room_room_info_message_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_rpc_room_room_info_message_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_rpc_room_room_info_message_proto_goTypes = []interface{}{
 	(*Chatroom)(nil),                 // 0: rbp.rpc.room.Chatroom
 	(*ReqRoomInfo)(nil),              // 1: rbp.rpc.room.ReqRoomInfo
@@ -794,15 +899,19 @@ var file_rpc_room_room_info_message_proto_goTypes = []interface{}{
 	(*RepRoomInfos)(nil),             // 3: rbp.rpc.room.RepRoomInfos
 	(*ReqUid)(nil),                   // 4: rbp.rpc.room.ReqUid
 	(*RepRid)(nil),                   // 5: rbp.rpc.room.RepRid
-	(*xianshi.EntityXsChatroom)(nil), // 6: db.xianshi.EntityXsChatroom
+	(*ReqUids)(nil),                  // 6: rbp.rpc.room.ReqUids
+	(*RepInRooms)(nil),               // 7: rbp.rpc.room.RepInRooms
+	nil,                              // 8: rbp.rpc.room.RepInRooms.DataEntry
+	(*xianshi.EntityXsChatroom)(nil), // 9: db.xianshi.EntityXsChatroom
 }
 var file_rpc_room_room_info_message_proto_depIdxs = []int32{
-	6, // 0: rbp.rpc.room.RepRoomInfos.data:type_name -> db.xianshi.EntityXsChatroom
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	9, // 0: rbp.rpc.room.RepRoomInfos.data:type_name -> db.xianshi.EntityXsChatroom
+	8, // 1: rbp.rpc.room.RepInRooms.data:type_name -> rbp.rpc.room.RepInRooms.DataEntry
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_rpc_room_room_info_message_proto_init() }
@@ -883,6 +992,30 @@ func file_rpc_room_room_info_message_proto_init() {
 				return nil
 			}
 		}
+		file_rpc_room_room_info_message_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqUids); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_room_room_info_message_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RepInRooms); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -890,7 +1023,7 @@ func file_rpc_room_room_info_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rpc_room_room_info_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

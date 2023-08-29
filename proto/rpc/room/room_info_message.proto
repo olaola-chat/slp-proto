@@ -83,3 +83,12 @@ message ReqUid{
 message RepRid{
 	uint32 rid = 1;
 }
+
+message ReqUids {
+	repeated uint32 uids = 1;
+}
+//在哪个房间，>=0表示在房间里
+//如果用户uid对应的rid<=0表示不在房间
+message RepInRooms {
+	map<uint32, uint32> data = 1;
+}
