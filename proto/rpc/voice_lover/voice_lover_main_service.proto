@@ -15,7 +15,7 @@ option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/voice_lover";
 service VoiceLoverMain {
   option (rbp.plugin.rbp_service).name = "Functor.VoiceLover.Main";
 
-  //是否需要实名认证
+  // 上传音频
   rpc Post (rbp.rpc.voice_lover.ReqPost) returns (rbp.rpc.voice_lover.ResBase);
 
   // 获取专辑详情
@@ -83,4 +83,7 @@ service VoiceLoverMain {
   rpc PlayStatReport (rbp.rpc.voice_lover.ReqPlayStatReport) returns (rbp.rpc.voice_lover.ResPlayStatReport);
   
   rpc IsUserCollectAudio(rbp.rpc.voice_lover.ReqCollect) returns (rbp.rpc.voice_lover.ResIsUserCollectAudio);
+
+  // 获取存在有效音频的用户
+  rpc GetValidAudioUsers(rbp.rpc.voice_lover.ReqGetValidAudioUsers) returns (rbp.rpc.voice_lover.ResGetValidAudioUsers);
 }

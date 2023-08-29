@@ -289,3 +289,10 @@ message ReqPlayStatReport {
 }
 message ResPlayStatReport {
 }
+
+message ReqGetValidAudioUsers {
+  uint32 uid = 1;
+}
+message ResGetValidAudioUsers {
+  repeated uint32 uids = 1;
+}

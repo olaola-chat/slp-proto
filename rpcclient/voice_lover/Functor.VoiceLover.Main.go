@@ -162,3 +162,9 @@ func (s *voiceLoverMain) IsUserCollectAudio(ctx context.Context, req *voice_love
 	err := s.Call(ctx, "IsUserCollectAudio", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) GetValidAudioUsers(ctx context.Context, req *voice_lover.ReqGetValidAudioUsers) (*voice_lover.ResGetValidAudioUsers, error) {
+	reply := &voice_lover.ResGetValidAudioUsers{}
+	err := s.Call(ctx, "GetValidAudioUsers", req, reply)
+	return reply, err
+}
