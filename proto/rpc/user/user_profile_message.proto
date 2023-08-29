@@ -60,7 +60,6 @@ message RepUsersBitMap{
 	repeated UserBitMapItem data = 1;
 }
 
-
 message ReqGetUserIpInfo{
 	string Ip = 1;//ip地址10.10.10.10
 }
@@ -106,4 +105,12 @@ message RepUserSearchDefault {
 	uint32 total = 1;
 	//返回的用户uids集合
 	repeated uint32 data = 2;
+}
+
+// 用户是否属于有效工会
+message ReqIsValidBrokerUser {
+	uint32 uid = 1;
+}
+message RepIsValidBrokerUser {
+	bool result = 1;
 }

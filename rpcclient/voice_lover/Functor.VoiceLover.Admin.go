@@ -96,3 +96,57 @@ func (s *voiceLoverAdmin) GetSubjectDetail(ctx context.Context, req *voice_lover
 	err := s.Call(ctx, "GetSubjectDetail", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) GetSubjectList(ctx context.Context, req *voice_lover.ReqGetSubjectList) (*voice_lover.ResGetSubjectList, error) {
+	reply := &voice_lover.ResGetSubjectList{}
+	err := s.Call(ctx, "GetSubjectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetAlbumCollect(ctx context.Context, req *voice_lover.ReqGetAlbumCollect) (*voice_lover.ResGetAlbumCollect, error) {
+	reply := &voice_lover.ResGetAlbumCollect{}
+	err := s.Call(ctx, "GetAlbumCollect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AlbumCollect(ctx context.Context, req *voice_lover.ReqAlbumCollect) (*voice_lover.ResAlbumCollect, error) {
+	reply := &voice_lover.ResAlbumCollect{}
+	err := s.Call(ctx, "AlbumCollect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AlbumChoice(ctx context.Context, req *voice_lover.ReqAlbumChoice) (*voice_lover.ResAlbumChoice, error) {
+	reply := &voice_lover.ResAlbumChoice{}
+	err := s.Call(ctx, "AlbumChoice", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetAlbumChoice(ctx context.Context, req *voice_lover.ReqGetAlbumChoice) (*voice_lover.ResGetAlbumChoice, error) {
+	reply := &voice_lover.ResGetAlbumChoice{}
+	err := s.Call(ctx, "GetAlbumChoice", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetBannerList(ctx context.Context, req *voice_lover.ReqGetBannerList) (*voice_lover.ResGetBannerList, error) {
+	reply := &voice_lover.ResGetBannerList{}
+	err := s.Call(ctx, "GetBannerList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) CreateBanner(ctx context.Context, req *voice_lover.ReqCreateBanner) (*voice_lover.ResCreateBanner, error) {
+	reply := &voice_lover.ResCreateBanner{}
+	err := s.Call(ctx, "CreateBanner", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) UpdateBanner(ctx context.Context, req *voice_lover.ReqUpdateBanner) (*voice_lover.ResUpdateBanner, error) {
+	reply := &voice_lover.ResUpdateBanner{}
+	err := s.Call(ctx, "UpdateBanner", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) GetBannerDetail(ctx context.Context, req *voice_lover.ReqGetBannerDetail) (*voice_lover.ResGetBannerDetail, error) {
+	reply := &voice_lover.ResGetBannerDetail{}
+	err := s.Call(ctx, "GetBannerDetail", req, reply)
+	return reply, err
+}

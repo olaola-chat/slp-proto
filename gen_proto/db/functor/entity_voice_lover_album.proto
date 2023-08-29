@@ -26,8 +26,10 @@ message EntityVoiceLoverAlbum {
     int32  choice                           = 7;  // 类型:0:默认 1:精选             
            //@inject_tag: orm:"choice_time"  
     uint64 choice_time                      = 8;  // 设置类型时间，choice非0时写入  
+           //@inject_tag: orm:"has_subject"  
+    uint32 has_subject                      = 9;  //                                
            //@inject_tag: orm:"create_time"  
-    uint64 create_time                      = 9;  // 创建时间                       
+    uint64 create_time                      = 10; // 创建时间                       
            //@inject_tag: orm:"update_time"  
-    uint64 update_time                      = 10; // 更新时间                       
+    uint64 update_time                      = 11; // 更新时间                       
 }

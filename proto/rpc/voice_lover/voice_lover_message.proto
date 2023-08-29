@@ -34,8 +34,18 @@ message ResGetAlbumInfoById {
 message ReqGetRecAlbums {
   uint32 uid = 1;
 }
+message ReqGetRecCommonAlbums {
+  uint32 uid = 1;
+}
 message ResGetRecAlbums {
   repeated AlbumData albums = 1;
+}
+
+message ReqGetRecBanners {
+  uint32 uid = 1;
+}
+message ResGetRecBanners {
+  repeated BannerData banners = 1;
 }
 
 message ReqGetAlbumsByPage {
@@ -69,9 +79,11 @@ message ResGetAudioEdit {
 
 message ReqGetAudioDetail {
   uint64 id = 1;
+  uint32 uid = 2;
 }
 message ResGetAudioDetail {
   AudioData audio = 1;
+  repeated AlbumData album = 2;
 }
 
 message ReqGetAudioListByAlbumId {
@@ -101,6 +113,47 @@ message ReqIsUserCollectAlbum {
 }
 message ResIsUserCollectAlbum {
   bool is_collect = 1;
+}
+
+message ResIsUserCollectAudio{
+  bool is_collect = 1;
+}
+
+message ReqIsUserCollectAlbums {
+  uint32 uid = 1;
+  repeated uint64 album_ids = 2;
+}
+message ResIsUserCollectAlbums {
+  repeated bool is_collects = 1;
+}
+
+message ReqCollect {
+  uint32 uid = 1;
+  uint64 id = 2;
+  uint32 type = 3; // 0-专辑 1-音频
+  uint32 from = 4; // 0-收藏 1-取消收藏
+}
+message ResCollect {
+}
+
+message ReqGetAlbumCollectList {
+  uint32 uid = 1;
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+message ResGetAlbumCollectList {
+  repeated AlbumData list = 1;
+  bool has_more = 2;
+}
+
+message ReqGetAudioCollectList {
+  uint32 uid = 1;
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+message ResGetAudioCollectList {
+  repeated AudioSimpleData list = 1;
+  bool has_more = 2;
 }
 
 message ReqUpdateAudio {
@@ -152,8 +205,9 @@ message ReqGetAlbumList {
   uint64 start_time = 1;
   uint64 end_time = 2;
   string name = 3;
-  int32 page = 4;
-  int32 limit = 5;
+  int32 collect_status = 4; //-1:全部 0:未收录 1:已收录
+  int32 page = 5;
+  int32 limit = 6;
 }
 
 message ResGetAlbumList {
@@ -178,15 +232,24 @@ message ReqAudioCollect {
 message ResAudioCollect {}
 
 
-message ReqSubmitComment {
+message ReqAudioSubmitComment {
   uint64 audio_id = 1;
   string content = 2;
-  uint32 uid = 3;
-  uint32 type = 4;
+  uint32 type = 3;
+  uint32 uid = 4;
+  string address = 5;
 }
 
-message ReqGetCommentList{
+message ReqGetAudioCommentList{
   uint64 audio_id = 1;
+  int32 offset = 2;
+  uint32 size = 3;
+}
+
+message ReqGetAlbumCommentList{
+  uint64 album_id = 1;
+  int32 offset = 2;
+  uint32 size = 3;
 }
 
 message ResCommonPost{
@@ -197,4 +260,39 @@ message ResCommonPost{
 
 message ResCommentList{
   repeated Comment list = 1;
+}
+
+message ReqAlbumSubmitComment {
+  uint64 album_id = 1;
+  string content = 2;
+  uint32 uid = 3;
+  string address = 4;
+}
+
+//举报回调参数
+message ReqUpdateStatus{
+  uint64 id = 1;   			// 评论id
+  uint32 type = 2; 			// 0-专辑 1-音频
+  uint32 status = 3; 		// 状态
+}
+
+//举报回调接过
+message ResUpdateStatus{
+  bool success = 1;
+  string msg = 2;
+  bool retry = 3;
+}
+
+message ReqPlayStatReport {
+  uint64 album_id = 1;
+  uint64 audio_id = 2;
+}
+message ResPlayStatReport {
+}
+
+message ReqGetValidAudioUsers {
+  uint32 uid = 1;
+}
+message ResGetValidAudioUsers {
+  repeated uint32 uids = 1;
 }

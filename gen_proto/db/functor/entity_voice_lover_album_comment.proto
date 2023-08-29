@@ -10,18 +10,20 @@ package db.functor;
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/functor";
 
 message EntityVoiceLoverAlbumComment {
-           //@inject_tag: orm:"id,primary"        
-    uint64 id                                    = 1; // 自增ID                           
-           //@inject_tag: orm:"album_id,primary"  
-    uint64 album_id                              = 2; // 专辑id                           
-           //@inject_tag: orm:"uid"               
-    uint64 uid                                   = 3; // 用户uid                          
-           //@inject_tag: orm:"content"           
-    string content                               = 4; // 评论内容                         
-           //@inject_tag: orm:"status"            
-    uint32 status                                = 5; // 审核状态：0-默认状态 1-举报封禁  
-           //@inject_tag: orm:"create_time"       
-    uint64 create_time                           = 6; // 创建时间                         
-           //@inject_tag: orm:"update_time"       
-    uint64 update_time                           = 7; // 更新时间                         
+           //@inject_tag: orm:"id,primary"           
+    uint64 id                                       = 1; // 自增ID                           
+           //@inject_tag: orm:"album_id"             
+    uint64 album_id                                 = 2; // 专辑id                           
+           //@inject_tag: orm:"uid"                  
+    uint64 uid                                      = 3; // 用户uid                          
+           //@inject_tag: orm:"content"              
+    string content                                  = 4; // 评论内容                         
+           //@inject_tag: orm:"status"               
+    uint32 status                                   = 5; // 审核状态：0-默认状态 1-举报封禁  
+           //@inject_tag: orm:"create_time,primary"  
+    uint64 create_time                              = 6; // 创建时间                         
+           //@inject_tag: orm:"update_time"          
+    uint64 update_time                              = 7; // 更新时间                         
+           //@inject_tag: orm:"address"              
+    string address                                  = 8; // 位置                             
 }

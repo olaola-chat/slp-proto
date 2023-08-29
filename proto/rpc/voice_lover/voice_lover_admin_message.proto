@@ -36,3 +36,110 @@ message ResGetSubjectDetail {
   map<uint64,SubjectData> subjects = 1;
 }
 
+message ReqGetSubjectList {
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string name = 3;
+  int32 page = 4;
+  int32 limit = 5;
+}
+
+message ResGetSubjectList {
+  repeated SubjectData subjects = 1;
+  int32 total = 2;
+}
+
+message ReqGetAlbumCollect {
+  string album_str = 1;
+  string subject_str = 2;
+  int32 page = 3;
+  int32 limit = 4;
+}
+
+message ResGetAlbumCollect {
+  repeated AlbumCollectData album_collects = 1;
+  int32 total = 2;
+}
+
+message AlbumCollectData {
+  uint64 id = 1;
+  string album_name = 2;
+  string subject_name = 3;
+  uint64 album_id = 4;
+  uint64 subject_id = 5;
+}
+
+message ReqAlbumCollect {
+  uint64 album_id = 1;
+  uint64 subject_id = 2;
+  int32 collect_type = 3;
+}
+
+message ResAlbumCollect {
+
+}
+
+message ReqAlbumChoice {
+  uint64 id = 1;
+  int32 type = 2; //0:精选 1:非精选
+}
+
+message ResAlbumChoice {}
+
+message ReqGetAlbumChoice {
+
+}
+
+message ResGetAlbumChoice {
+  repeated AlbumData albums = 1;
+}
+
+message ReqGetBannerList {
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string title = 3;
+  int32 status = 4; //0:全部 1:上架 2:没上架
+  int32 page = 5;
+  int32 limit = 6;
+}
+
+message ResGetBannerList {
+  repeated BannerData banners = 1;
+  int32 total = 2;
+}
+
+message ReqCreateBanner {
+  string title = 1;
+  string cover = 2;
+  string schema = 3;
+  uint64 op_uid = 4;
+  uint32 sort = 5;
+  uint64 start_time = 6;
+  uint64 end_time = 7;
+}
+
+message ResCreateBanner {
+  uint64 id = 1;
+}
+
+message ReqUpdateBanner {
+  uint64 id = 1;
+  string title = 2;
+  string cover = 3;
+  string schema = 4;
+  uint64 op_uid = 5;
+  uint32 sort = 6;
+  uint64 start_time = 7;
+  uint64 end_time = 8;
+}
+
+message ResUpdateBanner {
+}
+
+message ReqGetBannerDetail {
+  uint64 id = 1;
+}
+
+message ResGetBannerDetail {
+  BannerData banner = 1;
+}

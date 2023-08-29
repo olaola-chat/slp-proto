@@ -19,39 +19,39 @@ import (
 	"github.com/gogf/gf/util/gconv"
 
 	//	"github.com/olaola-chat/rbp-proto/model"
-	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
+	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
 )
 
-// VoiceLoverAudioLabelDao is the manager for logic model data accessing
+// XsUserFriendDao is the manager for logic model data accessing
 // and custom defined data operations functions management.
-type VoiceLoverAudioLabelDao struct {
+type XsUserFriendDao struct {
 	gmvc.M
 	DB      gdb.DB
 	Table   string
-	Columns voiceLoverAudioLabelColumns
+	Columns xsUserFriendColumns
 }
 
-// VoiceLoverAudioLabelColumns defines and stores column names for table voice_lover_audio_label.
-type voiceLoverAudioLabelColumns struct {
-	ID         string // 唯一标识
-	AudioID    string // 音频id
-	Label      string // 标签文案
-	CreateTime string // 创建时间
-	UpdateTime string // 更新时间
+// XsUserFriendColumns defines and stores column names for table xs_user_friend.
+type xsUserFriendColumns struct {
+	ID       string //
+	UID      string // 用户自己
+	To       string // 关注了谁
+	IsFriend string // 默认0：关注，1：互相关注
+	Dateline string //
 }
 
 var (
-	// VoiceLoverAudioLabel is globally public accessible object for table voice_lover_audio_label operations.
-	VoiceLoverAudioLabel = VoiceLoverAudioLabelDao{
-		M:     g.DB("functor").Model("voice_lover_audio_label").Safe(),
-		DB:    g.DB("functor"),
-		Table: "voice_lover_audio_label",
-		Columns: voiceLoverAudioLabelColumns{
-			ID:         "id",
-			AudioID:    "audio_id",
-			Label:      "label",
-			CreateTime: "create_time",
-			UpdateTime: "update_time",
+	// XsUserFriend is globally public accessible object for table xs_user_friend operations.
+	XsUserFriend = XsUserFriendDao{
+		M:     g.DB("xianshi").Model("xs_user_friend").Safe(),
+		DB:    g.DB("xianshi"),
+		Table: "xs_user_friend",
+		Columns: xsUserFriendColumns{
+			ID:       "id",
+			UID:      "uid",
+			To:       "to",
+			IsFriend: "is_friend",
+			Dateline: "dateline",
 		},
 	}
 )
@@ -60,34 +60,34 @@ var (
 // of current DB object and with given context in it.
 // Note that this returned DB object can be used only once, so do not assign it to
 // a global or package variable for long using.
-func (d *VoiceLoverAudioLabelDao) Ctx(ctx context.Context) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Ctx(ctx)}
+func (d *XsUserFriendDao) Ctx(ctx context.Context) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Ctx(ctx)}
 }
 
 // As sets an alias name for current table.
-func (d *VoiceLoverAudioLabelDao) As(as string) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.As(as)}
+func (d *XsUserFriendDao) As(as string) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.As(as)}
 }
 
 // TX sets the transaction for current operation.
-func (d *VoiceLoverAudioLabelDao) TX(tx *gdb.TX) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.TX(tx)}
+func (d *XsUserFriendDao) TX(tx *gdb.TX) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.TX(tx)}
 }
 
 // Master marks the following operation on master node.
-func (d *VoiceLoverAudioLabelDao) Master() *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Master()}
+func (d *XsUserFriendDao) Master() *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Master()}
 }
 
 // Slave marks the following operation on slave node.
 // Note that it makes sense only if there's any slave node configured.
-func (d *VoiceLoverAudioLabelDao) Slave() *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Slave()}
+func (d *XsUserFriendDao) Slave() *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Slave()}
 }
 
 // Args sets custom arguments for model operation.
-func (d *VoiceLoverAudioLabelDao) Args(args ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Args(args...)}
+func (d *XsUserFriendDao) Args(args ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Args(args...)}
 }
 
 // LeftJoin does "LEFT JOIN ... ON ..." statement on the model.
@@ -95,8 +95,8 @@ func (d *VoiceLoverAudioLabelDao) Args(args ...interface{}) *VoiceLoverAudioLabe
 // and also with its alias name, like:
 // Table("user").LeftJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").LeftJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAudioLabelDao) LeftJoin(table ...string) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.LeftJoin(table...)}
+func (d *XsUserFriendDao) LeftJoin(table ...string) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.LeftJoin(table...)}
 }
 
 // RightJoin does "RIGHT JOIN ... ON ..." statement on the model.
@@ -104,8 +104,8 @@ func (d *VoiceLoverAudioLabelDao) LeftJoin(table ...string) *VoiceLoverAudioLabe
 // and also with its alias name, like:
 // Table("user").RightJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").RightJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAudioLabelDao) RightJoin(table ...string) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.RightJoin(table...)}
+func (d *XsUserFriendDao) RightJoin(table ...string) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.RightJoin(table...)}
 }
 
 // InnerJoin does "INNER JOIN ... ON ..." statement on the model.
@@ -113,36 +113,36 @@ func (d *VoiceLoverAudioLabelDao) RightJoin(table ...string) *VoiceLoverAudioLab
 // and also with its alias name, like:
 // Table("user").InnerJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").InnerJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAudioLabelDao) InnerJoin(table ...string) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.InnerJoin(table...)}
+func (d *XsUserFriendDao) InnerJoin(table ...string) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.InnerJoin(table...)}
 }
 
 // Fields sets the operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAudioLabelDao) Fields(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
+func (d *XsUserFriendDao) Fields(fieldNamesOrMapStruct ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
 }
 
 // FieldsEx sets the excluded operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAudioLabelDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
+func (d *XsUserFriendDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
 }
 
 // Option sets the extra operation option for the model.
-func (d *VoiceLoverAudioLabelDao) Option(option int) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Option(option)}
+func (d *XsUserFriendDao) Option(option int) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Option(option)}
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers
 // the data and where attributes for empty values.
-func (d *VoiceLoverAudioLabelDao) OmitEmpty() *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.OmitEmpty()}
+func (d *XsUserFriendDao) OmitEmpty() *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.OmitEmpty()}
 }
 
 // Filter marks filtering the fields which does not exist in the fields of the operated table.
-func (d *VoiceLoverAudioLabelDao) Filter() *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Filter()}
+func (d *XsUserFriendDao) Filter() *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Filter()}
 }
 
 // Where sets the condition statement for the model. The parameter <where> can be type of
@@ -156,8 +156,8 @@ func (d *VoiceLoverAudioLabelDao) Filter() *VoiceLoverAudioLabelDao {
 // Where("status IN (?)", g.Slice{1,2,3})
 // Where("age IN(?,?)", 18, 50)
 // Where(User{ Id : 1, UserName : "john"})
-func (d *VoiceLoverAudioLabelDao) Where(where interface{}, args ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Where(where, args...)}
+func (d *XsUserFriendDao) Where(where interface{}, args ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Where(where, args...)}
 }
 
 // WherePri does the same logic as M.Where except that if the parameter <where>
@@ -165,54 +165,54 @@ func (d *VoiceLoverAudioLabelDao) Where(where interface{}, args ...interface{}) 
 // key value. That is, if primary key is "id" and given <where> parameter as "123", the
 // WherePri function treats the condition as "id=123", but M.Where treats the condition
 // as string "123".
-func (d *VoiceLoverAudioLabelDao) WherePri(where interface{}, args ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.WherePri(where, args...)}
+func (d *XsUserFriendDao) WherePri(where interface{}, args ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.WherePri(where, args...)}
 }
 
 // And adds "AND" condition to the where statement.
-func (d *VoiceLoverAudioLabelDao) And(where interface{}, args ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.And(where, args...)}
+func (d *XsUserFriendDao) And(where interface{}, args ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.And(where, args...)}
 }
 
 // Or adds "OR" condition to the where statement.
-func (d *VoiceLoverAudioLabelDao) Or(where interface{}, args ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Or(where, args...)}
+func (d *XsUserFriendDao) Or(where interface{}, args ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Or(where, args...)}
 }
 
 // Group sets the "GROUP BY" statement for the model.
-func (d *VoiceLoverAudioLabelDao) Group(groupBy string) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Group(groupBy)}
+func (d *XsUserFriendDao) Group(groupBy string) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Group(groupBy)}
 }
 
 // Order sets the "ORDER BY" statement for the model.
-func (d *VoiceLoverAudioLabelDao) Order(orderBy ...string) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Order(orderBy...)}
+func (d *XsUserFriendDao) Order(orderBy ...string) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Order(orderBy...)}
 }
 
 // Limit sets the "LIMIT" statement for the model.
 // The parameter <limit> can be either one or two number, if passed two number is passed,
 // it then sets "LIMIT limit[0],limit[1]" statement for the model, or else it sets "LIMIT limit[0]"
 // statement.
-func (d *VoiceLoverAudioLabelDao) Limit(limit ...int) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Limit(limit...)}
+func (d *XsUserFriendDao) Limit(limit ...int) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Limit(limit...)}
 }
 
 // Offset sets the "OFFSET" statement for the model.
 // It only makes sense for some databases like SQLServer, PostgreSQL, etc.
-func (d *VoiceLoverAudioLabelDao) Offset(offset int) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Offset(offset)}
+func (d *XsUserFriendDao) Offset(offset int) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Offset(offset)}
 }
 
 // Page sets the paging number for the model.
 // The parameter <page> is started from 1 for paging.
 // Note that, it differs that the Limit function start from 0 for "LIMIT" statement.
-func (d *VoiceLoverAudioLabelDao) Page(page, limit int) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Page(page, limit)}
+func (d *XsUserFriendDao) Page(page, limit int) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Page(page, limit)}
 }
 
 // Batch sets the batch operation number for the model.
-func (d *VoiceLoverAudioLabelDao) Batch(batch int) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Batch(batch)}
+func (d *XsUserFriendDao) Batch(batch int) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Batch(batch)}
 }
 
 // Cache sets the cache feature for the model. It caches the result of the sql, which means
@@ -227,8 +227,8 @@ func (d *VoiceLoverAudioLabelDao) Batch(batch int) *VoiceLoverAudioLabelDao {
 // control the cache like changing the <duration> or clearing the cache with specified <name>.
 //
 // Note that, the cache feature is disabled if the model is operating on a transaction.
-func (d *VoiceLoverAudioLabelDao) Cache(duration time.Duration, name ...string) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Cache(duration, name...)}
+func (d *XsUserFriendDao) Cache(duration time.Duration, name ...string) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Cache(duration, name...)}
 }
 
 // Data sets the operation data for the model.
@@ -238,22 +238,22 @@ func (d *VoiceLoverAudioLabelDao) Cache(duration time.Duration, name ...string) 
 // Data("uid", 10000)
 // Data(g.Map{"uid": 10000, "name":"john"})
 // Data(g.Slice{g.Map{"uid": 10000, "name":"john"}, g.Map{"uid": 20000, "name":"smith"})
-func (d *VoiceLoverAudioLabelDao) Data(data ...interface{}) *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Data(data...)}
+func (d *XsUserFriendDao) Data(data ...interface{}) *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Data(data...)}
 }
 
 // All does "SELECT FROM ..." statement for the model.
-// It retrieves the records from table and returns the result as []*pb.EntityVoiceLoverAudioLabel.
+// It retrieves the records from table and returns the result as []*pb.EntityXsUserFriend.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAudioLabelDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAudioLabel, error) {
+func (d *XsUserFriendDao) All(where ...interface{}) ([]*pb.EntityXsUserFriend, error) {
 	all, err := d.M.All(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAudioLabel
+	var entities []*pb.EntityXsUserFriend
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -263,17 +263,17 @@ func (d *VoiceLoverAudioLabelDao) All(where ...interface{}) ([]*pb.EntityVoiceLo
 	return entities, nil
 }
 
-// One retrieves one record from table and returns the result as *pb.EntityVoiceLoverAudioLabel.
+// One retrieves one record from table and returns the result as *pb.EntityXsUserFriend.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAudioLabelDao) One(where ...interface{}) (*pb.EntityVoiceLoverAudioLabel, error) {
+func (d *XsUserFriendDao) One(where ...interface{}) (*pb.EntityXsUserFriend, error) {
 	one, err := d.M.One(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAudioLabel
+	var entity *pb.EntityXsUserFriend
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -282,12 +282,12 @@ func (d *VoiceLoverAudioLabelDao) One(where ...interface{}) (*pb.EntityVoiceLove
 
 // FindOne retrieves and returns a single Record by M.WherePri and M.One.
 // Also see M.WherePri and M.One.
-func (d *VoiceLoverAudioLabelDao) FindOne(where ...interface{}) (*pb.EntityVoiceLoverAudioLabel, error) {
+func (d *XsUserFriendDao) FindOne(where ...interface{}) (*pb.EntityXsUserFriend, error) {
 	one, err := d.M.FindOne(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAudioLabel
+	var entity *pb.EntityXsUserFriend
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -296,12 +296,12 @@ func (d *VoiceLoverAudioLabelDao) FindOne(where ...interface{}) (*pb.EntityVoice
 
 // FindAll retrieves and returns Result by by M.WherePri and M.All.
 // Also see M.WherePri and M.All.
-func (d *VoiceLoverAudioLabelDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLoverAudioLabel, error) {
+func (d *XsUserFriendDao) FindAll(where ...interface{}) ([]*pb.EntityXsUserFriend, error) {
 	all, err := d.M.FindAll(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAudioLabel
+	var entities []*pb.EntityXsUserFriend
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -327,7 +327,7 @@ func (d *VoiceLoverAudioLabelDao) FindAll(where ...interface{}) ([]*pb.EntityVoi
 //
 // user := (*User)(nil)
 // err  := dao.User.Where("id", 1).Struct(&user)
-func (d *VoiceLoverAudioLabelDao) Struct(pointer interface{}, where ...interface{}) error {
+func (d *XsUserFriendDao) Struct(pointer interface{}, where ...interface{}) error {
 	return d.M.Struct(pointer, where...)
 }
 
@@ -347,7 +347,7 @@ func (d *VoiceLoverAudioLabelDao) Struct(pointer interface{}, where ...interface
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Structs(&users)
-func (d *VoiceLoverAudioLabelDao) Structs(pointer interface{}, where ...interface{}) error {
+func (d *XsUserFriendDao) Structs(pointer interface{}, where ...interface{}) error {
 	return d.M.Structs(pointer, where...)
 }
 
@@ -372,14 +372,14 @@ func (d *VoiceLoverAudioLabelDao) Structs(pointer interface{}, where ...interfac
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Scan(&users)
-func (d *VoiceLoverAudioLabelDao) Scan(pointer interface{}, where ...interface{}) error {
+func (d *XsUserFriendDao) Scan(pointer interface{}, where ...interface{}) error {
 	return d.M.Scan(pointer, where...)
 }
 
 // Chunk iterates the table with given size and callback function.
-func (d *VoiceLoverAudioLabelDao) Chunk(limit int, callback func(entities []*pb.EntityVoiceLoverAudioLabel, err error) bool) {
+func (d *XsUserFriendDao) Chunk(limit int, callback func(entities []*pb.EntityXsUserFriend, err error) bool) {
 	d.M.Chunk(limit, func(result gdb.Result, err error) bool {
-		var entities []*pb.EntityVoiceLoverAudioLabel
+		var entities []*pb.EntityXsUserFriend
 		err = result.Structs(&entities)
 		if err == sql.ErrNoRows {
 			return false
@@ -389,21 +389,21 @@ func (d *VoiceLoverAudioLabelDao) Chunk(limit int, callback func(entities []*pb.
 }
 
 // LockUpdate sets the lock for update for current operation.
-func (d *VoiceLoverAudioLabelDao) LockUpdate() *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.LockUpdate()}
+func (d *XsUserFriendDao) LockUpdate() *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.LockUpdate()}
 }
 
 // LockShared sets the lock in share mode for current operation.
-func (d *VoiceLoverAudioLabelDao) LockShared() *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.LockShared()}
+func (d *XsUserFriendDao) LockShared() *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.LockShared()}
 }
 
 // Unscoped enables/disables the soft deleting feature.
-func (d *VoiceLoverAudioLabelDao) Unscoped() *VoiceLoverAudioLabelDao {
-	return &VoiceLoverAudioLabelDao{M: d.M.Unscoped()}
+func (d *XsUserFriendDao) Unscoped() *XsUserFriendDao {
+	return &XsUserFriendDao{M: d.M.Unscoped()}
 }
 
-func (d *VoiceLoverAudioLabelDao) scan(res gdb.Result, in interface{}) error {
+func (d *XsUserFriendDao) scan(res gdb.Result, in interface{}) error {
 	length := res.Len()
 	if length == 0 {
 		return sql.ErrNoRows
@@ -432,7 +432,7 @@ func (d *VoiceLoverAudioLabelDao) scan(res gdb.Result, in interface{}) error {
 	return nil
 }
 
-func (d *VoiceLoverAudioLabelDao) getFieldTag(v reflect.Value) []string {
+func (d *XsUserFriendDao) getFieldTag(v reflect.Value) []string {
 	t := v.Type()
 	typ := t.Elem()
 	val := v.Elem()
@@ -459,7 +459,7 @@ func (d *VoiceLoverAudioLabelDao) getFieldTag(v reflect.Value) []string {
 	return fieldToTag
 }
 
-func (d *VoiceLoverAudioLabelDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
+func (d *XsUserFriendDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
 	val := v.Elem()
 	length := val.NumField()
 	for i := 0; i < length; i++ {

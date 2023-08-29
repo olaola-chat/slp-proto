@@ -41,6 +41,7 @@ type voiceLoverAudioCommentColumns struct {
 	Status     string // 审核状态：0-默认状态 1-举报封禁
 	CreateTime string // 创建时间
 	UpdateTime string // 更新时间
+	Address    string // 位置
 }
 
 var (
@@ -58,6 +59,7 @@ var (
 			Status:     "status",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",
+			Address:    "address",
 		},
 	}
 )

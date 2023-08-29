@@ -14,8 +14,8 @@ rm -rf ./gen_pb/db/functor
 ./gen_db.sh functor voice_lover_audio_comment
 ./gen_db.sh functor voice_lover_subject
 ./gen_db.sh functor voice_lover_user_collect
-./gen_db.sh functor voice_lover_audio_label
 ./gen_db.sh functor voice_lover_audio_partner
+./gen_db.sh functor voice_lover_banner
 # ./gen_db.sh xianshi bbc_commodity_type_config
 # ./gen_db.sh xianshi bbc_commodity_whitelist
 # ./gen_db.sh xianshi bbc_murder_auto_question_category

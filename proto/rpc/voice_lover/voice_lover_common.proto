@@ -4,16 +4,17 @@ package rbp.rpc.voice_lover;
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover";
 
 message AlbumData {
-  uint64 id = 1;            // 专辑id
-  string name = 2;          // 专辑名称
-  string intro = 3;         // 专辑介绍
-  string cover = 4;         // 专辑封面
-  uint64 create_time = 5;   // 创建时间
+  uint64 id = 1;              // 专辑id
+  string name = 2;            // 专辑名称
+  string intro = 3;           // 专辑介绍
+  string cover = 4;           // 专辑封面
+  uint64 create_time = 5;     // 创建时间
 
-  uint32 audio_count = 6;   // 音频数量
-  uint64 play_count = 7;    // 播放数量
-
-  uint64 op_uid = 8;
+  uint32 audio_count = 6;     // 音频数量
+  uint64 play_count = 7;      // 播放数量
+  string play_count_desc = 8; // 播放数量默认显示字符串
+  uint64 op_uid = 9;
+  int32  has_subject = 10;  //收录状态
 }
 
 message SubjectData {
@@ -22,6 +23,7 @@ message SubjectData {
   uint64 create_time = 3;         // 创建时间
 
   repeated AlbumData albums = 4;  // 专题下专辑数据
+  uint64 album_count = 5; //专题下专辑数量
 }
 
 message AudioSimpleData {
@@ -30,8 +32,10 @@ message AudioSimpleData {
   string resource = 3;
   repeated string covers = 4;
   uint32 seconds = 5;
+  uint32 uid = 6;
 
-  uint64 play_count = 6;
+  uint64 play_count = 7;
+  string play_count_desc = 8;
 }
 
 message AudioData {
@@ -51,6 +55,8 @@ message AudioData {
   repeated AudioEditData edit_posts = 14;
   repeated AudioEditData edit_covers = 15;
   uint32 seconds = 16;
+  uint64 play_count = 17;
+  string play_count_desc = 18;
 }
 
 message AudioEditData {
@@ -67,10 +73,22 @@ message Comment{
   uint64 id = 1;
   string content = 2;
   uint64 create_time = 3;
-  string ip_address = 4;
+  string address = 4;
   CommentUser user_info = 5;
 }
 message CommentUser{
   string name = 1;
   string avtar = 2;
+}
+
+message BannerData {
+  uint64 id = 1;
+  string title = 2;
+  string cover = 3;
+  string schema = 4;
+  uint64 op_uid = 5;
+  uint64 start_time = 6;
+  uint64 end_time = 7;
+  uint64 create_time = 8;
+  uint32 sort = 9;
 }

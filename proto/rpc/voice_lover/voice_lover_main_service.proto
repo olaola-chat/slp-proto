@@ -15,14 +15,20 @@ option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/voice_lover";
 service VoiceLoverMain {
   option (rbp.plugin.rbp_service).name = "Functor.VoiceLover.Main";
 
-  //是否需要实名认证
+  // 上传音频
   rpc Post (rbp.rpc.voice_lover.ReqPost) returns (rbp.rpc.voice_lover.ResBase);
 
   // 获取专辑详情
   rpc GetAlbumInfoById (rbp.rpc.voice_lover.ReqGetAlbumInfoById) returns (rbp.rpc.voice_lover.ResGetAlbumInfoById);
 
-  // 获取推荐专辑数据
+  // 获取精选推荐专辑数据
   rpc GetRecAlbums (rbp.rpc.voice_lover.ReqGetRecAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
+
+  // 获取推荐banner数据
+  rpc GetRecBanners (rbp.rpc.voice_lover.ReqGetRecBanners) returns (rbp.rpc.voice_lover.ResGetRecBanners);
+
+  // 获取普通推荐专辑数据
+  rpc GetRecCommonAlbums (rbp.rpc.voice_lover.ReqGetRecCommonAlbums) returns (rbp.rpc.voice_lover.ResGetRecAlbums);
 
   // 分页获取专辑列表
   rpc GetAlbumsByPage (rbp.rpc.voice_lover.ReqGetAlbumsByPage) returns (rbp.rpc.voice_lover.ResGetAlbumsByPage);
@@ -45,9 +51,39 @@ service VoiceLoverMain {
   // 判断用户是否收藏了专辑
   rpc IsUserCollectAlbum (rbp.rpc.voice_lover.ReqIsUserCollectAlbum) returns (rbp.rpc.voice_lover.ResIsUserCollectAlbum);
 
-  // 提交音频评论
-  rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+  // 批量判断用户是否收藏了专辑
+  rpc IsUserCollectAlbums (rbp.rpc.voice_lover.ReqIsUserCollectAlbums) returns (rbp.rpc.voice_lover.ResIsUserCollectAlbums);
+
+  // 收藏专辑或者音频
+  rpc Collect (rbp.rpc.voice_lover.ReqCollect) returns (rbp.rpc.voice_lover.ResCollect);
+
+  // 获取收藏专辑列表
+  rpc GetAlbumCollectList (rbp.rpc.voice_lover.ReqGetAlbumCollectList) returns (rbp.rpc.voice_lover.ResGetAlbumCollectList);
+
+  // 获取收藏音频列表
+  rpc GetAudioCollectList (rbp.rpc.voice_lover.ReqGetAudioCollectList) returns (rbp.rpc.voice_lover.ResGetAudioCollectList);
 
   // 提交音频评论
-  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqGetAudioEdit) returns (rbp.rpc.voice_lover.ResCommentList);
+  rpc SubmitAudioComment (rbp.rpc.voice_lover.ReqAudioSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+
+  // 提交音频评论
+  rpc GetAudioCommentList (rbp.rpc.voice_lover.ReqGetAudioCommentList) returns (rbp.rpc.voice_lover.ResCommentList);
+
+  // 提交音频评论
+  rpc SubmitAlbumComment (rbp.rpc.voice_lover.ReqAlbumSubmitComment) returns (rbp.rpc.voice_lover.ResCommonPost);
+
+  // 提交音频评论
+  rpc GetAlbumCommentList (rbp.rpc.voice_lover.ReqGetAlbumCommentList) returns (rbp.rpc.voice_lover.ResCommentList);
+
+  // 音频详情
+  rpc GetAudioInfoById (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
+
+  rpc UpdateReportStatus(rbp.rpc.voice_lover.ReqUpdateStatus) returns (rbp.rpc.voice_lover.ResUpdateStatus);
+
+  rpc PlayStatReport (rbp.rpc.voice_lover.ReqPlayStatReport) returns (rbp.rpc.voice_lover.ResPlayStatReport);
+  
+  rpc IsUserCollectAudio(rbp.rpc.voice_lover.ReqCollect) returns (rbp.rpc.voice_lover.ResIsUserCollectAudio);
+
+  // 获取存在有效音频的用户
+  rpc GetValidAudioUsers(rbp.rpc.voice_lover.ReqGetValidAudioUsers) returns (rbp.rpc.voice_lover.ResGetValidAudioUsers);
 }

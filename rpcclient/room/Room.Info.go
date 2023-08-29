@@ -31,3 +31,15 @@ func (s *roomInfo) Mget(ctx context.Context, req *room.ReqRoomInfos) (*room.RepR
 	err := s.Call(ctx, "Mget", req, reply)
 	return reply, err
 }
+
+func (s *roomInfo) InRoom(ctx context.Context, req *room.ReqUid) (*room.RepRid, error) {
+	reply := &room.RepRid{}
+	err := s.Call(ctx, "InRoom", req, reply)
+	return reply, err
+}
+
+func (s *roomInfo) MgetInRoom(ctx context.Context, req *room.ReqUids) (*room.RepInRooms, error) {
+	reply := &room.RepInRooms{}
+	err := s.Call(ctx, "MgetInRoom", req, reply)
+	return reply, err
+}

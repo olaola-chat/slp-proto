@@ -8,17 +8,17 @@ import (
 	"github.com/olaola-chat/rbp-proto/dao/functor/internal"
 )
 
-// voiceLoverAudioLabelDao is the manager for logic model data accessing
+// voiceLoverBannerDao is the manager for logic model data accessing
 // and custom defined data operations functions management. You can define
 // methods on it to extend its functionality as you wish.
-type voiceLoverAudioLabelDao struct {
-	internal.VoiceLoverAudioLabelDao
+type voiceLoverBannerDao struct {
+	internal.VoiceLoverBannerDao
 }
 
 var (
-	// VoiceLoverAudioLabel is globally public accessible object for table voice_lover_audio_label operations.
-	VoiceLoverAudioLabel = voiceLoverAudioLabelDao{
-		internal.VoiceLoverAudioLabel,
+	// VoiceLoverBanner is globally public accessible object for table voice_lover_banner operations.
+	VoiceLoverBanner = voiceLoverBannerDao{
+		internal.VoiceLoverBanner,
 	}
 )
 

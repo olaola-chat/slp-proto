@@ -22,46 +22,44 @@ import (
 	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
 )
 
-// VoiceLoverAlbumDao is the manager for logic model data accessing
+// VoiceLoverBannerDao is the manager for logic model data accessing
 // and custom defined data operations functions management.
-type VoiceLoverAlbumDao struct {
+type VoiceLoverBannerDao struct {
 	gmvc.M
 	DB      gdb.DB
 	Table   string
-	Columns voiceLoverAlbumColumns
+	Columns voiceLoverBannerColumns
 }
 
-// VoiceLoverAlbumColumns defines and stores column names for table voice_lover_album.
-type voiceLoverAlbumColumns struct {
-	ID         string // 专辑编号
-	Name       string // 专辑名称
-	Intro      string // 专辑简介
+// VoiceLoverBannerColumns defines and stores column names for table voice_lover_banner.
+type voiceLoverBannerColumns struct {
+	ID         string // id
+	Title      string // 标题
 	Cover      string // 专辑封面
-	IsDeleted  string // 是否删除:0-未删除 1-已删除
+	Schema     string // 跳转链接
 	OpUID      string // 操作人
-	Choice     string // 类型:0:默认 1:精选
-	ChoiceTime string // 设置类型时间，choice非0时写入
-	HasSubject string //
+	StartTime  string // 开始时间
+	EndTime    string // 结束时间
+	Sort       string // 排序
 	CreateTime string // 创建时间
 	UpdateTime string // 更新时间
 }
 
 var (
-	// VoiceLoverAlbum is globally public accessible object for table voice_lover_album operations.
-	VoiceLoverAlbum = VoiceLoverAlbumDao{
-		M:     g.DB("functor").Model("voice_lover_album").Safe(),
+	// VoiceLoverBanner is globally public accessible object for table voice_lover_banner operations.
+	VoiceLoverBanner = VoiceLoverBannerDao{
+		M:     g.DB("functor").Model("voice_lover_banner").Safe(),
 		DB:    g.DB("functor"),
-		Table: "voice_lover_album",
-		Columns: voiceLoverAlbumColumns{
+		Table: "voice_lover_banner",
+		Columns: voiceLoverBannerColumns{
 			ID:         "id",
-			Name:       "name",
-			Intro:      "intro",
+			Title:      "title",
 			Cover:      "cover",
-			IsDeleted:  "is_deleted",
+			Schema:     "schema",
 			OpUID:      "op_uid",
-			Choice:     "choice",
-			ChoiceTime: "choice_time",
-			HasSubject: "has_subject",
+			StartTime:  "start_time",
+			EndTime:    "end_time",
+			Sort:       "sort",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",
 		},
@@ -72,34 +70,34 @@ var (
 // of current DB object and with given context in it.
 // Note that this returned DB object can be used only once, so do not assign it to
 // a global or package variable for long using.
-func (d *VoiceLoverAlbumDao) Ctx(ctx context.Context) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Ctx(ctx)}
+func (d *VoiceLoverBannerDao) Ctx(ctx context.Context) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Ctx(ctx)}
 }
 
 // As sets an alias name for current table.
-func (d *VoiceLoverAlbumDao) As(as string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.As(as)}
+func (d *VoiceLoverBannerDao) As(as string) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.As(as)}
 }
 
 // TX sets the transaction for current operation.
-func (d *VoiceLoverAlbumDao) TX(tx *gdb.TX) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.TX(tx)}
+func (d *VoiceLoverBannerDao) TX(tx *gdb.TX) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.TX(tx)}
 }
 
 // Master marks the following operation on master node.
-func (d *VoiceLoverAlbumDao) Master() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Master()}
+func (d *VoiceLoverBannerDao) Master() *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Master()}
 }
 
 // Slave marks the following operation on slave node.
 // Note that it makes sense only if there's any slave node configured.
-func (d *VoiceLoverAlbumDao) Slave() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Slave()}
+func (d *VoiceLoverBannerDao) Slave() *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Slave()}
 }
 
 // Args sets custom arguments for model operation.
-func (d *VoiceLoverAlbumDao) Args(args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Args(args...)}
+func (d *VoiceLoverBannerDao) Args(args ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Args(args...)}
 }
 
 // LeftJoin does "LEFT JOIN ... ON ..." statement on the model.
@@ -107,8 +105,8 @@ func (d *VoiceLoverAlbumDao) Args(args ...interface{}) *VoiceLoverAlbumDao {
 // and also with its alias name, like:
 // Table("user").LeftJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").LeftJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAlbumDao) LeftJoin(table ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.LeftJoin(table...)}
+func (d *VoiceLoverBannerDao) LeftJoin(table ...string) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.LeftJoin(table...)}
 }
 
 // RightJoin does "RIGHT JOIN ... ON ..." statement on the model.
@@ -116,8 +114,8 @@ func (d *VoiceLoverAlbumDao) LeftJoin(table ...string) *VoiceLoverAlbumDao {
 // and also with its alias name, like:
 // Table("user").RightJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").RightJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAlbumDao) RightJoin(table ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.RightJoin(table...)}
+func (d *VoiceLoverBannerDao) RightJoin(table ...string) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.RightJoin(table...)}
 }
 
 // InnerJoin does "INNER JOIN ... ON ..." statement on the model.
@@ -125,36 +123,36 @@ func (d *VoiceLoverAlbumDao) RightJoin(table ...string) *VoiceLoverAlbumDao {
 // and also with its alias name, like:
 // Table("user").InnerJoin("user_detail", "user_detail.uid=user.uid")
 // Table("user", "u").InnerJoin("user_detail", "ud", "ud.uid=u.uid")
-func (d *VoiceLoverAlbumDao) InnerJoin(table ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.InnerJoin(table...)}
+func (d *VoiceLoverBannerDao) InnerJoin(table ...string) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.InnerJoin(table...)}
 }
 
 // Fields sets the operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAlbumDao) Fields(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
+func (d *VoiceLoverBannerDao) Fields(fieldNamesOrMapStruct ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Fields(fieldNamesOrMapStruct...)}
 }
 
 // FieldsEx sets the excluded operation fields of the model, multiple fields joined using char ','.
 // The parameter <fieldNamesOrMapStruct> can be type of string/map/*map/struct/*struct.
-func (d *VoiceLoverAlbumDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
+func (d *VoiceLoverBannerDao) FieldsEx(fieldNamesOrMapStruct ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.FieldsEx(fieldNamesOrMapStruct...)}
 }
 
 // Option sets the extra operation option for the model.
-func (d *VoiceLoverAlbumDao) Option(option int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Option(option)}
+func (d *VoiceLoverBannerDao) Option(option int) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Option(option)}
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers
 // the data and where attributes for empty values.
-func (d *VoiceLoverAlbumDao) OmitEmpty() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.OmitEmpty()}
+func (d *VoiceLoverBannerDao) OmitEmpty() *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.OmitEmpty()}
 }
 
 // Filter marks filtering the fields which does not exist in the fields of the operated table.
-func (d *VoiceLoverAlbumDao) Filter() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Filter()}
+func (d *VoiceLoverBannerDao) Filter() *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Filter()}
 }
 
 // Where sets the condition statement for the model. The parameter <where> can be type of
@@ -168,8 +166,8 @@ func (d *VoiceLoverAlbumDao) Filter() *VoiceLoverAlbumDao {
 // Where("status IN (?)", g.Slice{1,2,3})
 // Where("age IN(?,?)", 18, 50)
 // Where(User{ Id : 1, UserName : "john"})
-func (d *VoiceLoverAlbumDao) Where(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Where(where, args...)}
+func (d *VoiceLoverBannerDao) Where(where interface{}, args ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Where(where, args...)}
 }
 
 // WherePri does the same logic as M.Where except that if the parameter <where>
@@ -177,54 +175,54 @@ func (d *VoiceLoverAlbumDao) Where(where interface{}, args ...interface{}) *Voic
 // key value. That is, if primary key is "id" and given <where> parameter as "123", the
 // WherePri function treats the condition as "id=123", but M.Where treats the condition
 // as string "123".
-func (d *VoiceLoverAlbumDao) WherePri(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.WherePri(where, args...)}
+func (d *VoiceLoverBannerDao) WherePri(where interface{}, args ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.WherePri(where, args...)}
 }
 
 // And adds "AND" condition to the where statement.
-func (d *VoiceLoverAlbumDao) And(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.And(where, args...)}
+func (d *VoiceLoverBannerDao) And(where interface{}, args ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.And(where, args...)}
 }
 
 // Or adds "OR" condition to the where statement.
-func (d *VoiceLoverAlbumDao) Or(where interface{}, args ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Or(where, args...)}
+func (d *VoiceLoverBannerDao) Or(where interface{}, args ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Or(where, args...)}
 }
 
 // Group sets the "GROUP BY" statement for the model.
-func (d *VoiceLoverAlbumDao) Group(groupBy string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Group(groupBy)}
+func (d *VoiceLoverBannerDao) Group(groupBy string) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Group(groupBy)}
 }
 
 // Order sets the "ORDER BY" statement for the model.
-func (d *VoiceLoverAlbumDao) Order(orderBy ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Order(orderBy...)}
+func (d *VoiceLoverBannerDao) Order(orderBy ...string) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Order(orderBy...)}
 }
 
 // Limit sets the "LIMIT" statement for the model.
 // The parameter <limit> can be either one or two number, if passed two number is passed,
 // it then sets "LIMIT limit[0],limit[1]" statement for the model, or else it sets "LIMIT limit[0]"
 // statement.
-func (d *VoiceLoverAlbumDao) Limit(limit ...int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Limit(limit...)}
+func (d *VoiceLoverBannerDao) Limit(limit ...int) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Limit(limit...)}
 }
 
 // Offset sets the "OFFSET" statement for the model.
 // It only makes sense for some databases like SQLServer, PostgreSQL, etc.
-func (d *VoiceLoverAlbumDao) Offset(offset int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Offset(offset)}
+func (d *VoiceLoverBannerDao) Offset(offset int) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Offset(offset)}
 }
 
 // Page sets the paging number for the model.
 // The parameter <page> is started from 1 for paging.
 // Note that, it differs that the Limit function start from 0 for "LIMIT" statement.
-func (d *VoiceLoverAlbumDao) Page(page, limit int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Page(page, limit)}
+func (d *VoiceLoverBannerDao) Page(page, limit int) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Page(page, limit)}
 }
 
 // Batch sets the batch operation number for the model.
-func (d *VoiceLoverAlbumDao) Batch(batch int) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Batch(batch)}
+func (d *VoiceLoverBannerDao) Batch(batch int) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Batch(batch)}
 }
 
 // Cache sets the cache feature for the model. It caches the result of the sql, which means
@@ -239,8 +237,8 @@ func (d *VoiceLoverAlbumDao) Batch(batch int) *VoiceLoverAlbumDao {
 // control the cache like changing the <duration> or clearing the cache with specified <name>.
 //
 // Note that, the cache feature is disabled if the model is operating on a transaction.
-func (d *VoiceLoverAlbumDao) Cache(duration time.Duration, name ...string) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Cache(duration, name...)}
+func (d *VoiceLoverBannerDao) Cache(duration time.Duration, name ...string) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Cache(duration, name...)}
 }
 
 // Data sets the operation data for the model.
@@ -250,22 +248,22 @@ func (d *VoiceLoverAlbumDao) Cache(duration time.Duration, name ...string) *Voic
 // Data("uid", 10000)
 // Data(g.Map{"uid": 10000, "name":"john"})
 // Data(g.Slice{g.Map{"uid": 10000, "name":"john"}, g.Map{"uid": 20000, "name":"smith"})
-func (d *VoiceLoverAlbumDao) Data(data ...interface{}) *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Data(data...)}
+func (d *VoiceLoverBannerDao) Data(data ...interface{}) *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Data(data...)}
 }
 
 // All does "SELECT FROM ..." statement for the model.
-// It retrieves the records from table and returns the result as []*pb.EntityVoiceLoverAlbum.
+// It retrieves the records from table and returns the result as []*pb.EntityVoiceLoverBanner.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAlbumDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverBannerDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverBanner, error) {
 	all, err := d.M.All(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAlbum
+	var entities []*pb.EntityVoiceLoverBanner
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -275,17 +273,17 @@ func (d *VoiceLoverAlbumDao) All(where ...interface{}) ([]*pb.EntityVoiceLoverAl
 	return entities, nil
 }
 
-// One retrieves one record from table and returns the result as *pb.EntityVoiceLoverAlbum.
+// One retrieves one record from table and returns the result as *pb.EntityVoiceLoverBanner.
 // It returns nil if there's no record retrieved with the given conditions from table.
 //
 // The optional parameter <where> is the same as the parameter of M.Where function,
 // see M.Where.
-func (d *VoiceLoverAlbumDao) One(where ...interface{}) (*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverBannerDao) One(where ...interface{}) (*pb.EntityVoiceLoverBanner, error) {
 	one, err := d.M.One(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAlbum
+	var entity *pb.EntityVoiceLoverBanner
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -294,12 +292,12 @@ func (d *VoiceLoverAlbumDao) One(where ...interface{}) (*pb.EntityVoiceLoverAlbu
 
 // FindOne retrieves and returns a single Record by M.WherePri and M.One.
 // Also see M.WherePri and M.One.
-func (d *VoiceLoverAlbumDao) FindOne(where ...interface{}) (*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverBannerDao) FindOne(where ...interface{}) (*pb.EntityVoiceLoverBanner, error) {
 	one, err := d.M.FindOne(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entity *pb.EntityVoiceLoverAlbum
+	var entity *pb.EntityVoiceLoverBanner
 	if err = one.Struct(&entity); err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}
@@ -308,12 +306,12 @@ func (d *VoiceLoverAlbumDao) FindOne(where ...interface{}) (*pb.EntityVoiceLover
 
 // FindAll retrieves and returns Result by by M.WherePri and M.All.
 // Also see M.WherePri and M.All.
-func (d *VoiceLoverAlbumDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLoverAlbum, error) {
+func (d *VoiceLoverBannerDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLoverBanner, error) {
 	all, err := d.M.FindAll(where...)
 	if err != nil {
 		return nil, err
 	}
-	var entities []*pb.EntityVoiceLoverAlbum
+	var entities []*pb.EntityVoiceLoverBanner
 	//if err = all.Structs(&entities); err != nil && err != sql.ErrNoRows {
 	//	return nil, err
 	//}
@@ -339,7 +337,7 @@ func (d *VoiceLoverAlbumDao) FindAll(where ...interface{}) ([]*pb.EntityVoiceLov
 //
 // user := (*User)(nil)
 // err  := dao.User.Where("id", 1).Struct(&user)
-func (d *VoiceLoverAlbumDao) Struct(pointer interface{}, where ...interface{}) error {
+func (d *VoiceLoverBannerDao) Struct(pointer interface{}, where ...interface{}) error {
 	return d.M.Struct(pointer, where...)
 }
 
@@ -359,7 +357,7 @@ func (d *VoiceLoverAlbumDao) Struct(pointer interface{}, where ...interface{}) e
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Structs(&users)
-func (d *VoiceLoverAlbumDao) Structs(pointer interface{}, where ...interface{}) error {
+func (d *VoiceLoverBannerDao) Structs(pointer interface{}, where ...interface{}) error {
 	return d.M.Structs(pointer, where...)
 }
 
@@ -384,14 +382,14 @@ func (d *VoiceLoverAlbumDao) Structs(pointer interface{}, where ...interface{}) 
 //
 // users := ([]*User)(nil)
 // err   := dao.User.Scan(&users)
-func (d *VoiceLoverAlbumDao) Scan(pointer interface{}, where ...interface{}) error {
+func (d *VoiceLoverBannerDao) Scan(pointer interface{}, where ...interface{}) error {
 	return d.M.Scan(pointer, where...)
 }
 
 // Chunk iterates the table with given size and callback function.
-func (d *VoiceLoverAlbumDao) Chunk(limit int, callback func(entities []*pb.EntityVoiceLoverAlbum, err error) bool) {
+func (d *VoiceLoverBannerDao) Chunk(limit int, callback func(entities []*pb.EntityVoiceLoverBanner, err error) bool) {
 	d.M.Chunk(limit, func(result gdb.Result, err error) bool {
-		var entities []*pb.EntityVoiceLoverAlbum
+		var entities []*pb.EntityVoiceLoverBanner
 		err = result.Structs(&entities)
 		if err == sql.ErrNoRows {
 			return false
@@ -401,21 +399,21 @@ func (d *VoiceLoverAlbumDao) Chunk(limit int, callback func(entities []*pb.Entit
 }
 
 // LockUpdate sets the lock for update for current operation.
-func (d *VoiceLoverAlbumDao) LockUpdate() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.LockUpdate()}
+func (d *VoiceLoverBannerDao) LockUpdate() *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.LockUpdate()}
 }
 
 // LockShared sets the lock in share mode for current operation.
-func (d *VoiceLoverAlbumDao) LockShared() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.LockShared()}
+func (d *VoiceLoverBannerDao) LockShared() *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.LockShared()}
 }
 
 // Unscoped enables/disables the soft deleting feature.
-func (d *VoiceLoverAlbumDao) Unscoped() *VoiceLoverAlbumDao {
-	return &VoiceLoverAlbumDao{M: d.M.Unscoped()}
+func (d *VoiceLoverBannerDao) Unscoped() *VoiceLoverBannerDao {
+	return &VoiceLoverBannerDao{M: d.M.Unscoped()}
 }
 
-func (d *VoiceLoverAlbumDao) scan(res gdb.Result, in interface{}) error {
+func (d *VoiceLoverBannerDao) scan(res gdb.Result, in interface{}) error {
 	length := res.Len()
 	if length == 0 {
 		return sql.ErrNoRows
@@ -444,7 +442,7 @@ func (d *VoiceLoverAlbumDao) scan(res gdb.Result, in interface{}) error {
 	return nil
 }
 
-func (d *VoiceLoverAlbumDao) getFieldTag(v reflect.Value) []string {
+func (d *VoiceLoverBannerDao) getFieldTag(v reflect.Value) []string {
 	t := v.Type()
 	typ := t.Elem()
 	val := v.Elem()
@@ -471,7 +469,7 @@ func (d *VoiceLoverAlbumDao) getFieldTag(v reflect.Value) []string {
 	return fieldToTag
 }
 
-func (d *VoiceLoverAlbumDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
+func (d *VoiceLoverBannerDao) mapping(m map[string]*gvar.Var, v reflect.Value, fieldToTag []string) error {
 	val := v.Elem()
 	length := val.NumField()
 	for i := 0; i < length; i++ {

@@ -37,6 +37,18 @@ func (s *voiceLoverMain) GetRecAlbums(ctx context.Context, req *voice_lover.ReqG
 	return reply, err
 }
 
+func (s *voiceLoverMain) GetRecBanners(ctx context.Context, req *voice_lover.ReqGetRecBanners) (*voice_lover.ResGetRecBanners, error) {
+	reply := &voice_lover.ResGetRecBanners{}
+	err := s.Call(ctx, "GetRecBanners", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetRecCommonAlbums(ctx context.Context, req *voice_lover.ReqGetRecCommonAlbums) (*voice_lover.ResGetRecAlbums, error) {
+	reply := &voice_lover.ResGetRecAlbums{}
+	err := s.Call(ctx, "GetRecCommonAlbums", req, reply)
+	return reply, err
+}
+
 func (s *voiceLoverMain) GetAlbumsByPage(ctx context.Context, req *voice_lover.ReqGetAlbumsByPage) (*voice_lover.ResGetAlbumsByPage, error) {
 	reply := &voice_lover.ResGetAlbumsByPage{}
 	err := s.Call(ctx, "GetAlbumsByPage", req, reply)
@@ -79,14 +91,80 @@ func (s *voiceLoverMain) IsUserCollectAlbum(ctx context.Context, req *voice_love
 	return reply, err
 }
 
-func (s *voiceLoverMain) SubmitAudioComment(ctx context.Context, req *voice_lover.ReqSubmitComment) (*voice_lover.ResCommonPost, error) {
+func (s *voiceLoverMain) IsUserCollectAlbums(ctx context.Context, req *voice_lover.ReqIsUserCollectAlbums) (*voice_lover.ResIsUserCollectAlbums, error) {
+	reply := &voice_lover.ResIsUserCollectAlbums{}
+	err := s.Call(ctx, "IsUserCollectAlbums", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) Collect(ctx context.Context, req *voice_lover.ReqCollect) (*voice_lover.ResCollect, error) {
+	reply := &voice_lover.ResCollect{}
+	err := s.Call(ctx, "Collect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAlbumCollectList(ctx context.Context, req *voice_lover.ReqGetAlbumCollectList) (*voice_lover.ResGetAlbumCollectList, error) {
+	reply := &voice_lover.ResGetAlbumCollectList{}
+	err := s.Call(ctx, "GetAlbumCollectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAudioCollectList(ctx context.Context, req *voice_lover.ReqGetAudioCollectList) (*voice_lover.ResGetAudioCollectList, error) {
+	reply := &voice_lover.ResGetAudioCollectList{}
+	err := s.Call(ctx, "GetAudioCollectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) SubmitAudioComment(ctx context.Context, req *voice_lover.ReqAudioSubmitComment) (*voice_lover.ResCommonPost, error) {
 	reply := &voice_lover.ResCommonPost{}
 	err := s.Call(ctx, "SubmitAudioComment", req, reply)
 	return reply, err
 }
 
-func (s *voiceLoverMain) GetAudioCommentList(ctx context.Context, req *voice_lover.ReqGetAudioEdit) (*voice_lover.ResCommentList, error) {
+func (s *voiceLoverMain) GetAudioCommentList(ctx context.Context, req *voice_lover.ReqGetAudioCommentList) (*voice_lover.ResCommentList, error) {
 	reply := &voice_lover.ResCommentList{}
 	err := s.Call(ctx, "GetAudioCommentList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) SubmitAlbumComment(ctx context.Context, req *voice_lover.ReqAlbumSubmitComment) (*voice_lover.ResCommonPost, error) {
+	reply := &voice_lover.ResCommonPost{}
+	err := s.Call(ctx, "SubmitAlbumComment", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAlbumCommentList(ctx context.Context, req *voice_lover.ReqGetAlbumCommentList) (*voice_lover.ResCommentList, error) {
+	reply := &voice_lover.ResCommentList{}
+	err := s.Call(ctx, "GetAlbumCommentList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAudioInfoById(ctx context.Context, req *voice_lover.ReqGetAudioDetail) (*voice_lover.ResGetAudioDetail, error) {
+	reply := &voice_lover.ResGetAudioDetail{}
+	err := s.Call(ctx, "GetAudioInfoById", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) UpdateReportStatus(ctx context.Context, req *voice_lover.ReqUpdateStatus) (*voice_lover.ResUpdateStatus, error) {
+	reply := &voice_lover.ResUpdateStatus{}
+	err := s.Call(ctx, "UpdateReportStatus", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) PlayStatReport(ctx context.Context, req *voice_lover.ReqPlayStatReport) (*voice_lover.ResPlayStatReport, error) {
+	reply := &voice_lover.ResPlayStatReport{}
+	err := s.Call(ctx, "PlayStatReport", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) IsUserCollectAudio(ctx context.Context, req *voice_lover.ReqCollect) (*voice_lover.ResIsUserCollectAudio, error) {
+	reply := &voice_lover.ResIsUserCollectAudio{}
+	err := s.Call(ctx, "IsUserCollectAudio", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetValidAudioUsers(ctx context.Context, req *voice_lover.ReqGetValidAudioUsers) (*voice_lover.ResGetValidAudioUsers, error) {
+	reply := &voice_lover.ResGetValidAudioUsers{}
+	err := s.Call(ctx, "GetValidAudioUsers", req, reply)
 	return reply, err
 }

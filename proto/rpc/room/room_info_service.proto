@@ -20,6 +20,12 @@ service RoomInfo {
 
 	// 批量获取房间列表
 	rpc Mget (rbp.rpc.room.ReqRoomInfos) returns (rbp.rpc.room.RepRoomInfos);
+
+	// 是否在房间,rid多少
+	rpc InRoom (rbp.rpc.room.ReqUid) returns (rbp.rpc.room.RepRid);
+
+	// 是否在房间,rid多少 批量
+	rpc MgetInRoom (rbp.rpc.room.ReqUids) returns (rbp.rpc.room.RepInRooms);
 }
 
 
