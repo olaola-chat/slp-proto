@@ -1505,7 +1505,7 @@ type ResGetBannerDetail struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Banner *BannerData `protobuf:"bytes,1,opt,name=banner,proto3" json:"banner,omitempty"`
+	Banner *AdminBannerData `protobuf:"bytes,1,opt,name=banner,proto3" json:"banner,omitempty"`
 }
 
 func (x *ResGetBannerDetail) Reset() {
@@ -1540,11 +1540,3683 @@ func (*ResGetBannerDetail) Descriptor() ([]byte, []int) {
 	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{26}
 }
 
-func (x *ResGetBannerDetail) GetBanner() *BannerData {
+func (x *ResGetBannerDetail) GetBanner() *AdminBannerData {
 	if x != nil {
 		return x.Banner
 	}
 	return nil
+}
+
+type ReqAdminAudioList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	EndTime     uint64 `protobuf:"varint,1,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	UserStr     string `protobuf:"bytes,2,opt,name=user_str,json=userStr,proto3" json:"user_str,omitempty"`
+	Source      int32  `protobuf:"varint,3,opt,name=source,proto3" json:"source,omitempty"`
+	Label       string `protobuf:"bytes,4,opt,name=label,proto3" json:"label,omitempty"`
+	Order       string `protobuf:"bytes,5,opt,name=order,proto3" json:"order,omitempty"`
+	AuditStatus int32  `protobuf:"varint,6,opt,name=audit_status,json=auditStatus,proto3" json:"audit_status,omitempty"`
+	Page        int32  `protobuf:"varint,7,opt,name=page,proto3" json:"page,omitempty"`
+	Limit       int32  `protobuf:"varint,8,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *ReqAdminAudioList) Reset() {
+	*x = ReqAdminAudioList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[27]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAudioList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAudioList) ProtoMessage() {}
+
+func (x *ReqAdminAudioList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[27]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAudioList.ProtoReflect.Descriptor instead.
+func (*ReqAdminAudioList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ReqAdminAudioList) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioList) GetUserStr() string {
+	if x != nil {
+		return x.UserStr
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioList) GetSource() int32 {
+	if x != nil {
+		return x.Source
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioList) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioList) GetOrder() string {
+	if x != nil {
+		return x.Order
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioList) GetAuditStatus() int32 {
+	if x != nil {
+		return x.AuditStatus
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioList) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioList) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ResAdminAudioList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Audios []*AdminAudio `protobuf:"bytes,1,rep,name=audios,proto3" json:"audios,omitempty"`
+	Total  int32         `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+}
+
+func (x *ResAdminAudioList) Reset() {
+	*x = ResAdminAudioList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[28]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAudioList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAudioList) ProtoMessage() {}
+
+func (x *ResAdminAudioList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[28]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAudioList.ProtoReflect.Descriptor instead.
+func (*ResAdminAudioList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *ResAdminAudioList) GetAudios() []*AdminAudio {
+	if x != nil {
+		return x.Audios
+	}
+	return nil
+}
+
+func (x *ResAdminAudioList) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type ReqAdminAudioDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ReqAdminAudioDetail) Reset() {
+	*x = ReqAdminAudioDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[29]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAudioDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAudioDetail) ProtoMessage() {}
+
+func (x *ReqAdminAudioDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[29]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAudioDetail.ProtoReflect.Descriptor instead.
+func (*ReqAdminAudioDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *ReqAdminAudioDetail) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ResAdminAudioDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Audio *AdminAudio `protobuf:"bytes,1,opt,name=audio,proto3" json:"audio,omitempty"`
+}
+
+func (x *ResAdminAudioDetail) Reset() {
+	*x = ResAdminAudioDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[30]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAudioDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAudioDetail) ProtoMessage() {}
+
+func (x *ResAdminAudioDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[30]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAudioDetail.ProtoReflect.Descriptor instead.
+func (*ResAdminAudioDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *ResAdminAudioDetail) GetAudio() *AdminAudio {
+	if x != nil {
+		return x.Audio
+	}
+	return nil
+}
+
+type ReqAdminAudioUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id     uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title  string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Desc   string `protobuf:"bytes,3,opt,name=desc,proto3" json:"desc,omitempty"`
+	Labels string `protobuf:"bytes,4,opt,name=labels,proto3" json:"labels,omitempty"`
+	OpUid  uint64 `protobuf:"varint,5,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+}
+
+func (x *ReqAdminAudioUpdate) Reset() {
+	*x = ReqAdminAudioUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[31]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAudioUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAudioUpdate) ProtoMessage() {}
+
+func (x *ReqAdminAudioUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[31]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAudioUpdate.ProtoReflect.Descriptor instead.
+func (*ReqAdminAudioUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *ReqAdminAudioUpdate) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioUpdate) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioUpdate) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioUpdate) GetLabels() string {
+	if x != nil {
+		return x.Labels
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioUpdate) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+type ResAdminAudioUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminAudioUpdate) Reset() {
+	*x = ResAdminAudioUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[32]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAudioUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAudioUpdate) ProtoMessage() {}
+
+func (x *ResAdminAudioUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[32]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAudioUpdate.ProtoReflect.Descriptor instead.
+func (*ResAdminAudioUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{32}
+}
+
+type ReqAdminAudioAudit struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	AuditStatus int32  `protobuf:"varint,2,opt,name=audit_status,json=auditStatus,proto3" json:"audit_status,omitempty"` // 1:通过 2:不通过
+	AuditReason int32  `protobuf:"varint,3,opt,name=audit_reason,json=auditReason,proto3" json:"audit_reason,omitempty"`
+	OpUid       uint64 `protobuf:"varint,4,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+}
+
+func (x *ReqAdminAudioAudit) Reset() {
+	*x = ReqAdminAudioAudit{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAudioAudit) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAudioAudit) ProtoMessage() {}
+
+func (x *ReqAdminAudioAudit) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAudioAudit.ProtoReflect.Descriptor instead.
+func (*ReqAdminAudioAudit) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *ReqAdminAudioAudit) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioAudit) GetAuditStatus() int32 {
+	if x != nil {
+		return x.AuditStatus
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioAudit) GetAuditReason() int32 {
+	if x != nil {
+		return x.AuditReason
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioAudit) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+type ResAdminAudioAudit struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminAudioAudit) Reset() {
+	*x = ResAdminAudioAudit{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAudioAudit) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAudioAudit) ProtoMessage() {}
+
+func (x *ResAdminAudioAudit) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAudioAudit.ProtoReflect.Descriptor instead.
+func (*ResAdminAudioAudit) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{34}
+}
+
+type ReqAdminAudioAuditReason struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ReqAdminAudioAuditReason) Reset() {
+	*x = ReqAdminAudioAuditReason{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[35]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAudioAuditReason) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAudioAuditReason) ProtoMessage() {}
+
+func (x *ReqAdminAudioAuditReason) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[35]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAudioAuditReason.ProtoReflect.Descriptor instead.
+func (*ReqAdminAudioAuditReason) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{35}
+}
+
+type ResAdminAudioAuditReason struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Reasons []*AdminAudioAuditReason `protobuf:"bytes,1,rep,name=reasons,proto3" json:"reasons,omitempty"`
+}
+
+func (x *ResAdminAudioAuditReason) Reset() {
+	*x = ResAdminAudioAuditReason{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[36]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAudioAuditReason) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAudioAuditReason) ProtoMessage() {}
+
+func (x *ResAdminAudioAuditReason) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[36]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAudioAuditReason.ProtoReflect.Descriptor instead.
+func (*ResAdminAudioAuditReason) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *ResAdminAudioAuditReason) GetReasons() []*AdminAudioAuditReason {
+	if x != nil {
+		return x.Reasons
+	}
+	return nil
+}
+
+type ReqAdminAlbumCreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name  string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Intro string `protobuf:"bytes,2,opt,name=intro,proto3" json:"intro,omitempty"`
+	Cover string `protobuf:"bytes,3,opt,name=cover,proto3" json:"cover,omitempty"`
+	OpUid uint64 `protobuf:"varint,4,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+}
+
+func (x *ReqAdminAlbumCreate) Reset() {
+	*x = ReqAdminAlbumCreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[37]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumCreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumCreate) ProtoMessage() {}
+
+func (x *ReqAdminAlbumCreate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[37]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumCreate.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumCreate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *ReqAdminAlbumCreate) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumCreate) GetIntro() string {
+	if x != nil {
+		return x.Intro
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumCreate) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumCreate) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+type ResAdminAlbumCreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ResAdminAlbumCreate) Reset() {
+	*x = ResAdminAlbumCreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[38]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumCreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumCreate) ProtoMessage() {}
+
+func (x *ResAdminAlbumCreate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[38]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumCreate.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumCreate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *ResAdminAlbumCreate) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ReqAdminAlbumDel struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id    uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	OpUid uint64 `protobuf:"varint,2,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+}
+
+func (x *ReqAdminAlbumDel) Reset() {
+	*x = ReqAdminAlbumDel{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[39]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumDel) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumDel) ProtoMessage() {}
+
+func (x *ReqAdminAlbumDel) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[39]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumDel.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumDel) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *ReqAdminAlbumDel) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumDel) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+type ResAdminAlbumDel struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminAlbumDel) Reset() {
+	*x = ResAdminAlbumDel{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[40]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumDel) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumDel) ProtoMessage() {}
+
+func (x *ResAdminAlbumDel) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[40]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumDel.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumDel) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{40}
+}
+
+type ReqAdminAlbumUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id    uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name  string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Intro string `protobuf:"bytes,3,opt,name=intro,proto3" json:"intro,omitempty"`
+	Cover string `protobuf:"bytes,4,opt,name=cover,proto3" json:"cover,omitempty"`
+	OpUid uint64 `protobuf:"varint,5,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+}
+
+func (x *ReqAdminAlbumUpdate) Reset() {
+	*x = ReqAdminAlbumUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[41]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumUpdate) ProtoMessage() {}
+
+func (x *ReqAdminAlbumUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[41]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumUpdate.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *ReqAdminAlbumUpdate) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumUpdate) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumUpdate) GetIntro() string {
+	if x != nil {
+		return x.Intro
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumUpdate) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumUpdate) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+type ResAdminAlbumUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminAlbumUpdate) Reset() {
+	*x = ResAdminAlbumUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[42]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumUpdate) ProtoMessage() {}
+
+func (x *ResAdminAlbumUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[42]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumUpdate.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{42}
+}
+
+type ReqAdminAlbumDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ReqAdminAlbumDetail) Reset() {
+	*x = ReqAdminAlbumDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[43]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumDetail) ProtoMessage() {}
+
+func (x *ReqAdminAlbumDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[43]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumDetail.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *ReqAdminAlbumDetail) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ResAdminAlbumDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Album *AdminAlbum `protobuf:"bytes,1,opt,name=album,proto3" json:"album,omitempty"`
+}
+
+func (x *ResAdminAlbumDetail) Reset() {
+	*x = ResAdminAlbumDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[44]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumDetail) ProtoMessage() {}
+
+func (x *ResAdminAlbumDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[44]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumDetail.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *ResAdminAlbumDetail) GetAlbum() *AdminAlbum {
+	if x != nil {
+		return x.Album
+	}
+	return nil
+}
+
+type ReqAdminAlbumList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name          string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	StartTime     uint64 `protobuf:"varint,2,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime       uint64 `protobuf:"varint,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	CollectStatus int32  `protobuf:"varint,4,opt,name=collect_status,json=collectStatus,proto3" json:"collect_status,omitempty"`
+	Page          uint64 `protobuf:"varint,5,opt,name=page,proto3" json:"page,omitempty"`
+	Limit         uint64 `protobuf:"varint,6,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *ReqAdminAlbumList) Reset() {
+	*x = ReqAdminAlbumList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[45]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumList) ProtoMessage() {}
+
+func (x *ReqAdminAlbumList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[45]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumList.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *ReqAdminAlbumList) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumList) GetStartTime() uint64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumList) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumList) GetCollectStatus() int32 {
+	if x != nil {
+		return x.CollectStatus
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumList) GetPage() uint64 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumList) GetLimit() uint64 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ResAdminAlbumList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Albums *AdminAlbum `protobuf:"bytes,1,opt,name=albums,proto3" json:"albums,omitempty"`
+	Total  int32       `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+}
+
+func (x *ResAdminAlbumList) Reset() {
+	*x = ResAdminAlbumList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[46]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumList) ProtoMessage() {}
+
+func (x *ResAdminAlbumList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[46]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumList.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *ResAdminAlbumList) GetAlbums() *AdminAlbum {
+	if x != nil {
+		return x.Albums
+	}
+	return nil
+}
+
+func (x *ResAdminAlbumList) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type ReqAdminAudioCollectList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserStr       string `protobuf:"bytes,1,opt,name=user_str,json=userStr,proto3" json:"user_str,omitempty"`
+	AlbumStr      string `protobuf:"bytes,2,opt,name=album_str,json=albumStr,proto3" json:"album_str,omitempty"`
+	AudioStr      string `protobuf:"bytes,3,opt,name=audio_str,json=audioStr,proto3" json:"audio_str,omitempty"`
+	Label         string `protobuf:"bytes,4,opt,name=label,proto3" json:"label,omitempty"`
+	CollectStatus int32  `protobuf:"varint,5,opt,name=collect_status,json=collectStatus,proto3" json:"collect_status,omitempty"`
+	Order         string `protobuf:"bytes,6,opt,name=order,proto3" json:"order,omitempty"`
+	Page          uint64 `protobuf:"varint,7,opt,name=page,proto3" json:"page,omitempty"`
+	Limit         uint64 `protobuf:"varint,8,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *ReqAdminAudioCollectList) Reset() {
+	*x = ReqAdminAudioCollectList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[47]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAudioCollectList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAudioCollectList) ProtoMessage() {}
+
+func (x *ReqAdminAudioCollectList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[47]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAudioCollectList.ProtoReflect.Descriptor instead.
+func (*ReqAdminAudioCollectList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *ReqAdminAudioCollectList) GetUserStr() string {
+	if x != nil {
+		return x.UserStr
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioCollectList) GetAlbumStr() string {
+	if x != nil {
+		return x.AlbumStr
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioCollectList) GetAudioStr() string {
+	if x != nil {
+		return x.AudioStr
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioCollectList) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioCollectList) GetCollectStatus() int32 {
+	if x != nil {
+		return x.CollectStatus
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioCollectList) GetOrder() string {
+	if x != nil {
+		return x.Order
+	}
+	return ""
+}
+
+func (x *ReqAdminAudioCollectList) GetPage() uint64 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioCollectList) GetLimit() uint64 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ResAdminAudioCollectList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Audios []*AdminAudioCollect `protobuf:"bytes,1,rep,name=audios,proto3" json:"audios,omitempty"`
+	Total  int32                `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+}
+
+func (x *ResAdminAudioCollectList) Reset() {
+	*x = ResAdminAudioCollectList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[48]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAudioCollectList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAudioCollectList) ProtoMessage() {}
+
+func (x *ResAdminAudioCollectList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[48]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAudioCollectList.ProtoReflect.Descriptor instead.
+func (*ResAdminAudioCollectList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *ResAdminAudioCollectList) GetAudios() []*AdminAudioCollect {
+	if x != nil {
+		return x.Audios
+	}
+	return nil
+}
+
+func (x *ResAdminAudioCollectList) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type ReqAdminAudioCollect struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AudioId uint64 `protobuf:"varint,1,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty"`
+	AlbumId uint64 `protobuf:"varint,2,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty"`
+	Type    int32  `protobuf:"varint,3,opt,name=type,proto3" json:"type,omitempty"`
+}
+
+func (x *ReqAdminAudioCollect) Reset() {
+	*x = ReqAdminAudioCollect{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[49]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAudioCollect) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAudioCollect) ProtoMessage() {}
+
+func (x *ReqAdminAudioCollect) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[49]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAudioCollect.ProtoReflect.Descriptor instead.
+func (*ReqAdminAudioCollect) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *ReqAdminAudioCollect) GetAudioId() uint64 {
+	if x != nil {
+		return x.AudioId
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioCollect) GetAlbumId() uint64 {
+	if x != nil {
+		return x.AlbumId
+	}
+	return 0
+}
+
+func (x *ReqAdminAudioCollect) GetType() int32 {
+	if x != nil {
+		return x.Type
+	}
+	return 0
+}
+
+type ResAdminAudioCollect struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminAudioCollect) Reset() {
+	*x = ResAdminAudioCollect{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[50]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAudioCollect) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAudioCollect) ProtoMessage() {}
+
+func (x *ResAdminAudioCollect) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[50]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAudioCollect.ProtoReflect.Descriptor instead.
+func (*ResAdminAudioCollect) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{50}
+}
+
+type ReqAdminSubjectCreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name  string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	OpUid uint64 `protobuf:"varint,2,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+}
+
+func (x *ReqAdminSubjectCreate) Reset() {
+	*x = ReqAdminSubjectCreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[51]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminSubjectCreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminSubjectCreate) ProtoMessage() {}
+
+func (x *ReqAdminSubjectCreate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[51]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminSubjectCreate.ProtoReflect.Descriptor instead.
+func (*ReqAdminSubjectCreate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *ReqAdminSubjectCreate) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ReqAdminSubjectCreate) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+type ResAdminSubjectCreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ResAdminSubjectCreate) Reset() {
+	*x = ResAdminSubjectCreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[52]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminSubjectCreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminSubjectCreate) ProtoMessage() {}
+
+func (x *ResAdminSubjectCreate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[52]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminSubjectCreate.ProtoReflect.Descriptor instead.
+func (*ResAdminSubjectCreate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *ResAdminSubjectCreate) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ReqAdminSubjectUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id    uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name  string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	OpUid uint64 `protobuf:"varint,3,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+}
+
+func (x *ReqAdminSubjectUpdate) Reset() {
+	*x = ReqAdminSubjectUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[53]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminSubjectUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminSubjectUpdate) ProtoMessage() {}
+
+func (x *ReqAdminSubjectUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[53]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminSubjectUpdate.ProtoReflect.Descriptor instead.
+func (*ReqAdminSubjectUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *ReqAdminSubjectUpdate) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAdminSubjectUpdate) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ReqAdminSubjectUpdate) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+type ResAdminSubjectUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminSubjectUpdate) Reset() {
+	*x = ResAdminSubjectUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[54]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminSubjectUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminSubjectUpdate) ProtoMessage() {}
+
+func (x *ResAdminSubjectUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[54]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminSubjectUpdate.ProtoReflect.Descriptor instead.
+func (*ResAdminSubjectUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{54}
+}
+
+type ReqAdminSubjectDel struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ReqAdminSubjectDel) Reset() {
+	*x = ReqAdminSubjectDel{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[55]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminSubjectDel) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminSubjectDel) ProtoMessage() {}
+
+func (x *ReqAdminSubjectDel) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[55]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminSubjectDel.ProtoReflect.Descriptor instead.
+func (*ReqAdminSubjectDel) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *ReqAdminSubjectDel) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ResAdminSubjectDel struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminSubjectDel) Reset() {
+	*x = ResAdminSubjectDel{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[56]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminSubjectDel) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminSubjectDel) ProtoMessage() {}
+
+func (x *ResAdminSubjectDel) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[56]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminSubjectDel.ProtoReflect.Descriptor instead.
+func (*ResAdminSubjectDel) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{56}
+}
+
+type ReqAdminSubjectList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Page      uint64 `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	Limit     uint64 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	Name      string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	StartTime uint64 `protobuf:"varint,4,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime   uint64 `protobuf:"varint,5,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+}
+
+func (x *ReqAdminSubjectList) Reset() {
+	*x = ReqAdminSubjectList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[57]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminSubjectList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminSubjectList) ProtoMessage() {}
+
+func (x *ReqAdminSubjectList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[57]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminSubjectList.ProtoReflect.Descriptor instead.
+func (*ReqAdminSubjectList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *ReqAdminSubjectList) GetPage() uint64 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ReqAdminSubjectList) GetLimit() uint64 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ReqAdminSubjectList) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ReqAdminSubjectList) GetStartTime() uint64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *ReqAdminSubjectList) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+type ResAdminSubjectList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	List  []*AdminSubjectData `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+	Total int32               `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+}
+
+func (x *ResAdminSubjectList) Reset() {
+	*x = ResAdminSubjectList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[58]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminSubjectList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminSubjectList) ProtoMessage() {}
+
+func (x *ResAdminSubjectList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[58]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminSubjectList.ProtoReflect.Descriptor instead.
+func (*ResAdminSubjectList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *ResAdminSubjectList) GetList() []*AdminSubjectData {
+	if x != nil {
+		return x.List
+	}
+	return nil
+}
+
+func (x *ResAdminSubjectList) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type ReqAdminAlbumCollect struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AlbumId   uint64 `protobuf:"varint,1,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty"`
+	SubjectId uint64 `protobuf:"varint,2,opt,name=subject_id,json=subjectId,proto3" json:"subject_id,omitempty"`
+	Type      int32  `protobuf:"varint,3,opt,name=type,proto3" json:"type,omitempty"`
+}
+
+func (x *ReqAdminAlbumCollect) Reset() {
+	*x = ReqAdminAlbumCollect{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[59]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumCollect) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumCollect) ProtoMessage() {}
+
+func (x *ReqAdminAlbumCollect) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[59]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumCollect.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumCollect) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *ReqAdminAlbumCollect) GetAlbumId() uint64 {
+	if x != nil {
+		return x.AlbumId
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumCollect) GetSubjectId() uint64 {
+	if x != nil {
+		return x.SubjectId
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumCollect) GetType() int32 {
+	if x != nil {
+		return x.Type
+	}
+	return 0
+}
+
+type ResAdminAlbumCollect struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminAlbumCollect) Reset() {
+	*x = ResAdminAlbumCollect{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[60]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumCollect) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumCollect) ProtoMessage() {}
+
+func (x *ResAdminAlbumCollect) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[60]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumCollect.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumCollect) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{60}
+}
+
+type ReqAdminAlbumChoice struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id     uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Choice int32  `protobuf:"varint,2,opt,name=choice,proto3" json:"choice,omitempty"`
+}
+
+func (x *ReqAdminAlbumChoice) Reset() {
+	*x = ReqAdminAlbumChoice{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[61]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumChoice) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumChoice) ProtoMessage() {}
+
+func (x *ReqAdminAlbumChoice) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[61]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumChoice.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumChoice) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *ReqAdminAlbumChoice) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumChoice) GetChoice() int32 {
+	if x != nil {
+		return x.Choice
+	}
+	return 0
+}
+
+type ResAdminAlbumChoice struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminAlbumChoice) Reset() {
+	*x = ResAdminAlbumChoice{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[62]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumChoice) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumChoice) ProtoMessage() {}
+
+func (x *ResAdminAlbumChoice) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[62]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumChoice.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumChoice) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{62}
+}
+
+type ReqAdminAlbumCollectList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AlbumStr   string `protobuf:"bytes,1,opt,name=album_str,json=albumStr,proto3" json:"album_str,omitempty"`
+	SubjectStr string `protobuf:"bytes,2,opt,name=subject_str,json=subjectStr,proto3" json:"subject_str,omitempty"`
+	Page       uint64 `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
+	Limit      uint64 `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *ReqAdminAlbumCollectList) Reset() {
+	*x = ReqAdminAlbumCollectList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[63]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumCollectList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumCollectList) ProtoMessage() {}
+
+func (x *ReqAdminAlbumCollectList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[63]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumCollectList.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumCollectList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *ReqAdminAlbumCollectList) GetAlbumStr() string {
+	if x != nil {
+		return x.AlbumStr
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumCollectList) GetSubjectStr() string {
+	if x != nil {
+		return x.SubjectStr
+	}
+	return ""
+}
+
+func (x *ReqAdminAlbumCollectList) GetPage() uint64 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *ReqAdminAlbumCollectList) GetLimit() uint64 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ResAdminAlbumCollectList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	List  []*AdminAlbumSubject `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+	Total int32                `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+}
+
+func (x *ResAdminAlbumCollectList) Reset() {
+	*x = ResAdminAlbumCollectList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[64]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminAlbumCollectList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminAlbumCollectList) ProtoMessage() {}
+
+func (x *ResAdminAlbumCollectList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[64]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminAlbumCollectList.ProtoReflect.Descriptor instead.
+func (*ResAdminAlbumCollectList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *ResAdminAlbumCollectList) GetList() []*AdminAlbumSubject {
+	if x != nil {
+		return x.List
+	}
+	return nil
+}
+
+func (x *ResAdminAlbumCollectList) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type ReqAdminSubjectDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ReqAdminSubjectDetail) Reset() {
+	*x = ReqAdminSubjectDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[65]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminSubjectDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminSubjectDetail) ProtoMessage() {}
+
+func (x *ReqAdminSubjectDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[65]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminSubjectDetail.ProtoReflect.Descriptor instead.
+func (*ReqAdminSubjectDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *ReqAdminSubjectDetail) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ResAdminSubjectDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Subject *AdminSubjectData `protobuf:"bytes,1,opt,name=subject,proto3" json:"subject,omitempty"`
+}
+
+func (x *ResAdminSubjectDetail) Reset() {
+	*x = ResAdminSubjectDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[66]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminSubjectDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminSubjectDetail) ProtoMessage() {}
+
+func (x *ResAdminSubjectDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[66]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminSubjectDetail.ProtoReflect.Descriptor instead.
+func (*ResAdminSubjectDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *ResAdminSubjectDetail) GetSubject() *AdminSubjectData {
+	if x != nil {
+		return x.Subject
+	}
+	return nil
+}
+
+type ReqAdminAlbumChoiceList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ReqAdminAlbumChoiceList) Reset() {
+	*x = ReqAdminAlbumChoiceList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[67]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminAlbumChoiceList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminAlbumChoiceList) ProtoMessage() {}
+
+func (x *ReqAdminAlbumChoiceList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[67]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminAlbumChoiceList.ProtoReflect.Descriptor instead.
+func (*ReqAdminAlbumChoiceList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{67}
+}
+
+type RespAdminAlbumChoiceList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Albums []*AdminAlbumData `protobuf:"bytes,1,rep,name=albums,proto3" json:"albums,omitempty"`
+}
+
+func (x *RespAdminAlbumChoiceList) Reset() {
+	*x = RespAdminAlbumChoiceList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[68]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RespAdminAlbumChoiceList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespAdminAlbumChoiceList) ProtoMessage() {}
+
+func (x *RespAdminAlbumChoiceList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[68]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespAdminAlbumChoiceList.ProtoReflect.Descriptor instead.
+func (*RespAdminAlbumChoiceList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *RespAdminAlbumChoiceList) GetAlbums() []*AdminAlbumData {
+	if x != nil {
+		return x.Albums
+	}
+	return nil
+}
+
+type ReqAdminBannerList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StartTime uint64 `protobuf:"varint,1,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime   uint64 `protobuf:"varint,2,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	Title     string `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status    string `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (x *ReqAdminBannerList) Reset() {
+	*x = ReqAdminBannerList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[69]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminBannerList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminBannerList) ProtoMessage() {}
+
+func (x *ReqAdminBannerList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[69]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminBannerList.ProtoReflect.Descriptor instead.
+func (*ReqAdminBannerList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *ReqAdminBannerList) GetStartTime() uint64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerList) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerList) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ReqAdminBannerList) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type ResAdminBannerList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	List  []*AdminBannerData `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+	Total int32              `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+}
+
+func (x *ResAdminBannerList) Reset() {
+	*x = ResAdminBannerList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[70]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminBannerList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminBannerList) ProtoMessage() {}
+
+func (x *ResAdminBannerList) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[70]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminBannerList.ProtoReflect.Descriptor instead.
+func (*ResAdminBannerList) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *ResAdminBannerList) GetList() []*AdminBannerData {
+	if x != nil {
+		return x.List
+	}
+	return nil
+}
+
+func (x *ResAdminBannerList) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+type ReqAdminBannerCreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Title     string `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Schema    string `protobuf:"bytes,2,opt,name=schema,proto3" json:"schema,omitempty"`
+	OpUid     uint64 `protobuf:"varint,3,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	StartTime uint64 `protobuf:"varint,4,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime   uint64 `protobuf:"varint,5,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	Sort      uint32 `protobuf:"varint,6,opt,name=sort,proto3" json:"sort,omitempty"`
+}
+
+func (x *ReqAdminBannerCreate) Reset() {
+	*x = ReqAdminBannerCreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[71]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminBannerCreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminBannerCreate) ProtoMessage() {}
+
+func (x *ReqAdminBannerCreate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[71]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminBannerCreate.ProtoReflect.Descriptor instead.
+func (*ReqAdminBannerCreate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *ReqAdminBannerCreate) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ReqAdminBannerCreate) GetSchema() string {
+	if x != nil {
+		return x.Schema
+	}
+	return ""
+}
+
+func (x *ReqAdminBannerCreate) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerCreate) GetStartTime() uint64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerCreate) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerCreate) GetSort() uint32 {
+	if x != nil {
+		return x.Sort
+	}
+	return 0
+}
+
+type ResAdminBannerCreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ResAdminBannerCreate) Reset() {
+	*x = ResAdminBannerCreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[72]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminBannerCreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminBannerCreate) ProtoMessage() {}
+
+func (x *ResAdminBannerCreate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[72]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminBannerCreate.ProtoReflect.Descriptor instead.
+func (*ResAdminBannerCreate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *ResAdminBannerCreate) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ReqAdminBannerUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id        uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title     string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Schema    string `protobuf:"bytes,3,opt,name=schema,proto3" json:"schema,omitempty"`
+	OpUid     uint64 `protobuf:"varint,4,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	StartTime uint64 `protobuf:"varint,5,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime   uint64 `protobuf:"varint,6,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	Sort      uint32 `protobuf:"varint,7,opt,name=sort,proto3" json:"sort,omitempty"`
+}
+
+func (x *ReqAdminBannerUpdate) Reset() {
+	*x = ReqAdminBannerUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[73]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminBannerUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminBannerUpdate) ProtoMessage() {}
+
+func (x *ReqAdminBannerUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[73]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminBannerUpdate.ProtoReflect.Descriptor instead.
+func (*ReqAdminBannerUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *ReqAdminBannerUpdate) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerUpdate) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ReqAdminBannerUpdate) GetSchema() string {
+	if x != nil {
+		return x.Schema
+	}
+	return ""
+}
+
+func (x *ReqAdminBannerUpdate) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerUpdate) GetStartTime() uint64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerUpdate) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+func (x *ReqAdminBannerUpdate) GetSort() uint32 {
+	if x != nil {
+		return x.Sort
+	}
+	return 0
+}
+
+type ResAdminBannerUpdate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ResAdminBannerUpdate) Reset() {
+	*x = ResAdminBannerUpdate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[74]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminBannerUpdate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminBannerUpdate) ProtoMessage() {}
+
+func (x *ResAdminBannerUpdate) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[74]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminBannerUpdate.ProtoReflect.Descriptor instead.
+func (*ResAdminBannerUpdate) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{74}
+}
+
+type ReqAdminBannerDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *ReqAdminBannerDetail) Reset() {
+	*x = ReqAdminBannerDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[75]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAdminBannerDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAdminBannerDetail) ProtoMessage() {}
+
+func (x *ReqAdminBannerDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[75]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAdminBannerDetail.ProtoReflect.Descriptor instead.
+func (*ReqAdminBannerDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *ReqAdminBannerDetail) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ResAdminBannerDetail struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Banner *AdminBannerData `protobuf:"bytes,1,opt,name=banner,proto3" json:"banner,omitempty"`
+}
+
+func (x *ResAdminBannerDetail) Reset() {
+	*x = ResAdminBannerDetail{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[76]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResAdminBannerDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResAdminBannerDetail) ProtoMessage() {}
+
+func (x *ResAdminBannerDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[76]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResAdminBannerDetail.ProtoReflect.Descriptor instead.
+func (*ResAdminBannerDetail) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *ResAdminBannerDetail) GetBanner() *AdminBannerData {
+	if x != nil {
+		return x.Banner
+	}
+	return nil
+}
+
+type AdminAlbumData struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id         uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name       string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	CreateTime uint64 `protobuf:"varint,3,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+	Level      int32  `protobuf:"varint,4,opt,name=level,proto3" json:"level,omitempty"`
+}
+
+func (x *AdminAlbumData) Reset() {
+	*x = AdminAlbumData{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[77]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAlbumData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAlbumData) ProtoMessage() {}
+
+func (x *AdminAlbumData) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[77]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAlbumData.ProtoReflect.Descriptor instead.
+func (*AdminAlbumData) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *AdminAlbumData) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminAlbumData) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *AdminAlbumData) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+func (x *AdminAlbumData) GetLevel() int32 {
+	if x != nil {
+		return x.Level
+	}
+	return 0
+}
+
+type AdminSubjectData struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id         uint64       `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`        // 专题id
+	Title      string       `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`   // 专题名称
+	Albums     []*AlbumData `protobuf:"bytes,3,rep,name=albums,proto3" json:"albums,omitempty"` // 专题下专辑列表
+	AlbumTotal uint32       `protobuf:"varint,4,opt,name=album_total,json=albumTotal,proto3" json:"album_total,omitempty"`
+}
+
+func (x *AdminSubjectData) Reset() {
+	*x = AdminSubjectData{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[78]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminSubjectData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminSubjectData) ProtoMessage() {}
+
+func (x *AdminSubjectData) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[78]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminSubjectData.ProtoReflect.Descriptor instead.
+func (*AdminSubjectData) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *AdminSubjectData) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminSubjectData) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AdminSubjectData) GetAlbums() []*AlbumData {
+	if x != nil {
+		return x.Albums
+	}
+	return nil
+}
+
+func (x *AdminSubjectData) GetAlbumTotal() uint32 {
+	if x != nil {
+		return x.AlbumTotal
+	}
+	return 0
+}
+
+type AdminAlbumSubject struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	AlbumName   string `protobuf:"bytes,2,opt,name=album_name,json=albumName,proto3" json:"album_name,omitempty"`
+	SubjectName string `protobuf:"bytes,3,opt,name=subject_name,json=subjectName,proto3" json:"subject_name,omitempty"`
+	AlbumId     uint64 `protobuf:"varint,4,opt,name=album_id,json=albumId,proto3" json:"album_id,omitempty"`
+	SubjectId   uint64 `protobuf:"varint,5,opt,name=subject_id,json=subjectId,proto3" json:"subject_id,omitempty"`
+}
+
+func (x *AdminAlbumSubject) Reset() {
+	*x = AdminAlbumSubject{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[79]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAlbumSubject) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAlbumSubject) ProtoMessage() {}
+
+func (x *AdminAlbumSubject) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[79]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAlbumSubject.ProtoReflect.Descriptor instead.
+func (*AdminAlbumSubject) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *AdminAlbumSubject) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminAlbumSubject) GetAlbumName() string {
+	if x != nil {
+		return x.AlbumName
+	}
+	return ""
+}
+
+func (x *AdminAlbumSubject) GetSubjectName() string {
+	if x != nil {
+		return x.SubjectName
+	}
+	return ""
+}
+
+func (x *AdminAlbumSubject) GetAlbumId() uint64 {
+	if x != nil {
+		return x.AlbumId
+	}
+	return 0
+}
+
+func (x *AdminAlbumSubject) GetSubjectId() uint64 {
+	if x != nil {
+		return x.SubjectId
+	}
+	return 0
+}
+
+type AdminAudio struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id           uint64            `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	CreateTime   uint64            `protobuf:"varint,2,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+	PubUid       uint32            `protobuf:"varint,3,opt,name=pub_uid,json=pubUid,proto3" json:"pub_uid,omitempty"`
+	PubUserName  string            `protobuf:"bytes,4,opt,name=pub_user_name,json=pubUserName,proto3" json:"pub_user_name,omitempty"`
+	Broker       string            `protobuf:"bytes,5,opt,name=broker,proto3" json:"broker,omitempty"`
+	Resource     string            `protobuf:"bytes,6,opt,name=resource,proto3" json:"resource,omitempty"`
+	Covers       []string          `protobuf:"bytes,7,rep,name=covers,proto3" json:"covers,omitempty"`
+	Source       int32             `protobuf:"varint,8,opt,name=source,proto3" json:"source,omitempty"`
+	Desc         string            `protobuf:"bytes,9,opt,name=desc,proto3" json:"desc,omitempty"`
+	Title        string            `protobuf:"bytes,10,opt,name=title,proto3" json:"title,omitempty"`
+	Labels       []string          `protobuf:"bytes,11,rep,name=labels,proto3" json:"labels,omitempty"`
+	AuditStatus  int32             `protobuf:"varint,12,opt,name=audit_status,json=auditStatus,proto3" json:"audit_status,omitempty"`
+	OpUid        uint64            `protobuf:"varint,13,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	EditDubs     []*AdminAudioEdit `protobuf:"bytes,14,rep,name=edit_dubs,json=editDubs,proto3" json:"edit_dubs,omitempty"`
+	EditContents []*AdminAudioEdit `protobuf:"bytes,15,rep,name=edit_contents,json=editContents,proto3" json:"edit_contents,omitempty"`
+	EditPosts    []*AdminAudioEdit `protobuf:"bytes,16,rep,name=edit_posts,json=editPosts,proto3" json:"edit_posts,omitempty"`
+	EditCovers   []*AdminAudioEdit `protobuf:"bytes,17,rep,name=edit_covers,json=editCovers,proto3" json:"edit_covers,omitempty"`
+}
+
+func (x *AdminAudio) Reset() {
+	*x = AdminAudio{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[80]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAudio) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAudio) ProtoMessage() {}
+
+func (x *AdminAudio) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[80]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAudio.ProtoReflect.Descriptor instead.
+func (*AdminAudio) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *AdminAudio) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminAudio) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+func (x *AdminAudio) GetPubUid() uint32 {
+	if x != nil {
+		return x.PubUid
+	}
+	return 0
+}
+
+func (x *AdminAudio) GetPubUserName() string {
+	if x != nil {
+		return x.PubUserName
+	}
+	return ""
+}
+
+func (x *AdminAudio) GetBroker() string {
+	if x != nil {
+		return x.Broker
+	}
+	return ""
+}
+
+func (x *AdminAudio) GetResource() string {
+	if x != nil {
+		return x.Resource
+	}
+	return ""
+}
+
+func (x *AdminAudio) GetCovers() []string {
+	if x != nil {
+		return x.Covers
+	}
+	return nil
+}
+
+func (x *AdminAudio) GetSource() int32 {
+	if x != nil {
+		return x.Source
+	}
+	return 0
+}
+
+func (x *AdminAudio) GetDesc() string {
+	if x != nil {
+		return x.Desc
+	}
+	return ""
+}
+
+func (x *AdminAudio) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AdminAudio) GetLabels() []string {
+	if x != nil {
+		return x.Labels
+	}
+	return nil
+}
+
+func (x *AdminAudio) GetAuditStatus() int32 {
+	if x != nil {
+		return x.AuditStatus
+	}
+	return 0
+}
+
+func (x *AdminAudio) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *AdminAudio) GetEditDubs() []*AdminAudioEdit {
+	if x != nil {
+		return x.EditDubs
+	}
+	return nil
+}
+
+func (x *AdminAudio) GetEditContents() []*AdminAudioEdit {
+	if x != nil {
+		return x.EditContents
+	}
+	return nil
+}
+
+func (x *AdminAudio) GetEditPosts() []*AdminAudioEdit {
+	if x != nil {
+		return x.EditPosts
+	}
+	return nil
+}
+
+func (x *AdminAudio) GetEditCovers() []*AdminAudioEdit {
+	if x != nil {
+		return x.EditCovers
+	}
+	return nil
+}
+
+type AdminAudioAuditReason struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id     uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Reason string `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+}
+
+func (x *AdminAudioAuditReason) Reset() {
+	*x = AdminAudioAuditReason{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[81]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAudioAuditReason) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAudioAuditReason) ProtoMessage() {}
+
+func (x *AdminAudioAuditReason) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[81]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAudioAuditReason.ProtoReflect.Descriptor instead.
+func (*AdminAudioAuditReason) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *AdminAudioAuditReason) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminAudioAuditReason) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type AdminAlbum struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id         uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name       string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Intro      string `protobuf:"bytes,3,opt,name=intro,proto3" json:"intro,omitempty"`
+	Cover      string `protobuf:"bytes,4,opt,name=cover,proto3" json:"cover,omitempty"`
+	OpUid      uint64 `protobuf:"varint,5,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	AudioCount int32  `protobuf:"varint,6,opt,name=audio_count,json=audioCount,proto3" json:"audio_count,omitempty"`
+	CreateTime uint64 `protobuf:"varint,7,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+	HasSubject int32  `protobuf:"varint,8,opt,name=has_subject,json=hasSubject,proto3" json:"has_subject,omitempty"`
+}
+
+func (x *AdminAlbum) Reset() {
+	*x = AdminAlbum{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[82]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAlbum) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAlbum) ProtoMessage() {}
+
+func (x *AdminAlbum) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[82]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAlbum.ProtoReflect.Descriptor instead.
+func (*AdminAlbum) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *AdminAlbum) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminAlbum) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *AdminAlbum) GetIntro() string {
+	if x != nil {
+		return x.Intro
+	}
+	return ""
+}
+
+func (x *AdminAlbum) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *AdminAlbum) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *AdminAlbum) GetAudioCount() int32 {
+	if x != nil {
+		return x.AudioCount
+	}
+	return 0
+}
+
+func (x *AdminAlbum) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+func (x *AdminAlbum) GetHasSubject() int32 {
+	if x != nil {
+		return x.HasSubject
+	}
+	return 0
+}
+
+type AdminAudioCollect struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          uint64                    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title       string                    `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Labels      []string                  `protobuf:"bytes,3,rep,name=labels,proto3" json:"labels,omitempty"`
+	PubUid      uint32                    `protobuf:"varint,4,opt,name=pub_uid,json=pubUid,proto3" json:"pub_uid,omitempty"`
+	PubUserName string                    `protobuf:"bytes,5,opt,name=pub_user_name,json=pubUserName,proto3" json:"pub_user_name,omitempty"`
+	Collects    []*AdminAudioCollectAlbum `protobuf:"bytes,6,rep,name=collects,proto3" json:"collects,omitempty"`
+	CreateTime  uint64                    `protobuf:"varint,7,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+}
+
+func (x *AdminAudioCollect) Reset() {
+	*x = AdminAudioCollect{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[83]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAudioCollect) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAudioCollect) ProtoMessage() {}
+
+func (x *AdminAudioCollect) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[83]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAudioCollect.ProtoReflect.Descriptor instead.
+func (*AdminAudioCollect) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *AdminAudioCollect) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminAudioCollect) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AdminAudioCollect) GetLabels() []string {
+	if x != nil {
+		return x.Labels
+	}
+	return nil
+}
+
+func (x *AdminAudioCollect) GetPubUid() uint32 {
+	if x != nil {
+		return x.PubUid
+	}
+	return 0
+}
+
+func (x *AdminAudioCollect) GetPubUserName() string {
+	if x != nil {
+		return x.PubUserName
+	}
+	return ""
+}
+
+func (x *AdminAudioCollect) GetCollects() []*AdminAudioCollectAlbum {
+	if x != nil {
+		return x.Collects
+	}
+	return nil
+}
+
+func (x *AdminAudioCollect) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+type AdminAudioCollectAlbum struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id   uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+}
+
+func (x *AdminAudioCollectAlbum) Reset() {
+	*x = AdminAudioCollectAlbum{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[84]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAudioCollectAlbum) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAudioCollectAlbum) ProtoMessage() {}
+
+func (x *AdminAudioCollectAlbum) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[84]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAudioCollectAlbum.ProtoReflect.Descriptor instead.
+func (*AdminAudioCollectAlbum) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *AdminAudioCollectAlbum) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminAudioCollectAlbum) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type AdminBannerData struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id         uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title      string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Cover      string `protobuf:"bytes,3,opt,name=cover,proto3" json:"cover,omitempty"`
+	Schema     string `protobuf:"bytes,4,opt,name=schema,proto3" json:"schema,omitempty"`
+	OpUid      uint64 `protobuf:"varint,5,opt,name=op_uid,json=opUid,proto3" json:"op_uid,omitempty"`
+	Sort       uint32 `protobuf:"varint,6,opt,name=sort,proto3" json:"sort,omitempty"`
+	StartTime  uint64 `protobuf:"varint,7,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
+	EndTime    uint64 `protobuf:"varint,8,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	CreateTime uint64 `protobuf:"varint,9,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
+}
+
+func (x *AdminBannerData) Reset() {
+	*x = AdminBannerData{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[85]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminBannerData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminBannerData) ProtoMessage() {}
+
+func (x *AdminBannerData) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[85]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminBannerData.ProtoReflect.Descriptor instead.
+func (*AdminBannerData) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *AdminBannerData) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *AdminBannerData) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AdminBannerData) GetCover() string {
+	if x != nil {
+		return x.Cover
+	}
+	return ""
+}
+
+func (x *AdminBannerData) GetSchema() string {
+	if x != nil {
+		return x.Schema
+	}
+	return ""
+}
+
+func (x *AdminBannerData) GetOpUid() uint64 {
+	if x != nil {
+		return x.OpUid
+	}
+	return 0
+}
+
+func (x *AdminBannerData) GetSort() uint32 {
+	if x != nil {
+		return x.Sort
+	}
+	return 0
+}
+
+func (x *AdminBannerData) GetStartTime() uint64 {
+	if x != nil {
+		return x.StartTime
+	}
+	return 0
+}
+
+func (x *AdminBannerData) GetEndTime() uint64 {
+	if x != nil {
+		return x.EndTime
+	}
+	return 0
+}
+
+func (x *AdminBannerData) GetCreateTime() uint64 {
+	if x != nil {
+		return x.CreateTime
+	}
+	return 0
+}
+
+type AdminAudioEdit struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uid    uint32 `protobuf:"varint,1,opt,name=uid,proto3" json:"uid,omitempty"`
+	Name   string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Avatar string `protobuf:"bytes,3,opt,name=avatar,proto3" json:"avatar,omitempty"`
+}
+
+func (x *AdminAudioEdit) Reset() {
+	*x = AdminAudioEdit{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[86]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AdminAudioEdit) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminAudioEdit) ProtoMessage() {}
+
+func (x *AdminAudioEdit) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[86]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminAudioEdit.ProtoReflect.Descriptor instead.
+func (*AdminAudioEdit) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *AdminAudioEdit) GetUid() uint32 {
+	if x != nil {
+		return x.Uid
+	}
+	return 0
+}
+
+func (x *AdminAudioEdit) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *AdminAudioEdit) GetAvatar() string {
+	if x != nil {
+		return x.Avatar
+	}
+	return ""
 }
 
 var File_rpc_voice_lover_voice_lover_admin_message_proto protoreflect.FileDescriptor
@@ -1696,16 +5368,396 @@ var file_rpc_voice_lover_voice_lover_admin_message_proto_rawDesc = []byte{
 	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x22, 0x24, 0x0a, 0x12,
 	0x52, 0x65, 0x71, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x65, 0x74, 0x61,
 	0x69, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02,
-	0x69, 0x64, 0x22, 0x4d, 0x0a, 0x12, 0x52, 0x65, 0x73, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e,
-	0x65, 0x72, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x37, 0x0a, 0x06, 0x62, 0x61, 0x6e, 0x6e,
-	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72,
-	0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x42,
-	0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06, 0x62, 0x61, 0x6e, 0x6e, 0x65,
-	0x72, 0x42, 0x39, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70, 0x63,
-	0x2f, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x64, 0x22, 0x52, 0x0a, 0x12, 0x52, 0x65, 0x73, 0x47, 0x65, 0x74, 0x42, 0x61, 0x6e, 0x6e,
+	0x65, 0x72, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x3c, 0x0a, 0x06, 0x62, 0x61, 0x6e, 0x6e,
+	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72,
+	0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41,
+	0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06,
+	0x62, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x22, 0xda, 0x01, 0x0a, 0x11, 0x52, 0x65, 0x71, 0x41, 0x64,
+	0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x19, 0x0a, 0x08,
+	0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07,
+	0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x75, 0x73, 0x65, 0x72, 0x5f,
+	0x73, 0x74, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x75, 0x73, 0x65, 0x72, 0x53,
+	0x74, 0x72, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x06, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x61,
+	0x62, 0x65, 0x6c, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6c, 0x61, 0x62, 0x65, 0x6c,
+	0x12, 0x14, 0x0a, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x75, 0x64, 0x69, 0x74, 0x5f,
+	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x61, 0x75,
+	0x64, 0x69, 0x74, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67,
+	0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12, 0x14, 0x0a,
+	0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x6c, 0x69,
+	0x6d, 0x69, 0x74, 0x22, 0x62, 0x0a, 0x11, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41,
+	0x75, 0x64, 0x69, 0x6f, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x06, 0x61, 0x75, 0x64, 0x69,
+	0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72,
+	0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41,
+	0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x52, 0x06, 0x61, 0x75, 0x64, 0x69, 0x6f,
+	0x73, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x25, 0x0a, 0x13, 0x52, 0x65, 0x71, 0x41, 0x64,
+	0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x0e,
+	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x4c,
+	0x0a, 0x13, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x44,
+	0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x35, 0x0a, 0x05, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76,
+	0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e,
+	0x41, 0x75, 0x64, 0x69, 0x6f, 0x52, 0x05, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x22, 0x7e, 0x0a, 0x13,
+	0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52,
+	0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x65, 0x73,
+	0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x16, 0x0a,
+	0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x6c,
+	0x61, 0x62, 0x65, 0x6c, 0x73, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x22, 0x15, 0x0a, 0x13,
+	0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x22, 0x81, 0x01, 0x0a, 0x12, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e,
+	0x41, 0x75, 0x64, 0x69, 0x6f, 0x41, 0x75, 0x64, 0x69, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x75,
+	0x64, 0x69, 0x74, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x0b, 0x61, 0x75, 0x64, 0x69, 0x74, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x21, 0x0a,
+	0x0c, 0x61, 0x75, 0x64, 0x69, 0x74, 0x5f, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x0b, 0x61, 0x75, 0x64, 0x69, 0x74, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e,
+	0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04,
+	0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x22, 0x14, 0x0a, 0x12, 0x52, 0x65, 0x73, 0x41, 0x64,
+	0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x41, 0x75, 0x64, 0x69, 0x74, 0x22, 0x1a, 0x0a,
+	0x18, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x41, 0x75,
+	0x64, 0x69, 0x74, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x22, 0x60, 0x0a, 0x18, 0x52, 0x65, 0x73,
+	0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x41, 0x75, 0x64, 0x69, 0x74, 0x52,
+	0x65, 0x61, 0x73, 0x6f, 0x6e, 0x12, 0x44, 0x0a, 0x07, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63,
+	0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d,
+	0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x41, 0x75, 0x64, 0x69, 0x74, 0x52, 0x65, 0x61, 0x73,
+	0x6f, 0x6e, 0x52, 0x07, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x73, 0x22, 0x6c, 0x0a, 0x13, 0x52,
+	0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x12, 0x14, 0x0a, 0x05,
+	0x63, 0x6f, 0x76, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76,
+	0x65, 0x72, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x22, 0x25, 0x0a, 0x13, 0x52, 0x65, 0x73,
+	0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64,
+	0x22, 0x39, 0x0a, 0x10, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75,
+	0x6d, 0x44, 0x65, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04,
+	0x52, 0x02, 0x69, 0x64, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x22, 0x12, 0x0a, 0x10, 0x52,
+	0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x44, 0x65, 0x6c, 0x22,
+	0x7c, 0x0a, 0x13, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e,
+	0x74, 0x72, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x6e, 0x74, 0x72, 0x6f,
+	0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64,
+	0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x22, 0x15, 0x0a,
+	0x13, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x22, 0x25, 0x0a, 0x13, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e,
+	0x41, 0x6c, 0x62, 0x75, 0x6d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x4c, 0x0a, 0x13, 0x52,
+	0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x12, 0x35, 0x0a, 0x05, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1f, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63,
+	0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62,
+	0x75, 0x6d, 0x52, 0x05, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x22, 0xb2, 0x01, 0x0a, 0x11, 0x52, 0x65,
+	0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x12,
+	0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69,
+	0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x25, 0x0a,
+	0x0e, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0d, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x53, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x04, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69,
+	0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0x62,
+	0x0a, 0x11, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x4c,
+	0x69, 0x73, 0x74, 0x12, 0x37, 0x0a, 0x06, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x73, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f,
+	0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41,
+	0x6c, 0x62, 0x75, 0x6d, 0x52, 0x06, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x73, 0x12, 0x14, 0x0a, 0x05,
+	0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x74, 0x6f, 0x74,
+	0x61, 0x6c, 0x22, 0xec, 0x01, 0x0a, 0x18, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41,
+	0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12,
+	0x19, 0x0a, 0x08, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x73, 0x74, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x75, 0x73, 0x65, 0x72, 0x53, 0x74, 0x72, 0x12, 0x1b, 0x0a, 0x09, 0x61, 0x6c,
+	0x62, 0x75, 0x6d, 0x5f, 0x73, 0x74, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x61,
+	0x6c, 0x62, 0x75, 0x6d, 0x53, 0x74, 0x72, 0x12, 0x1b, 0x0a, 0x09, 0x61, 0x75, 0x64, 0x69, 0x6f,
+	0x5f, 0x73, 0x74, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x61, 0x75, 0x64, 0x69,
+	0x6f, 0x53, 0x74, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x12, 0x25, 0x0a, 0x0e, 0x63, 0x6f,
+	0x6c, 0x6c, 0x65, 0x63, 0x74, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x05, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x0d, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x53, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x12, 0x14, 0x0a, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x05, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18,
+	0x07, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6c,
+	0x69, 0x6d, 0x69, 0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6c, 0x69, 0x6d, 0x69,
+	0x74, 0x22, 0x70, 0x0a, 0x18, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64,
+	0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x3e, 0x0a,
+	0x06, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e,
+	0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f,
+	0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f,
+	0x6c, 0x6c, 0x65, 0x63, 0x74, 0x52, 0x06, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x73, 0x12, 0x14, 0x0a,
+	0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x74, 0x6f,
+	0x74, 0x61, 0x6c, 0x22, 0x60, 0x0a, 0x14, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41,
+	0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61,
+	0x75, 0x64, 0x69, 0x6f, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61,
+	0x75, 0x64, 0x69, 0x6f, 0x49, 0x64, 0x12, 0x19, 0x0a, 0x08, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f,
+	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x49,
+	0x64, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x16, 0x0a, 0x14, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69,
+	0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x22, 0x42, 0x0a,
+	0x15, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70,
+	0x5f, 0x75, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69,
+	0x64, 0x22, 0x27, 0x0a, 0x15, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62,
+	0x6a, 0x65, 0x63, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x52, 0x0a, 0x15, 0x52, 0x65,
+	0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52,
+	0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69,
+	0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x22, 0x17,
+	0x0a, 0x15, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x22, 0x24, 0x0a, 0x12, 0x52, 0x65, 0x71, 0x41, 0x64,
+	0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x44, 0x65, 0x6c, 0x12, 0x0e, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x14, 0x0a,
+	0x12, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74,
+	0x44, 0x65, 0x6c, 0x22, 0x8d, 0x01, 0x0a, 0x13, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e,
+	0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x70,
+	0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05,
+	0x6c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x74, 0x61,
+	0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x73,
+	0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f,
+	0x74, 0x69, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54,
+	0x69, 0x6d, 0x65, 0x22, 0x66, 0x0a, 0x13, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53,
+	0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x39, 0x0a, 0x04, 0x6c, 0x69,
+	0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72,
+	0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41,
+	0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52,
+	0x04, 0x6c, 0x69, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0x64, 0x0a, 0x14, 0x52,
+	0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x6f, 0x6c, 0x6c,
+	0x65, 0x63, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x49, 0x64, 0x12, 0x1d,
+	0x0a, 0x0a, 0x73, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x04, 0x52, 0x09, 0x73, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x12, 0x12, 0x0a,
+	0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x74, 0x79, 0x70,
+	0x65, 0x22, 0x16, 0x0a, 0x14, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62,
+	0x75, 0x6d, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x22, 0x3d, 0x0a, 0x13, 0x52, 0x65, 0x71,
+	0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x68, 0x6f, 0x69, 0x63, 0x65,
+	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64,
+	0x12, 0x16, 0x0a, 0x06, 0x63, 0x68, 0x6f, 0x69, 0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x06, 0x63, 0x68, 0x6f, 0x69, 0x63, 0x65, 0x22, 0x15, 0x0a, 0x13, 0x52, 0x65, 0x73, 0x41,
+	0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x68, 0x6f, 0x69, 0x63, 0x65, 0x22,
+	0x82, 0x01, 0x0a, 0x18, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75,
+	0x6d, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09,
+	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f, 0x73, 0x74, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x08, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x53, 0x74, 0x72, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x75, 0x62,
+	0x6a, 0x65, 0x63, 0x74, 0x5f, 0x73, 0x74, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a,
+	0x73, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x53, 0x74, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61,
+	0x67, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x12, 0x14,
+	0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6c,
+	0x69, 0x6d, 0x69, 0x74, 0x22, 0x6c, 0x0a, 0x18, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e,
+	0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x4c, 0x69, 0x73, 0x74,
+	0x12, 0x3a, 0x0a, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26,
+	0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c,
+	0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x53,
+	0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05,
+	0x74, 0x6f, 0x74, 0x61, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x74, 0x6f, 0x74,
+	0x61, 0x6c, 0x22, 0x27, 0x0a, 0x15, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75,
+	0x62, 0x6a, 0x65, 0x63, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x0e, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x58, 0x0a, 0x15, 0x52,
+	0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x44, 0x65,
+	0x74, 0x61, 0x69, 0x6c, 0x12, 0x3f, 0x0a, 0x07, 0x73, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e,
+	0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69,
+	0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x07, 0x73, 0x75,
+	0x62, 0x6a, 0x65, 0x63, 0x74, 0x22, 0x19, 0x0a, 0x17, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69,
+	0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x68, 0x6f, 0x69, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74,
+	0x22, 0x57, 0x0a, 0x18, 0x52, 0x65, 0x73, 0x70, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62,
+	0x75, 0x6d, 0x43, 0x68, 0x6f, 0x69, 0x63, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x3b, 0x0a, 0x06,
+	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x72,
+	0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76,
+	0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x44, 0x61, 0x74,
+	0x61, 0x52, 0x06, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x73, 0x22, 0x7c, 0x0a, 0x12, 0x52, 0x65, 0x71,
+	0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12,
+	0x1d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x04, 0x52, 0x09, 0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x19,
+	0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04,
+	0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74,
+	0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12,
+	0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x64, 0x0a, 0x12, 0x52, 0x65, 0x73, 0x41, 0x64,
+	0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x38, 0x0a,
+	0x04, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x72, 0x62,
+	0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65,
+	0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74,
+	0x61, 0x52, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x22, 0xa9, 0x01,
+	0x0a, 0x14, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x16, 0x0a, 0x06,
+	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x63,
+	0x68, 0x65, 0x6d, 0x61, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x73,
+	0x74, 0x61, 0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52,
+	0x09, 0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e,
+	0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07, 0x65, 0x6e,
+	0x64, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x6f, 0x72, 0x74, 0x18, 0x06, 0x20,
+	0x01, 0x28, 0x0d, 0x52, 0x04, 0x73, 0x6f, 0x72, 0x74, 0x22, 0x26, 0x0a, 0x14, 0x52, 0x65, 0x73,
+	0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69,
+	0x64, 0x22, 0xb9, 0x01, 0x0a, 0x14, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61,
+	0x6e, 0x6e, 0x65, 0x72, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69,
+	0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65,
+	0x12, 0x16, 0x0a, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75,
+	0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x12,
+	0x1d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x04, 0x52, 0x09, 0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x19,
+	0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x04,
+	0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x6f, 0x72,
+	0x74, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x73, 0x6f, 0x72, 0x74, 0x22, 0x16, 0x0a,
+	0x14, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x22, 0x26, 0x0a, 0x14, 0x52, 0x65, 0x71, 0x41, 0x64, 0x6d, 0x69,
+	0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x0e, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x54, 0x0a,
+	0x14, 0x52, 0x65, 0x73, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44,
+	0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x3c, 0x0a, 0x06, 0x62, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e,
+	0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69,
+	0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06, 0x62, 0x61, 0x6e,
+	0x6e, 0x65, 0x72, 0x22, 0x6b, 0x0a, 0x0e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75,
+	0x6d, 0x44, 0x61, 0x74, 0x61, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a,
+	0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x65,
+	0x76, 0x65, 0x6c, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x6c, 0x65, 0x76, 0x65, 0x6c,
+	0x22, 0x91, 0x01, 0x0a, 0x10, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x44, 0x61, 0x74, 0x61, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x36, 0x0a, 0x06, 0x61,
+	0x6c, 0x62, 0x75, 0x6d, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x72, 0x62,
+	0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65,
+	0x72, 0x2e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x44, 0x61, 0x74, 0x61, 0x52, 0x06, 0x61, 0x6c, 0x62,
+	0x75, 0x6d, 0x73, 0x12, 0x1f, 0x0a, 0x0b, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f, 0x74, 0x6f, 0x74,
+	0x61, 0x6c, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0a, 0x61, 0x6c, 0x62, 0x75, 0x6d, 0x54,
+	0x6f, 0x74, 0x61, 0x6c, 0x22, 0x9f, 0x01, 0x0a, 0x11, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c,
+	0x62, 0x75, 0x6d, 0x53, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x61, 0x6c,
+	0x62, 0x75, 0x6d, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
+	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x73, 0x75, 0x62,
+	0x6a, 0x65, 0x63, 0x74, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0b, 0x73, 0x75, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x19, 0x0a, 0x08,
+	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x07,
+	0x61, 0x6c, 0x62, 0x75, 0x6d, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x75, 0x62, 0x6a, 0x65,
+	0x63, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x73, 0x75, 0x62,
+	0x6a, 0x65, 0x63, 0x74, 0x49, 0x64, 0x22, 0xf0, 0x04, 0x0a, 0x0a, 0x41, 0x64, 0x6d, 0x69, 0x6e,
+	0x41, 0x75, 0x64, 0x69, 0x6f, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f,
+	0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x17, 0x0a, 0x07, 0x70, 0x75, 0x62, 0x5f, 0x75, 0x69,
+	0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x70, 0x75, 0x62, 0x55, 0x69, 0x64, 0x12,
+	0x22, 0x0a, 0x0d, 0x70, 0x75, 0x62, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x75, 0x62, 0x55, 0x73, 0x65, 0x72, 0x4e,
+	0x61, 0x6d, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x62, 0x72, 0x6f, 0x6b, 0x65, 0x72, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x62, 0x72, 0x6f, 0x6b, 0x65, 0x72, 0x12, 0x1a, 0x0a, 0x08, 0x72,
+	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x72,
+	0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x63, 0x6f, 0x76, 0x65, 0x72,
+	0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x09, 0x52, 0x06, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x73, 0x12,
+	0x16, 0x0a, 0x06, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x06, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18,
+	0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x14, 0x0a, 0x05, 0x74,
+	0x69, 0x74, 0x6c, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c,
+	0x65, 0x12, 0x16, 0x0a, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x0b, 0x20, 0x03, 0x28,
+	0x09, 0x52, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x75, 0x64,
+	0x69, 0x74, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x0b, 0x61, 0x75, 0x64, 0x69, 0x74, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x15, 0x0a, 0x06,
+	0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70,
+	0x55, 0x69, 0x64, 0x12, 0x40, 0x0a, 0x09, 0x65, 0x64, 0x69, 0x74, 0x5f, 0x64, 0x75, 0x62, 0x73,
+	0x18, 0x0e, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63,
+	0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d,
+	0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x45, 0x64, 0x69, 0x74, 0x52, 0x08, 0x65, 0x64, 0x69,
+	0x74, 0x44, 0x75, 0x62, 0x73, 0x12, 0x48, 0x0a, 0x0d, 0x65, 0x64, 0x69, 0x74, 0x5f, 0x63, 0x6f,
+	0x6e, 0x74, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x0f, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x72,
+	0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76,
+	0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x45, 0x64, 0x69,
+	0x74, 0x52, 0x0c, 0x65, 0x64, 0x69, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x73, 0x12,
+	0x42, 0x0a, 0x0a, 0x65, 0x64, 0x69, 0x74, 0x5f, 0x70, 0x6f, 0x73, 0x74, 0x73, 0x18, 0x10, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63, 0x2e, 0x76, 0x6f,
+	0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41,
+	0x75, 0x64, 0x69, 0x6f, 0x45, 0x64, 0x69, 0x74, 0x52, 0x09, 0x65, 0x64, 0x69, 0x74, 0x50, 0x6f,
+	0x73, 0x74, 0x73, 0x12, 0x44, 0x0a, 0x0b, 0x65, 0x64, 0x69, 0x74, 0x5f, 0x63, 0x6f, 0x76, 0x65,
+	0x72, 0x73, 0x18, 0x11, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72,
+	0x70, 0x63, 0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41,
+	0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x45, 0x64, 0x69, 0x74, 0x52, 0x0a, 0x65,
+	0x64, 0x69, 0x74, 0x43, 0x6f, 0x76, 0x65, 0x72, 0x73, 0x22, 0x3f, 0x0a, 0x15, 0x41, 0x64, 0x6d,
+	0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x41, 0x75, 0x64, 0x69, 0x74, 0x52, 0x65, 0x61, 0x73,
+	0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02,
+	0x69, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x72, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x22, 0xd6, 0x01, 0x0a, 0x0a, 0x41,
+	0x64, 0x6d, 0x69, 0x6e, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a,
+	0x05, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x69, 0x6e,
+	0x74, 0x72, 0x6f, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f,
+	0x75, 0x69, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64,
+	0x12, 0x1f, 0x0a, 0x0b, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18,
+	0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x61, 0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x75, 0x6e,
+	0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65,
+	0x18, 0x07, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69,
+	0x6d, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x68, 0x61, 0x73, 0x5f, 0x73, 0x75, 0x62, 0x6a, 0x65, 0x63,
+	0x74, 0x18, 0x08, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x68, 0x61, 0x73, 0x53, 0x75, 0x62, 0x6a,
+	0x65, 0x63, 0x74, 0x22, 0xf8, 0x01, 0x0a, 0x11, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64,
+	0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74,
+	0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12,
+	0x16, 0x0a, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x09, 0x52,
+	0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x12, 0x17, 0x0a, 0x07, 0x70, 0x75, 0x62, 0x5f, 0x75,
+	0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x70, 0x75, 0x62, 0x55, 0x69, 0x64,
+	0x12, 0x22, 0x0a, 0x0d, 0x70, 0x75, 0x62, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x75, 0x62, 0x55, 0x73, 0x65, 0x72,
+	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x47, 0x0a, 0x08, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x73,
+	0x18, 0x06, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2b, 0x2e, 0x72, 0x62, 0x70, 0x2e, 0x72, 0x70, 0x63,
+	0x2e, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x2e, 0x41, 0x64, 0x6d,
+	0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x41, 0x6c,
+	0x62, 0x75, 0x6d, 0x52, 0x08, 0x63, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x73, 0x12, 0x1f, 0x0a,
+	0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x07, 0x20, 0x01,
+	0x28, 0x04, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x3c,
+	0x0a, 0x16, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x43, 0x6f, 0x6c, 0x6c,
+	0x65, 0x63, 0x74, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0xeb, 0x01, 0x0a,
+	0x0f, 0x41, 0x64, 0x6d, 0x69, 0x6e, 0x42, 0x61, 0x6e, 0x6e, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61,
+	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64,
+	0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x12, 0x16, 0x0a, 0x06,
+	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x63,
+	0x68, 0x65, 0x6d, 0x61, 0x12, 0x15, 0x0a, 0x06, 0x6f, 0x70, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x05,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6f, 0x70, 0x55, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x73,
+	0x6f, 0x72, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x73, 0x6f, 0x72, 0x74, 0x12,
+	0x1d, 0x0a, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x07, 0x20,
+	0x01, 0x28, 0x04, 0x52, 0x09, 0x73, 0x74, 0x61, 0x72, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x19,
+	0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x04,
+	0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x09, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a,
+	0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x4e, 0x0a, 0x0e, 0x41, 0x64,
+	0x6d, 0x69, 0x6e, 0x41, 0x75, 0x64, 0x69, 0x6f, 0x45, 0x64, 0x69, 0x74, 0x12, 0x10, 0x0a, 0x03,
+	0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x03, 0x75, 0x69, 0x64, 0x12, 0x12,
+	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
+	0x6d, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x61, 0x76, 0x61, 0x74, 0x61, 0x72, 0x42, 0x39, 0x5a, 0x37, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d,
+	0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67,
+	0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70, 0x63, 0x2f, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f,
+	0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1720,53 +5772,131 @@ func file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescGZIP() []byte {
 	return file_rpc_voice_lover_voice_lover_admin_message_proto_rawDescData
 }
 
-var file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
+var file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes = make([]protoimpl.MessageInfo, 88)
 var file_rpc_voice_lover_voice_lover_admin_message_proto_goTypes = []interface{}{
-	(*ReqCreateSubject)(nil),    // 0: rbp.rpc.voice_lover.ReqCreateSubject
-	(*ResCreateSubject)(nil),    // 1: rbp.rpc.voice_lover.ResCreateSubject
-	(*ReqUpdateSubject)(nil),    // 2: rbp.rpc.voice_lover.ReqUpdateSubject
-	(*ResUpdateSubject)(nil),    // 3: rbp.rpc.voice_lover.ResUpdateSubject
-	(*ReqDelSubject)(nil),       // 4: rbp.rpc.voice_lover.ReqDelSubject
-	(*ResDelSubject)(nil),       // 5: rbp.rpc.voice_lover.ResDelSubject
-	(*ReqGetSubjectDetail)(nil), // 6: rbp.rpc.voice_lover.ReqGetSubjectDetail
-	(*ResGetSubjectDetail)(nil), // 7: rbp.rpc.voice_lover.ResGetSubjectDetail
-	(*ReqGetSubjectList)(nil),   // 8: rbp.rpc.voice_lover.ReqGetSubjectList
-	(*ResGetSubjectList)(nil),   // 9: rbp.rpc.voice_lover.ResGetSubjectList
-	(*ReqGetAlbumCollect)(nil),  // 10: rbp.rpc.voice_lover.ReqGetAlbumCollect
-	(*ResGetAlbumCollect)(nil),  // 11: rbp.rpc.voice_lover.ResGetAlbumCollect
-	(*AlbumCollectData)(nil),    // 12: rbp.rpc.voice_lover.AlbumCollectData
-	(*ReqAlbumCollect)(nil),     // 13: rbp.rpc.voice_lover.ReqAlbumCollect
-	(*ResAlbumCollect)(nil),     // 14: rbp.rpc.voice_lover.ResAlbumCollect
-	(*ReqAlbumChoice)(nil),      // 15: rbp.rpc.voice_lover.ReqAlbumChoice
-	(*ResAlbumChoice)(nil),      // 16: rbp.rpc.voice_lover.ResAlbumChoice
-	(*ReqGetAlbumChoice)(nil),   // 17: rbp.rpc.voice_lover.ReqGetAlbumChoice
-	(*ResGetAlbumChoice)(nil),   // 18: rbp.rpc.voice_lover.ResGetAlbumChoice
-	(*ReqGetBannerList)(nil),    // 19: rbp.rpc.voice_lover.ReqGetBannerList
-	(*ResGetBannerList)(nil),    // 20: rbp.rpc.voice_lover.ResGetBannerList
-	(*ReqCreateBanner)(nil),     // 21: rbp.rpc.voice_lover.ReqCreateBanner
-	(*ResCreateBanner)(nil),     // 22: rbp.rpc.voice_lover.ResCreateBanner
-	(*ReqUpdateBanner)(nil),     // 23: rbp.rpc.voice_lover.ReqUpdateBanner
-	(*ResUpdateBanner)(nil),     // 24: rbp.rpc.voice_lover.ResUpdateBanner
-	(*ReqGetBannerDetail)(nil),  // 25: rbp.rpc.voice_lover.ReqGetBannerDetail
-	(*ResGetBannerDetail)(nil),  // 26: rbp.rpc.voice_lover.ResGetBannerDetail
-	nil,                         // 27: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
-	(*SubjectData)(nil),         // 28: rbp.rpc.voice_lover.SubjectData
-	(*AlbumData)(nil),           // 29: rbp.rpc.voice_lover.AlbumData
-	(*BannerData)(nil),          // 30: rbp.rpc.voice_lover.BannerData
+	(*ReqCreateSubject)(nil),         // 0: rbp.rpc.voice_lover.ReqCreateSubject
+	(*ResCreateSubject)(nil),         // 1: rbp.rpc.voice_lover.ResCreateSubject
+	(*ReqUpdateSubject)(nil),         // 2: rbp.rpc.voice_lover.ReqUpdateSubject
+	(*ResUpdateSubject)(nil),         // 3: rbp.rpc.voice_lover.ResUpdateSubject
+	(*ReqDelSubject)(nil),            // 4: rbp.rpc.voice_lover.ReqDelSubject
+	(*ResDelSubject)(nil),            // 5: rbp.rpc.voice_lover.ResDelSubject
+	(*ReqGetSubjectDetail)(nil),      // 6: rbp.rpc.voice_lover.ReqGetSubjectDetail
+	(*ResGetSubjectDetail)(nil),      // 7: rbp.rpc.voice_lover.ResGetSubjectDetail
+	(*ReqGetSubjectList)(nil),        // 8: rbp.rpc.voice_lover.ReqGetSubjectList
+	(*ResGetSubjectList)(nil),        // 9: rbp.rpc.voice_lover.ResGetSubjectList
+	(*ReqGetAlbumCollect)(nil),       // 10: rbp.rpc.voice_lover.ReqGetAlbumCollect
+	(*ResGetAlbumCollect)(nil),       // 11: rbp.rpc.voice_lover.ResGetAlbumCollect
+	(*AlbumCollectData)(nil),         // 12: rbp.rpc.voice_lover.AlbumCollectData
+	(*ReqAlbumCollect)(nil),          // 13: rbp.rpc.voice_lover.ReqAlbumCollect
+	(*ResAlbumCollect)(nil),          // 14: rbp.rpc.voice_lover.ResAlbumCollect
+	(*ReqAlbumChoice)(nil),           // 15: rbp.rpc.voice_lover.ReqAlbumChoice
+	(*ResAlbumChoice)(nil),           // 16: rbp.rpc.voice_lover.ResAlbumChoice
+	(*ReqGetAlbumChoice)(nil),        // 17: rbp.rpc.voice_lover.ReqGetAlbumChoice
+	(*ResGetAlbumChoice)(nil),        // 18: rbp.rpc.voice_lover.ResGetAlbumChoice
+	(*ReqGetBannerList)(nil),         // 19: rbp.rpc.voice_lover.ReqGetBannerList
+	(*ResGetBannerList)(nil),         // 20: rbp.rpc.voice_lover.ResGetBannerList
+	(*ReqCreateBanner)(nil),          // 21: rbp.rpc.voice_lover.ReqCreateBanner
+	(*ResCreateBanner)(nil),          // 22: rbp.rpc.voice_lover.ResCreateBanner
+	(*ReqUpdateBanner)(nil),          // 23: rbp.rpc.voice_lover.ReqUpdateBanner
+	(*ResUpdateBanner)(nil),          // 24: rbp.rpc.voice_lover.ResUpdateBanner
+	(*ReqGetBannerDetail)(nil),       // 25: rbp.rpc.voice_lover.ReqGetBannerDetail
+	(*ResGetBannerDetail)(nil),       // 26: rbp.rpc.voice_lover.ResGetBannerDetail
+	(*ReqAdminAudioList)(nil),        // 27: rbp.rpc.voice_lover.ReqAdminAudioList
+	(*ResAdminAudioList)(nil),        // 28: rbp.rpc.voice_lover.ResAdminAudioList
+	(*ReqAdminAudioDetail)(nil),      // 29: rbp.rpc.voice_lover.ReqAdminAudioDetail
+	(*ResAdminAudioDetail)(nil),      // 30: rbp.rpc.voice_lover.ResAdminAudioDetail
+	(*ReqAdminAudioUpdate)(nil),      // 31: rbp.rpc.voice_lover.ReqAdminAudioUpdate
+	(*ResAdminAudioUpdate)(nil),      // 32: rbp.rpc.voice_lover.ResAdminAudioUpdate
+	(*ReqAdminAudioAudit)(nil),       // 33: rbp.rpc.voice_lover.ReqAdminAudioAudit
+	(*ResAdminAudioAudit)(nil),       // 34: rbp.rpc.voice_lover.ResAdminAudioAudit
+	(*ReqAdminAudioAuditReason)(nil), // 35: rbp.rpc.voice_lover.ReqAdminAudioAuditReason
+	(*ResAdminAudioAuditReason)(nil), // 36: rbp.rpc.voice_lover.ResAdminAudioAuditReason
+	(*ReqAdminAlbumCreate)(nil),      // 37: rbp.rpc.voice_lover.ReqAdminAlbumCreate
+	(*ResAdminAlbumCreate)(nil),      // 38: rbp.rpc.voice_lover.ResAdminAlbumCreate
+	(*ReqAdminAlbumDel)(nil),         // 39: rbp.rpc.voice_lover.ReqAdminAlbumDel
+	(*ResAdminAlbumDel)(nil),         // 40: rbp.rpc.voice_lover.ResAdminAlbumDel
+	(*ReqAdminAlbumUpdate)(nil),      // 41: rbp.rpc.voice_lover.ReqAdminAlbumUpdate
+	(*ResAdminAlbumUpdate)(nil),      // 42: rbp.rpc.voice_lover.ResAdminAlbumUpdate
+	(*ReqAdminAlbumDetail)(nil),      // 43: rbp.rpc.voice_lover.ReqAdminAlbumDetail
+	(*ResAdminAlbumDetail)(nil),      // 44: rbp.rpc.voice_lover.ResAdminAlbumDetail
+	(*ReqAdminAlbumList)(nil),        // 45: rbp.rpc.voice_lover.ReqAdminAlbumList
+	(*ResAdminAlbumList)(nil),        // 46: rbp.rpc.voice_lover.ResAdminAlbumList
+	(*ReqAdminAudioCollectList)(nil), // 47: rbp.rpc.voice_lover.ReqAdminAudioCollectList
+	(*ResAdminAudioCollectList)(nil), // 48: rbp.rpc.voice_lover.ResAdminAudioCollectList
+	(*ReqAdminAudioCollect)(nil),     // 49: rbp.rpc.voice_lover.ReqAdminAudioCollect
+	(*ResAdminAudioCollect)(nil),     // 50: rbp.rpc.voice_lover.ResAdminAudioCollect
+	(*ReqAdminSubjectCreate)(nil),    // 51: rbp.rpc.voice_lover.ReqAdminSubjectCreate
+	(*ResAdminSubjectCreate)(nil),    // 52: rbp.rpc.voice_lover.ResAdminSubjectCreate
+	(*ReqAdminSubjectUpdate)(nil),    // 53: rbp.rpc.voice_lover.ReqAdminSubjectUpdate
+	(*ResAdminSubjectUpdate)(nil),    // 54: rbp.rpc.voice_lover.ResAdminSubjectUpdate
+	(*ReqAdminSubjectDel)(nil),       // 55: rbp.rpc.voice_lover.ReqAdminSubjectDel
+	(*ResAdminSubjectDel)(nil),       // 56: rbp.rpc.voice_lover.ResAdminSubjectDel
+	(*ReqAdminSubjectList)(nil),      // 57: rbp.rpc.voice_lover.ReqAdminSubjectList
+	(*ResAdminSubjectList)(nil),      // 58: rbp.rpc.voice_lover.ResAdminSubjectList
+	(*ReqAdminAlbumCollect)(nil),     // 59: rbp.rpc.voice_lover.ReqAdminAlbumCollect
+	(*ResAdminAlbumCollect)(nil),     // 60: rbp.rpc.voice_lover.ResAdminAlbumCollect
+	(*ReqAdminAlbumChoice)(nil),      // 61: rbp.rpc.voice_lover.ReqAdminAlbumChoice
+	(*ResAdminAlbumChoice)(nil),      // 62: rbp.rpc.voice_lover.ResAdminAlbumChoice
+	(*ReqAdminAlbumCollectList)(nil), // 63: rbp.rpc.voice_lover.ReqAdminAlbumCollectList
+	(*ResAdminAlbumCollectList)(nil), // 64: rbp.rpc.voice_lover.ResAdminAlbumCollectList
+	(*ReqAdminSubjectDetail)(nil),    // 65: rbp.rpc.voice_lover.ReqAdminSubjectDetail
+	(*ResAdminSubjectDetail)(nil),    // 66: rbp.rpc.voice_lover.ResAdminSubjectDetail
+	(*ReqAdminAlbumChoiceList)(nil),  // 67: rbp.rpc.voice_lover.ReqAdminAlbumChoiceList
+	(*RespAdminAlbumChoiceList)(nil), // 68: rbp.rpc.voice_lover.RespAdminAlbumChoiceList
+	(*ReqAdminBannerList)(nil),       // 69: rbp.rpc.voice_lover.ReqAdminBannerList
+	(*ResAdminBannerList)(nil),       // 70: rbp.rpc.voice_lover.ResAdminBannerList
+	(*ReqAdminBannerCreate)(nil),     // 71: rbp.rpc.voice_lover.ReqAdminBannerCreate
+	(*ResAdminBannerCreate)(nil),     // 72: rbp.rpc.voice_lover.ResAdminBannerCreate
+	(*ReqAdminBannerUpdate)(nil),     // 73: rbp.rpc.voice_lover.ReqAdminBannerUpdate
+	(*ResAdminBannerUpdate)(nil),     // 74: rbp.rpc.voice_lover.ResAdminBannerUpdate
+	(*ReqAdminBannerDetail)(nil),     // 75: rbp.rpc.voice_lover.ReqAdminBannerDetail
+	(*ResAdminBannerDetail)(nil),     // 76: rbp.rpc.voice_lover.ResAdminBannerDetail
+	(*AdminAlbumData)(nil),           // 77: rbp.rpc.voice_lover.AdminAlbumData
+	(*AdminSubjectData)(nil),         // 78: rbp.rpc.voice_lover.AdminSubjectData
+	(*AdminAlbumSubject)(nil),        // 79: rbp.rpc.voice_lover.AdminAlbumSubject
+	(*AdminAudio)(nil),               // 80: rbp.rpc.voice_lover.AdminAudio
+	(*AdminAudioAuditReason)(nil),    // 81: rbp.rpc.voice_lover.AdminAudioAuditReason
+	(*AdminAlbum)(nil),               // 82: rbp.rpc.voice_lover.AdminAlbum
+	(*AdminAudioCollect)(nil),        // 83: rbp.rpc.voice_lover.AdminAudioCollect
+	(*AdminAudioCollectAlbum)(nil),   // 84: rbp.rpc.voice_lover.AdminAudioCollectAlbum
+	(*AdminBannerData)(nil),          // 85: rbp.rpc.voice_lover.AdminBannerData
+	(*AdminAudioEdit)(nil),           // 86: rbp.rpc.voice_lover.AdminAudioEdit
+	nil,                              // 87: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
+	(*SubjectData)(nil),              // 88: rbp.rpc.voice_lover.SubjectData
+	(*AlbumData)(nil),                // 89: rbp.rpc.voice_lover.AlbumData
+	(*BannerData)(nil),               // 90: rbp.rpc.voice_lover.BannerData
 }
 var file_rpc_voice_lover_voice_lover_admin_message_proto_depIdxs = []int32{
-	27, // 0: rbp.rpc.voice_lover.ResGetSubjectDetail.subjects:type_name -> rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
-	28, // 1: rbp.rpc.voice_lover.ResGetSubjectList.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
+	87, // 0: rbp.rpc.voice_lover.ResGetSubjectDetail.subjects:type_name -> rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry
+	88, // 1: rbp.rpc.voice_lover.ResGetSubjectList.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
 	12, // 2: rbp.rpc.voice_lover.ResGetAlbumCollect.album_collects:type_name -> rbp.rpc.voice_lover.AlbumCollectData
-	29, // 3: rbp.rpc.voice_lover.ResGetAlbumChoice.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	30, // 4: rbp.rpc.voice_lover.ResGetBannerList.banners:type_name -> rbp.rpc.voice_lover.BannerData
-	30, // 5: rbp.rpc.voice_lover.ResGetBannerDetail.banner:type_name -> rbp.rpc.voice_lover.BannerData
-	28, // 6: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry.value:type_name -> rbp.rpc.voice_lover.SubjectData
-	7,  // [7:7] is the sub-list for method output_type
-	7,  // [7:7] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	89, // 3: rbp.rpc.voice_lover.ResGetAlbumChoice.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	90, // 4: rbp.rpc.voice_lover.ResGetBannerList.banners:type_name -> rbp.rpc.voice_lover.BannerData
+	85, // 5: rbp.rpc.voice_lover.ResGetBannerDetail.banner:type_name -> rbp.rpc.voice_lover.AdminBannerData
+	80, // 6: rbp.rpc.voice_lover.ResAdminAudioList.audios:type_name -> rbp.rpc.voice_lover.AdminAudio
+	80, // 7: rbp.rpc.voice_lover.ResAdminAudioDetail.audio:type_name -> rbp.rpc.voice_lover.AdminAudio
+	81, // 8: rbp.rpc.voice_lover.ResAdminAudioAuditReason.reasons:type_name -> rbp.rpc.voice_lover.AdminAudioAuditReason
+	82, // 9: rbp.rpc.voice_lover.ResAdminAlbumDetail.album:type_name -> rbp.rpc.voice_lover.AdminAlbum
+	82, // 10: rbp.rpc.voice_lover.ResAdminAlbumList.albums:type_name -> rbp.rpc.voice_lover.AdminAlbum
+	83, // 11: rbp.rpc.voice_lover.ResAdminAudioCollectList.audios:type_name -> rbp.rpc.voice_lover.AdminAudioCollect
+	78, // 12: rbp.rpc.voice_lover.ResAdminSubjectList.list:type_name -> rbp.rpc.voice_lover.AdminSubjectData
+	79, // 13: rbp.rpc.voice_lover.ResAdminAlbumCollectList.list:type_name -> rbp.rpc.voice_lover.AdminAlbumSubject
+	78, // 14: rbp.rpc.voice_lover.ResAdminSubjectDetail.subject:type_name -> rbp.rpc.voice_lover.AdminSubjectData
+	77, // 15: rbp.rpc.voice_lover.RespAdminAlbumChoiceList.albums:type_name -> rbp.rpc.voice_lover.AdminAlbumData
+	85, // 16: rbp.rpc.voice_lover.ResAdminBannerList.list:type_name -> rbp.rpc.voice_lover.AdminBannerData
+	85, // 17: rbp.rpc.voice_lover.ResAdminBannerDetail.banner:type_name -> rbp.rpc.voice_lover.AdminBannerData
+	89, // 18: rbp.rpc.voice_lover.AdminSubjectData.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	86, // 19: rbp.rpc.voice_lover.AdminAudio.edit_dubs:type_name -> rbp.rpc.voice_lover.AdminAudioEdit
+	86, // 20: rbp.rpc.voice_lover.AdminAudio.edit_contents:type_name -> rbp.rpc.voice_lover.AdminAudioEdit
+	86, // 21: rbp.rpc.voice_lover.AdminAudio.edit_posts:type_name -> rbp.rpc.voice_lover.AdminAudioEdit
+	86, // 22: rbp.rpc.voice_lover.AdminAudio.edit_covers:type_name -> rbp.rpc.voice_lover.AdminAudioEdit
+	84, // 23: rbp.rpc.voice_lover.AdminAudioCollect.collects:type_name -> rbp.rpc.voice_lover.AdminAudioCollectAlbum
+	88, // 24: rbp.rpc.voice_lover.ResGetSubjectDetail.SubjectsEntry.value:type_name -> rbp.rpc.voice_lover.SubjectData
+	25, // [25:25] is the sub-list for method output_type
+	25, // [25:25] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_rpc_voice_lover_voice_lover_admin_message_proto_init() }
@@ -2100,6 +6230,726 @@ func file_rpc_voice_lover_voice_lover_admin_message_proto_init() {
 				return nil
 			}
 		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAudioList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAudioList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAudioDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAudioDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAudioUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAudioUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAudioAudit); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAudioAudit); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAudioAuditReason); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAudioAuditReason); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumCreate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumCreate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumDel); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumDel); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAudioCollectList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAudioCollectList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAudioCollect); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAudioCollect); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminSubjectCreate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminSubjectCreate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminSubjectUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminSubjectUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminSubjectDel); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminSubjectDel); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminSubjectList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminSubjectList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumCollect); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumCollect); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumChoice); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumChoice); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumCollectList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminAlbumCollectList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminSubjectDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminSubjectDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminAlbumChoiceList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RespAdminAlbumChoiceList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminBannerList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminBannerList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminBannerCreate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminBannerCreate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminBannerUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminBannerUpdate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAdminBannerDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResAdminBannerDetail); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAlbumData); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminSubjectData); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAlbumSubject); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAudio); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAudioAuditReason); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAlbum); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAudioCollect); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAudioCollectAlbum); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminBannerData); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_admin_message_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AdminAudioEdit); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2107,7 +6957,7 @@ func file_rpc_voice_lover_voice_lover_admin_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rpc_voice_lover_voice_lover_admin_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   28,
+			NumMessages:   88,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

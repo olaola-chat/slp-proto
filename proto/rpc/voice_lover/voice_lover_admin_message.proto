@@ -141,5 +141,353 @@ message ReqGetBannerDetail {
 }
 
 message ResGetBannerDetail {
-  BannerData banner = 1;
+  AdminBannerData banner = 1;
+}
+
+////rpc
+
+message ReqAdminAudioList {
+  uint64 end_time = 1;
+  string user_str = 2 ;
+  int32 source = 3;
+  string label = 4;
+  string order = 5;
+  int32 audit_status = 6;
+  int32 page = 7;
+  int32 limit = 8;
+}
+
+message ResAdminAudioList {
+  repeated AdminAudio audios = 1;
+  int32 total = 2;
+}
+
+message ReqAdminAudioDetail {
+  uint64 id = 1;
+}
+
+message ResAdminAudioDetail {
+    AdminAudio audio = 1;
+}
+
+message ReqAdminAudioUpdate {
+  uint64 id = 1;
+  string  title = 2;
+  string   desc = 3;
+  string labels = 4;
+  uint64  op_uid = 5;
+}
+
+message ResAdminAudioUpdate {}
+
+message ReqAdminAudioAudit {
+  uint64 id = 1;
+  int32 audit_status = 2; // 1:通过 2:不通过
+  int32 audit_reason = 3;
+  uint64 op_uid = 4;
+}
+
+message ResAdminAudioAudit {}
+
+message ReqAdminAudioAuditReason {
+
+}
+
+message ResAdminAudioAuditReason {
+  repeated AdminAudioAuditReason reasons = 1;
+}
+
+message ReqAdminAlbumCreate {
+  string  name = 1;
+  string intro = 2;
+  string cover = 3;
+  uint64 op_uid = 4;
+}
+
+message ResAdminAlbumCreate {
+  uint64 id = 1;
+}
+
+message ReqAdminAlbumDel {
+  uint64 id = 1;
+  uint64 op_uid = 2;
+}
+
+message ResAdminAlbumDel {
+}
+
+message ReqAdminAlbumUpdate {
+  uint64 id = 1;
+  string name = 2;
+  string intro = 3;
+  string cover = 4;
+  uint64 op_uid = 5;
+}
+
+message ResAdminAlbumUpdate {
+
+}
+
+message  ReqAdminAlbumDetail  {
+   uint64 id  = 1;
+}
+
+message ResAdminAlbumDetail {
+  AdminAlbum album = 1;
+}
+
+message ReqAdminAlbumList {
+  string name = 1;
+  uint64 start_time = 2;
+  uint64 end_time = 3;
+  int32 collect_status = 4;
+  uint64 page = 5;
+  uint64 limit = 6;
+}
+
+message ResAdminAlbumList {
+  AdminAlbum albums = 1;
+  int32 total = 2;
+}
+
+message ReqAdminAudioCollectList {
+  string user_str = 1;
+  string album_str = 2;
+  string audio_str = 3;
+  string label = 4;
+  int32 collect_status = 5;
+  string order = 6;
+  uint64 page = 7;
+  uint64 limit = 8;
+}
+
+message ResAdminAudioCollectList {
+    repeated  AdminAudioCollect audios = 1;
+    int32 total = 2;
+}
+
+message ReqAdminAudioCollect {
+  uint64 audio_id = 1;
+  uint64 album_id = 2;
+  int32 type = 3;
+}
+
+message ResAdminAudioCollect {
+
+}
+
+message ReqAdminSubjectCreate {
+  string name = 1;
+  uint64 op_uid = 2;
+}
+
+message ResAdminSubjectCreate {
+  uint64 id = 1;
+}
+
+message ReqAdminSubjectUpdate {
+  uint64 id = 1;
+  string name = 2;
+  uint64 op_uid = 3;
+}
+
+message ResAdminSubjectUpdate {}
+
+message  ReqAdminSubjectDel {
+  uint64 id = 1;
+}
+
+message ResAdminSubjectDel {
+
+}
+
+message ReqAdminSubjectList {
+  uint64 page = 1;
+  uint64 limit = 2;
+  string name = 3;
+  uint64 start_time = 4;
+  uint64 end_time = 5;
+}
+
+message ResAdminSubjectList {
+  repeated AdminSubjectData list = 1;
+  int32 total = 2;
+}
+
+message ReqAdminAlbumCollect  {
+  uint64 album_id = 1;
+  uint64 subject_id = 2;
+  int32 type = 3;
+}
+
+message ResAdminAlbumCollect {}
+
+message ReqAdminAlbumChoice {
+  uint64 id = 1;
+  int32 choice = 2;
+}
+
+message ResAdminAlbumChoice {}
+
+message  ReqAdminAlbumCollectList  {
+  string album_str = 1;
+  string subject_str = 2;
+  uint64 page = 3;
+  uint64 limit = 4;
+}
+
+message ResAdminAlbumCollectList {
+  repeated AdminAlbumSubject list = 1;
+  int32 total = 2;
+}
+
+message ReqAdminSubjectDetail {
+  uint64 id = 1;
+}
+
+message ResAdminSubjectDetail {
+  AdminSubjectData subject = 1;
+}
+
+message ReqAdminAlbumChoiceList {}
+
+message RespAdminAlbumChoiceList {
+  repeated AdminAlbumData albums = 1;
+}
+
+message ReqAdminBannerList  {
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string title = 3;
+  string status = 4;
+}
+
+message ResAdminBannerList {
+  repeated AdminBannerData list = 1;
+  int32 total = 2;
+}
+
+message ReqAdminBannerCreate {
+  string title = 1;
+  string schema = 2;
+  uint64 op_uid = 3;
+  uint64 start_time = 4;
+  uint64 end_time = 5;
+  uint32 sort = 6;
+}
+
+message ResAdminBannerCreate {
+  uint64 id = 1;
+}
+
+message ReqAdminBannerUpdate {
+  uint64 id = 1;
+  string title = 2;
+  string schema = 3;
+  uint64 op_uid = 4;
+  uint64 start_time = 5;
+  uint64 end_time = 6;
+  uint32 sort = 7;
+}
+
+message ResAdminBannerUpdate {
+}
+
+message ReqAdminBannerDetail {
+  uint64 id = 1;
+}
+
+message ResAdminBannerDetail {
+  AdminBannerData banner = 1;
+}
+
+message AdminAlbumData {
+  uint64 id = 1;
+  string name = 2;
+  uint64 create_time = 3;
+  int32 level = 4;
+}
+
+message AdminSubjectData {
+  uint64 id = 1;                  // 专题id
+  string title = 2;               // 专题名称
+  repeated AlbumData albums = 3;  // 专题下专辑列表
+  uint32 album_total = 4;
+}
+
+message AdminAlbumSubject {
+  uint64 id = 1;
+  string album_name = 2;
+  string subject_name = 3;
+  uint64 album_id = 4;
+  uint64 subject_id = 5;
+}
+
+message AdminAudio {
+  uint64 id = 1;
+  uint64 create_time = 2;
+  uint32 pub_uid = 3;
+  string pub_user_name = 4;
+  string broker = 5;
+  string resource = 6;
+  repeated string covers = 7;
+  int32 source = 8;
+  string desc = 9;
+  string title = 10;
+  repeated string labels = 11;
+  int32 audit_status = 12;
+  uint64 op_uid = 13;
+  repeated AdminAudioEdit edit_dubs = 14;
+  repeated AdminAudioEdit edit_contents = 15;
+  repeated AdminAudioEdit edit_posts = 16;
+  repeated AdminAudioEdit edit_covers = 17;
+}
+
+message AdminAudioAuditReason {
+  uint64 id = 1;
+  string reason = 2;
+}
+
+message AdminAlbum {
+  uint64 id = 1;
+  string name = 2;
+  string intro = 3;
+  string cover = 4;
+  uint64 op_uid = 5;
+  int32 audio_count = 6;
+  uint64 create_time = 7;
+  int32 has_subject = 8;
+}
+
+message AdminAudioCollect {
+  uint64 id = 1;
+  string title = 2;
+  repeated string labels = 3;
+  uint32 pub_uid = 4;
+  string pub_user_name = 5;
+  repeated AdminAudioCollectAlbum collects = 6;
+  uint64 create_time = 7;
+}
+
+message AdminAudioCollectAlbum {
+  uint64 id = 1;
+  string name = 2;
+}
+
+message AdminBannerData {
+  uint64 id = 1;
+  string title = 2;
+  string cover = 3;
+  string schema = 4;
+  uint64 op_uid = 5;
+  uint32 sort = 6;
+  uint64 start_time = 7;
+  uint64 end_time = 8;
+  uint64 create_time = 9;
+}
+
+message AdminAudioEdit {
+  uint32 uid = 1;
+  string name = 2;
+  string avatar = 3;
 }
