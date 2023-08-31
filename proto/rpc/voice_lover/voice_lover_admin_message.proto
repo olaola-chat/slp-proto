@@ -141,7 +141,7 @@ message ReqGetBannerDetail {
 }
 
 message ResGetBannerDetail {
-  AdminBannerData banner = 1;
+  BannerData banner = 1;
 }
 
 ////rpc
