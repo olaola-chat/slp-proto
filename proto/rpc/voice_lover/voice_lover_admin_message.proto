@@ -353,7 +353,7 @@ message ResAdminSubjectDetail {
 
 message ReqAdminAlbumChoiceList {}
 
-message RespAdminAlbumChoiceList {
+message ResAdminAlbumChoiceList {
   repeated AdminAlbumData albums = 1;
 }
 

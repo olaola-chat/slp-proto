@@ -100,7 +100,7 @@ service VoiceLoverAdmin {
 
   rpc AdminSubjectDetail (rbp.rpc.voice_lover.ReqAdminSubjectDetail) returns (rbp.rpc.voice_lover.ResAdminSubjectDetail);
 
-  rpc AdminAlbumChoiceList (rbp.rpc.voice_lover.ReqAdminAlbumChoiceList) returns (rbp.rpc.voice_lover.ReqAdminAlbumChoiceList);
+  rpc AdminAlbumChoiceList (rbp.rpc.voice_lover.ReqAdminAlbumChoiceList) returns (rbp.rpc.voice_lover.ResAdminAlbumChoiceList);
 
   rpc AdminBannerList (rbp.rpc.voice_lover.ReqAdminBannerList) returns (rbp.rpc.voice_lover.ResAdminBannerList);
 

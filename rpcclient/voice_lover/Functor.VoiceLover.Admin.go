@@ -271,8 +271,8 @@ func (s *voiceLoverAdmin) AdminSubjectDetail(ctx context.Context, req *voice_lov
 	return reply, err
 }
 
-func (s *voiceLoverAdmin) AdminAlbumChoiceList(ctx context.Context, req *voice_lover.ReqAdminAlbumChoiceList) (*voice_lover.ReqAdminAlbumChoiceList, error) {
-	reply := &voice_lover.ReqAdminAlbumChoiceList{}
+func (s *voiceLoverAdmin) AdminAlbumChoiceList(ctx context.Context, req *voice_lover.ReqAdminAlbumChoiceList) (*voice_lover.ResAdminAlbumChoiceList, error) {
+	reply := &voice_lover.ResAdminAlbumChoiceList{}
 	err := s.Call(ctx, "AdminAlbumChoiceList", req, reply)
 	return reply, err
 }
