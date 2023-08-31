@@ -150,3 +150,153 @@ func (s *voiceLoverAdmin) GetBannerDetail(ctx context.Context, req *voice_lover.
 	err := s.Call(ctx, "GetBannerDetail", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) AdminAudioList(ctx context.Context, req *voice_lover.ReqAdminAudioList) (*voice_lover.ResAdminAudioList, error) {
+	reply := &voice_lover.ResAdminAudioList{}
+	err := s.Call(ctx, "AdminAudioList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAudioDetail(ctx context.Context, req *voice_lover.ReqAdminAudioDetail) (*voice_lover.ResAdminAudioDetail, error) {
+	reply := &voice_lover.ResAdminAudioDetail{}
+	err := s.Call(ctx, "AdminAudioDetail", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAudioUpdate(ctx context.Context, req *voice_lover.ReqAdminAudioUpdate) (*voice_lover.ResAdminAudioUpdate, error) {
+	reply := &voice_lover.ResAdminAudioUpdate{}
+	err := s.Call(ctx, "AdminAudioUpdate", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAudioAudit(ctx context.Context, req *voice_lover.ReqAdminAudioAudit) (*voice_lover.ResAdminAudioAudit, error) {
+	reply := &voice_lover.ResAdminAudioAudit{}
+	err := s.Call(ctx, "AdminAudioAudit", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAudioAuditReason(ctx context.Context, req *voice_lover.ReqAdminAudioAuditReason) (*voice_lover.ResAdminAudioAuditReason, error) {
+	reply := &voice_lover.ResAdminAudioAuditReason{}
+	err := s.Call(ctx, "AdminAudioAuditReason", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumCreate(ctx context.Context, req *voice_lover.ReqAdminAlbumCreate) (*voice_lover.ResAdminAlbumCreate, error) {
+	reply := &voice_lover.ResAdminAlbumCreate{}
+	err := s.Call(ctx, "AdminAlbumCreate", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumDel(ctx context.Context, req *voice_lover.ReqAdminAlbumDel) (*voice_lover.ResAdminAlbumDel, error) {
+	reply := &voice_lover.ResAdminAlbumDel{}
+	err := s.Call(ctx, "AdminAlbumDel", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumUpdate(ctx context.Context, req *voice_lover.ReqAdminAlbumUpdate) (*voice_lover.ResAdminAlbumUpdate, error) {
+	reply := &voice_lover.ResAdminAlbumUpdate{}
+	err := s.Call(ctx, "AdminAlbumUpdate", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumDetail(ctx context.Context, req *voice_lover.ReqAdminAlbumDetail) (*voice_lover.ResAdminAlbumDetail, error) {
+	reply := &voice_lover.ResAdminAlbumDetail{}
+	err := s.Call(ctx, "AdminAlbumDetail", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumList(ctx context.Context, req *voice_lover.ReqAdminAlbumList) (*voice_lover.ResAdminAlbumList, error) {
+	reply := &voice_lover.ResAdminAlbumList{}
+	err := s.Call(ctx, "AdminAlbumList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAudioCollectList(ctx context.Context, req *voice_lover.ReqAdminAudioCollectList) (*voice_lover.ResAdminAudioCollectList, error) {
+	reply := &voice_lover.ResAdminAudioCollectList{}
+	err := s.Call(ctx, "AdminAudioCollectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAudioCollect(ctx context.Context, req *voice_lover.ReqAdminAudioCollect) (*voice_lover.ResAdminAudioCollect, error) {
+	reply := &voice_lover.ResAdminAudioCollect{}
+	err := s.Call(ctx, "AdminAudioCollect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminSubjectCreate(ctx context.Context, req *voice_lover.ReqAdminSubjectCreate) (*voice_lover.ResAdminSubjectCreate, error) {
+	reply := &voice_lover.ResAdminSubjectCreate{}
+	err := s.Call(ctx, "AdminSubjectCreate", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminSubjectUpdate(ctx context.Context, req *voice_lover.ReqAdminSubjectUpdate) (*voice_lover.ResAdminSubjectUpdate, error) {
+	reply := &voice_lover.ResAdminSubjectUpdate{}
+	err := s.Call(ctx, "AdminSubjectUpdate", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminSubjectDel(ctx context.Context, req *voice_lover.ReqAdminSubjectDel) (*voice_lover.ResAdminSubjectDel, error) {
+	reply := &voice_lover.ResAdminSubjectDel{}
+	err := s.Call(ctx, "AdminSubjectDel", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminSubjectList(ctx context.Context, req *voice_lover.ReqAdminSubjectList) (*voice_lover.ResAdminSubjectList, error) {
+	reply := &voice_lover.ResAdminSubjectList{}
+	err := s.Call(ctx, "AdminSubjectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumCollect(ctx context.Context, req *voice_lover.ReqAdminAlbumCollect) (*voice_lover.ResAdminAlbumCollect, error) {
+	reply := &voice_lover.ResAdminAlbumCollect{}
+	err := s.Call(ctx, "AdminAlbumCollect", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumChoice(ctx context.Context, req *voice_lover.ReqAdminAlbumChoice) (*voice_lover.ResAdminAlbumChoice, error) {
+	reply := &voice_lover.ResAdminAlbumChoice{}
+	err := s.Call(ctx, "AdminAlbumChoice", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumCollectList(ctx context.Context, req *voice_lover.ReqAdminAlbumCollectList) (*voice_lover.ResAdminAlbumCollectList, error) {
+	reply := &voice_lover.ResAdminAlbumCollectList{}
+	err := s.Call(ctx, "AdminAlbumCollectList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminSubjectDetail(ctx context.Context, req *voice_lover.ReqAdminSubjectDetail) (*voice_lover.ResAdminSubjectDetail, error) {
+	reply := &voice_lover.ResAdminSubjectDetail{}
+	err := s.Call(ctx, "AdminSubjectDetail", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminAlbumChoiceList(ctx context.Context, req *voice_lover.ReqAdminAlbumChoiceList) (*voice_lover.ResAdminAlbumChoiceList, error) {
+	reply := &voice_lover.ResAdminAlbumChoiceList{}
+	err := s.Call(ctx, "AdminAlbumChoiceList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminBannerList(ctx context.Context, req *voice_lover.ReqAdminBannerList) (*voice_lover.ResAdminBannerList, error) {
+	reply := &voice_lover.ResAdminBannerList{}
+	err := s.Call(ctx, "AdminBannerList", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminBannerCreate(ctx context.Context, req *voice_lover.ReqAdminBannerCreate) (*voice_lover.ResAdminBannerCreate, error) {
+	reply := &voice_lover.ResAdminBannerCreate{}
+	err := s.Call(ctx, "AdminBannerCreate", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminBannerUpdate(ctx context.Context, req *voice_lover.ReqAdminBannerUpdate) (*voice_lover.ResAdminBannerUpdate, error) {
+	reply := &voice_lover.ResAdminBannerUpdate{}
+	err := s.Call(ctx, "AdminBannerUpdate", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverAdmin) AdminBannerDetail(ctx context.Context, req *voice_lover.ReqAdminBannerDetail) (*voice_lover.ResAdminBannerDetail, error) {
+	reply := &voice_lover.ResAdminBannerDetail{}
+	err := s.Call(ctx, "AdminBannerDetail", req, reply)
+	return reply, err
+}

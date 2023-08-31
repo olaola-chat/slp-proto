@@ -60,4 +60,54 @@ service VoiceLoverAdmin {
 
   rpc GetBannerDetail (rbp.rpc.voice_lover.ReqGetBannerDetail) returns (rbp.rpc.voice_lover.ResGetBannerDetail);
 
+  rpc AdminAudioList (rbp.rpc.voice_lover.ReqAdminAudioList) returns (rbp.rpc.voice_lover.ResAdminAudioList);
+
+  rpc AdminAudioDetail (rbp.rpc.voice_lover.ReqAdminAudioDetail) returns (rbp.rpc.voice_lover.ResAdminAudioDetail);
+
+  rpc AdminAudioUpdate (rbp.rpc.voice_lover.ReqAdminAudioUpdate) returns (rbp.rpc.voice_lover.ResAdminAudioUpdate);
+
+  rpc AdminAudioAudit (rbp.rpc.voice_lover.ReqAdminAudioAudit) returns (rbp.rpc.voice_lover.ResAdminAudioAudit);
+
+  rpc AdminAudioAuditReason (rbp.rpc.voice_lover.ReqAdminAudioAuditReason) returns (rbp.rpc.voice_lover.ResAdminAudioAuditReason);
+
+  rpc AdminAlbumCreate (rbp.rpc.voice_lover.ReqAdminAlbumCreate) returns (rbp.rpc.voice_lover.ResAdminAlbumCreate);
+
+  rpc AdminAlbumDel (rbp.rpc.voice_lover.ReqAdminAlbumDel) returns (rbp.rpc.voice_lover.ResAdminAlbumDel);
+
+  rpc AdminAlbumUpdate (rbp.rpc.voice_lover.ReqAdminAlbumUpdate) returns (rbp.rpc.voice_lover.ResAdminAlbumUpdate);
+
+  rpc AdminAlbumDetail (rbp.rpc.voice_lover.ReqAdminAlbumDetail) returns (rbp.rpc.voice_lover.ResAdminAlbumDetail);
+
+  rpc AdminAlbumList (rbp.rpc.voice_lover.ReqAdminAlbumList) returns (rbp.rpc.voice_lover.ResAdminAlbumList);
+
+  rpc AdminAudioCollectList (rbp.rpc.voice_lover.ReqAdminAudioCollectList) returns (rbp.rpc.voice_lover.ResAdminAudioCollectList);
+
+  rpc AdminAudioCollect (rbp.rpc.voice_lover.ReqAdminAudioCollect) returns (rbp.rpc.voice_lover.ResAdminAudioCollect);
+
+  rpc AdminSubjectCreate (rbp.rpc.voice_lover.ReqAdminSubjectCreate) returns (rbp.rpc.voice_lover.ResAdminSubjectCreate);
+
+  rpc AdminSubjectUpdate (rbp.rpc.voice_lover.ReqAdminSubjectUpdate) returns (rbp.rpc.voice_lover.ResAdminSubjectUpdate);
+
+  rpc AdminSubjectDel (rbp.rpc.voice_lover.ReqAdminSubjectDel) returns (rbp.rpc.voice_lover.ResAdminSubjectDel);
+
+  rpc AdminSubjectList (rbp.rpc.voice_lover.ReqAdminSubjectList) returns (rbp.rpc.voice_lover.ResAdminSubjectList);
+
+  rpc AdminAlbumCollect (rbp.rpc.voice_lover.ReqAdminAlbumCollect) returns (rbp.rpc.voice_lover.ResAdminAlbumCollect);
+
+  rpc AdminAlbumChoice (rbp.rpc.voice_lover.ReqAdminAlbumChoice) returns (rbp.rpc.voice_lover.ResAdminAlbumChoice);
+
+  rpc AdminAlbumCollectList (rbp.rpc.voice_lover.ReqAdminAlbumCollectList) returns (rbp.rpc.voice_lover.ResAdminAlbumCollectList);
+
+  rpc AdminSubjectDetail (rbp.rpc.voice_lover.ReqAdminSubjectDetail) returns (rbp.rpc.voice_lover.ResAdminSubjectDetail);
+
+  rpc AdminAlbumChoiceList (rbp.rpc.voice_lover.ReqAdminAlbumChoiceList) returns (rbp.rpc.voice_lover.ResAdminAlbumChoiceList);
+
+  rpc AdminBannerList (rbp.rpc.voice_lover.ReqAdminBannerList) returns (rbp.rpc.voice_lover.ResAdminBannerList);
+
+  rpc AdminBannerCreate (rbp.rpc.voice_lover.ReqAdminBannerCreate) returns (rbp.rpc.voice_lover.ResAdminBannerCreate);
+
+  rpc AdminBannerUpdate (rbp.rpc.voice_lover.ReqAdminBannerUpdate) returns (rbp.rpc.voice_lover.ResAdminBannerUpdate);
+
+  rpc AdminBannerDetail (rbp.rpc.voice_lover.ReqAdminBannerDetail) returns (rbp.rpc.voice_lover.ResAdminBannerDetail);
+
 }
