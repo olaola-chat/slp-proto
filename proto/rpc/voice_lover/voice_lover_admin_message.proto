@@ -242,12 +242,12 @@ message ReqAdminAlbumList {
   uint64 start_time = 2;
   uint64 end_time = 3;
   int32 collect_status = 4;
-  uint64 page = 5;
-  uint64 limit = 6;
+  int32 page = 5;
+  int32 limit = 6;
 }
 
 message ResAdminAlbumList {
-  AdminAlbum albums = 1;
+  repeated AdminAlbum albums = 1;
   int32 total = 2;
 }
 
