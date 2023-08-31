@@ -147,14 +147,15 @@ message ResGetBannerDetail {
 ////rpc
 
 message ReqAdminAudioList {
-  uint64 end_time = 1;
-  string user_str = 2 ;
-  int32 source = 3;
-  string label = 4;
-  string order = 5;
-  int32 audit_status = 6;
-  int32 page = 7;
-  int32 limit = 8;
+  uint64 start_time = 1;
+  uint64 end_time = 2;
+  string user_str = 3;
+  int32 source = 4;
+  string label = 5;
+  string order = 6;
+  int32 audit_status = 7;
+  int32 page = 8;
+  int32 limit = 9;
 }
 
 message ResAdminAudioList {
