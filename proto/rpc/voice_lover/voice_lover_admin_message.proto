@@ -362,6 +362,8 @@ message ReqAdminBannerList  {
   uint64 end_time = 2;
   string title = 3;
   string status = 4;
+  int32 pate = 5;
+  int32 limit = 6;
 }
 
 message ResAdminBannerList {
