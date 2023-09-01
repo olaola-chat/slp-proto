@@ -161,6 +161,8 @@ message ReqAdminAudioList {
 message ResAdminAudioList {
   repeated AdminAudio audios = 1;
   int32 total = 2;
+  bool success = 3;
+  string msg = 4;
 }
 
 message ReqAdminAudioDetail {
@@ -169,6 +171,8 @@ message ReqAdminAudioDetail {
 
 message ResAdminAudioDetail {
     AdminAudio audio = 1;
+    bool success = 2;
+    string msg = 3;
 }
 
 message ReqAdminAudioUpdate {
@@ -179,7 +183,10 @@ message ReqAdminAudioUpdate {
   uint64  op_uid = 5;
 }
 
-message ResAdminAudioUpdate {}
+message ResAdminAudioUpdate {
+  bool success = 1;
+  string msg = 2;
+}
 
 message ReqAdminAudioAudit {
   uint64 id = 1;
@@ -188,7 +195,10 @@ message ReqAdminAudioAudit {
   uint64 op_uid = 4;
 }
 
-message ResAdminAudioAudit {}
+message ResAdminAudioAudit {
+  bool success = 1;
+  string msg = 2;
+}
 
 message ReqAdminAudioAuditReason {
 
@@ -196,6 +206,8 @@ message ReqAdminAudioAuditReason {
 
 message ResAdminAudioAuditReason {
   repeated AdminAudioAuditReason reasons = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message ReqAdminAlbumCreate {
@@ -207,6 +219,8 @@ message ReqAdminAlbumCreate {
 
 message ResAdminAlbumCreate {
   uint64 id = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message ReqAdminAlbumDel {
@@ -215,6 +229,8 @@ message ReqAdminAlbumDel {
 }
 
 message ResAdminAlbumDel {
+  bool success = 1;
+  string msg = 2;
 }
 
 message ReqAdminAlbumUpdate {
@@ -226,7 +242,8 @@ message ReqAdminAlbumUpdate {
 }
 
 message ResAdminAlbumUpdate {
-
+  bool success = 1;
+  string msg = 2;
 }
 
 message  ReqAdminAlbumDetail  {
@@ -235,6 +252,8 @@ message  ReqAdminAlbumDetail  {
 
 message ResAdminAlbumDetail {
   AdminAlbum album = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message ReqAdminAlbumList {
@@ -249,6 +268,8 @@ message ReqAdminAlbumList {
 message ResAdminAlbumList {
   repeated AdminAlbum albums = 1;
   int32 total = 2;
+  bool success = 3;
+  string msg = 4;
 }
 
 message ReqAdminAudioCollectList {
@@ -265,6 +286,8 @@ message ReqAdminAudioCollectList {
 message ResAdminAudioCollectList {
     repeated  AdminAudioCollect audios = 1;
     int32 total = 2;
+  bool success = 3;
+  string msg = 4;
 }
 
 message ReqAdminAudioCollect {
@@ -274,7 +297,8 @@ message ReqAdminAudioCollect {
 }
 
 message ResAdminAudioCollect {
-
+  bool success = 1;
+  string msg = 2;
 }
 
 message ReqAdminSubjectCreate {
@@ -284,6 +308,8 @@ message ReqAdminSubjectCreate {
 
 message ResAdminSubjectCreate {
   uint64 id = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message ReqAdminSubjectUpdate {
@@ -292,7 +318,10 @@ message ReqAdminSubjectUpdate {
   uint64 op_uid = 3;
 }
 
-message ResAdminSubjectUpdate {}
+message ResAdminSubjectUpdate {
+  bool success = 1;
+  string msg = 2;
+}
 
 message  ReqAdminSubjectDel {
   uint64 id = 1;
@@ -300,7 +329,8 @@ message  ReqAdminSubjectDel {
 }
 
 message ResAdminSubjectDel {
-
+  bool success = 1;
+  string msg = 2;
 }
 
 message ReqAdminSubjectList {
@@ -314,6 +344,8 @@ message ReqAdminSubjectList {
 message ResAdminSubjectList {
   repeated AdminSubjectData list = 1;
   int32 total = 2;
+  bool success = 3;
+  string msg = 4;
 }
 
 message ReqAdminAlbumCollect  {
@@ -322,14 +354,20 @@ message ReqAdminAlbumCollect  {
   int32 type = 3;
 }
 
-message ResAdminAlbumCollect {}
+message ResAdminAlbumCollect {
+  bool success = 1;
+  string msg = 2;
+}
 
 message ReqAdminAlbumChoice {
   uint64 id = 1;
   int32 choice = 2;
 }
 
-message ResAdminAlbumChoice {}
+message ResAdminAlbumChoice {
+  bool success = 1;
+  string msg = 2;
+}
 
 message  ReqAdminAlbumCollectList  {
   string album_str = 1;
@@ -341,6 +379,8 @@ message  ReqAdminAlbumCollectList  {
 message ResAdminAlbumCollectList {
   repeated AdminAlbumSubject list = 1;
   int32 total = 2;
+  bool success = 3;
+  string msg = 4;
 }
 
 message ReqAdminSubjectDetail {
@@ -349,12 +389,16 @@ message ReqAdminSubjectDetail {
 
 message ResAdminSubjectDetail {
   AdminSubjectData subject = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message ReqAdminAlbumChoiceList {}
 
 message ResAdminAlbumChoiceList {
   repeated AdminAlbumData albums = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message ReqAdminBannerList  {
@@ -369,6 +413,8 @@ message ReqAdminBannerList  {
 message ResAdminBannerList {
   repeated AdminBannerData list = 1;
   int32 total = 2;
+  bool success = 3;
+  string msg = 4;
 }
 
 message ReqAdminBannerCreate {
@@ -383,6 +429,8 @@ message ReqAdminBannerCreate {
 
 message ResAdminBannerCreate {
   uint64 id = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message ReqAdminBannerUpdate {
@@ -397,6 +445,8 @@ message ReqAdminBannerUpdate {
 }
 
 message ResAdminBannerUpdate {
+  bool success = 1;
+  string msg = 2;
 }
 
 message ReqAdminBannerDetail {
@@ -405,6 +455,8 @@ message ReqAdminBannerDetail {
 
 message ResAdminBannerDetail {
   AdminBannerData banner = 1;
+  bool success = 2;
+  string msg = 3;
 }
 
 message AdminAlbumData {
