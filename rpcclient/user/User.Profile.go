@@ -20,6 +20,15 @@ type userProfile struct {
 	*base.Base
 }
 
+func (s *userProfile) Auth(ctx context.Context, token string) (*user.RepUserAuth, error) {
+	req := &user.ReqUserAuth{
+		Token: token,
+	}
+	reply := &user.RepUserAuth{}
+	err := s.Call(ctx, "Auth", req, reply)
+	return reply, err
+}
+
 func (s *userProfile) NeedVerify(ctx context.Context, req *user.ReqNeedVerify) (*user.RepNeedVerify, error) {
 	reply := &user.RepNeedVerify{}
 	err := s.Call(ctx, "NeedVerify", req, reply)
