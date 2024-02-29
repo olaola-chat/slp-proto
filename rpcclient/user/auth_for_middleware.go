@@ -26,3 +26,21 @@ func Auth(ctx context.Context, token string) (middleware.AuthUser, error) {
 
 	return user, nil
 }
+
+func Auth2(ctx context.Context, token string) (middleware.AuthUser, error) {
+	res, err := UserProfile.Auth(ctx, token)
+	if err != nil {
+		return middleware.AuthUser{}, err
+	}
+
+	user := middleware.AuthUser{
+		UID:      res.Uid,
+		Time:     res.Time,
+		AppID:    uint8(res.AppId),
+		Salt:     res.Salt,
+		Platform: res.Platform,
+		Channel:  res.Channel,
+	}
+
+	return user, nil
+}
