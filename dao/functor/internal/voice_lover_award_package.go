@@ -35,7 +35,7 @@ type VoiceLoverAwardPackageDao struct {
 type voiceLoverAwardPackageColumns struct {
 	ID         string //
 	Name       string // 名称
-	Awards     string // 装扮id列表，用,分隔
+	Awards     string // 奖励内容，json格式
 	CreateTime string //
 	UpdateTime string //
 }

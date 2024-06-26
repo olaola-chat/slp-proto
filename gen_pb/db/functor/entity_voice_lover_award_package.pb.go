@@ -40,7 +40,7 @@ type EntityVoiceLoverAwardPackage struct {
 	//@inject_tag: orm:"name"
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"` // 名称
 	//@inject_tag: orm:"awards"
-	Awards string `protobuf:"bytes,3,opt,name=awards,proto3" json:"awards,omitempty"` // 装扮id列表，用,分隔
+	Awards string `protobuf:"bytes,3,opt,name=awards,proto3" json:"awards,omitempty"` // 奖励内容，json格式
 	//@inject_tag: orm:"create_time"
 	CreateTime uint32 `protobuf:"varint,4,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"` //
 	//@inject_tag: orm:"update_time"
