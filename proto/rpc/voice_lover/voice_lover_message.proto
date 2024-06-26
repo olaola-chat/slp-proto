@@ -296,16 +296,3 @@ message ReqGetValidAudioUsers {
 message ResGetValidAudioUsers {
   repeated uint32 uids = 1;
 }
-
-message ReqAddActivity {
-  string title = 1;
-  string intro = 2;
-  string cover = 3;
-  int64 start_time = 4;
-  int64 end_time = 5;
-}
-
-message RespAddActivity {
-  bool success = 1;
-  string msg = 2;
-}
