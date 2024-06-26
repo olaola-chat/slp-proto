@@ -11,23 +11,15 @@ option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/functor";
 
 message EntityVoiceLoverActivityRankAward {
            //@inject_tag: orm:"id,primary"   
-    uint32 id                               = 1;  //                         
+    uint32 id                               = 1; //                     
            //@inject_tag: orm:"name"         
-    string name                             = 2;  // 名称                    
-           //@inject_tag: orm:"activity_id"  
-    uint32 activity_id                      = 3;  // 活动id                  
+    string name                             = 2; // 名称                
            //@inject_tag: orm:"package_id"   
-    uint32 package_id                       = 4;  // 奖励包id                
-           //@inject_tag: orm:"rank_type"    
-    uint32 rank_type                        = 5;  // 排行名次 0-单个 1-范围  
-           //@inject_tag: orm:"rank"         
-    uint32 rank                             = 6;  // （起始）名次            
-           //@inject_tag: orm:"rank_end"     
-    uint32 rank_end                         = 7;  // 结束名次                
-           //@inject_tag: orm:"days"         
-    uint32 days                             = 8;  // 发放天数                
+    uint32 package_id                       = 3; // 奖励包id            
+           //@inject_tag: orm:"content"      
+    string content                          = 4; // 奖励内容，json格式  
            //@inject_tag: orm:"create_time"  
-    uint32 create_time                      = 9;  //                         
+    uint32 create_time                      = 5; //                     
            //@inject_tag: orm:"update_time"  
-    uint32 update_time                      = 10; //                         
+    uint32 update_time                      = 6; //                     
 }

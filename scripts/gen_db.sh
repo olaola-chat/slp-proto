@@ -37,7 +37,7 @@ gendao(){
 
 gengo() {
     # protoc --go_out=. --proto_path=gen_proto/db/$2 entity_$1.proto
-    protoc --go_out=${GOPATH}/src -I=./gen_proto db/$2/entity_$1.proto
+    protoc --go_out=. -I=./gen_proto db/$2/entity_$1.proto
     if [ $? -ne 0 ]; then
         echo "gengo failed"
         exit 1

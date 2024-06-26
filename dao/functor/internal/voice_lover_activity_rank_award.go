@@ -35,12 +35,8 @@ type VoiceLoverActivityRankAwardDao struct {
 type voiceLoverActivityRankAwardColumns struct {
 	ID         string //
 	Name       string // 名称
-	ActivityID string // 活动id
 	PackageID  string // 奖励包id
-	RankType   string // 排行名次 0-单个 1-范围
-	Rank       string // （起始）名次
-	RankEnd    string // 结束名次
-	Days       string // 发放天数
+	Content    string // 奖励内容，json格式
 	CreateTime string //
 	UpdateTime string //
 }
@@ -54,12 +50,8 @@ var (
 		Columns: voiceLoverActivityRankAwardColumns{
 			ID:         "id",
 			Name:       "name",
-			ActivityID: "activity_id",
 			PackageID:  "package_id",
-			RankType:   "rank_type",
-			Rank:       "rank",
-			RankEnd:    "rank_end",
-			Days:       "days",
+			Content:    "content",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",
 		},
