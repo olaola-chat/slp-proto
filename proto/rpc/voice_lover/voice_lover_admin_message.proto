@@ -562,6 +562,7 @@ message ReqAdminAddActivity {
 message RespAdminAddActivity {
   bool success = 1;
   string msg = 2;
+  uint32 id = 3;
 }
 
 message ReqAdminAddAwardPackage {
@@ -572,15 +573,10 @@ message ReqAdminAddAwardPackage {
 message RespAdminAddAwardPackage {
   bool success = 1;
   string msg = 2;
+  uint32 id = 3;
 }
 
 message ReqAdminAddRankAward {
-  message RankInfo {
-    uint32 type = 1; // 排行奖励类型 1-单个 2-范围
-    uint32 start = 3; // 开始名次
-    uint32 end = 4; // 结束名次
-    uint32 days = 5; // 奖励天数
-  }
   string name = 1;
   uint64 package_id = 2; // 奖励包id
   repeated RankInfo info = 3;
@@ -589,4 +585,80 @@ message ReqAdminAddRankAward {
 message RespAdminAddRankAward {
   bool success = 1;
   string msg = 2;
+  uint32 id = 3;
+}
+
+// 活动列表
+message ReqAdminActivityList {
+  uint32 page = 1;
+  uint32 limit = 2;
+  uint32 id = 3; // 搜索指定id的挑战
+  string title = 4; // 根据title模糊搜索
+}
+
+message RespAdminActivityList {
+  message Item {
+    uint32 id = 1;
+    string title = 2;
+    string intro = 3;
+    string cover = 4;
+    int64 start_time = 5;
+    int64 end_time = 6;
+    uint32 rank_award_id = 7;
+    int64 create_time = 8;
+    int64 update_time = 9;
+  }
+  bool success = 1;
+  string msg = 2;
+  repeated Item data = 3;
+  uint32 total = 4;
+}
+
+// 奖励包列表
+message ReqAdminAwardPackageList {
+  uint32 page = 1;
+  uint32 limit = 2;
+  uint32 id = 3; // 搜索指定id的挑战
+  string name = 4; // 根据name模糊搜索
+}
+
+message RespAdminAwardPackageList {
+  message Item {
+    uint32 id = 1;
+    string name = 2;
+    repeated uint32 pretend_ids = 3; // 装扮id列表
+    int64 create_time = 4;
+    int64 update_time = 5;
+  }
+  bool success = 1;
+  string msg = 2;
+  repeated Item data = 3;
+  uint32 total = 4;
+}
+
+// 排行奖励列表
+message ReqAdminRankAwardList {
+  uint32 page = 1;
+  uint32 limit = 2;
+  uint32 id = 3; // 搜索指定id的挑战
+  string name = 4; // 根据name模糊搜索
+}
+
+message RespAdminRankAwardList {
+  message Item {
+    string name = 1;
+    uint64 package_id = 2; // 奖励包id
+    repeated RankInfo info = 3;
+  }
+  bool success = 1;
+  string msg = 2;
+  repeated Item data = 3;
+  uint32 total = 4;
+}
+
+message RankInfo {
+  uint32 type = 1; // 排行奖励类型 1-单个 2-范围
+  uint32 start = 3; // 开始名次
+  uint32 end = 4; // 结束名次
+  uint32 days = 5; // 奖励天数
 }
