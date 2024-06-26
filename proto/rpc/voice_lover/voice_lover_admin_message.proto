@@ -550,15 +550,43 @@ message AdminAudioEdit {
   string avatar = 3;
 }
 
-message ReqAddActivity {
-  string title = 1;
-  string intro = 2;
-  string cover = 3;
-  int64 start_time = 4;
-  int64 end_time = 5;
+message ReqAdminAddActivity {
+  string title = 1; // 标题
+  string intro = 2; // 介绍
+  string cover = 3; // 封面
+  int64 start_time = 4; // 开始时间 秒级时间戳
+  int64 end_time = 5; // 结束时间
+  uint32 rank_award_id = 6; // 排行奖励id
 }
 
-message RespAddActivity {
+message RespAdminAddActivity {
+  bool success = 1;
+  string msg = 2;
+}
+
+message ReqAdminAddAwardPackage {
+  string name = 1;
+  repeated uint32 pretend_ids = 2;
+}
+
+message RespAdminAddAwardPackage {
+  bool success = 1;
+  string msg = 2;
+}
+
+message ReqAdminAddRankAward {
+  message RankInfo {
+    uint32 type = 1; // 排行奖励类型 1-单个 2-范围
+    uint32 start = 3; // 开始名次
+    uint32 end = 4; // 结束名次
+    uint32 days = 5; // 奖励天数
+  }
+  string name = 1;
+  uint64 package_id = 2; // 奖励包id
+  repeated RankInfo info = 3;
+}
+
+message RespAdminAddRankAward {
   bool success = 1;
   string msg = 2;
 }
