@@ -33,14 +33,15 @@ type VoiceLoverActivityDao struct {
 
 // VoiceLoverActivityColumns defines and stores column names for table voice_lover_activity.
 type voiceLoverActivityColumns struct {
-	ID         string //
-	Title      string // 标题
-	Intro      string // 介绍
-	Cover      string // 封面
-	StartTime  string // 开始时间
-	EndTime    string // 结束时间
-	CreateTime string //
-	UpdateTime string //
+	ID          string //
+	Title       string // 标题
+	Intro       string // 介绍
+	Cover       string // 封面
+	StartTime   string // 开始时间
+	EndTime     string // 结束时间
+	RankAwardID string // 排行奖励id
+	CreateTime  string //
+	UpdateTime  string //
 }
 
 var (
@@ -50,14 +51,15 @@ var (
 		DB:    g.DB("functor"),
 		Table: "voice_lover_activity",
 		Columns: voiceLoverActivityColumns{
-			ID:         "id",
-			Title:      "title",
-			Intro:      "intro",
-			Cover:      "cover",
-			StartTime:  "start_time",
-			EndTime:    "end_time",
-			CreateTime: "create_time",
-			UpdateTime: "update_time",
+			ID:          "id",
+			Title:       "title",
+			Intro:       "intro",
+			Cover:       "cover",
+			StartTime:   "start_time",
+			EndTime:     "end_time",
+			RankAwardID: "rank_award_id",
+			CreateTime:  "create_time",
+			UpdateTime:  "update_time",
 		},
 	}
 )

@@ -10,20 +10,22 @@ package db.functor;
 option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/functor";
 
 message EntityVoiceLoverActivity {
-           //@inject_tag: orm:"id,primary"   
-    uint32 id                               = 1; //           
-           //@inject_tag: orm:"title"        
-    string title                            = 2; // 标题      
-           //@inject_tag: orm:"intro"        
-    string intro                            = 3; // 介绍      
-           //@inject_tag: orm:"cover"        
-    string cover                            = 4; // 封面      
-           //@inject_tag: orm:"start_time"   
-    uint32 start_time                       = 5; // 开始时间  
-           //@inject_tag: orm:"end_time"     
-    uint32 end_time                         = 6; // 结束时间  
-           //@inject_tag: orm:"create_time"  
-    uint32 create_time                      = 7; //           
-           //@inject_tag: orm:"update_time"  
-    uint32 update_time                      = 8; //           
+           //@inject_tag: orm:"id,primary"     
+    uint32 id                                 = 1; //             
+           //@inject_tag: orm:"title"          
+    string title                              = 2; // 标题        
+           //@inject_tag: orm:"intro"          
+    string intro                              = 3; // 介绍        
+           //@inject_tag: orm:"cover"          
+    string cover                              = 4; // 封面        
+           //@inject_tag: orm:"start_time"     
+    uint32 start_time                         = 5; // 开始时间    
+           //@inject_tag: orm:"end_time"       
+    uint32 end_time                           = 6; // 结束时间    
+           //@inject_tag: orm:"rank_award_id"  
+    uint32 rank_award_id                      = 7; // 排行奖励id  
+           //@inject_tag: orm:"create_time"    
+    uint32 create_time                        = 8; //             
+           //@inject_tag: orm:"update_time"    
+    uint32 update_time                        = 9; //             
 }
