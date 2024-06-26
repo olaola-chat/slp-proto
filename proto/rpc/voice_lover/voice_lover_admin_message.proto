@@ -557,6 +557,7 @@ message ReqAdminAddActivity {
   int64 start_time = 4; // 开始时间 秒级时间戳
   int64 end_time = 5; // 结束时间
   uint32 rank_award_id = 6; // 排行奖励id
+  uint32 id = 7; // 大于0表示更新
 }
 
 message RespAdminAddActivity {
@@ -568,6 +569,7 @@ message RespAdminAddActivity {
 message ReqAdminAddAwardPackage {
   string name = 1;
   repeated uint32 pretend_ids = 2;
+  uint32 id = 3; // 大于0表示更新
 }
 
 message RespAdminAddAwardPackage {
@@ -580,6 +582,7 @@ message ReqAdminAddRankAward {
   string name = 1;
   uint64 package_id = 2; // 奖励包id
   repeated RankInfo info = 3;
+  uint32 id = 4; // 大于0表示更新
 }
 
 message RespAdminAddRankAward {
@@ -661,4 +664,34 @@ message RankInfo {
   uint32 start = 3; // 开始名次
   uint32 end = 4; // 结束名次
   uint32 days = 5; // 奖励天数
+}
+
+// 删除活动
+message ReqAdminActivityDelete {
+  uint32 id = 1;
+}
+
+message RespAdminActivityDelete {
+  bool success = 1;
+  string msg = 2;
+}
+
+// 删除奖励包
+message ReqAdminAwardPackageDelete {
+  uint32 id = 1;
+}
+
+message RespAdminAwardPackageDelete {
+  bool success = 1;
+  string msg = 2;
+}
+
+// 删除排行奖励
+message ReqAdminRankAwardDelete {
+  uint32 id = 1;
+}
+
+message RespAdminRankAwardDelete {
+  bool success = 1;
+  string msg = 2;
 }
