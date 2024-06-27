@@ -168,3 +168,21 @@ func (s *voiceLoverMain) GetValidAudioUsers(ctx context.Context, req *voice_love
 	err := s.Call(ctx, "GetValidAudioUsers", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) GetActivity(ctx context.Context, req *voice_lover.ReqGetActivity) (*voice_lover.RespGetActivity, error) {
+	reply := &voice_lover.RespGetActivity{}
+	err := s.Call(ctx, "GetActivity", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetAwardPackage(ctx context.Context, req *voice_lover.ReqGetAwardPackage) (*voice_lover.RespGetAwardPackage, error) {
+	reply := &voice_lover.RespGetAwardPackage{}
+	err := s.Call(ctx, "GetAwardPackage", req, reply)
+	return reply, err
+}
+
+func (s *voiceLoverMain) GetRankAward(ctx context.Context, req *voice_lover.ReqGetRankAward) (*voice_lover.RespGetRankAward, error) {
+	reply := &voice_lover.RespGetRankAward{}
+	err := s.Call(ctx, "GetRankAward", req, reply)
+	return reply, err
+}

@@ -550,6 +550,7 @@ message AdminAudioEdit {
   string avatar = 3;
 }
 
+
 message ReqAdminAddActivity {
   string title = 1; // 标题
   string intro = 2; // 介绍
@@ -557,8 +558,8 @@ message ReqAdminAddActivity {
   int64 start_time = 4; // 开始时间 秒级时间戳
   int64 end_time = 5; // 结束时间
   uint32 rank_award_id = 6; // 排行奖励id
-  uint32 id = 7; // 大于0表示更新
-  string rule_url = 8; // 投稿规则链接
+  string jump_url = 7; //jump_url
+  uint32 id = 8; // 大于0表示更新
 }
 
 message RespAdminAddActivity {
@@ -609,8 +610,10 @@ message RespAdminActivityList {
     int64 start_time = 5;
     int64 end_time = 6;
     uint32 rank_award_id = 7;
-    int64 create_time = 8;
-    int64 update_time = 9;
+    string rank_award_name = 8;
+    string jump_url = 9;
+    int64 create_time = 10;
+    int64 update_time = 11;
   }
   bool success = 1;
   string msg = 2;
@@ -652,10 +655,11 @@ message RespAdminRankAwardList {
   message Item {
     uint32 id = 1;
     string name = 2;
-    uint64 package_id = 3; // 奖励包id
-    repeated RankInfo info = 4;
-    int64 create_time = 5;
-    int64 update_time = 6;
+    uint32 package_id = 3; // 奖励包id
+    string package_name = 4; // 奖励包名称
+    repeated RankInfo info = 5;
+    int64 create_time = 6;
+    int64 update_time = 7;
   }
   bool success = 1;
   string msg = 2;
