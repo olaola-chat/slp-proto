@@ -649,9 +649,12 @@ message ReqAdminRankAwardList {
 
 message RespAdminRankAwardList {
   message Item {
-    string name = 1;
-    uint64 package_id = 2; // 奖励包id
-    repeated RankInfo info = 3;
+    uint32 id = 1;
+    string name = 2;
+    uint64 package_id = 3; // 奖励包id
+    repeated RankInfo info = 4;
+    int64 create_time = 5;
+    int64 update_time = 6;
   }
   bool success = 1;
   string msg = 2;
