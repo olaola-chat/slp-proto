@@ -40,6 +40,7 @@ type voiceLoverActivityColumns struct {
 	StartTime   string // 开始时间
 	EndTime     string // 结束时间
 	RankAwardID string // 排行奖励id
+	RuleURL     string // 投稿规则链接
 	CreateTime  string //
 	UpdateTime  string //
 }
@@ -58,6 +59,7 @@ var (
 			StartTime:   "start_time",
 			EndTime:     "end_time",
 			RankAwardID: "rank_award_id",
+			RuleURL:     "rule_url",
 			CreateTime:  "create_time",
 			UpdateTime:  "update_time",
 		},
