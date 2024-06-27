@@ -302,6 +302,12 @@ message ReqGetActivity {
 }
 
 message RespGetActivity {
+  bool success = 1;
+  string msg = 2;
+  ActivityInfo activity = 3;
+}
+
+message ActivityInfo {
   uint32 id = 1;
   string title = 2;
   string intro = 3;
