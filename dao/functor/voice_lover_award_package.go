@@ -5,7 +5,10 @@
 package functor
 
 import (
+	"context"
+
 	"github.com/olaola-chat/rbp-proto/dao/functor/internal"
+	"github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
 )
 
 // voiceLoverAwardPackageDao is the manager for logic model data accessing
@@ -23,3 +26,19 @@ var (
 )
 
 // Fill with you ideas below.
+func (v *voiceLoverAwardPackageDao) GetList(ctx context.Context, id uint32, name string, page, limit int) ([]*functor.EntityVoiceLoverAwardPackage, int, error) {
+	//dao := functor2.VoiceLoverAwardPackage.Ctx(ctx)
+	//if id > 0 {
+	//	dao = dao.Where("id = ?", id)
+	//}
+	//if name = strings.TrimSpace(name); name != "" {
+	//	dao = dao.Where("name = ?", name)
+	//}
+	//list, err := dao.Order("id desc").Page(page, limit).FindAll()
+	list, err := v.FindAll()
+	total, _ := v.Count()
+	if err != nil {
+		return nil, 0, err
+	}
+	return list, total, nil
+}
