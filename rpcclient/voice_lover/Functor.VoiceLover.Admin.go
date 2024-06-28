@@ -300,3 +300,9 @@ func (s *voiceLoverAdmin) AdminBannerDetail(ctx context.Context, req *voice_love
 	err := s.Call(ctx, "AdminBannerDetail", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverAdmin) AdminAwardPackageList(ctx context.Context, req *voice_lover.ReqAdminAwardPackageList) (*voice_lover.RespAdminAwardPackageList, error) {
+	reply := &voice_lover.RespAdminAwardPackageList{}
+	err := s.Call(ctx, "AdminAwardPackageList", req, reply)
+	return reply, err
+}
