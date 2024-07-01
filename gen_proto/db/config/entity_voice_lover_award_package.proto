@@ -5,9 +5,9 @@
 
 syntax = "proto3";
 
-package db.functor;
+package db.config;
 
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/functor";
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/config";
 
 message EntityVoiceLoverAwardPackage {
            //@inject_tag: orm:"id,primary"   
