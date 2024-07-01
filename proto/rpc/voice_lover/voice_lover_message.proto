@@ -359,3 +359,18 @@ message PretendInfo {
   string name = 2; // 装扮名称
   string icon = 3;
 }
+
+message ReqBatchGetAudioInfo {
+  repeated uint32 audio_id = 1;
+}
+
+message RespBatchGetAudioInfo {
+  message Audio {
+    uint32 id = 1;
+    string title = 2;
+    string cover = 3;
+  }
+  bool Success = 1;
+  string Message = 2;
+  repeated Audio items = 3;
+}
