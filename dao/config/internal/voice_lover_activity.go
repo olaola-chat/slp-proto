@@ -19,7 +19,7 @@ import (
 	"github.com/gogf/gf/util/gconv"
 
 	//	"github.com/olaola-chat/rbp-proto/model"
-	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
+	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/config"
 )
 
 // VoiceLoverActivityDao is the manager for logic model data accessing
@@ -48,8 +48,8 @@ type voiceLoverActivityColumns struct {
 var (
 	// VoiceLoverActivity is globally public accessible object for table voice_lover_activity operations.
 	VoiceLoverActivity = VoiceLoverActivityDao{
-		M:     g.DB("functor").Model("voice_lover_activity").Safe(),
-		DB:    g.DB("functor"),
+		M:     g.DB("config").Model("voice_lover_activity").Safe(),
+		DB:    g.DB("config"),
 		Table: "voice_lover_activity",
 		Columns: voiceLoverActivityColumns{
 			ID:          "id",
