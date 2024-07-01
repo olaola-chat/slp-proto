@@ -48,6 +48,7 @@ type voiceLoverAudioColumns struct {
 	ApplyTime   string // 审核时间
 	CreateTime  string // 创建时间
 	UpdateTime  string // 更新时间
+	ActivityID  string // 活动id
 }
 
 var (
@@ -72,6 +73,7 @@ var (
 			ApplyTime:   "apply_time",
 			CreateTime:  "create_time",
 			UpdateTime:  "update_time",
+			ActivityID:  "activity_id",
 		},
 	}
 )
