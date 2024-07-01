@@ -369,6 +369,7 @@ message RespBatchGetAudioInfo {
     uint32 id = 1;
     string title = 2;
     string cover = 3;
+    uint32 pub_uid = 4;
   }
   bool Success = 1;
   string Message = 2;
