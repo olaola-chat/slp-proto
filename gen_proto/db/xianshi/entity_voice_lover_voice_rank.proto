@@ -5,9 +5,9 @@
 
 syntax = "proto3";
 
-package db.functor;
+package db.xianshi;
 
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/functor";
+option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi";
 
 message EntityVoiceLoverVoiceRank {
            //@inject_tag: orm:"id,primary"   

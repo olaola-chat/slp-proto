@@ -19,7 +19,7 @@ import (
 	"github.com/gogf/gf/util/gconv"
 
 	//	"github.com/olaola-chat/rbp-proto/model"
-	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
+	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
 )
 
 // VoiceLoverVoiceRankDao is the manager for logic model data accessing
@@ -44,8 +44,8 @@ type voiceLoverVoiceRankColumns struct {
 var (
 	// VoiceLoverVoiceRank is globally public accessible object for table voice_lover_voice_rank operations.
 	VoiceLoverVoiceRank = VoiceLoverVoiceRankDao{
-		M:     g.DB("functor").Model("voice_lover_voice_rank").Safe(),
-		DB:    g.DB("functor"),
+		M:     g.DB("xianshi").Model("voice_lover_voice_rank").Safe(),
+		DB:    g.DB("xianshi"),
 		Table: "voice_lover_voice_rank",
 		Columns: voiceLoverVoiceRankColumns{
 			ID:         "id",
