@@ -375,3 +375,15 @@ message RespBatchGetAudioInfo {
   string Message = 2;
   repeated Audio items = 3;
 }
+
+message ReqGenRecAlbum {
+  string name = 1; // 专辑名称
+  string intro = 2; // 专辑简介
+  string cover = 3; // 专辑封面
+  repeated uint32 audio_id = 4; // 声音id
+}
+
+message RespGenRecAlbum {
+  bool Success = 1;
+  string Message = 2;
+}
