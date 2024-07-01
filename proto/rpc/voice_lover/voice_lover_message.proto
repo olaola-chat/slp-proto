@@ -22,6 +22,7 @@ message ReqPost {
   string edit_cover = 10;
   string labels = 11;
   uint32 seconds = 12;
+  uint32 activity_id = 13;
 }
 
 message ReqGetAlbumInfoById {
