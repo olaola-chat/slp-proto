@@ -387,3 +387,13 @@ message RespGenRecAlbum {
   bool Success = 1;
   string Message = 2;
 }
+
+message ReqGetMainPageAudios {
+  uint32 uid = 1;
+}
+
+message RespGetMainPageAudios {
+  bool Success = 1;
+  string Message = 2;
+  repeated AudioData audios = 3;
+}
