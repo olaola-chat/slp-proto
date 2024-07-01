@@ -19,7 +19,7 @@ import (
 	"github.com/gogf/gf/util/gconv"
 
 	//	"github.com/olaola-chat/rbp-proto/model"
-	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/functor"
+	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/config"
 )
 
 // VoiceLoverActivityRankAwardDao is the manager for logic model data accessing
@@ -44,8 +44,8 @@ type voiceLoverActivityRankAwardColumns struct {
 var (
 	// VoiceLoverActivityRankAward is globally public accessible object for table voice_lover_activity_rank_award operations.
 	VoiceLoverActivityRankAward = VoiceLoverActivityRankAwardDao{
-		M:     g.DB("functor").Model("voice_lover_activity_rank_award").Safe(),
-		DB:    g.DB("functor"),
+		M:     g.DB("config").Model("voice_lover_activity_rank_award").Safe(),
+		DB:    g.DB("config"),
 		Table: "voice_lover_activity_rank_award",
 		Columns: voiceLoverActivityRankAwardColumns{
 			ID:         "id",
