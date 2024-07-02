@@ -186,9 +186,3 @@ func (s *voiceLoverMain) GetRankAward(ctx context.Context, req *voice_lover.ReqG
 	err := s.Call(ctx, "GetRankAward", req, reply)
 	return reply, err
 }
-
-func (s *voiceLoverMain) GetMainPageAudios(ctx context.Context, req *voice_lover.ReqGetMainPageAudios) (*voice_lover.RespGetMainPageAudios, error) {
-	reply := &voice_lover.RespGetMainPageAudios{}
-	err := s.Call(ctx, "GetMainPageAudios", req, reply)
-	return reply, err
-}
