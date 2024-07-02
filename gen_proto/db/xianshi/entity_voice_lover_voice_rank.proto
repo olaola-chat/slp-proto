@@ -11,15 +11,17 @@ option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi";
 
 message EntityVoiceLoverVoiceRank {
            //@inject_tag: orm:"id,primary"   
-    uint32 id                               = 1; //         
+    uint32 id                               = 1; //                                 
            //@inject_tag: orm:"activity_id"  
-    uint32 activity_id                      = 2; // 活动id  
+    uint32 activity_id                      = 2; // 活动id                          
            //@inject_tag: orm:"audio_id"     
-    uint32 audio_id                         = 3; // 作品id  
+    uint32 audio_id                         = 3; // 作品id                          
            //@inject_tag: orm:"like_num"     
-    uint32 like_num                         = 4; // 点赞数  
+    uint32 like_num                         = 4; // 点赞数                          
            //@inject_tag: orm:"create_time"  
-    uint32 create_time                      = 5; //         
+    uint32 create_time                      = 5; //                                 
            //@inject_tag: orm:"update_time"  
-    uint32 update_time                      = 6; //         
+    uint32 update_time                      = 6; //                                 
+           //@inject_tag: orm:"sent_award"   
+    uint32 sent_award                       = 7; // 是否已发奖励 0-未发放 1-已发放  
 }

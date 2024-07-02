@@ -39,6 +39,7 @@ type voiceLoverVoiceRankColumns struct {
 	LikeNum    string // 点赞数
 	CreateTime string //
 	UpdateTime string //
+	SentAward  string // 是否已发奖励 0-未发放 1-已发放
 }
 
 var (
@@ -54,6 +55,7 @@ var (
 			LikeNum:    "like_num",
 			CreateTime: "create_time",
 			UpdateTime: "update_time",
+			SentAward:  "sent_award",
 		},
 	}
 )
