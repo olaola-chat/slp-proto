@@ -198,3 +198,9 @@ func (s *voiceLoverMain) BatchCheckUserCollect(ctx context.Context, req *voice_l
 	err := s.Call(ctx, "BatchCheckUserCollect", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) BatchGetCollectNum(ctx context.Context, req *voice_lover.ReqBatchGetCollectNum) (*voice_lover.RespBatchGetCollectNum, error) {
+	reply := &voice_lover.RespBatchGetCollectNum{}
+	err := s.Call(ctx, "BatchGetCollectNum", req, reply)
+	return reply, err
+}

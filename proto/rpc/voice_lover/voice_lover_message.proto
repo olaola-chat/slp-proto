@@ -406,3 +406,13 @@ message RespBatchCheckUserCollect {
   string Message = 2;
   map<uint32, bool> collect_info = 3;
 }
+
+message ReqBatchGetCollectNum {
+  repeated uint32 collect_id = 1;
+}
+
+message RespBatchGetCollectNum {
+  bool Success = 1;
+  string Message = 2;
+  map<uint32, uint32> nums = 3;
+}
