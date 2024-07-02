@@ -36,15 +36,15 @@ type EntityVoiceLoverAwardPackage struct {
 	unknownFields protoimpl.UnknownFields
 
 	//@inject_tag: orm:"id,primary"
-	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"` //
+	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` //
 	//@inject_tag: orm:"name"
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"` // 名称
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" orm:"name"` // 名称
 	//@inject_tag: orm:"awards"
-	Awards string `protobuf:"bytes,3,opt,name=awards,proto3" json:"awards,omitempty"` // 奖励内容，json格式
+	Awards string `protobuf:"bytes,3,opt,name=awards,proto3" json:"awards,omitempty" orm:"awards"` // 奖励内容，json格式
 	//@inject_tag: orm:"create_time"
-	CreateTime uint32 `protobuf:"varint,4,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"` //
+	CreateTime uint32 `protobuf:"varint,4,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time"` //
 	//@inject_tag: orm:"update_time"
-	UpdateTime uint32 `protobuf:"varint,5,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"` //
+	UpdateTime uint32 `protobuf:"varint,5,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty" orm:"update_time"` //
 }
 
 func (x *EntityVoiceLoverAwardPackage) Reset() {
