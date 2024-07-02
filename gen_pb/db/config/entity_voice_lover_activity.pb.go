@@ -36,25 +36,25 @@ type EntityVoiceLoverActivity struct {
 	unknownFields protoimpl.UnknownFields
 
 	//@inject_tag: orm:"id,primary"
-	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"` //
+	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` //
 	//@inject_tag: orm:"title"
-	Title string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"` // 标题
+	Title string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty" orm:"title"` // 标题
 	//@inject_tag: orm:"intro"
-	Intro string `protobuf:"bytes,3,opt,name=intro,proto3" json:"intro,omitempty"` // 介绍
+	Intro string `protobuf:"bytes,3,opt,name=intro,proto3" json:"intro,omitempty" orm:"intro"` // 介绍
 	//@inject_tag: orm:"cover"
-	Cover string `protobuf:"bytes,4,opt,name=cover,proto3" json:"cover,omitempty"` // 封面
+	Cover string `protobuf:"bytes,4,opt,name=cover,proto3" json:"cover,omitempty" orm:"cover"` // 封面
 	//@inject_tag: orm:"start_time"
-	StartTime uint32 `protobuf:"varint,5,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"` // 开始时间
+	StartTime uint32 `protobuf:"varint,5,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty" orm:"start_time"` // 开始时间
 	//@inject_tag: orm:"end_time"
-	EndTime uint32 `protobuf:"varint,6,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"` // 结束时间
+	EndTime uint32 `protobuf:"varint,6,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty" orm:"end_time"` // 结束时间
 	//@inject_tag: orm:"rank_award_id"
-	RankAwardId uint32 `protobuf:"varint,7,opt,name=rank_award_id,json=rankAwardId,proto3" json:"rank_award_id,omitempty"` // 排行奖励id
+	RankAwardId uint32 `protobuf:"varint,7,opt,name=rank_award_id,json=rankAwardId,proto3" json:"rank_award_id,omitempty" orm:"rank_award_id"` // 排行奖励id
 	//@inject_tag: orm:"rule_url"
-	RuleUrl string `protobuf:"bytes,8,opt,name=rule_url,json=ruleUrl,proto3" json:"rule_url,omitempty"` // 投稿规则链接
+	RuleUrl string `protobuf:"bytes,8,opt,name=rule_url,json=ruleUrl,proto3" json:"rule_url,omitempty" orm:"rule_url"` // 投稿规则链接
 	//@inject_tag: orm:"create_time"
-	CreateTime uint32 `protobuf:"varint,9,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"` //
+	CreateTime uint32 `protobuf:"varint,9,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time"` //
 	//@inject_tag: orm:"update_time"
-	UpdateTime uint32 `protobuf:"varint,10,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"` //
+	UpdateTime uint32 `protobuf:"varint,10,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty" orm:"update_time"` //
 }
 
 func (x *EntityVoiceLoverActivity) Reset() {
