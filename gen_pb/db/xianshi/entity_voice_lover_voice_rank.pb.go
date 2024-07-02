@@ -36,19 +36,19 @@ type EntityVoiceLoverVoiceRank struct {
 	unknownFields protoimpl.UnknownFields
 
 	//@inject_tag: orm:"id,primary"
-	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"` //
+	Id uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" orm:"id,primary"` //
 	//@inject_tag: orm:"activity_id"
-	ActivityId uint32 `protobuf:"varint,2,opt,name=activity_id,json=activityId,proto3" json:"activity_id,omitempty"` // 活动id
+	ActivityId uint32 `protobuf:"varint,2,opt,name=activity_id,json=activityId,proto3" json:"activity_id,omitempty" orm:"activity_id"` // 活动id
 	//@inject_tag: orm:"audio_id"
-	AudioId uint32 `protobuf:"varint,3,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty"` // 作品id
+	AudioId uint32 `protobuf:"varint,3,opt,name=audio_id,json=audioId,proto3" json:"audio_id,omitempty" orm:"audio_id"` // 作品id
 	//@inject_tag: orm:"like_num"
-	LikeNum uint32 `protobuf:"varint,4,opt,name=like_num,json=likeNum,proto3" json:"like_num,omitempty"` // 点赞数
+	LikeNum uint32 `protobuf:"varint,4,opt,name=like_num,json=likeNum,proto3" json:"like_num,omitempty" orm:"like_num"` // 点赞数
 	//@inject_tag: orm:"create_time"
-	CreateTime uint32 `protobuf:"varint,5,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"` //
+	CreateTime uint32 `protobuf:"varint,5,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty" orm:"create_time"` //
 	//@inject_tag: orm:"update_time"
-	UpdateTime uint32 `protobuf:"varint,6,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"` //
+	UpdateTime uint32 `protobuf:"varint,6,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty" orm:"update_time"` //
 	//@inject_tag: orm:"sent_award"
-	SentAward uint32 `protobuf:"varint,7,opt,name=sent_award,json=sentAward,proto3" json:"sent_award,omitempty"` // 是否已发奖励 0-未发放 1-已发放
+	SentAward uint32 `protobuf:"varint,7,opt,name=sent_award,json=sentAward,proto3" json:"sent_award,omitempty" orm:"sent_award"` // 是否已发奖励 0-未发放 1-已发放
 }
 
 func (x *EntityVoiceLoverVoiceRank) Reset() {
