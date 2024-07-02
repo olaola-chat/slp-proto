@@ -368,8 +368,12 @@ message RespBatchGetAudioInfo {
   message Audio {
     uint32 id = 1;
     string title = 2;
-    string cover = 3;
-    uint32 pub_uid = 4;
+    string desc = 3;
+    string resource = 4;
+    string cover = 5;
+    uint32 from = 6;
+    uint32 seconds = 7;
+    uint32 pub_uid = 8;
   }
   bool Success = 1;
   string Message = 2;
@@ -386,14 +390,4 @@ message ReqGenRecAlbum {
 message RespGenRecAlbum {
   bool Success = 1;
   string Message = 2;
-}
-
-message ReqGetMainPageAudios {
-  uint32 uid = 1;
-}
-
-message RespGetMainPageAudios {
-  bool Success = 1;
-  string Message = 2;
-  repeated AudioData audios = 3;
 }
