@@ -186,3 +186,9 @@ func (s *voiceLoverMain) GetRankAward(ctx context.Context, req *voice_lover.ReqG
 	err := s.Call(ctx, "GetRankAward", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) BatchGetAudioInfo(ctx context.Context, req *voice_lover.ReqBatchGetAudioInfo) (*voice_lover.RespBatchGetAudioInfo, error) {
+	reply := &voice_lover.RespBatchGetAudioInfo{}
+	err := s.Call(ctx, "BatchGetAudioInfo", req, reply)
+	return reply, err
+}
