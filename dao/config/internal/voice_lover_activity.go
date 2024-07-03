@@ -43,7 +43,8 @@ type voiceLoverActivityColumns struct {
 	RuleURL     string // 投稿规则链接
 	CreateTime  string //
 	UpdateTime  string //
-	Settled     string // 是否已结算 0-未结算 1-已结算
+	GenAlbum    string // 是否已生成专辑 0-已生成 1-未生成
+	SentAward   string // 是否已发所有排行奖励 0-未发放 1-已发放
 }
 
 var (
@@ -63,7 +64,8 @@ var (
 			RuleURL:     "rule_url",
 			CreateTime:  "create_time",
 			UpdateTime:  "update_time",
-			Settled:     "settled",
+			GenAlbum:    "gen_album",
+			SentAward:   "sent_award",
 		},
 	}
 )
