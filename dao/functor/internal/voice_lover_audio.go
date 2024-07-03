@@ -49,6 +49,7 @@ type voiceLoverAudioColumns struct {
 	CreateTime  string // 创建时间
 	UpdateTime  string // 更新时间
 	ActivityID  string // 活动id
+	LikeNum     string // 点赞数
 }
 
 var (
@@ -74,6 +75,7 @@ var (
 			CreateTime:  "create_time",
 			UpdateTime:  "update_time",
 			ActivityID:  "activity_id",
+			LikeNum:     "like_num",
 		},
 	}
 )

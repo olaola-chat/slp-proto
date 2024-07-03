@@ -42,4 +42,6 @@ message EntityVoiceLoverAudio {
     uint64 update_time                       = 15; // 更新时间                                    
            //@inject_tag: orm:"activity_id"   
     uint32 activity_id                       = 16; // 活动id                                      
+           //@inject_tag: orm:"like_num"      
+    uint32 like_num                          = 17; // 点赞数                                      
 }
