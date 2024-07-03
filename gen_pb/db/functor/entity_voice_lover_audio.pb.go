@@ -12,11 +12,12 @@
 package functor
 
 import (
+	reflect "reflect"
+	sync "sync"
+
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -67,6 +68,8 @@ type EntityVoiceLoverAudio struct {
 	UpdateTime uint64 `protobuf:"varint,15,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty" orm:"update_time"` // 更新时间
 	//@inject_tag: orm:"activity_id"
 	ActivityId uint32 `protobuf:"varint,16,opt,name=activity_id,json=activityId,proto3" json:"activity_id,omitempty" orm:"activity_id"` // 活动id
+	//@inject_tag: orm:"like_num"
+	LikeNum uint32 `protobuf:"varint,17,opt,name=like_num,json=likeNum,proto3" json:"like_num,omitempty" orm:"like_num"` // 点赞数
 }
 
 func (x *EntityVoiceLoverAudio) Reset() {
