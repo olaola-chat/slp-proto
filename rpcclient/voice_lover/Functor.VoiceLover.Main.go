@@ -186,3 +186,9 @@ func (s *voiceLoverMain) BatchGetCollectNum(ctx context.Context, req *voice_love
 	err := s.Call(ctx, "BatchGetCollectNum", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) AudioCommentAuditCallback(ctx context.Context, req *voice_lover.ReqAudioCommentAuditCallback) (*voice_lover.RespAudioCommentAuditCallback, error) {
+	reply := &voice_lover.RespAudioCommentAuditCallback{}
+	err := s.Call(ctx, "AudioCommentAuditCallback", req, reply)
+	return reply, err
+}
