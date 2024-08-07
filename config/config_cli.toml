@@ -88,14 +88,14 @@
 [gfcli]
     # 自定义DAO生成配置(默认是读取database配置)
     [[gfcli.gen.dao]]
-        link = "mysql:root:root@tcp(47.99.171.114:3306)/config"
+        link = "mysql:root:root@tcp(47.99.171.114:3306)/functor"
         mod = "github.com/olaola-chat/rbp-proto"
         jsonCase = "Snake"
         path = "./"
         tplDaoIndex = "config/daoindex.tpl"
         tplDaoInternal = "config/dao_internal.tpl"
     [[gfcli.gen.pbentity]]
-        link = "mysql:root:root@tcp(47.99.171.114:3306)/config"
+        link = "mysql:root:root@tcp(47.99.171.114:3306)/functor"
         jsonCase = "Snake"
         package = "pb"
         option 	= "option go_package = \"./gen_pb\";"

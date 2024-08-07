@@ -33,15 +33,16 @@ type VoiceLoverAudioCommentDao struct {
 
 // VoiceLoverAudioCommentColumns defines and stores column names for table voice_lover_audio_comment.
 type voiceLoverAudioCommentColumns struct {
-	ID         string // 自增ID
-	AudioID    string // 音频id
-	UID        string // 用户uid
-	Content    string // 评论内容
-	Type       string // 审核状态：0-评论 1-弹幕
-	Status     string // 审核状态：0-默认状态 1-举报封禁
-	CreateTime string // 创建时间
-	UpdateTime string // 更新时间
-	Address    string // 位置
+	ID          string // 自增ID
+	AudioID     string // 音频id
+	UID         string // 用户uid
+	Content     string // 评论内容
+	Type        string // 审核状态：0-评论 1-弹幕
+	Status      string // 审核状态：0-默认状态 1-举报封禁
+	CreateTime  string // 创建时间
+	UpdateTime  string // 更新时间
+	Address     string // 位置
+	AuditStatus string // 审核状态：1-待审核 2-审核通过 3-审核不通过
 }
 
 var (
@@ -51,15 +52,16 @@ var (
 		DB:    g.DB("functor"),
 		Table: "voice_lover_audio_comment",
 		Columns: voiceLoverAudioCommentColumns{
-			ID:         "id",
-			AudioID:    "audio_id",
-			UID:        "uid",
-			Content:    "content",
-			Type:       "type",
-			Status:     "status",
-			CreateTime: "create_time",
-			UpdateTime: "update_time",
-			Address:    "address",
+			ID:          "id",
+			AudioID:     "audio_id",
+			UID:         "uid",
+			Content:     "content",
+			Type:        "type",
+			Status:      "status",
+			CreateTime:  "create_time",
+			UpdateTime:  "update_time",
+			Address:     "address",
+			AuditStatus: "audit_status",
 		},
 	}
 )

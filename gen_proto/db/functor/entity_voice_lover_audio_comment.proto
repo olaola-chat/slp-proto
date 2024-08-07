@@ -11,21 +11,23 @@ option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/functor";
 
 message EntityVoiceLoverAudioComment {
            //@inject_tag: orm:"id,primary"           
-    uint64 id                                       = 1; // 自增ID                           
+    uint64 id                                       = 1;  // 自增ID                                      
            //@inject_tag: orm:"audio_id"             
-    uint64 audio_id                                 = 2; // 音频id                           
+    uint64 audio_id                                 = 2;  // 音频id                                      
            //@inject_tag: orm:"uid"                  
-    uint64 uid                                      = 3; // 用户uid                          
+    uint64 uid                                      = 3;  // 用户uid                                     
            //@inject_tag: orm:"content"              
-    string content                                  = 4; // 评论内容                         
+    string content                                  = 4;  // 评论内容                                    
            //@inject_tag: orm:"type"                 
-    uint32 type                                     = 5; // 审核状态：0-评论 1-弹幕          
+    uint32 type                                     = 5;  // 审核状态：0-评论 1-弹幕                     
            //@inject_tag: orm:"status"               
-    uint32 status                                   = 6; // 审核状态：0-默认状态 1-举报封禁  
+    uint32 status                                   = 6;  // 审核状态：0-默认状态 1-举报封禁             
            //@inject_tag: orm:"create_time,primary"  
-    uint64 create_time                              = 7; // 创建时间                         
+    uint64 create_time                              = 7;  // 创建时间                                    
            //@inject_tag: orm:"update_time"          
-    uint64 update_time                              = 8; // 更新时间                         
+    uint64 update_time                              = 8;  // 更新时间                                    
            //@inject_tag: orm:"address"              
-    string address                                  = 9; // 位置                             
+    string address                                  = 9;  // 位置                                        
+           //@inject_tag: orm:"audit_status"         
+    uint32 audit_status                             = 10; // 审核状态：1-待审核 2-审核通过 3-审核不通过  
 }
