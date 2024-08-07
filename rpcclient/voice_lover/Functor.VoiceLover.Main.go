@@ -192,3 +192,9 @@ func (s *voiceLoverMain) AudioCommentAuditCallback(ctx context.Context, req *voi
 	err := s.Call(ctx, "AudioCommentAuditCallback", req, reply)
 	return reply, err
 }
+
+func (s *voiceLoverMain) AlbumCommentAuditCallback(ctx context.Context, req *voice_lover.ReqAlbumCommentAuditCallback) (*voice_lover.RespAlbumCommentAuditCallback, error) {
+	reply := &voice_lover.RespAlbumCommentAuditCallback{}
+	err := s.Call(ctx, "AlbumCommentAuditCallback", req, reply)
+	return reply, err
+}

@@ -428,3 +428,14 @@ message RespAudioCommentAuditCallback {
   bool Success = 1;
   string Message = 2;
 }
+
+message ReqAlbumCommentAuditCallback {
+  uint32 id = 1; // voice_lover_audio_comment 表的id
+  uint32 audit_status = 2; // 1-审核通过 2-审核拒绝
+  string reject_reason = 3; // 审核拒绝原因
+}
+
+message RespAlbumCommentAuditCallback {
+  bool Success = 1;
+  string Message = 2;
+}

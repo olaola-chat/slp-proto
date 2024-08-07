@@ -4669,6 +4669,124 @@ func (x *RespAudioCommentAuditCallback) GetMessage() string {
 	return ""
 }
 
+type ReqAlbumCommentAuditCallback struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id           uint32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`                                        // voice_lover_audio_comment 表的id
+	AuditStatus  uint32 `protobuf:"varint,2,opt,name=audit_status,json=auditStatus,proto3" json:"audit_status,omitempty"`   // 1-审核通过 2-审核拒绝
+	RejectReason string `protobuf:"bytes,3,opt,name=reject_reason,json=rejectReason,proto3" json:"reject_reason,omitempty"` // 审核拒绝原因
+}
+
+func (x *ReqAlbumCommentAuditCallback) Reset() {
+	*x = ReqAlbumCommentAuditCallback{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[82]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReqAlbumCommentAuditCallback) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReqAlbumCommentAuditCallback) ProtoMessage() {}
+
+func (x *ReqAlbumCommentAuditCallback) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[82]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReqAlbumCommentAuditCallback.ProtoReflect.Descriptor instead.
+func (*ReqAlbumCommentAuditCallback) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *ReqAlbumCommentAuditCallback) GetId() uint32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *ReqAlbumCommentAuditCallback) GetAuditStatus() uint32 {
+	if x != nil {
+		return x.AuditStatus
+	}
+	return 0
+}
+
+func (x *ReqAlbumCommentAuditCallback) GetRejectReason() string {
+	if x != nil {
+		return x.RejectReason
+	}
+	return ""
+}
+
+type RespAlbumCommentAuditCallback struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Success bool   `protobuf:"varint,1,opt,name=Success,proto3" json:"Success,omitempty"`
+	Message string `protobuf:"bytes,2,opt,name=Message,proto3" json:"Message,omitempty"`
+}
+
+func (x *RespAlbumCommentAuditCallback) Reset() {
+	*x = RespAlbumCommentAuditCallback{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[83]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RespAlbumCommentAuditCallback) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespAlbumCommentAuditCallback) ProtoMessage() {}
+
+func (x *RespAlbumCommentAuditCallback) ProtoReflect() protoreflect.Message {
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[83]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespAlbumCommentAuditCallback.ProtoReflect.Descriptor instead.
+func (*RespAlbumCommentAuditCallback) Descriptor() ([]byte, []int) {
+	return file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *RespAlbumCommentAuditCallback) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+func (x *RespAlbumCommentAuditCallback) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 type RespBatchGetAudioInfo_Audio struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -4692,7 +4810,7 @@ type RespBatchGetAudioInfo_Audio struct {
 func (x *RespBatchGetAudioInfo_Audio) Reset() {
 	*x = RespBatchGetAudioInfo_Audio{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[84]
+		mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[86]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4705,7 +4823,7 @@ func (x *RespBatchGetAudioInfo_Audio) String() string {
 func (*RespBatchGetAudioInfo_Audio) ProtoMessage() {}
 
 func (x *RespBatchGetAudioInfo_Audio) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[84]
+	mi := &file_rpc_voice_lover_voice_lover_message_proto_msgTypes[86]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5294,11 +5412,24 @@ var file_rpc_voice_lover_voice_lover_message_proto_rawDesc = []byte{
 	0x07, 0x53, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07,
 	0x53, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61,
 	0x67, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x42, 0x39, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x6f, 0x6c, 0x61, 0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70, 0x63,
-	0x2f, 0x76, 0x6f, 0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x22, 0x76, 0x0a, 0x1c, 0x52, 0x65, 0x71, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x6f, 0x6d,
+	0x6d, 0x65, 0x6e, 0x74, 0x41, 0x75, 0x64, 0x69, 0x74, 0x43, 0x61, 0x6c, 0x6c, 0x62, 0x61, 0x63,
+	0x6b, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69,
+	0x64, 0x12, 0x21, 0x0a, 0x0c, 0x61, 0x75, 0x64, 0x69, 0x74, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0b, 0x61, 0x75, 0x64, 0x69, 0x74, 0x53, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x72,
+	0x65, 0x61, 0x73, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x6a,
+	0x65, 0x63, 0x74, 0x52, 0x65, 0x61, 0x73, 0x6f, 0x6e, 0x22, 0x53, 0x0a, 0x1d, 0x52, 0x65, 0x73,
+	0x70, 0x41, 0x6c, 0x62, 0x75, 0x6d, 0x43, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x41, 0x75, 0x64,
+	0x69, 0x74, 0x43, 0x61, 0x6c, 0x6c, 0x62, 0x61, 0x63, 0x6b, 0x12, 0x18, 0x0a, 0x07, 0x53, 0x75,
+	0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x53, 0x75, 0x63,
+	0x63, 0x65, 0x73, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x39,
+	0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x6c, 0x61,
+	0x6f, 0x6c, 0x61, 0x2d, 0x63, 0x68, 0x61, 0x74, 0x2f, 0x72, 0x62, 0x70, 0x2d, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2f, 0x67, 0x65, 0x6e, 0x5f, 0x70, 0x62, 0x2f, 0x72, 0x70, 0x63, 0x2f, 0x76, 0x6f,
+	0x69, 0x63, 0x65, 0x5f, 0x6c, 0x6f, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -5313,7 +5444,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_rawDescGZIP() []byte {
 	return file_rpc_voice_lover_voice_lover_message_proto_rawDescData
 }
 
-var file_rpc_voice_lover_voice_lover_message_proto_msgTypes = make([]protoimpl.MessageInfo, 87)
+var file_rpc_voice_lover_voice_lover_message_proto_msgTypes = make([]protoimpl.MessageInfo, 89)
 var file_rpc_voice_lover_voice_lover_message_proto_goTypes = []interface{}{
 	(*ResBase)(nil),                       // 0: rbp.rpc.voice_lover.ResBase
 	(*ReqPost)(nil),                       // 1: rbp.rpc.voice_lover.ReqPost
@@ -5397,44 +5528,46 @@ var file_rpc_voice_lover_voice_lover_message_proto_goTypes = []interface{}{
 	(*RespBatchGetCollectNum)(nil),        // 79: rbp.rpc.voice_lover.RespBatchGetCollectNum
 	(*ReqAudioCommentAuditCallback)(nil),  // 80: rbp.rpc.voice_lover.ReqAudioCommentAuditCallback
 	(*RespAudioCommentAuditCallback)(nil), // 81: rbp.rpc.voice_lover.RespAudioCommentAuditCallback
-	nil,                                   // 82: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
-	nil,                                   // 83: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
-	(*RespBatchGetAudioInfo_Audio)(nil),   // 84: rbp.rpc.voice_lover.RespBatchGetAudioInfo.Audio
-	nil,                                   // 85: rbp.rpc.voice_lover.RespBatchCheckUserCollect.CollectInfoEntry
-	nil,                                   // 86: rbp.rpc.voice_lover.RespBatchGetCollectNum.NumsEntry
-	(*AlbumData)(nil),                     // 87: rbp.rpc.voice_lover.AlbumData
-	(*BannerData)(nil),                    // 88: rbp.rpc.voice_lover.BannerData
-	(*SubjectData)(nil),                   // 89: rbp.rpc.voice_lover.SubjectData
-	(*AudioEditData)(nil),                 // 90: rbp.rpc.voice_lover.AudioEditData
-	(*AudioData)(nil),                     // 91: rbp.rpc.voice_lover.AudioData
-	(*AudioSimpleData)(nil),               // 92: rbp.rpc.voice_lover.AudioSimpleData
-	(*Comment)(nil),                       // 93: rbp.rpc.voice_lover.Comment
+	(*ReqAlbumCommentAuditCallback)(nil),  // 82: rbp.rpc.voice_lover.ReqAlbumCommentAuditCallback
+	(*RespAlbumCommentAuditCallback)(nil), // 83: rbp.rpc.voice_lover.RespAlbumCommentAuditCallback
+	nil,                                   // 84: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
+	nil,                                   // 85: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
+	(*RespBatchGetAudioInfo_Audio)(nil),   // 86: rbp.rpc.voice_lover.RespBatchGetAudioInfo.Audio
+	nil,                                   // 87: rbp.rpc.voice_lover.RespBatchCheckUserCollect.CollectInfoEntry
+	nil,                                   // 88: rbp.rpc.voice_lover.RespBatchGetCollectNum.NumsEntry
+	(*AlbumData)(nil),                     // 89: rbp.rpc.voice_lover.AlbumData
+	(*BannerData)(nil),                    // 90: rbp.rpc.voice_lover.BannerData
+	(*SubjectData)(nil),                   // 91: rbp.rpc.voice_lover.SubjectData
+	(*AudioEditData)(nil),                 // 92: rbp.rpc.voice_lover.AudioEditData
+	(*AudioData)(nil),                     // 93: rbp.rpc.voice_lover.AudioData
+	(*AudioSimpleData)(nil),               // 94: rbp.rpc.voice_lover.AudioSimpleData
+	(*Comment)(nil),                       // 95: rbp.rpc.voice_lover.Comment
 }
 var file_rpc_voice_lover_voice_lover_message_proto_depIdxs = []int32{
-	87, // 0: rbp.rpc.voice_lover.ResGetAlbumInfoById.album:type_name -> rbp.rpc.voice_lover.AlbumData
-	87, // 1: rbp.rpc.voice_lover.ResGetRecAlbums.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	88, // 2: rbp.rpc.voice_lover.ResGetRecBanners.banners:type_name -> rbp.rpc.voice_lover.BannerData
-	87, // 3: rbp.rpc.voice_lover.ResGetAlbumsByPage.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	89, // 4: rbp.rpc.voice_lover.ResGetRecSubjects.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
-	90, // 5: rbp.rpc.voice_lover.ResGetAudioEdit.edits:type_name -> rbp.rpc.voice_lover.AudioEditData
-	91, // 6: rbp.rpc.voice_lover.ResGetAudioDetail.audio:type_name -> rbp.rpc.voice_lover.AudioData
-	87, // 7: rbp.rpc.voice_lover.ResGetAudioDetail.album:type_name -> rbp.rpc.voice_lover.AlbumData
-	92, // 8: rbp.rpc.voice_lover.ResGetAudioListByAlbumId.audios:type_name -> rbp.rpc.voice_lover.AudioSimpleData
-	82, // 9: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.album_counts:type_name -> rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
-	87, // 10: rbp.rpc.voice_lover.ResGetAlbumCollectList.list:type_name -> rbp.rpc.voice_lover.AlbumData
-	92, // 11: rbp.rpc.voice_lover.ResGetAudioCollectList.list:type_name -> rbp.rpc.voice_lover.AudioSimpleData
-	87, // 12: rbp.rpc.voice_lover.ResGetAlbumList.albums:type_name -> rbp.rpc.voice_lover.AlbumData
-	83, // 13: rbp.rpc.voice_lover.ResGetAlbumDetail.albums:type_name -> rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
-	93, // 14: rbp.rpc.voice_lover.ResCommentList.list:type_name -> rbp.rpc.voice_lover.Comment
+	89, // 0: rbp.rpc.voice_lover.ResGetAlbumInfoById.album:type_name -> rbp.rpc.voice_lover.AlbumData
+	89, // 1: rbp.rpc.voice_lover.ResGetRecAlbums.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	90, // 2: rbp.rpc.voice_lover.ResGetRecBanners.banners:type_name -> rbp.rpc.voice_lover.BannerData
+	89, // 3: rbp.rpc.voice_lover.ResGetAlbumsByPage.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	91, // 4: rbp.rpc.voice_lover.ResGetRecSubjects.subjects:type_name -> rbp.rpc.voice_lover.SubjectData
+	92, // 5: rbp.rpc.voice_lover.ResGetAudioEdit.edits:type_name -> rbp.rpc.voice_lover.AudioEditData
+	93, // 6: rbp.rpc.voice_lover.ResGetAudioDetail.audio:type_name -> rbp.rpc.voice_lover.AudioData
+	89, // 7: rbp.rpc.voice_lover.ResGetAudioDetail.album:type_name -> rbp.rpc.voice_lover.AlbumData
+	94, // 8: rbp.rpc.voice_lover.ResGetAudioListByAlbumId.audios:type_name -> rbp.rpc.voice_lover.AudioSimpleData
+	84, // 9: rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.album_counts:type_name -> rbp.rpc.voice_lover.ResBatchGetAlbumAudioCount.AlbumCountsEntry
+	89, // 10: rbp.rpc.voice_lover.ResGetAlbumCollectList.list:type_name -> rbp.rpc.voice_lover.AlbumData
+	94, // 11: rbp.rpc.voice_lover.ResGetAudioCollectList.list:type_name -> rbp.rpc.voice_lover.AudioSimpleData
+	89, // 12: rbp.rpc.voice_lover.ResGetAlbumList.albums:type_name -> rbp.rpc.voice_lover.AlbumData
+	85, // 13: rbp.rpc.voice_lover.ResGetAlbumDetail.albums:type_name -> rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry
+	95, // 14: rbp.rpc.voice_lover.ResCommentList.list:type_name -> rbp.rpc.voice_lover.Comment
 	64, // 15: rbp.rpc.voice_lover.RespGetActivity.activity:type_name -> rbp.rpc.voice_lover.ActivityInfo
 	70, // 16: rbp.rpc.voice_lover.RespGetAwardPackage.data:type_name -> rbp.rpc.voice_lover.AwardPackageInfo
 	70, // 17: rbp.rpc.voice_lover.RespGetRankAward.package:type_name -> rbp.rpc.voice_lover.AwardPackageInfo
 	69, // 18: rbp.rpc.voice_lover.RespGetRankAward.ranks:type_name -> rbp.rpc.voice_lover.ActivityRankInfo
 	71, // 19: rbp.rpc.voice_lover.AwardPackageInfo.pretends:type_name -> rbp.rpc.voice_lover.PretendInfo
-	84, // 20: rbp.rpc.voice_lover.RespBatchGetAudioInfo.items:type_name -> rbp.rpc.voice_lover.RespBatchGetAudioInfo.Audio
-	85, // 21: rbp.rpc.voice_lover.RespBatchCheckUserCollect.collect_info:type_name -> rbp.rpc.voice_lover.RespBatchCheckUserCollect.CollectInfoEntry
-	86, // 22: rbp.rpc.voice_lover.RespBatchGetCollectNum.nums:type_name -> rbp.rpc.voice_lover.RespBatchGetCollectNum.NumsEntry
-	87, // 23: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry.value:type_name -> rbp.rpc.voice_lover.AlbumData
+	86, // 20: rbp.rpc.voice_lover.RespBatchGetAudioInfo.items:type_name -> rbp.rpc.voice_lover.RespBatchGetAudioInfo.Audio
+	87, // 21: rbp.rpc.voice_lover.RespBatchCheckUserCollect.collect_info:type_name -> rbp.rpc.voice_lover.RespBatchCheckUserCollect.CollectInfoEntry
+	88, // 22: rbp.rpc.voice_lover.RespBatchGetCollectNum.nums:type_name -> rbp.rpc.voice_lover.RespBatchGetCollectNum.NumsEntry
+	89, // 23: rbp.rpc.voice_lover.ResGetAlbumDetail.AlbumsEntry.value:type_name -> rbp.rpc.voice_lover.AlbumData
 	24, // [24:24] is the sub-list for method output_type
 	24, // [24:24] is the sub-list for method input_type
 	24, // [24:24] is the sub-list for extension type_name
@@ -6433,7 +6566,31 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 				return nil
 			}
 		}
-		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
+		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReqAlbumCommentAuditCallback); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RespAlbumCommentAuditCallback); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_rpc_voice_lover_voice_lover_message_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RespBatchGetAudioInfo_Audio); i {
 			case 0:
 				return &v.state
@@ -6452,7 +6609,7 @@ func file_rpc_voice_lover_voice_lover_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_rpc_voice_lover_voice_lover_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   87,
+			NumMessages:   89,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
