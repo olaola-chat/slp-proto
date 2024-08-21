@@ -57,6 +57,7 @@ message AudioData {
   uint32 seconds = 16;
   uint64 play_count = 17;
   string play_count_desc = 18;
+  uint32 from = 19;
 }
 
 message AudioEditData {
