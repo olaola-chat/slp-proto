@@ -36,6 +36,7 @@ message AudioSimpleData {
 
   uint64 play_count = 7;
   string play_count_desc = 8;
+  uint32 from = 9;
 }
 
 message AudioData {
