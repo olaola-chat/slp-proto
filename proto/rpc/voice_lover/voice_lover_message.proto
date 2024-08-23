@@ -163,6 +163,8 @@ message ReqUpdateAudio {
   string desc = 3;
   string labels = 4;
   uint64 op_uid = 5;
+  string cover = 6; // 封面
+  uint32 from = 7; // 作品来源：0-无 1-原创 2-搬运
 }
 
 message ReqAuditAudio {
