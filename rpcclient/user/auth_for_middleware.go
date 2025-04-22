@@ -3,7 +3,7 @@ package user
 import (
 	"context"
 
-	"github.com/olaola-chat/rbp-library/server/http/middleware"
+	"github.com/olaola-chat/slp-library/server/http/middleware"
 
 	"github.com/olaola-chat/slp-proto/gen_pb/rpc/user"
 )
