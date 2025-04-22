@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.rpc.consume;
+package slp.rpc.consume;
 
 /*
 consume_money rpc 协议

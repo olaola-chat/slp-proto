@@ -1,7 +1,7 @@
 syntax = "proto3";
-package rbp.rpc.activity;
+package slp.rpc.activity;
 
-import "rbp/plugin/option.proto";
+import "slp/plugin/option.proto";
 
 import "rpc/activity/qixi_message.proto";
 import "rpc/activity/send_gift_message.proto";
@@ -9,7 +9,7 @@ import "rpc/activity/send_gift_message.proto";
 option go_package = "github.com/olaola-chat/slp-proto/rpcclient/activity";
 
 service RbpActivityQixi {
-    option (rbp.plugin.rbp_service).name = "Rbp.Activity.Qixi";
+    option (slp.plugin.rbp_service).name = "Rbp.Activity.Qixi";
 
     rpc RoomPackage(ReqRoomPackage) returns (RepConsume);
     rpc ChatGift(ReqChatGift) returns (RepConsume);

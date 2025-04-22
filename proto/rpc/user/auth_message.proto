@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.rpc.user;
+package slp.rpc.user;
 
 option go_package = "github.com/olaola-chat/slp-proto/gen_pb/rpc/user";
 

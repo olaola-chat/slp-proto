@@ -1,7 +1,7 @@
 syntax = "proto3";
-package rbp.rpc.room;
+package slp.rpc.room;
 
-import "rbp/plugin/option.proto";
+import "slp/plugin/option.proto";
 import "rpc/room/room_info_message.proto";
 import "db/xianshi/entity_xs_chatroom.proto";
 
@@ -13,19 +13,19 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/room";
 
 
 service RoomInfo {
-	option (rbp.plugin.rbp_service).name = "Room.Info";
+	option (slp.plugin.rbp_service).name = "Room.Info";
 
 	// 获取单个房间信息
-	rpc Get (rbp.rpc.room.ReqRoomInfo) returns (db.xianshi.EntityXsChatroom);
+	rpc Get (slp.rpc.room.ReqRoomInfo) returns (db.xianshi.EntityXsChatroom);
 
 	// 批量获取房间列表
-	rpc Mget (rbp.rpc.room.ReqRoomInfos) returns (rbp.rpc.room.RepRoomInfos);
+	rpc Mget (slp.rpc.room.ReqRoomInfos) returns (slp.rpc.room.RepRoomInfos);
 
 	// 是否在房间,rid多少
-	rpc InRoom (rbp.rpc.room.ReqUid) returns (rbp.rpc.room.RepRid);
+	rpc InRoom (slp.rpc.room.ReqUid) returns (slp.rpc.room.RepRid);
 
 	// 是否在房间,rid多少 批量
-	rpc MgetInRoom (rbp.rpc.room.ReqUids) returns (rbp.rpc.room.RepInRooms);
+	rpc MgetInRoom (slp.rpc.room.ReqUids) returns (slp.rpc.room.RepInRooms);
 }
 
 

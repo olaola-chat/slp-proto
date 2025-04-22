@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.rpc.friends;
+package slp.rpc.friends;
 
 /*
 friend rpc 协议

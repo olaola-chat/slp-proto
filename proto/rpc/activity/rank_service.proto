@@ -1,7 +1,7 @@
 syntax = "proto3";
-package rbp.rpc.activity;
+package slp.rpc.activity;
 
-import "rbp/plugin/option.proto";
+import "slp/plugin/option.proto";
 
 import "rpc/activity/rank_message.proto";
 
@@ -15,7 +15,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/activity";
  */
 
 service RbpActivityRank {
-    option (rbp.plugin.rbp_service).name = "Rbp.Activity.Rank";
+    option (slp.plugin.rbp_service).name = "Rbp.Activity.Rank";
 
     rpc Insert(ReqRankInsert) returns (RepRankInsert);
     rpc IncrSimple(ReqRankIncrSimple) returns (RepRankIncr);

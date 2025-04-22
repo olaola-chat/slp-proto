@@ -19,7 +19,7 @@ slp-proto
                 xxx.proto
         nsq nsq消息结构
         kafka kafka消息结构
-    protoc-gen-rbp-rpc 生成RPC客户端的插件代码
+    protoc-gen-slp-rpc 生成RPC客户端的插件代码
     rpcclient proto生成的rpc客户端，各项目共用
         base RPC基类
         user  系统名
@@ -43,7 +43,7 @@ rpc服务手写proto，用service定义函数方法，通过工具自动生成�
 
 IDE 设置protobuf路径导入路径
 ${GOPATH}/src/github.com/olaola-chat/slp-proto/proto
-${GOPATH}/src/github.com/olaola-chat/slp-proto/protoc-gen-rbp-rpc/proto
+${GOPATH}/src/github.com/olaola-chat/slp-proto/protoc-gen-slp-rpc/proto
 ${GOPATH}/src/github.com/olaola-chat/slp-proto/gen_proto
 
 
@@ -52,8 +52,8 @@ ${GOPATH}/src/github.com/olaola-chat/slp-proto/gen_proto
 * 数据库配置名需要与db名一致
 * 参考make dao直接生成一张表的全套
 * proto目录下手写RPC协议
-* rpc的proto需要import "rbp/plugin/option.proto"
-* rpc的service需要添加option (rbp.plugin.rbp_service).name = "User.Profile";
+* rpc的proto需要import "slp/plugin/option.proto"
+* rpc的service需要添加option (slp.plugin.rbp_service).name = "User.Profile";
 * 所有proto的go_package需要写全路径
 
 # 生成数据库表代码

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.nsq.consume;
+package slp.nsq.consume;
 
 option go_package = "github.com/olaola-chat/slp-proto/gen_pb/nsq/consume";
 

@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//错误码
+// 错误码
 type ErrorCode int32
 
 const (
@@ -118,7 +118,7 @@ func (ErrorCode) EnumDescriptor() ([]byte, []int) {
 	return file_rpc_consume_consume_money_message_proto_rawDescGZIP(), []int{0}
 }
 
-//场景类型
+// 场景类型
 type ConsumeType int32
 
 const (
@@ -333,7 +333,7 @@ func (ConsumeType) EnumDescriptor() ([]byte, []int) {
 	return file_rpc_consume_consume_money_message_proto_rawDescGZIP(), []int{1}
 }
 
-//金额类型
+// 金额类型
 type MoneyType int32
 
 const (
@@ -459,13 +459,13 @@ func (x *CommoditySend) GetNum() int32 {
 	return 0
 }
 
-//发物品时可以同时发钱，方便业务使用
+// 发物品时可以同时发钱，方便业务使用
 type MoneySend struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Mtype MoneyType `protobuf:"varint,1,opt,name=mtype,proto3,enum=rbp.rpc.consume.MoneyType" json:"mtype,omitempty"` //金额类型（必填）
+	Mtype MoneyType `protobuf:"varint,1,opt,name=mtype,proto3,enum=slp.rpc.consume.MoneyType" json:"mtype,omitempty"` //金额类型（必填）
 	Money int32     `protobuf:"varint,2,opt,name=money,proto3" json:"money,omitempty"`                                //金额数量（必填）
 }
 
@@ -614,7 +614,7 @@ type CommoditySendReq struct {
 	unknownFields protoimpl.UnknownFields
 
 	RequestId   uint64           `protobuf:"varint,1,opt,name=requestId,proto3" json:"requestId,omitempty"`                        //请求id，全局唯一（必填）
-	Type        ConsumeType      `protobuf:"varint,2,opt,name=type,proto3,enum=rbp.rpc.consume.ConsumeType" json:"type,omitempty"` //场景类型（必填）
+	Type        ConsumeType      `protobuf:"varint,2,opt,name=type,proto3,enum=slp.rpc.consume.ConsumeType" json:"type,omitempty"` //场景类型（必填）
 	Uid         uint32           `protobuf:"varint,3,opt,name=uid,proto3" json:"uid,omitempty"`                                    //用户id（必填）
 	Commodities []*CommoditySend `protobuf:"bytes,4,rep,name=commodities,proto3" json:"commodities,omitempty"`                     //发放的物品，最多100种（必填）
 	Subject     string           `protobuf:"bytes,5,opt,name=subject,proto3" json:"subject,omitempty"`                             //发放说明
@@ -709,7 +709,7 @@ type CommoditySendRes struct {
 	unknownFields protoimpl.UnknownFields
 
 	Success bool      `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`                          //false-处理失败，true-处理成功
-	Code    ErrorCode `protobuf:"varint,2,opt,name=code,proto3,enum=rbp.rpc.consume.ErrorCode" json:"code,omitempty"` //错误码
+	Code    ErrorCode `protobuf:"varint,2,opt,name=code,proto3,enum=slp.rpc.consume.ErrorCode" json:"code,omitempty"` //错误码
 	Msg     string    `protobuf:"bytes,3,opt,name=msg,proto3" json:"msg,omitempty"`                                   //错误信息
 }
 
@@ -936,22 +936,22 @@ func file_rpc_consume_consume_money_message_proto_rawDescGZIP() []byte {
 var file_rpc_consume_consume_money_message_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_rpc_consume_consume_money_message_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_rpc_consume_consume_money_message_proto_goTypes = []interface{}{
-	(ErrorCode)(0),           // 0: rbp.rpc.consume.ErrorCode
-	(ConsumeType)(0),         // 1: rbp.rpc.consume.ConsumeType
-	(MoneyType)(0),           // 2: rbp.rpc.consume.MoneyType
-	(*CommoditySend)(nil),    // 3: rbp.rpc.consume.CommoditySend
-	(*MoneySend)(nil),        // 4: rbp.rpc.consume.MoneySend
-	(*GetRequestIdReq)(nil),  // 5: rbp.rpc.consume.GetRequestIdReq
-	(*GetRequestIdRes)(nil),  // 6: rbp.rpc.consume.GetRequestIdRes
-	(*CommoditySendReq)(nil), // 7: rbp.rpc.consume.CommoditySendReq
-	(*CommoditySendRes)(nil), // 8: rbp.rpc.consume.CommoditySendRes
+	(ErrorCode)(0),           // 0: slp.rpc.consume.ErrorCode
+	(ConsumeType)(0),         // 1: slp.rpc.consume.ConsumeType
+	(MoneyType)(0),           // 2: slp.rpc.consume.MoneyType
+	(*CommoditySend)(nil),    // 3: slp.rpc.consume.CommoditySend
+	(*MoneySend)(nil),        // 4: slp.rpc.consume.MoneySend
+	(*GetRequestIdReq)(nil),  // 5: slp.rpc.consume.GetRequestIdReq
+	(*GetRequestIdRes)(nil),  // 6: slp.rpc.consume.GetRequestIdRes
+	(*CommoditySendReq)(nil), // 7: slp.rpc.consume.CommoditySendReq
+	(*CommoditySendRes)(nil), // 8: slp.rpc.consume.CommoditySendRes
 }
 var file_rpc_consume_consume_money_message_proto_depIdxs = []int32{
-	2, // 0: rbp.rpc.consume.MoneySend.mtype:type_name -> rbp.rpc.consume.MoneyType
-	1, // 1: rbp.rpc.consume.CommoditySendReq.type:type_name -> rbp.rpc.consume.ConsumeType
-	3, // 2: rbp.rpc.consume.CommoditySendReq.commodities:type_name -> rbp.rpc.consume.CommoditySend
-	4, // 3: rbp.rpc.consume.CommoditySendReq.moneys:type_name -> rbp.rpc.consume.MoneySend
-	0, // 4: rbp.rpc.consume.CommoditySendRes.code:type_name -> rbp.rpc.consume.ErrorCode
+	2, // 0: slp.rpc.consume.MoneySend.mtype:type_name -> slp.rpc.consume.MoneyType
+	1, // 1: slp.rpc.consume.CommoditySendReq.type:type_name -> slp.rpc.consume.ConsumeType
+	3, // 2: slp.rpc.consume.CommoditySendReq.commodities:type_name -> slp.rpc.consume.CommoditySend
+	4, // 3: slp.rpc.consume.CommoditySendReq.moneys:type_name -> slp.rpc.consume.MoneySend
+	0, // 4: slp.rpc.consume.CommoditySendRes.code:type_name -> slp.rpc.consume.ErrorCode
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name

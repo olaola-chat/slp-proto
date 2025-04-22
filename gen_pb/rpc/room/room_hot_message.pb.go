@@ -469,18 +469,18 @@ func file_rpc_room_room_hot_message_proto_rawDescGZIP() []byte {
 
 var file_rpc_room_room_hot_message_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_rpc_room_room_hot_message_proto_goTypes = []interface{}{
-	(*ReqRoomHotAdd)(nil),      // 0: rbp.rpc.room.ReqRoomHotAdd
-	(*ReqRoomHotGet)(nil),      // 1: rbp.rpc.room.ReqRoomHotGet
-	(*RoomHotItem)(nil),        // 2: rbp.rpc.room.RoomHotItem
-	(*ResRoomHotGet)(nil),      // 3: rbp.rpc.room.ResRoomHotGet
-	(*ReqRoomHotGetBatch)(nil), // 4: rbp.rpc.room.ReqRoomHotGetBatch
-	(*ResRoomHotGetBatch)(nil), // 5: rbp.rpc.room.ResRoomHotGetBatch
-	nil,                        // 6: rbp.rpc.room.ReqRoomHotGetBatch.OnlineNumEntry
-	nil,                        // 7: rbp.rpc.room.ResRoomHotGetBatch.HotEntry
+	(*ReqRoomHotAdd)(nil),      // 0: slp.rpc.room.ReqRoomHotAdd
+	(*ReqRoomHotGet)(nil),      // 1: slp.rpc.room.ReqRoomHotGet
+	(*RoomHotItem)(nil),        // 2: slp.rpc.room.RoomHotItem
+	(*ResRoomHotGet)(nil),      // 3: slp.rpc.room.ResRoomHotGet
+	(*ReqRoomHotGetBatch)(nil), // 4: slp.rpc.room.ReqRoomHotGetBatch
+	(*ResRoomHotGetBatch)(nil), // 5: slp.rpc.room.ResRoomHotGetBatch
+	nil,                        // 6: slp.rpc.room.ReqRoomHotGetBatch.OnlineNumEntry
+	nil,                        // 7: slp.rpc.room.ResRoomHotGetBatch.HotEntry
 }
 var file_rpc_room_room_hot_message_proto_depIdxs = []int32{
-	6, // 0: rbp.rpc.room.ReqRoomHotGetBatch.online_num:type_name -> rbp.rpc.room.ReqRoomHotGetBatch.OnlineNumEntry
-	7, // 1: rbp.rpc.room.ResRoomHotGetBatch.hot:type_name -> rbp.rpc.room.ResRoomHotGetBatch.HotEntry
+	6, // 0: slp.rpc.room.ReqRoomHotGetBatch.online_num:type_name -> slp.rpc.room.ReqRoomHotGetBatch.OnlineNumEntry
+	7, // 1: slp.rpc.room.ResRoomHotGetBatch.hot:type_name -> slp.rpc.room.ResRoomHotGetBatch.HotEntry
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

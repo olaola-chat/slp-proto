@@ -5,8 +5,8 @@ GOTEST=$(GOCMD) test
 GOFMT=gofmt
 SHELL=/bin/bash #解决ubuntu下编译报错问题
 PWD=$(shell pwd)
-PROTOC=protoc --go_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto
-PROTO_SERV=protoc --rbp-rpc_out=${GOPATH}/src -I=./protoc-gen-rbp-rpc/proto -I=./proto -I=./gen_proto
+PROTOC=protoc --go_out=${GOPATH}/src -I=./protoc-gen-slp-rpc/proto -I=./proto -I=./gen_proto
+PROTO_SERV=protoc --slp-rpc_out=${GOPATH}/src -I=./protoc-gen-slp-rpc/proto -I=./proto -I=./gen_proto
 
 fmt:
 	$(GOFMT) -l -s -w .
@@ -27,8 +27,8 @@ dao:
 
 .PHONY: cli
 cli:
-	${PROTOC} rbp/plugin/option.proto
-	go install ./protoc-gen-rbp-rpc
+	${PROTOC} slp/plugin/option.proto
+	go install ./protoc-gen-slp-rpc
 
 
 .PHONY: rpc

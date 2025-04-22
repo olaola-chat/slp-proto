@@ -1,0 +1,15 @@
+syntax = "proto3";
+package slp.plugin;
+
+option go_package="github.com/olaola-chat/slp-proto/protoc-gen-slp-rpc/proto";
+import "google/protobuf/descriptor.proto";
+
+message SlpServiceOption {
+  optional string name = 1;
+}
+
+// 扩展protobuf的MessageOptions
+extend google.protobuf.ServiceOptions {
+  optional SlpServiceOption slp_service = 10099; // 取一个自定义不重复值
+}
+

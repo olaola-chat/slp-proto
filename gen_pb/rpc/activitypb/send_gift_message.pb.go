@@ -359,9 +359,9 @@ func file_rpc_activity_send_gift_message_proto_rawDescGZIP() []byte {
 
 var file_rpc_activity_send_gift_message_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_rpc_activity_send_gift_message_proto_goTypes = []interface{}{
-	(*ReqRoomPackage)(nil), // 0: rbp.rpc.activity.ReqRoomPackage
-	(*ReqChatGift)(nil),    // 1: rbp.rpc.activity.ReqChatGift
-	(*RepConsume)(nil),     // 2: rbp.rpc.activity.RepConsume
+	(*ReqRoomPackage)(nil), // 0: slp.rpc.activity.ReqRoomPackage
+	(*ReqChatGift)(nil),    // 1: slp.rpc.activity.ReqChatGift
+	(*RepConsume)(nil),     // 2: slp.rpc.activity.RepConsume
 }
 var file_rpc_activity_send_gift_message_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

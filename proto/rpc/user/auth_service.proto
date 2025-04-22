@@ -1,7 +1,7 @@
 syntax = "proto3";
-package rbp.rpc.user;
+package slp.rpc.user;
 
-import "rbp/plugin/option.proto";
+import "slp/plugin/option.proto";
 
 import "rpc/user/auth_message.proto";
 
@@ -9,7 +9,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/user";
 
 
 service RbpUserAuth {
-  option (rbp.plugin.rbp_service).name = "Rbp.User.Auth";
+  option (slp.plugin.rbp_service).name = "Rbp.User.Auth";
 
   rpc Auth(ReqUserAuth) returns (RepUserAuth);
 }

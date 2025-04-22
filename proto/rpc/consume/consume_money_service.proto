@@ -1,7 +1,7 @@
 syntax = "proto3";
-package rbp.rpc.consume;
+package slp.rpc.consume;
 
-import "rbp/plugin/option.proto";
+import "slp/plugin/option.proto";
 
 import "rpc/consume/consume_money_message.proto";
 
@@ -13,13 +13,13 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/consume";
 
 
 service ConsumeMoney {
-	option (rbp.plugin.rbp_service).name = "Consume.Money";
+	option (slp.plugin.rbp_service).name = "Consume.Money";
 
 	// 获取请求id
-	rpc GetRequestId (rbp.rpc.consume.GetRequestIdReq) returns (rbp.rpc.consume.GetRequestIdRes);
+	rpc GetRequestId (slp.rpc.consume.GetRequestIdReq) returns (slp.rpc.consume.GetRequestIdRes);
 
 	// 物品发放
-	rpc CommoditySend (rbp.rpc.consume.CommoditySendReq) returns (rbp.rpc.consume.CommoditySendRes);
+	rpc CommoditySend (slp.rpc.consume.CommoditySendReq) returns (slp.rpc.consume.CommoditySendRes);
 }
 
 

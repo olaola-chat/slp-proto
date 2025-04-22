@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.rpc.room;
+package slp.rpc.room;
 
 /*
 room_hot rpc 协议

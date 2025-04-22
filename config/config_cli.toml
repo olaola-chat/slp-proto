@@ -2,7 +2,7 @@
 [database]
     [[database.default]]
         type = "bbsql"
-        link = "root:root@tcp(47.99.171.114:3306)/xianshi"
+        link = "root:root@tcp(114.55.3.96:8547)/xianshi"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
@@ -11,7 +11,7 @@
 	#xianshi库
     [[database.xianshi]]
         type = "bbsql"
-        link = "root:root@tcp(47.99.171.114:3306)/xianshi"
+        link = "root:root@tcp(114.55.3.96:8547)/xianshi"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
@@ -25,7 +25,7 @@
 	#rush库
 	[[database.rush]]
 		type = "bbsql"
-		link = "root:root@tcp(47.99.171.114:3306)/rush"
+		link = "root:root@tcp(114.55.3.96:8547)/rush"
 		charset = "utf8mb4"
 		debug = true
 		maxIdle = 1
@@ -34,7 +34,7 @@
 	#联盟库
 	[[database.bbu]]
 		type = "bbsql"
-		link = "root:root@tcp(47.99.171.114:3306)/banban_union"
+		link = "root:root@tcp(114.55.3.96:8547)/banban_union"
 		charset = "utf8mb4"
 		debug = true
 		maxIdle = 1
@@ -43,7 +43,7 @@
 	#数据统计库
 	[[database.banban]]
 		type = "bbsql"
-		link = "root:root@tcp(47.99.171.114:3306)/banban"
+		link = "root:root@tcp(114.55.3.96:8547)/banban"
 		charset = "utf8mb4"
 		debug = true
 		maxIdle = 1
@@ -52,7 +52,7 @@
 	#配置库
 	[[database.config]]
 		type = "bbsql"
-		link = "root:root@tcp(47.99.171.114:3306)/config"
+		link = "root:root@tcp(114.55.3.96:8547)/config"
 		charset = "utf8mb4"
 		debug = true
 		maxIdle = 1
@@ -61,7 +61,7 @@
     #朋友圈主库
     [[database.circle]]
         type = "bbsql"
-        link = "root:root@tcp(47.99.171.114:3306)/circle_dev"
+        link = "root:root@tcp(114.55.3.96:8547)/circle_dev"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
@@ -69,7 +69,7 @@
         maxLifetime = 30
     [[database.activity]]
         type = "bbsql"
-        link = "root:root@tcp(47.99.171.114:3306)/activity"
+        link = "root:root@tcp(114.55.3.96:8547)/activity"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
@@ -77,7 +77,7 @@
         maxLifetime = 30
     [[database.functor]]
         type = "bbsql"
-        link = "root:root@tcp(47.99.171.114:3306)/functor"
+        link = "root:root@tcp(114.55.3.96:8547)/functor"
         charset = "utf8mb4"
         debug = true
         maxIdle = 1
@@ -88,14 +88,14 @@
 [gfcli]
     # 自定义DAO生成配置(默认是读取database配置)
     [[gfcli.gen.dao]]
-        link = "mysql:root:root@tcp(47.99.171.114:3306)/functor"
+        link = "mysql:root:root@tcp(114.55.3.96:8547)/functor"
         mod = "github.com/olaola-chat/slp-proto"
         jsonCase = "Snake"
         path = "./"
         tplDaoIndex = "config/daoindex.tpl"
         tplDaoInternal = "config/dao_internal.tpl"
     [[gfcli.gen.pbentity]]
-        link = "mysql:root:root@tcp(47.99.171.114:3306)/functor"
+        link = "mysql:root:root@tcp(114.55.3.96:8547)/functor"
         jsonCase = "Snake"
         package = "pb"
         option 	= "option go_package = \"./gen_pb\";"

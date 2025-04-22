@@ -10,7 +10,7 @@ import (
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/proto"
 
-	rbp_proto "github.com/olaola-chat/slp-proto/protoc-gen-rbp-rpc/proto"
+	slp_proto "github.com/olaola-chat/slp-proto/protoc-gen-slp-rpc/proto"
 )
 
 // FirstUpper 字符串首字母大写
@@ -60,7 +60,7 @@ func AddImport(name2path map[string]string, path2name map[string]string, fullNam
 
 func genServices(gen *protogen.Plugin, file *protogen.File, service *protogen.Service) {
 
-	myOptions, ok := proto.GetExtension(service.Desc.Options(), rbp_proto.E_RbpService).(*rbp_proto.RbpServiceOption)
+	myOptions, ok := proto.GetExtension(service.Desc.Options(), slp_proto.E_RbpService).(*slp_proto.RbpServiceOption)
 	if !ok || myOptions == nil {
 		log.Println("No Option : ", service.Desc.FullName())
 		return

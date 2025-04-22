@@ -1,7 +1,7 @@
 syntax = "proto3";
-package rbp.rpc.voice_lover;
+package slp.rpc.voice_lover;
 
-import "rbp/plugin/option.proto";
+import "slp/plugin/option.proto";
 
 import "rpc/voice_lover/voice_lover_message.proto";
 import "rpc/voice_lover/voice_lover_admin_message.proto";
@@ -14,7 +14,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/voice_lover";
 
 
 service VoiceLoverAdmin {
-  option (rbp.plugin.rbp_service).name = "Functor.VoiceLover.Admin";
+  option (slp.plugin.rbp_service).name = "Functor.VoiceLover.Admin";
 
   rpc GetAudioDetail (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
   //是否需要实名认证

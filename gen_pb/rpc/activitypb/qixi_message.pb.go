@@ -321,10 +321,10 @@ func file_rpc_activity_qixi_message_proto_rawDescGZIP() []byte {
 
 var file_rpc_activity_qixi_message_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_rpc_activity_qixi_message_proto_goTypes = []interface{}{
-	(*ReqQixiMyData)(nil),    // 0: rbp.rpc.activity.ReqQixiMyData
-	(*RepQixiMyData)(nil),    // 1: rbp.rpc.activity.RepQixiMyData
-	(*ReqQixiAwardPool)(nil), // 2: rbp.rpc.activity.ReqQixiAwardPool
-	(*RepQixiAwardPool)(nil), // 3: rbp.rpc.activity.RepQixiAwardPool
+	(*ReqQixiMyData)(nil),    // 0: slp.rpc.activity.ReqQixiMyData
+	(*RepQixiMyData)(nil),    // 1: slp.rpc.activity.RepQixiMyData
+	(*ReqQixiAwardPool)(nil), // 2: slp.rpc.activity.ReqQixiAwardPool
+	(*RepQixiAwardPool)(nil), // 3: slp.rpc.activity.RepQixiAwardPool
 }
 var file_rpc_activity_qixi_message_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

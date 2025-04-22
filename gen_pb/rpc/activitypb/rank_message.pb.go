@@ -671,28 +671,28 @@ func file_rpc_activity_rank_message_proto_rawDescGZIP() []byte {
 
 var file_rpc_activity_rank_message_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_rpc_activity_rank_message_proto_goTypes = []interface{}{
-	(*RankCfg)(nil),            // 0: rbp.rpc.activity.RankCfg
-	(*ReqRankInsert)(nil),      // 1: rbp.rpc.activity.ReqRankInsert
-	(*RepRankInsert)(nil),      // 2: rbp.rpc.activity.RepRankInsert
-	(*ReqRankIncrSimple)(nil),  // 3: rbp.rpc.activity.ReqRankIncrSimple
-	(*ReqRankIncrComplex)(nil), // 4: rbp.rpc.activity.ReqRankIncrComplex
-	(*RepRankIncr)(nil),        // 5: rbp.rpc.activity.RepRankIncr
-	(*ReqRankGetList)(nil),     // 6: rbp.rpc.activity.ReqRankGetList
-	(*RankDataItem)(nil),       // 7: rbp.rpc.activity.RankDataItem
-	(*RepRankGetList)(nil),     // 8: rbp.rpc.activity.RepRankGetList
-	nil,                        // 9: rbp.rpc.activity.ReqRankInsert.ValuesEntry
-	nil,                        // 10: rbp.rpc.activity.ReqRankIncrSimple.ValuesEntry
-	nil,                        // 11: rbp.rpc.activity.ReqRankIncrComplex.ValuesEntry
+	(*RankCfg)(nil),            // 0: slp.rpc.activity.RankCfg
+	(*ReqRankInsert)(nil),      // 1: slp.rpc.activity.ReqRankInsert
+	(*RepRankInsert)(nil),      // 2: slp.rpc.activity.RepRankInsert
+	(*ReqRankIncrSimple)(nil),  // 3: slp.rpc.activity.ReqRankIncrSimple
+	(*ReqRankIncrComplex)(nil), // 4: slp.rpc.activity.ReqRankIncrComplex
+	(*RepRankIncr)(nil),        // 5: slp.rpc.activity.RepRankIncr
+	(*ReqRankGetList)(nil),     // 6: slp.rpc.activity.ReqRankGetList
+	(*RankDataItem)(nil),       // 7: slp.rpc.activity.RankDataItem
+	(*RepRankGetList)(nil),     // 8: slp.rpc.activity.RepRankGetList
+	nil,                        // 9: slp.rpc.activity.ReqRankInsert.ValuesEntry
+	nil,                        // 10: slp.rpc.activity.ReqRankIncrSimple.ValuesEntry
+	nil,                        // 11: slp.rpc.activity.ReqRankIncrComplex.ValuesEntry
 }
 var file_rpc_activity_rank_message_proto_depIdxs = []int32{
-	0,  // 0: rbp.rpc.activity.ReqRankInsert.cfg:type_name -> rbp.rpc.activity.RankCfg
-	9,  // 1: rbp.rpc.activity.ReqRankInsert.values:type_name -> rbp.rpc.activity.ReqRankInsert.ValuesEntry
-	0,  // 2: rbp.rpc.activity.ReqRankIncrSimple.cfg:type_name -> rbp.rpc.activity.RankCfg
-	10, // 3: rbp.rpc.activity.ReqRankIncrSimple.values:type_name -> rbp.rpc.activity.ReqRankIncrSimple.ValuesEntry
-	0,  // 4: rbp.rpc.activity.ReqRankIncrComplex.cfg:type_name -> rbp.rpc.activity.RankCfg
-	11, // 5: rbp.rpc.activity.ReqRankIncrComplex.values:type_name -> rbp.rpc.activity.ReqRankIncrComplex.ValuesEntry
-	0,  // 6: rbp.rpc.activity.ReqRankGetList.cfg:type_name -> rbp.rpc.activity.RankCfg
-	7,  // 7: rbp.rpc.activity.RepRankGetList.data:type_name -> rbp.rpc.activity.RankDataItem
+	0,  // 0: slp.rpc.activity.ReqRankInsert.cfg:type_name -> slp.rpc.activity.RankCfg
+	9,  // 1: slp.rpc.activity.ReqRankInsert.values:type_name -> slp.rpc.activity.ReqRankInsert.ValuesEntry
+	0,  // 2: slp.rpc.activity.ReqRankIncrSimple.cfg:type_name -> slp.rpc.activity.RankCfg
+	10, // 3: slp.rpc.activity.ReqRankIncrSimple.values:type_name -> slp.rpc.activity.ReqRankIncrSimple.ValuesEntry
+	0,  // 4: slp.rpc.activity.ReqRankIncrComplex.cfg:type_name -> slp.rpc.activity.RankCfg
+	11, // 5: slp.rpc.activity.ReqRankIncrComplex.values:type_name -> slp.rpc.activity.ReqRankIncrComplex.ValuesEntry
+	0,  // 6: slp.rpc.activity.ReqRankGetList.cfg:type_name -> slp.rpc.activity.RankCfg
+	7,  // 7: slp.rpc.activity.RepRankGetList.data:type_name -> slp.rpc.activity.RankDataItem
 	8,  // [8:8] is the sub-list for method output_type
 	8,  // [8:8] is the sub-list for method input_type
 	8,  // [8:8] is the sub-list for extension type_name

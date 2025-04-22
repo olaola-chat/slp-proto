@@ -893,20 +893,20 @@ func file_rpc_room_room_info_message_proto_rawDescGZIP() []byte {
 
 var file_rpc_room_room_info_message_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_rpc_room_room_info_message_proto_goTypes = []interface{}{
-	(*Chatroom)(nil),                 // 0: rbp.rpc.room.Chatroom
-	(*ReqRoomInfo)(nil),              // 1: rbp.rpc.room.ReqRoomInfo
-	(*ReqRoomInfos)(nil),             // 2: rbp.rpc.room.ReqRoomInfos
-	(*RepRoomInfos)(nil),             // 3: rbp.rpc.room.RepRoomInfos
-	(*ReqUid)(nil),                   // 4: rbp.rpc.room.ReqUid
-	(*RepRid)(nil),                   // 5: rbp.rpc.room.RepRid
-	(*ReqUids)(nil),                  // 6: rbp.rpc.room.ReqUids
-	(*RepInRooms)(nil),               // 7: rbp.rpc.room.RepInRooms
-	nil,                              // 8: rbp.rpc.room.RepInRooms.DataEntry
+	(*Chatroom)(nil),                 // 0: slp.rpc.room.Chatroom
+	(*ReqRoomInfo)(nil),              // 1: slp.rpc.room.ReqRoomInfo
+	(*ReqRoomInfos)(nil),             // 2: slp.rpc.room.ReqRoomInfos
+	(*RepRoomInfos)(nil),             // 3: slp.rpc.room.RepRoomInfos
+	(*ReqUid)(nil),                   // 4: slp.rpc.room.ReqUid
+	(*RepRid)(nil),                   // 5: slp.rpc.room.RepRid
+	(*ReqUids)(nil),                  // 6: slp.rpc.room.ReqUids
+	(*RepInRooms)(nil),               // 7: slp.rpc.room.RepInRooms
+	nil,                              // 8: slp.rpc.room.RepInRooms.DataEntry
 	(*xianshi.EntityXsChatroom)(nil), // 9: db.xianshi.EntityXsChatroom
 }
 var file_rpc_room_room_info_message_proto_depIdxs = []int32{
-	9, // 0: rbp.rpc.room.RepRoomInfos.data:type_name -> db.xianshi.EntityXsChatroom
-	8, // 1: rbp.rpc.room.RepInRooms.data:type_name -> rbp.rpc.room.RepInRooms.DataEntry
+	9, // 0: slp.rpc.room.RepRoomInfos.data:type_name -> db.xianshi.EntityXsChatroom
+	8, // 1: slp.rpc.room.RepInRooms.data:type_name -> slp.rpc.room.RepInRooms.DataEntry
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

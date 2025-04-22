@@ -1,7 +1,7 @@
 syntax = "proto3";
-package rbp.rpc.friends;
+package slp.rpc.friends;
 
-import "rbp/plugin/option.proto";
+import "slp/plugin/option.proto";
 
 import "rpc/friends/friends_message.proto";
 
@@ -13,7 +13,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/friends";
 
 
 service Friend {
-	option (rbp.plugin.rbp_service).name = "Friend";
+	option (slp.plugin.rbp_service).name = "Friend";
 
 	rpc Count (ReqFriendCount) returns (RepFriendCount);
 

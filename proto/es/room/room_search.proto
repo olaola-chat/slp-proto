@@ -1,5 +1,5 @@
 syntax = "proto3";
-package rbp.es.room;
+package slp.es.room;
 
 option go_package = "github.com/olaola-chat/slp-proto/gen_pb/es/room";;
 
