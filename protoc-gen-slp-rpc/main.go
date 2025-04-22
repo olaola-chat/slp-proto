@@ -60,7 +60,7 @@ func AddImport(name2path map[string]string, path2name map[string]string, fullNam
 
 func genServices(gen *protogen.Plugin, file *protogen.File, service *protogen.Service) {
 
-	myOptions, ok := proto.GetExtension(service.Desc.Options(), slp_proto.E_RbpService).(*slp_proto.RbpServiceOption)
+	myOptions, ok := proto.GetExtension(service.Desc.Options(), slp_proto.E_SlpService).(*slp_proto.SlpServiceOption)
 	if !ok || myOptions == nil {
 		log.Println("No Option : ", service.Desc.FullName())
 		return
