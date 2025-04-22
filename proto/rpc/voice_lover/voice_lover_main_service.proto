@@ -13,7 +13,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/voice_lover";
 
 
 service VoiceLoverMain {
-  option (slp.plugin.rbp_service).name = "Functor.VoiceLover.Main";
+  option (slp.plugin.slp_service).name = "Functor.VoiceLover.Main";
 
   // 上传音频
   rpc Post (rbp.rpc.voice_lover.ReqPost) returns (rbp.rpc.voice_lover.ResBase);

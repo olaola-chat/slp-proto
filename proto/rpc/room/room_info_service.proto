@@ -13,7 +13,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/room";
 
 
 service RoomInfo {
-	option (slp.plugin.rbp_service).name = "Room.Info";
+	option (slp.plugin.slp_service).name = "Room.Info";
 
 	// 获取单个房间信息
 	rpc Get (slp.rpc.room.ReqRoomInfo) returns (db.xianshi.EntityXsChatroom);

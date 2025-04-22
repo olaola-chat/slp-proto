@@ -53,7 +53,7 @@ ${GOPATH}/src/github.com/olaola-chat/slp-proto/gen_proto
 * 参考make dao直接生成一张表的全套
 * proto目录下手写RPC协议
 * rpc的proto需要import "slp/plugin/option.proto"
-* rpc的service需要添加option (slp.plugin.rbp_service).name = "User.Profile";
+* rpc的service需要添加option (slp.plugin.slp_service).name = "User.Profile";
 * 所有proto的go_package需要写全路径
 
 # 生成数据库表代码

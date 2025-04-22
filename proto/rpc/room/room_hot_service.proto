@@ -9,7 +9,7 @@ import "rpc/room/room_hot_message.proto";
 option go_package = "github.com/olaola-chat/slp-proto/rpcclient/room";
 
 service RoomHot{
-  option (slp.plugin.rbp_service).name = "Room.Hot";
+  option (slp.plugin.slp_service).name = "Room.Hot";
 
   //获取单个房间热度
   rpc Get (slp.rpc.room.ReqRoomHotGet) returns (slp.rpc.room.ReqRoomHotGet);

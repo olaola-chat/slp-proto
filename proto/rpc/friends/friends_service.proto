@@ -13,7 +13,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/friends";
 
 
 service Friend {
-	option (slp.plugin.rbp_service).name = "Friend";
+	option (slp.plugin.slp_service).name = "Friend";
 
 	rpc Count (ReqFriendCount) returns (RepFriendCount);
 

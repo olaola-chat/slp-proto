@@ -15,7 +15,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/user";
 
 
 service UserProfile {
-	option (slp.plugin.rbp_service).name = "User.Profile";
+	option (slp.plugin.slp_service).name = "User.Profile";
 
 	//是否需要实名认证
 	rpc NeedVerify (ReqNeedVerify) returns (RepNeedVerify);

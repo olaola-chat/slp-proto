@@ -9,7 +9,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/user";
 
 
 service RbpUserAuth {
-  option (slp.plugin.rbp_service).name = "Rbp.User.Auth";
+  option (slp.plugin.slp_service).name = "Rbp.User.Auth";
 
   rpc Auth(ReqUserAuth) returns (RepUserAuth);
 }

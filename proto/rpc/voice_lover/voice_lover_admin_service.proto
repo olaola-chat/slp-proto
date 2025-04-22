@@ -14,7 +14,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/voice_lover";
 
 
 service VoiceLoverAdmin {
-  option (slp.plugin.rbp_service).name = "Functor.VoiceLover.Admin";
+  option (slp.plugin.slp_service).name = "Functor.VoiceLover.Admin";
 
   rpc GetAudioDetail (rbp.rpc.voice_lover.ReqGetAudioDetail) returns (rbp.rpc.voice_lover.ResGetAudioDetail);
   //是否需要实名认证

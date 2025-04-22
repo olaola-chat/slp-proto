@@ -13,7 +13,7 @@ option go_package = "github.com/olaola-chat/slp-proto/rpcclient/consume";
 
 
 service ConsumeMoney {
-	option (slp.plugin.rbp_service).name = "Consume.Money";
+	option (slp.plugin.slp_service).name = "Consume.Money";
 
 	// 获取请求id
 	rpc GetRequestId (slp.rpc.consume.GetRequestIdReq) returns (slp.rpc.consume.GetRequestIdRes);
