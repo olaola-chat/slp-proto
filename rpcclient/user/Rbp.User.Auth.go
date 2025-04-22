@@ -11,7 +11,7 @@ import (
 // RbpUserAuth *rbpUserAuth
 var RbpUserAuth = &rbpUserAuth{
 	&base.Base{
-		Name: "Rbp.User.Auth",
+		Name: "User.Profile",
 	},
 }
 
