@@ -5,7 +5,7 @@
 package activity
 
 import (
-	"github.com/olaola-chat/rbp-proto/dao/activity/internal"
+	"github.com/olaola-chat/slp-proto/dao/activity/internal"
 )
 
 // actExperienceUserBindDao is the manager for logic model data accessing

@@ -7,7 +7,7 @@
 package room
 
 import (
-	xianshi "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
+	xianshi "github.com/olaola-chat/slp-proto/gen_pb/db/xianshi"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -412,7 +412,7 @@ func (x *Chatroom) GetGiftWish() uint32 {
 	return 0
 }
 
-//获取单个请求请求
+// 获取单个请求请求
 type ReqRoomInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -470,7 +470,7 @@ func (x *ReqRoomInfo) GetFields() []string {
 	return nil
 }
 
-//获取批量请求
+// 获取批量请求
 type ReqRoomInfos struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -528,7 +528,7 @@ func (x *ReqRoomInfos) GetFields() []string {
 	return nil
 }
 
-//返回多个房间信息
+// 返回多个房间信息
 type RepRoomInfos struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -717,8 +717,8 @@ func (x *ReqUids) GetUids() []uint32 {
 	return nil
 }
 
-//在哪个房间，>=0表示在房间里
-//如果用户uid对应的rid<=0表示不在房间
+// 在哪个房间，>=0表示在房间里
+// 如果用户uid对应的rid<=0表示不在房间
 type RepInRooms struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

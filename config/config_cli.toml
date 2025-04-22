@@ -89,7 +89,7 @@
     # 自定义DAO生成配置(默认是读取database配置)
     [[gfcli.gen.dao]]
         link = "mysql:root:root@tcp(47.99.171.114:3306)/functor"
-        mod = "github.com/olaola-chat/rbp-proto"
+        mod = "github.com/olaola-chat/slp-proto"
         jsonCase = "Snake"
         path = "./"
         tplDaoIndex = "config/daoindex.tpl"

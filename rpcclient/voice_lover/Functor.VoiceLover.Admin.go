@@ -3,9 +3,9 @@ package voice_lover
 import (
 	"context"
 
-	"github.com/olaola-chat/rbp-proto/rpcclient/base"
+	"github.com/olaola-chat/slp-proto/rpcclient/base"
 
-	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/voice_lover"
+	"github.com/olaola-chat/slp-proto/gen_pb/rpc/voice_lover"
 )
 
 // VoiceLoverAdmin *voiceLoverAdmin

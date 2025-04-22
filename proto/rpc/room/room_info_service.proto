@@ -9,7 +9,7 @@ import "db/xianshi/entity_xs_chatroom.proto";
 room_info rpc 协议
 */
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/room";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/room";
 
 
 service RoomInfo {

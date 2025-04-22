@@ -9,7 +9,7 @@ import "rpc/friends/friends_message.proto";
 friend rpc 协议
 */
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/friends";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/friends";
 
 
 service Friend {

@@ -5,7 +5,7 @@ import (
 
 	"github.com/olaola-chat/rbp-library/server/http/middleware"
 
-	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/user"
+	"github.com/olaola-chat/slp-proto/gen_pb/rpc/user"
 )
 
 func Auth(ctx context.Context, token string) (middleware.AuthUser, error) {

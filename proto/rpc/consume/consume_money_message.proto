@@ -5,7 +5,7 @@ package rbp.rpc.consume;
 consume_money rpc 协议
 */
 
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/consume";
+option go_package = "github.com/olaola-chat/slp-proto/gen_pb/rpc/consume";
 
 //错误码
 enum ErrorCode {

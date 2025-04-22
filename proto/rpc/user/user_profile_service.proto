@@ -11,7 +11,7 @@ import "db/xianshi/entity_xs_user_profile.proto";
 user_profile rpc 协议
 */
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/user";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/user";
 
 
 service UserProfile {

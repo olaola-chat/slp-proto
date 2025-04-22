@@ -5,7 +5,7 @@
 package xianshi
 
 import (
-	"github.com/olaola-chat/rbp-proto/dao/xianshi/internal"
+	"github.com/olaola-chat/slp-proto/dao/xianshi/internal"
 )
 
 // xsChatroomSuperDao is the manager for logic model data accessing

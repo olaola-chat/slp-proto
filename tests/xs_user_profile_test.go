@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/olaola-chat/rbp-proto/dao/xianshi"
+	"github.com/olaola-chat/slp-proto/dao/xianshi"
 )
 
 func TestXsUserProfile(t *testing.T) {

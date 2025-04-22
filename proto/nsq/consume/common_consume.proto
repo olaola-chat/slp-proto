@@ -1,7 +1,7 @@
 syntax = "proto3";
 package rbp.nsq.consume;
 
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/nsq/consume";
+option go_package = "github.com/olaola-chat/slp-proto/gen_pb/nsq/consume";
 
 // 通用消费nsq：礼物消费消息推送
 message RbpCommonConsumeNsqPush {

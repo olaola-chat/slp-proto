@@ -18,8 +18,8 @@ import (
 	"github.com/gogf/gf/frame/gmvc"
 	"github.com/gogf/gf/util/gconv"
 
-	//	"github.com/olaola-chat/rbp-proto/model"
-	pb "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
+	//	"github.com/olaola-chat/slp-proto/model"
+	pb "github.com/olaola-chat/slp-proto/gen_pb/db/xianshi"
 )
 
 // XsGiftWallDetailDao is the manager for logic model data accessing

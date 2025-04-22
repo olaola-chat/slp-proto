@@ -5,7 +5,7 @@ import "rbp/plugin/option.proto";
 
 import "rpc/activity/rank_message.proto";
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/activity";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/activity";
 
 /*
  * 通用榜单, 有三种更新数据策略：

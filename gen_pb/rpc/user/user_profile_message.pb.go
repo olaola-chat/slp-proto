@@ -7,7 +7,7 @@
 package user
 
 import (
-	xianshi "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
+	xianshi "github.com/olaola-chat/slp-proto/gen_pb/db/xianshi"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//获取单个请求请求
+// 获取单个请求请求
 type ReqUserProfile struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -79,7 +79,7 @@ func (x *ReqUserProfile) GetFields() []string {
 	return nil
 }
 
-//获取批量请求
+// 获取批量请求
 type ReqUserProfiles struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -137,7 +137,7 @@ func (x *ReqUserProfiles) GetFields() []string {
 	return nil
 }
 
-//申请令牌
+// 申请令牌
 type ReqUserToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -209,7 +209,7 @@ func (x *ReqUserToken) GetChannel() string {
 	return ""
 }
 
-//返回令牌
+// 返回令牌
 type RepUserToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -257,7 +257,7 @@ func (x *RepUserToken) GetToken() string {
 	return ""
 }
 
-//返回多个用户信息
+// 返回多个用户信息
 type RepUserProfiles struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -573,7 +573,7 @@ func (x *RepGetUserIpInfo) GetTelecom() string {
 	return ""
 }
 
-//返回多人设置信息
+// 返回多人设置信息
 type RepUserSettings struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -714,8 +714,8 @@ func (x *RepNeedVerify) GetRes() uint32 {
 	return 0
 }
 
-//根据用户名字检索
-//只返回最近7天里，等级不低于5级的用户数据
+// 根据用户名字检索
+// 只返回最近7天里，等级不低于5级的用户数据
 type ReqUserSearchName struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -791,7 +791,7 @@ func (x *ReqUserSearchName) GetSearcherLevel() uint32 {
 	return 0
 }
 
-//通用检索返回
+// 通用检索返回
 type RepUserSearchDefault struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

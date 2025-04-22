@@ -12,7 +12,7 @@ fi
 export GF_GCFG_FILE=config/config_cli.toml
 
 genproto() {
-    gf-cli gen pbentity -g $2 -t $1 -path gen_proto/db/$2 -package "db.$2" -option "option go_package = \"github.com/olaola-chat/rbp-proto/gen_pb/db/$2\";"
+    gf-cli gen pbentity -g $2 -t $1 -path gen_proto/db/$2 -package "db.$2" -option "option go_package = \"github.com/olaola-chat/slp-proto/gen_pb/db/$2\";"
 
     if [ $? -ne 0 ]; then
         echo "genproto failed"

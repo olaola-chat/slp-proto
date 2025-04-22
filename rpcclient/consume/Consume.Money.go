@@ -3,9 +3,9 @@ package consume
 import (
 	"context"
 
-	"github.com/olaola-chat/rbp-proto/rpcclient/base"
+	"github.com/olaola-chat/slp-proto/rpcclient/base"
 
-	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/consume"
+	"github.com/olaola-chat/slp-proto/gen_pb/rpc/consume"
 )
 
 // ConsumeMoney *consumeMoney

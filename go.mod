@@ -1,4 +1,4 @@
-module github.com/olaola-chat/rbp-proto
+module github.com/olaola-chat/slp-proto
 
 go 1.20
 

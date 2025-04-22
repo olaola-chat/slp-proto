@@ -7,7 +7,7 @@ syntax = "proto3";
 
 package db.xianshi;
 
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi";
+option go_package = "github.com/olaola-chat/slp-proto/gen_pb/db/xianshi";
 
 message EntityXsLiveConfig {
            //@inject_tag: orm:"id,primary"               

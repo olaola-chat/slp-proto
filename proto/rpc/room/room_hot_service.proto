@@ -6,7 +6,7 @@ room_hot rpc 协议
 */
 import "rbp/plugin/option.proto";
 import "rpc/room/room_hot_message.proto";
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/room";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/room";
 
 service RoomHot{
   option (rbp.plugin.rbp_service).name = "Room.Hot";

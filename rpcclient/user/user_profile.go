@@ -3,8 +3,8 @@ package user
 import (
 	"context"
 
-	"github.com/olaola-chat/rbp-proto/gen_pb/db/xianshi"
-	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/user"
+	"github.com/olaola-chat/slp-proto/gen_pb/db/xianshi"
+	"github.com/olaola-chat/slp-proto/gen_pb/rpc/user"
 )
 
 func MgetMap(ctx context.Context, uids []uint32, fields []string) (map[uint32]*xianshi.EntityXsUserProfile, error) {

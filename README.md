@@ -4,7 +4,7 @@
 
 ```
 
-rbp-proto
+slp-proto
     config 用于工具生成代码的配置
     dao gf生成的dao
         xianshi  数据库名
@@ -39,12 +39,12 @@ rpc服务手写proto，用service定义函数方法，通过工具自动生成�
 
 # 注意！注意！注意！！！
 
-需要将项目代码按照go规范放置目录，当前代码应放置于${GOPATH}/src/github.com/olaola-chat/rbp-proto
+需要将项目代码按照go规范放置目录，当前代码应放置于${GOPATH}/src/github.com/olaola-chat/slp-proto
 
 IDE 设置protobuf路径导入路径
-${GOPATH}/src/github.com/olaola-chat/rbp-proto/proto
-${GOPATH}/src/github.com/olaola-chat/rbp-proto/protoc-gen-rbp-rpc/proto
-${GOPATH}/src/github.com/olaola-chat/rbp-proto/gen_proto
+${GOPATH}/src/github.com/olaola-chat/slp-proto/proto
+${GOPATH}/src/github.com/olaola-chat/slp-proto/protoc-gen-rbp-rpc/proto
+${GOPATH}/src/github.com/olaola-chat/slp-proto/gen_proto
 
 
 # 代码规范

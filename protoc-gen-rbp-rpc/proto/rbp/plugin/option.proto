@@ -1,7 +1,7 @@
 syntax = "proto3";
 package rbp.plugin;
 
-option go_package="github.com/olaola-chat/rbp-proto/protoc-gen-rbp-rpc/proto";
+option go_package="github.com/olaola-chat/slp-proto/protoc-gen-rbp-rpc/proto";
 import "google/protobuf/descriptor.proto";
 
 message RbpServiceOption {

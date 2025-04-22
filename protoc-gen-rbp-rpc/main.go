@@ -10,7 +10,7 @@ import (
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/proto"
 
-	rbp_proto "github.com/olaola-chat/rbp-proto/protoc-gen-rbp-rpc/proto"
+	rbp_proto "github.com/olaola-chat/slp-proto/protoc-gen-rbp-rpc/proto"
 )
 
 // FirstUpper 字符串首字母大写
@@ -92,7 +92,7 @@ func genServices(gen *protogen.Plugin, file *protogen.File, service *protogen.Se
 	g.P("import (")
 	g.P("  \"context\"")
 	g.P()
-	g.P("  \"github.com/olaola-chat/rbp-proto/rpcclient/base\"")
+	g.P("  \"github.com/olaola-chat/slp-proto/rpcclient/base\"")
 	g.P()
 	for _, n := range names {
 		a := path2name[n]

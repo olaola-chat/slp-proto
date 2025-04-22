@@ -1,7 +1,7 @@
 syntax = "proto3";
 package rbp.rpc.user;
 
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/user";
+option go_package = "github.com/olaola-chat/slp-proto/gen_pb/rpc/user";
 
 //验证用户登录令牌合法性
 message ReqUserAuth {

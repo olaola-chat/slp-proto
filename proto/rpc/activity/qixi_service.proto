@@ -6,7 +6,7 @@ import "rbp/plugin/option.proto";
 import "rpc/activity/qixi_message.proto";
 import "rpc/activity/send_gift_message.proto";
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/activity";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/activity";
 
 service RbpActivityQixi {
     option (rbp.plugin.rbp_service).name = "Rbp.Activity.Qixi";

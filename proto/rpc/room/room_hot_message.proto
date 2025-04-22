@@ -5,7 +5,7 @@ package rbp.rpc.room;
 room_hot rpc 协议
 */
 
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/room";
+option go_package = "github.com/olaola-chat/slp-proto/gen_pb/rpc/room";
 
 message ReqRoomHotAdd{
   uint32 rid = 1;            //房间id

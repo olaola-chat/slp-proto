@@ -5,7 +5,7 @@
 package functor
 
 import (
-	"github.com/olaola-chat/rbp-proto/dao/functor/internal"
+	"github.com/olaola-chat/slp-proto/dao/functor/internal"
 )
 
 // voiceLoverAudioCommentDao is the manager for logic model data accessing

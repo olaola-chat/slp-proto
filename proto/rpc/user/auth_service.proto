@@ -5,7 +5,7 @@ import "rbp/plugin/option.proto";
 
 import "rpc/user/auth_message.proto";
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/user";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/user";
 
 
 service RbpUserAuth {

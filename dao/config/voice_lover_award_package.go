@@ -5,7 +5,7 @@
 package config
 
 import (
-	"github.com/olaola-chat/rbp-proto/dao/config/internal"
+	"github.com/olaola-chat/slp-proto/dao/config/internal"
 )
 
 // voiceLoverAwardPackageDao is the manager for logic model data accessing

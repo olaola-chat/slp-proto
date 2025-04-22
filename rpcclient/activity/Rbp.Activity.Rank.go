@@ -3,9 +3,9 @@ package activity
 import (
 	"context"
 
-	"github.com/olaola-chat/rbp-proto/rpcclient/base"
+	"github.com/olaola-chat/slp-proto/rpcclient/base"
 
-	"github.com/olaola-chat/rbp-proto/gen_pb/rpc/activitypb"
+	"github.com/olaola-chat/slp-proto/gen_pb/rpc/activitypb"
 )
 
 // RbpActivityRank *rbpActivityRank

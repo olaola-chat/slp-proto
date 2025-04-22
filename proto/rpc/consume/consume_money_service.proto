@@ -9,7 +9,7 @@ import "rpc/consume/consume_money_message.proto";
 user_profile rpc 协议
 */
 
-option go_package = "github.com/olaola-chat/rbp-proto/rpcclient/consume";
+option go_package = "github.com/olaola-chat/slp-proto/rpcclient/consume";
 
 
 service ConsumeMoney {

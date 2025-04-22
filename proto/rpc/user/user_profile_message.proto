@@ -4,7 +4,7 @@ package rbp.rpc.user;
 /*
 user_profile rpc 协议
 */
-option go_package = "github.com/olaola-chat/rbp-proto/gen_pb/rpc/user";
+option go_package = "github.com/olaola-chat/slp-proto/gen_pb/rpc/user";
 
 import "db/xianshi/entity_xs_user_profile.proto";
 
