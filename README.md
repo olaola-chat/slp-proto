@@ -97,3 +97,5 @@ go install
 # 安装protoc-go-inject-tag
 
 go install github.com/favadi/protoc-go-inject-tag@latest
+
+# 测试
