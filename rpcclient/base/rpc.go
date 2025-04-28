@@ -1,6 +1,9 @@
 package base
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/gogf/gf/errors/gerror"
 	"github.com/gogf/gf/frame/g"
 	"github.com/rpcxio/libkv/store"
@@ -22,6 +25,14 @@ func init() {
 		panic(gerror.Wrap(err, "rpc discover config error"))
 	}
 
+	//k8s获取consul地址
+	if config.Type == "consul" && len(config.Addr) == 0 {
+		consulAgentIp := os.Getenv("CONSUL_AGENT_IP")
+		if consulAgentIp == "" {
+			panic(gerror.Wrap(err, "rpc discover config error"))
+		}
+		config.Addr = []string{fmt.Sprintf("%s:%d", consulAgentIp, 8500)}
+	}
 }
 
 // NewClientDiscover 根据server名字创建客户端发现服务配置
